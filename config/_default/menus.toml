@@ -1,0 +1,32 @@
+[[main]]
+    identifier = "about"
+    name = "About"
+    url = "/about/"
+    weight = 1
+
+[[main]]
+    # Top-level menu entry
+    identifier = "now"
+    name = "Now"
+    url = "/now/"
+    weight = 1
+
+[[main]]
+    # Top-level menu entry
+    identifier = "writing"
+    name = "Writing"
+    url = "/posts/"
+    weight = 1
+
+[[main]]
+    identifier = "projects"
+    name = "Projects"
+    url = "/projects/"
+    weight = 1
+
+[[main]]
+    identifier = "dg"
+    name = "Digital Garden"
+    url = "http://mtsolitary.com"
+    weight = 1
+
