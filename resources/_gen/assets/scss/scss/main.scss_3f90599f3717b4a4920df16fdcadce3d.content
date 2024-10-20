@@ -643,7 +643,6 @@ body {
  * 3. Leave some space on the edges, especially valuable on small screens
  */
 .container, .single-container-post, .single-container, .container--sm {
-  background-color: var(--color-contrast-lower);
   max-width: 1180px;
   /* 1 */
   margin-left: auto;
@@ -699,9 +698,7 @@ body {
 .main-nav {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 15px 0;
-  row-gap: 20px; }
+  justify-content: space-between; }
   .main-nav .nav-toggle {
     position: absolute;
     top: 20px;
