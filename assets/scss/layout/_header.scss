@@ -3,11 +3,12 @@
 // -----------------------------------------------------------------------------
 
 .main-nav {
+  color: var(--color-contrast-high);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-//   padding: 15px 0;
-//   row-gap: 20px;
+  padding: 15px 0;
+  row-gap: 20px;
 
   .nav-toggle {
     position: absolute;
@@ -32,7 +33,6 @@
 	font-family: 'PT Sans Narrow';
     @include font-size('md');
     margin-top: 10px;
-    margin-left: 20px;
 }
 
 .menu-link {

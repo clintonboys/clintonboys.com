@@ -2,8 +2,6 @@
   --color-primary: rgb(27, 27, 27);
   --color-inline-code: hsl(0, 81%, 35%);
   /* color contrasts */
-  --color-bg: rgb(227, 226, 223);
-  --color-contrast-lower: rgb(227, 226, 223);
   --color-contrast-low: rgb(227, 226, 223);
   --color-contrast-medium-low: hsl(240, 1%, 65%);
   --color-contrast-medium: hsl(240, 1%, 48%);
@@ -27,7 +25,7 @@
   --color-primary: rgb(89, 184, 237);
   --color-inline-code: hsl(0, 81%, 70%);
   /* color contrasts */
-  --color-bg: rgb(18, 18, 18);
+  --color-bg: rgb(77, 27, 27);
   --color-contrast-lower: hsl(240, 6%, 15%);
   --color-contrast-low: hsl(252, 4%, 25%);
   --color-contrast-medium-low: hsl(240, 2%, 34%);
@@ -696,9 +694,12 @@ body {
   padding: 10px 20px; }
 
 .main-nav {
+  color: var(--color-contrast-high);
   display: flex;
   flex-direction: column;
-  justify-content: space-between; }
+  justify-content: space-between;
+  padding: 15px 0;
+  row-gap: 20px; }
   .main-nav .nav-toggle {
     position: absolute;
     top: 20px;
@@ -718,8 +719,7 @@ body {
   font-family: 'PT Sans Narrow';
   font-size: var(--font-size-md);
   line-height: calc(8px + 2ex);
-  margin-top: 10px;
-  margin-left: 20px; }
+  margin-top: 10px; }
 
 .menu-link {
   color: var(--color-text);
