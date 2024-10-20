@@ -22,7 +22,7 @@
   color: var(--color-contrast-high); }
 
 [data-theme="dark"] {
-  --color-primary: rgb(89, 184, 237);
+  --color-primary: rgb(227, 226, 223);
   --color-inline-code: hsl(0, 81%, 70%);
   /* color contrasts */
   --color-bg: hsl(240, 6%, 15%);

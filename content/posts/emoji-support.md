@@ -3,7 +3,6 @@ title: Emoji Support
 seo_title: Emoji Support
 summary: Guide to emoji usage in Hugo.
 description: Guide to emoji usage in Hugo.
-slug: emoji-support
 author: John Doe
 
 draft: false
@@ -14,11 +13,6 @@ publishDate:
 
 feature_image: 
 feature_image_alt: 
-
-categories:
-  - Formatting
-tags:
-  - Emoji
 
 toc: true
 related: true

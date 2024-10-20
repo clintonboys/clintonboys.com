@@ -1,10 +1,10 @@
 ---
-title: Karev
-seo_title: conlang
-summary: Karev is a constructed language designed for argument and precision of thought. 
+title: Hugo migration
+seo_title: cb.com2
+summary: I recently migrated my personal website to Hugo after ten years of blogging with Jekyll. 
 description: This is the first full description of a constructed language I have created. It's a hobby I have dabbled in for over twenty years. 
-slug: portfolio-project-1
-author: John Doe
+slug: hugo-migration
+author: Clinton Boys
 
 draft: false
 date: 2019-02-20T03:52:30-05:00
@@ -12,17 +12,17 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-feature_image: conlang.png
+feature_image: site.png
 feature_image_alt: Conlang
 
 project types: 
-    - Personal
+    - Technical
 
 techstack:
     - Hugo
     - HTML/CSS
     - JavaScript
-    - Netlify
+    - Vercel
 live_url: https://hugo-liftoff.netlify.app
 source_url: https://github.com/wjh18/hugo-liftoff
 ---
