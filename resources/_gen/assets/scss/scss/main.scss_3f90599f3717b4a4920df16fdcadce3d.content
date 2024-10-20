@@ -643,6 +643,7 @@ body {
  * 3. Leave some space on the edges, especially valuable on small screens
  */
 .container, .single-container-post, .single-container, .container--sm {
+  background-color: var(--color-contrast-lower);
   max-width: 1180px;
   /* 1 */
   margin-left: auto;
@@ -692,7 +693,8 @@ body {
   width: 1px; }
 
 .section {
-  padding: 50px 0; }
+  background-color: var(--color-contrast-lower);
+  padding: 10px 20px; }
 
 .main-nav {
   display: flex;
@@ -717,7 +719,10 @@ body {
 .logo {
   text-transform: uppercase;
   font-family: 'PT Sans Narrow';
-  font-size: 30px; }
+  font-size: var(--font-size-md);
+  line-height: calc(8px + 2ex);
+  margin-top: 10px;
+  margin-left: 20px; }
 
 .menu-link {
   color: var(--color-text);
@@ -755,7 +760,7 @@ body {
       background-color: var(--color-primary);
       color: var(--color-contrast-lower); }
   .menu .drop-icon {
-    margin-left: 10px; }
+    margin-left: 10spx; }
   @media (min-width: 900px) {
     .menu {
       display: flex;
@@ -780,17 +785,15 @@ body {
       box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; }
       .sub-menu--active {
         display: none; } }
-.footer {
-  background-color: var(--color-contrast-lower); }
-
 .footer-socials {
   max-width: 300px;
   margin: 0 auto; }
 
 .footer-copyright {
-  text-align: center;
-  font-size: var(--font-size-base);
+  text-align: left;
+  font-size: var(--font-size-sm);
   line-height: calc(8px + 2ex);
+  margin-left: 20px;
   color: var(--color-contrast-medium-high); }
 
 :root {
@@ -1134,6 +1137,7 @@ body {
 
 .image-wrap {
   position: relative;
+  margin-top: 20px;
   margin-bottom: 2em; }
   .image-wrap:after {
     content: " ";
