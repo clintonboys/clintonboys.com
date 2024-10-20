@@ -42,10 +42,6 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -55,6 +51,10 @@
     <priority>0.5</priority>
   </url><url>
     <loc>/now/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/posts/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
