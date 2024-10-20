@@ -42,7 +42,7 @@
   }
   
   a {
-    color: var(--color-primary);
+    color: var(--color-contrast-medium-low);
     text-decoration: none;
   
     @include on-event {
