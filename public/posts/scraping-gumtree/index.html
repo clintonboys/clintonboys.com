@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+<link rel="stylesheet" href="/scss/main.min.css" />
+
+
+  
+<meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+
+<title>Scraping Gumtree</title>
+
+
+<meta name="author" content="">
+
+<meta name="description" content="">
+<link rel="canonical" href="/posts/scraping-gumtree/">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scraping Gumtree">
+<meta property="og:description" content="Gumtree.com.au is a trading post website, largely used by private sellers interacting with each other off-site to sell used goods. One particularly common use for Gumtree is concert tickets: this is one of the main uses I have for it.
+The site is however fairly lightweight, and doesn&rsquo;t have any sort of notifications system for a particular search. So when looking for tickets to a particular concert, say, you have to search the site constantly and see if there are any new results.">
+<meta property="og:url" content="/posts/scraping-gumtree/">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="Scraping Gumtree">
+<meta name="twitter:description" content="Gumtree.com.au is a trading post website, largely used by private sellers interacting with each other off-site to sell used goods. One particularly common use for Gumtree is concert tickets: this is one of the main uses I have for it.
+The site is however fairly lightweight, and doesn&rsquo;t have any sort of notifications system for a particular search. So when looking for tickets to a particular concert, say, you have to search the site constantly and see if there are any new results.">
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "/#/schema/person/1",
+      "name":  null ,
+      "url": "/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "/#/schema/image/1",
+        "url": "/\u003cnil\u003e",
+        "width": null ,
+        "height": null ,
+        "caption":  null 
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "/#/schema/website/1",
+      "url": "/",
+      "name": "Clinton Boys",
+      "description":  null ,
+      "publisher": {
+        "@id": "/#/schema/person/1"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "/posts/scraping-gumtree/",
+      "url": "/posts/scraping-gumtree/",
+      "name": "Scraping Gumtree",
+      "description":  null ,
+      "isPartOf": {
+        "@id": "/#/schema/website/1"
+      },
+      "about": {
+        "@id": "/#/schema/person/1"
+      },
+      "datePublished": "0001-01-01T00:00:00+00:00",
+      "dateModified": "0001-01-01T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "/posts/scraping-gumtree/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "/posts/scraping-gumtree/#/schema/image/2"
+      },
+      "inLanguage":  null ,
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["/posts/scraping-gumtree/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/posts/scraping-gumtree/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "",
+          "url": "",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "/posts/",
+          "url": "/posts/",
+          "name": "Posts"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "/posts/scraping-gumtree/"
+          }
+        }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "/#/schema/article/1",
+          "headline": "Scraping Gumtree",
+          "description": "",
+          "isPartOf": {
+            "@id": "/posts/scraping-gumtree/"
+          },
+          "mainEntityOfPage": {
+            "@id": "/posts/scraping-gumtree/"
+          },
+          "datePublished": "0001-01-01T00:00:00+00:00",
+          "dateModified": "0001-01-01T00:00:00+00:00",
+          "author": {
+            "@id": "/#/schema/person/1"
+          },          
+          "publisher": {
+            "@id": "/#/schema/person/1"
+          },
+          "image": {
+            "@id": "/posts/scraping-gumtree/#/schema/image/2"
+          }
+        }
+      ]
+    },{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "/posts/scraping-gumtree/#/schema/image/2",
+          "url":  null ,
+          "contentUrl":  null ,
+          "caption": "Scraping Gumtree"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  
+
+  
+
+</head><body>
+    <header class="container">
+  <nav class="main-nav" id="js-navbar">
+    <a class="logo" href="">Clinton Boys</a>
+    <ul class="menu" id="js-menu">
+      
+      
+      
+        <li class="menu-item">
+          <a href="/about/" class="menu-link">About</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="http://mtsolitary.com" class="menu-link">Digital Garden</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/now/" class="menu-link">Now</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/projects/" class="menu-link">Projects</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/writing/" class="menu-link">Writing</a>
+        </li>
+      
+      
+      <li class="menu-item--align">
+        <div class="switch">
+          <input class="switch-input" type="checkbox" id="themeSwitch">
+          <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+          <div aria-hidden="true" class="switch-marker"></div>
+        </div>
+      </li>
+    </ul>
+    <span class="nav-toggle" id="js-navbar-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+    </span>
+  </nav>
+</header><main class="section">
+
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+</div>
+    <article class="markdown">
+        <p>Gumtree.com.au is a trading post website, largely used by private sellers interacting with each other off-site to sell used goods. One particularly common use for Gumtree is concert tickets: this is one of the main uses I have for it.</p>
+<p>The site is however fairly lightweight, and doesn&rsquo;t have any sort of notifications system for a particular search. So when looking for tickets to a particular concert, say, you have to search the site constantly and see if there are any new results.</p>
+<p>I decided to learn some basic web-scraping techniques to write a script that did all this work for me. I wanted the following features:</p>
+<ol>
+<li>To specify a keyword (e.g. &ldquo;arctic monkeys&rdquo;).</li>
+<li>To have the script crawl Gumtree every $$x$$ minutes.</li>
+<li>To email me with any new results (within particular geographic areas or price brackets).</li>
+</ol>
+<h3 id="scraping-gumtree"></h>Scraping Gumtree<a href="#scraping-gumtree">
+    
+  </a>
+</h3><p>I&rsquo;d not done much web scraping before but I&rsquo;d heard good things about BeautifulSoup in Python to parse the scraped html, together with the requests package to actually scrape the pages. Since I was looking for tickets to a particular show, I used the following parameters, which could of course be altered depending on the user&rsquo;s requirements:</p>
+<pre><code>artist=&quot;arctic+monkeys&quot;
+city=&quot;sydney&quot;
+URL_START='http://www.gumtree.com.au'
+OFFER_CHOICE=['k0?ad=offering','k0?ad=wanted']
+ARTIST_URL=&quot;arctic+monkeys&quot;#re.sub(&quot;\s&quot;,+,artist)
+</code></pre>
+<p>I then used the requests package to scrape a gumtree results page and dump the JSON output; this scrapes the $n$th result page (Gumtree limits to 10 results per page).</p>
+<pre><code>def scrape_gumtree_page_n(n):
+    current_time=int(time.time())
+    pageURL='{0}/s-{1}+{2}/page-{3}/{4}'.format(URL_START,ARTIST_URL,city,n,OFFER_CHOICE[0])
+    savePath=os.path.join(scrapings_dir,&quot;{0}.html&quot;.format(current_time))
+    results=requests.get(pageURL)
+    results_file=open(savePath,'w')
+    with results_file:
+        results_file.write(results.text.encode('utf-8',errors='ignore'))
+    return savePath
+</code></pre>
+<p>There was then a simple while loop to run this over all results pages.</p>
+<h3 id="parsing-json-using-beautifulsoup"></h>Parsing JSON using BeautifulSoup<a href="#parsing-json-using-beautifulsoup">
+    
+  </a>
+</h3><p>Having obtained a whole bunch of messy output from the scraper, I used the following code to parse using BeautifulSoup:</p>
+<pre><code>def html_parser(filename):
+    gumtree_file=open(filename)
+    gumtree_contents=gumtree_file.read()
+    gtsoup=BeautifulSoup(gumtree_contents)
+    master_list=[]
+    gt_li=gtsoup.findAll('li', attrs={'class': 'js-click-block'})
+    for node in gt_li:
+        if len(node.contents) &gt; 0:
+            post_dict={}
+            if node.findAll('a') is not None:
+                post_dict['title']=node.findAll('a')[0].string
+            if node.find('div',attrs={&quot;class&quot;:&quot;h-elips&quot;}) is not None:
+                post_dict['price']=node.find('div',attrs={&quot;class&quot;:&quot;h-elips&quot;}).string
+            if node.findAll('span') is not None:
+                post_dict['description']=node.findAll('span')[0].contents[0]
+            if node.find('h3',attrs={&quot;class&quot;:&quot;rs-ad-location&quot;}) is not None:
+                post_dict['location1']=node.find('h3',attrs={&quot;class&quot;:&quot;rs-ad-location-area&quot;}).contents[0]
+            if node.find('span',attrs={&quot;class&quot;:&quot;rs-ad-location-suburb&quot;}) is not None:
+                post_dict['location2']=node.find('span',attrs={&quot;class&quot;:&quot;rs-ad-location-suburb&quot;}).contents[0]
+            if node.find('div',attrs={&quot;class&quot;:&quot;rs-ad-date&quot;}) is not None:
+                post_dict['date']=node.find('div',attrs={&quot;class&quot;:&quot;rs-ad-date&quot;}).contents[0]
+            anchors=node.findAll('a')
+            for node in anchors:
+                if node.get(&quot;data-adid&quot;) is not None:
+                    post_dict['ad_id']=node.get('data-adid')
+            master_list.append(post_dict)
+    return master_list
+</code></pre>
+<p>This returned things like</p>
+<pre><code>{&quot;ad_id&quot;: &quot;1048303295&quot;, 
+ &quot;description&quot;: &quot;Selling: 2 Coldplay Tickets - Sydney 19 June &quot;,
+ &quot;title&quot;: null, 
+ &quot;price&quot;: &quot;\n500&quot;, 
+ &quot;location2&quot;: &quot;St Ives Chase&quot;, 
+ &quot;date&quot;: &quot;\n04/06/2014&quot;}
+</code></pre>
+<p>which contains all the relevant information. This took me a while to write as I&rsquo;d not dealt with JSON much before, so I had to figure everything out from scratch. It was very satisfying to run the parser successfully and have big page-sized chunks of horrible JSON condensed into little search result nuggets like the above.</p>
+<h3 id="mandrill-email-automation"></h>Mandrill email automation<a href="#mandrill-email-automation">
+    
+  </a>
+</h3><p>I wanted to run the scraper constantly in the background, preferably on an Amazon Web Server instance, and have it send automated emails every time it found a new result. I had to register a Mandrill account to use their API; once an API key was generated I wrote the following very basic email template:</p>
+<pre><code>def new_result_email(result,artist,city):
+    subj=artist+' '+city
+    body=json.dumps(result)
+    message = {
+     'from_email': '...',
+     'from_name': 'Clinton Boys',
+     'headers': {'Reply-To': '...'},
+     'important': True,
+     'preserve_recipients': None,
+     'return_path_domain': None,
+     'signing_domain': None,
+     'subject': subj,
+     'text': body,
+     'to': [{'email': '...',
+             'name': 'Clinton Boys',
+             'type': 'to'}],
+    }
+    result = mandrill_client.messages.send(message=message)
+    print(result)
+</code></pre>
+<p>which I called in my function &ldquo;regular_scraping&rdquo;:</p>
+<pre><code>def regular_scraping():
+    json_file=open('master_file.text',&quot;r&quot;)
+    json_file_contents= json_file.read()
+    if not os.stat('master_file.text')[6]==0:
+        old_data=json.loads(json_file_contents)
+    else:
+        old_data=[]
+    this_scrape=[]
+    for n in range(1,pages_to_scrape()+1):
+        this_scrape.append(html_parser(scrape_gumtree_page_n(n)))
+        data_ids=[]
+        new_entries=[]
+        new_entry_count=0
+        for entry in old_data:
+            data_ids.append(entry[u'ad_id'])
+        for entry in this_scrape[n-1]:
+            if entry[u'ad_id'] not in data_ids:
+                old_data.append(entry)
+                new_entry_count += 1
+                new_entries.append(entry)
+                new_result_email(entry,artist,city)
+    json_file.close()
+    json_file=open('master_file.text',&quot;w&quot;)
+    json_file.write(json.dumps(old_data))
+    json_file.close()
+</code></pre>
+<p>The last step was to set this up on an Amazon Web Server instance: I made a master file which put all these ingredients together: every $$x$$ seconds (by default I chose 120), it ran the scraper across all results pages, looked through the neatened JSON for results, compared these to a master results file on disk, and if there were any new results, added to the file and sent an email through Mandrill. This was easy enough to set up, although there&rsquo;s still a bunch of memory leak issues because my code isn&rsquo;t great; after a while it will eventually crash the AWS instance. It did solve my initial problem though, which was the whole point of the exercise, and I did learn a whole lot of new techniques.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="/posts/tell-me-what-was-your-phd-about/">&laquo; Tell me - what was your PhD about?</a>
+      
+      
+        <a class="next" href="/posts/scraping-and-joining-google-trends-searches/">Scraping and joining Google trends searches &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+
+<script src="/main.min.js"></script>
+
+
+
+  
+</body>
+</html>

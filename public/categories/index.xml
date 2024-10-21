@@ -6,5 +6,68 @@
     <description>Recent content in Categories on Clinton Boys</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language><atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Aggregating Israeli opinion polls</title>
+      <link>/posts/aggregating-israeli-opinion-polls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/aggregating-israeli-opinion-polls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Clustering Australian electorates by demographic variables</title>
+      <link>/posts/clustering-australian-electorates-by-demographic-variables/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/clustering-australian-electorates-by-demographic-variables/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Correcting for reliability in Australian election polls</title>
+      <link>/posts/correcting-for-reliability-in-australian-election-polls/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/correcting-for-reliability-in-australian-election-polls/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Difficulties in forecasting elections in Australia</title>
+      <link>/posts/difficulties-in-forecasting-elections-in-australia/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/difficulties-in-forecasting-elections-in-australia/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scraping and joining Google trends searches</title>
+      <link>/posts/scraping-and-joining-google-trends-searches/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/scraping-and-joining-google-trends-searches/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scraping Gumtree</title>
+      <link>/posts/scraping-gumtree/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/scraping-gumtree/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tell me - what was your PhD about?</title>
+      <link>/posts/tell-me-what-was-your-phd-about/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/posts/tell-me-what-was-your-phd-about/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>
