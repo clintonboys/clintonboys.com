@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+<link rel="stylesheet" href="/scss/main.min.css" />
+
+
+  
+<meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+
+<title>Emma Chisit</title>
+
+
+<meta name="author" content="">
+
+<meta name="description" content="">
+<link rel="canonical" href="/posts/emma-chisit/">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Emma Chisit">
+<meta property="og:description" content="I&rsquo;ve spent the last few months of my spare time writing code for a model to forecast Australian elections. I&rsquo;m calling the model Emma Chisit. A very basic first version of the model is finished, and I wanted to write up a few things about how it works, mainly so I can explain the current shortcomings, and the improvements I want to make down the line. The good thing is that I&rsquo;ve written the bones of many of the core parts of the model, and have something that mostly works and is easy to improve.">
+<meta property="og:url" content="/posts/emma-chisit/">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="Emma Chisit">
+<meta name="twitter:description" content="I&rsquo;ve spent the last few months of my spare time writing code for a model to forecast Australian elections. I&rsquo;m calling the model Emma Chisit. A very basic first version of the model is finished, and I wanted to write up a few things about how it works, mainly so I can explain the current shortcomings, and the improvements I want to make down the line. The good thing is that I&rsquo;ve written the bones of many of the core parts of the model, and have something that mostly works and is easy to improve.">
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "/#/schema/person/1",
+      "name":  null ,
+      "url": "/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "/#/schema/image/1",
+        "url": "/\u003cnil\u003e",
+        "width": null ,
+        "height": null ,
+        "caption":  null 
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "/#/schema/website/1",
+      "url": "/",
+      "name": "Clinton Boys",
+      "description":  null ,
+      "publisher": {
+        "@id": "/#/schema/person/1"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "/posts/emma-chisit/",
+      "url": "/posts/emma-chisit/",
+      "name": "Emma Chisit",
+      "description":  null ,
+      "isPartOf": {
+        "@id": "/#/schema/website/1"
+      },
+      "about": {
+        "@id": "/#/schema/person/1"
+      },
+      "datePublished": "0001-01-01T00:00:00+00:00",
+      "dateModified": "0001-01-01T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "/posts/emma-chisit/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "/posts/emma-chisit/#/schema/image/2"
+      },
+      "inLanguage":  null ,
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["/posts/emma-chisit/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/posts/emma-chisit/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "",
+          "url": "",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "/posts/",
+          "url": "/posts/",
+          "name": "Posts"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "/posts/emma-chisit/"
+          }
+        }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "/#/schema/article/1",
+          "headline": "Emma Chisit",
+          "description": "",
+          "isPartOf": {
+            "@id": "/posts/emma-chisit/"
+          },
+          "mainEntityOfPage": {
+            "@id": "/posts/emma-chisit/"
+          },
+          "datePublished": "0001-01-01T00:00:00+00:00",
+          "dateModified": "0001-01-01T00:00:00+00:00",
+          "author": {
+            "@id": "/#/schema/person/1"
+          },          
+          "publisher": {
+            "@id": "/#/schema/person/1"
+          },
+          "image": {
+            "@id": "/posts/emma-chisit/#/schema/image/2"
+          }
+        }
+      ]
+    },{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "/posts/emma-chisit/#/schema/image/2",
+          "url":  null ,
+          "contentUrl":  null ,
+          "caption": "Emma Chisit"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  
+
+  
+
+</head><body>
+    <header class="container">
+  <nav class="main-nav" id="js-navbar">
+    <a class="logo" href="">Clinton Boys</a>
+    <ul class="menu" id="js-menu">
+      
+      
+      
+        <li class="menu-item">
+          <a href="/about/" class="menu-link">About</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="http://mtsolitary.com" class="menu-link">Digital Garden</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/now/" class="menu-link">Now</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/projects/" class="menu-link">Projects</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/writing/" class="menu-link">Writing</a>
+        </li>
+      
+      
+      <li class="menu-item--align">
+        <div class="switch">
+          <input class="switch-input" type="checkbox" id="themeSwitch">
+          <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+          <div aria-hidden="true" class="switch-marker"></div>
+        </div>
+      </li>
+    </ul>
+    <span class="nav-toggle" id="js-navbar-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+    </span>
+  </nav>
+</header><main class="section">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">Emma Chisit</h1>
+    <div class="post-list-meta">
+      <div class="post-list-dates">Jan 1, 0001&nbsp;&middot;&nbsp;4 min.</div>
+      
+      
+    </div>
+    <p class="page-header-desc"></p>
+    <div class="single-terms">
+      
+    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+</div>
+    <article class="markdown">
+        <p>I&rsquo;ve spent the last few months of my spare time writing code for a model to forecast Australian elections. I&rsquo;m calling the model Emma Chisit. A very basic first version of the model is finished, and I wanted to write up a few things about how it works, mainly so I can explain the current shortcomings, and the improvements I want to make down the line. The good thing is that I&rsquo;ve written the bones of many of the core parts of the model, and have something that mostly works and is easy to improve.</p>
+<p><strong>The data used by the model</strong></p>
+<p>The model uses the following data:</p>
+<ul>
+<li>poll data obtained from two main sources: The Phantom Trend&rsquo;s github repo which contains a nearly complete database of federal polling data from this century, and my own (incomplete but continuing) efforts at scraping the web for state polling data. At the moment I&rsquo;m concentrating on federal elections, so my model is only using the federal polling data.</li>
+<li>election results data from the AEC results page. The model uses the primary votes by polling place data for each polling place in the country</li>
+<li>preference data from Antony Green. I&rsquo;m using Antony Green&rsquo;s calculations of preference flows in the 2013 election.</li>
+</ul>
+<p><strong>Poll aggregator to swings</strong></p>
+<p>The current heart of the model is a poll aggregator. I&rsquo;m using the same code that I wrote for my [Israeli poll aggregator]({{ site.baseurl }}{% link _posts/2015-03-13-israel-poll-aggregator.md %}), which accounts for pollster reliability (measured across my entire poll database, including state polls) and recency. The model computes a poll aggregate (which has a much greater historical tendency for accuracy than the individual pollsters) and then the implied swing (percentage change) from the previous election&rsquo;s results.</p>
+<p><strong>Four-party model and runoff simulator</strong></p>
+<p>The model then takes the swing estimate and applies it to each individual seat. At this stage, the model assumes the system consists of four parties, the Coalition, the Labor Party, the Greens and a generic &ldquo;Others&rdquo; label that encompasses everyone else. This was a decision I made early on because these are the only four options reliably included in all polls. It&rsquo;s also the biggest shortcoming of the model in predicting recent elections, mainly because of the rise of PUP.</p>
+<p><strong>Current output</strong></p>
+<p>I ran this basic version of the model using the polling data from the thirty days before the 2013 federal election, and the results from the 2010 federal election. The output looks like this:</p>
+<pre><code>Greenway 49.48 | 52.98
+Hughes 43.72 | 39.33
+Hume 39.66 | 38.53
+Hunter 61.57 | 53.67
+Kingsford Smith 52.11 | 52.74
+Lindsay 49.02 | 47.01
+</code></pre>
+<p>with seat names, the predicted result in the seat, and the actual result in the seat at the election. Of the six seats above, the model gets five right and one (Greenway) wrong. In total, the model gets 134 out of 150 seats right and has an average error per seat of about 2.5%.</p>
+<p><strong>Shortcomings</strong></p>
+<p>The model fails completely at the moment in seats where the top two contestants are not the ALP and the Coalition. This accounts for five seats. It also fails in seats with strong independent candidates, or seats with a high PUP vote. The average error, 2.5%, is too high, since usually more than 20% of seats are decided by a TPP margin smaller than this.</p>
+<p><strong>Next steps</strong></p>
+<p>In order of priority, the next steps for the model are as follows:</p>
+<ul>
+<li>clean up the code so the modules work faster and together better (at the moment it has all been built ad hoc on top of itself so it&rsquo;s a little messy)</li>
+<li>add the ability for two-party preferred contests between parties other than the ALP and the Coalition</li>
+<li>add the option for a strong fourth party (like PUP in the 2013 election, and previous parties like Family First, One Nation and the Democrats)</li>
+<li>use historical data (and polling data) to better estimate [preference flows]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %}) (in particular, to obtain preference flows for non TPP contests)</li>
+<li>incorporate [clustering]({{ site.baseurl }}{% link _posts/2015-02-13-aus-election-model-8.md %}) by demographic data into the model to more accurately individualise the swing estimate to seat clusters</li>
+<li>incorporate state polls into the federal model</li>
+<li>incorporate marginal seat polls into the model</li>
+<li>account for personal votes of popular and long-incumbent members</li>
+<li>get the model working for individual states</li>
+<li>instead of providing a numerical estimate for each seat, provide a probabilistic estimate and a confidence interval</li>
+<li>account for [redistributions]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %}) by reassigning polling places</li>
+<li>add a trend feature to extrapolate results to the nearest election rather than just providing a nowcast</li>
+<li>incorporate an [economic index]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %})</li>
+</ul>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="/posts/encrypting-files-in-emacs-org-mode/">&laquo; Encrypting files in emacs org-mode</a>
+      
+      
+        <a class="next" href="/posts/difficulties-in-forecasting-elections-in-australia/">Difficulties in forecasting elections in Australia &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+
+<script src="/main.min.js"></script>
+
+
+
+  
+</body>
+</html>

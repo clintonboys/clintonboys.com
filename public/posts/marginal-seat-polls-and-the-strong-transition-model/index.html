@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+<link rel="stylesheet" href="/scss/main.min.css" />
+
+
+  
+<meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+
+<title>Marginal seat polls and the strong transition model</title>
+
+
+<meta name="author" content="">
+
+<meta name="description" content="">
+<link rel="canonical" href="/posts/marginal-seat-polls-and-the-strong-transition-model/">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Marginal seat polls and the strong transition model">
+<meta property="og:description" content="As I&rsquo;ve recently (and finally) become gainfully employed, I haven&rsquo;t been able to devote a huge amount of time to my [model]({{ site.baseurl }}{% link _posts/2015-05-14-aus-election-model-9.md %}) for forecasting Australian elections. I have spent some time rewriting my sloppy code, fixing some redundancies and bugs, and improving the model to include the first few things on my to-do list.
+The major theoretical improvement I&rsquo;ve been thinking about over the last month is the strong transition model which I learnt about while reading about the May 2015 UK general election (I was planning to write a post about why the polls failed so miserably to predict the result but I read so many good summaries of this I don&rsquo;t really think it&rsquo;s necessary).">
+<meta property="og:url" content="/posts/marginal-seat-polls-and-the-strong-transition-model/">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="Marginal seat polls and the strong transition model">
+<meta name="twitter:description" content="As I&rsquo;ve recently (and finally) become gainfully employed, I haven&rsquo;t been able to devote a huge amount of time to my [model]({{ site.baseurl }}{% link _posts/2015-05-14-aus-election-model-9.md %}) for forecasting Australian elections. I have spent some time rewriting my sloppy code, fixing some redundancies and bugs, and improving the model to include the first few things on my to-do list.
+The major theoretical improvement I&rsquo;ve been thinking about over the last month is the strong transition model which I learnt about while reading about the May 2015 UK general election (I was planning to write a post about why the polls failed so miserably to predict the result but I read so many good summaries of this I don&rsquo;t really think it&rsquo;s necessary).">
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "/#/schema/person/1",
+      "name":  null ,
+      "url": "/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "/#/schema/image/1",
+        "url": "/\u003cnil\u003e",
+        "width": null ,
+        "height": null ,
+        "caption":  null 
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "/#/schema/website/1",
+      "url": "/",
+      "name": "Clinton Boys",
+      "description":  null ,
+      "publisher": {
+        "@id": "/#/schema/person/1"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "/posts/marginal-seat-polls-and-the-strong-transition-model/",
+      "url": "/posts/marginal-seat-polls-and-the-strong-transition-model/",
+      "name": "Marginal seat polls and the strong transition model",
+      "description":  null ,
+      "isPartOf": {
+        "@id": "/#/schema/website/1"
+      },
+      "about": {
+        "@id": "/#/schema/person/1"
+      },
+      "datePublished": "0001-01-01T00:00:00+00:00",
+      "dateModified": "0001-01-01T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "/posts/marginal-seat-polls-and-the-strong-transition-model/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "/posts/marginal-seat-polls-and-the-strong-transition-model/#/schema/image/2"
+      },
+      "inLanguage":  null ,
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["/posts/marginal-seat-polls-and-the-strong-transition-model/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/posts/marginal-seat-polls-and-the-strong-transition-model/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "",
+          "url": "",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "/posts/",
+          "url": "/posts/",
+          "name": "Posts"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "/posts/marginal-seat-polls-and-the-strong-transition-model/"
+          }
+        }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "/#/schema/article/1",
+          "headline": "Marginal seat polls and the strong transition model",
+          "description": "",
+          "isPartOf": {
+            "@id": "/posts/marginal-seat-polls-and-the-strong-transition-model/"
+          },
+          "mainEntityOfPage": {
+            "@id": "/posts/marginal-seat-polls-and-the-strong-transition-model/"
+          },
+          "datePublished": "0001-01-01T00:00:00+00:00",
+          "dateModified": "0001-01-01T00:00:00+00:00",
+          "author": {
+            "@id": "/#/schema/person/1"
+          },          
+          "publisher": {
+            "@id": "/#/schema/person/1"
+          },
+          "image": {
+            "@id": "/posts/marginal-seat-polls-and-the-strong-transition-model/#/schema/image/2"
+          }
+        }
+      ]
+    },{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "/posts/marginal-seat-polls-and-the-strong-transition-model/#/schema/image/2",
+          "url":  null ,
+          "contentUrl":  null ,
+          "caption": "Marginal seat polls and the strong transition model"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  
+
+  
+
+</head><body>
+    <header class="container">
+  <nav class="main-nav" id="js-navbar">
+    <a class="logo" href="">Clinton Boys</a>
+    <ul class="menu" id="js-menu">
+      
+      
+      
+        <li class="menu-item">
+          <a href="/about/" class="menu-link">About</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="http://mtsolitary.com" class="menu-link">Digital Garden</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/now/" class="menu-link">Now</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/projects/" class="menu-link">Projects</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/writing/" class="menu-link">Writing</a>
+        </li>
+      
+      
+      <li class="menu-item--align">
+        <div class="switch">
+          <input class="switch-input" type="checkbox" id="themeSwitch">
+          <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+          <div aria-hidden="true" class="switch-marker"></div>
+        </div>
+      </li>
+    </ul>
+    <span class="nav-toggle" id="js-navbar-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+    </span>
+  </nav>
+</header><main class="section">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">Marginal seat polls and the strong transition model</h1>
+    <div class="post-list-meta">
+      <div class="post-list-dates">Jan 1, 0001&nbsp;&middot;&nbsp;3 min.</div>
+      
+      
+    </div>
+    <p class="page-header-desc"></p>
+    <div class="single-terms">
+      
+    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+</div>
+    <article class="markdown">
+        <p>As I&rsquo;ve recently (and finally) become gainfully employed, I haven&rsquo;t been able to devote a huge amount of time to my [model]({{ site.baseurl }}{% link _posts/2015-05-14-aus-election-model-9.md %}) for forecasting Australian elections. I have spent some time rewriting my sloppy code, fixing some redundancies and bugs, and improving the model to include the first few things on my to-do list.</p>
+<p>The major theoretical improvement I&rsquo;ve been thinking about over the last month is the <a href="http://www.electoralcalculus.co.uk/strongmodel.html" target="_blank" rel="noopener">strong transition model</a> which I learnt about while reading about the May 2015 UK general election (I was planning to write a post about why the polls failed so miserably to predict the result but I read so many good summaries of this I don&rsquo;t really think it&rsquo;s necessary).</p>
+<p>This model of voter behaviour at multi-party elections caught my eye after my initial model performed poorly in seats where the PUP candidate had a particularly strong showing. The thinking behind the model is that political parties generally have a two-tiered system of support: their dyed-in-the-wool followers who will vote for the party no matter what, and other supporters, who are more flakey and prone to switching teams. The proportion of a party&rsquo;s supporters in the former group is an unknown, and difficult to estimate, parameter of the model: the May2015 website put it at 20%. When a party loses support in the polls, it loses it from the <em>non-strong</em> group first. The <a href="http://www.electoralcalculus.co.uk/strongmodel.html" target="_blank" rel="noopener">page</a> at Electoral Calculus explains the idea with the help of some graphs. So this is being incorporated into the model at the moment.</p>
+<p>The second thing is the use of marginal seat polls to improve the model. It has always been my intention to include demographic data in the model, and using marginal seat polls allows me to do this in the following way.</p>
+<p>Suppose we cluster seats according to demographic data, like I did [here]({{ site.baseurl }}{% link _posts/2015-02-13-aus-election-model-8.md %}). And suppose we have some national (or state-level) swing that we want to adjust to a local level. I think the right way to combine these two pieces is using marginal seat polls: they give the link between the clusters and the swing adjustments. That is, if we have a marginal seat poll for one seat in a cluster, we can adjust the whole cluster away from the national swing by the amount the marginal seat within deviates. This is essentially the same thing that the FiveThirtyEight model does for states which are not polled frequently.</p>
+<p>The main theoretical issue with this idea is the margin of error associated with the marginal polls, as well as their frequency and comparability across elections. I&rsquo;m working on scraping marginal poll data and my next post will be an analysis of how it can fit into my model.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="/posts/multilevel-regression/">&laquo; Multilevel regression</a>
+      
+      
+        <a class="next" href="/posts/lifetime-flight-simulator/">Lifetime flight simulator &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+
+<script src="/main.min.js"></script>
+
+
+
+  
+</body>
+</html>

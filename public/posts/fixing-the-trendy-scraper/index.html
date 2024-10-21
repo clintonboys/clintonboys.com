@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+<link rel="stylesheet" href="/scss/main.min.css" />
+
+
+  
+<meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+
+<title>Fixing the Trendy scraper</title>
+
+
+<meta name="author" content="">
+
+<meta name="description" content="">
+<link rel="canonical" href="/posts/fixing-the-trendy-scraper/">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Fixing the Trendy scraper">
+<meta property="og:description" content="My [Google trends scraper]({{ site.baseurl }}{% link _posts/2015-01-12-google-trends-scraper.md %}) is the most popular post on this site, and I&rsquo;ve been getting questions about it for the last year or so, ever since Google changed the way the data is pulled and displayed on the trends site.
+I finally found some free time, worked out how Google had changed the API behind the scenes, and changed my trendy scraper to work with the new version.">
+<meta property="og:url" content="/posts/fixing-the-trendy-scraper/">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="Fixing the Trendy scraper">
+<meta name="twitter:description" content="My [Google trends scraper]({{ site.baseurl }}{% link _posts/2015-01-12-google-trends-scraper.md %}) is the most popular post on this site, and I&rsquo;ve been getting questions about it for the last year or so, ever since Google changed the way the data is pulled and displayed on the trends site.
+I finally found some free time, worked out how Google had changed the API behind the scenes, and changed my trendy scraper to work with the new version.">
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "/#/schema/person/1",
+      "name":  null ,
+      "url": "/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "/#/schema/image/1",
+        "url": "/\u003cnil\u003e",
+        "width": null ,
+        "height": null ,
+        "caption":  null 
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "/#/schema/website/1",
+      "url": "/",
+      "name": "Clinton Boys",
+      "description":  null ,
+      "publisher": {
+        "@id": "/#/schema/person/1"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "/posts/fixing-the-trendy-scraper/",
+      "url": "/posts/fixing-the-trendy-scraper/",
+      "name": "Fixing the Trendy scraper",
+      "description":  null ,
+      "isPartOf": {
+        "@id": "/#/schema/website/1"
+      },
+      "about": {
+        "@id": "/#/schema/person/1"
+      },
+      "datePublished": "0001-01-01T00:00:00+00:00",
+      "dateModified": "0001-01-01T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "/posts/fixing-the-trendy-scraper/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "/posts/fixing-the-trendy-scraper/#/schema/image/2"
+      },
+      "inLanguage":  null ,
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["/posts/fixing-the-trendy-scraper/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/posts/fixing-the-trendy-scraper/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "",
+          "url": "",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "/posts/",
+          "url": "/posts/",
+          "name": "Posts"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "/posts/fixing-the-trendy-scraper/"
+          }
+        }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "/#/schema/article/1",
+          "headline": "Fixing the Trendy scraper",
+          "description": "",
+          "isPartOf": {
+            "@id": "/posts/fixing-the-trendy-scraper/"
+          },
+          "mainEntityOfPage": {
+            "@id": "/posts/fixing-the-trendy-scraper/"
+          },
+          "datePublished": "0001-01-01T00:00:00+00:00",
+          "dateModified": "0001-01-01T00:00:00+00:00",
+          "author": {
+            "@id": "/#/schema/person/1"
+          },          
+          "publisher": {
+            "@id": "/#/schema/person/1"
+          },
+          "image": {
+            "@id": "/posts/fixing-the-trendy-scraper/#/schema/image/2"
+          }
+        }
+      ]
+    },{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "/posts/fixing-the-trendy-scraper/#/schema/image/2",
+          "url":  null ,
+          "contentUrl":  null ,
+          "caption": "Fixing the Trendy scraper"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  
+
+  
+
+</head><body>
+    <header class="container">
+  <nav class="main-nav" id="js-navbar">
+    <a class="logo" href="">Clinton Boys</a>
+    <ul class="menu" id="js-menu">
+      
+      
+      
+        <li class="menu-item">
+          <a href="/about/" class="menu-link">About</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="http://mtsolitary.com" class="menu-link">Digital Garden</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/now/" class="menu-link">Now</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/projects/" class="menu-link">Projects</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/writing/" class="menu-link">Writing</a>
+        </li>
+      
+      
+      <li class="menu-item--align">
+        <div class="switch">
+          <input class="switch-input" type="checkbox" id="themeSwitch">
+          <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+          <div aria-hidden="true" class="switch-marker"></div>
+        </div>
+      </li>
+    </ul>
+    <span class="nav-toggle" id="js-navbar-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+    </span>
+  </nav>
+</header><main class="section">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">Fixing the Trendy scraper</h1>
+    <div class="post-list-meta">
+      <div class="post-list-dates">Jan 1, 0001&nbsp;&middot;&nbsp;2 min.</div>
+      
+      
+    </div>
+    <p class="page-header-desc"></p>
+    <div class="single-terms">
+      
+    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+</div>
+    <article class="markdown">
+        <p>My [Google trends scraper]({{ site.baseurl }}{% link _posts/2015-01-12-google-trends-scraper.md %}) is the most popular post on this site, and I&rsquo;ve been getting questions about it for the last year or so, ever since Google changed the way the data is pulled and displayed on the <a href="https://trends.google.com/trends/explore" target="_blank" rel="noopener">trends site</a>.</p>
+<p>I finally found some free time, worked out how Google had changed the API behind the scenes, and changed my trendy scraper to work with the new version. I dramatically improved the code at the same time. Thanks to everyone who was interested!</p>
+<h1 id="changes-to-the-code"></h>Changes to the code<a href="#changes-to-the-code">
+    
+  </a>
+</h1><p>The way the code works is as follows:</p>
+<ul>
+<li>when you visit <a href="https://trends.google.com/trends/explore" target="_blank" rel="noopener">https://trends.google.com/trends/explore</a> and request a graph, you make a call to the Google trends explore API which generates for you a usage token (valid only for this page view)</li>
+<li>when you click export, you make a call to a different API, using this token</li>
+</ul>
+
+
+  <pre><code>def get_data(bucket_start_date,bucket_end_date, keyword):
+    bucket_start_date_printed = datetime.strftime(bucket_start_date, &#39;%Y-%m-%d&#39;)
+    bucket_end_date_printed = datetime.strftime(bucket_end_date, &#39;%Y-%m-%d&#39;)
+    time_formatted = bucket_start_date_printed &#43; &#39;&#43;&#39; &#43; bucket_end_date_printed
+
+    req = {&#34;comparisonItem&#34;:[{&#34;keyword&#34;:keyword, &#34;geo&#34;:geo, &#34;time&#34;: time_formatted}], &#34;category&#34;:category,&#34;property&#34;:&#34;&#34;}
+    hl = &#34;en-GB&#34;
+    tz = &#34;-120&#34;
+
+    explore_URL = &#39;https://trends.google.com/trends/api/explore?hl={0}&amp;tz={1}&amp;req={2}&#39;.format(hl,tz,json.dumps(req).replace(&#39; &#39;,&#39;&#39;).replace(&#39;&#43;&#39;,&#39; &#39;))
+    print explore_URL
+    print requests.get(explore_URL).text.encode(&#39;utf8&#39;)
+    return requests.get(explore_URL).text</code></pre>
+<p>This function simulates the first API call and stores the response as a string.</p>
+
+
+  <pre><code>def get_csv(response_text):
+    request = get_csv_request(response_text)
+    token = get_token(response_text)
+
+    csv = requests.get(&#39;https://www.google.com/trends/api/widgetdata/multiline/csv?req={0}&amp;token={1}&amp;tz=-120&#39;.format(request,token))
+    return csv.text.encode(&#39;utf8&#39;)
+
+def parse_csv(csv_contents):
+    lines = csv_contents.split(&#39;\n&#39;)
+    df = pd.DataFrame(columns = [&#39;date&#39;,&#39;value&#39;])
+    dates = []
+    values = []
+    # Delete top 3 lines
+    for line in lines[3:]:
+        try:
+            dates.append(line.split(&#39;,&#39;)[0].replace(&#39; &#39;,&#39;&#39;))
+            values.append(line.split(&#39;,&#39;)[1].replace(&#39; &#39;,&#39;&#39;))
+        except:
+            pass
+    df[&#39;date&#39;] = dates
+    df[&#39;value&#39;] = values
+    print df.head()
+    return df   </code></pre>
+<p>These two functions then parse the response, pull the token and the request for the CSV and then simulates the second API call, saving the results as a pandas dataframe (much better than the previous code which had to actually save all the files to a local folder).</p>
+<p>The rest of the code is basically the same: you can read about the stitching process in the original [post]({{ site.baseurl }}{% link _posts/2015-01-12-google-trends-scraper.md %}).</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="/posts/forecasting-australian-elections-the-tricky-seats/">&laquo; Forecasting Australian elections - the tricky seats</a>
+      
+      
+        <a class="next" href="/posts/fifty-years-of-australian-elections-in-an-alternative-electoral-reality/">Fifty years of Australian elections in an alternative electoral reality &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+
+<script src="/main.min.js"></script>
+
+
+
+  
+</body>
+</html>

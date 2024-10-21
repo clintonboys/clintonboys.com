@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+<link rel="stylesheet" href="/scss/main.min.css" />
+
+
+  
+<meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+
+<title>The curse of dimensionality and the weak law of large numbers</title>
+
+
+<meta name="author" content="">
+
+<meta name="description" content="">
+<link rel="canonical" href="/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The curse of dimensionality and the weak law of large numbers">
+<meta property="og:description" content="I was recently re-reading some fantastic course notes by the peerless Terence Tao on basic statistics from a fairly high mathematical standpoint as I wanted a quick refresher on a couple of things, and came across a very nice connection between two important and beautiful results which are fundamental to statistics and machine learning.
+The weak law of large numbers The weak law of large numbers is an important theorem in statistics which underpins a lot of analysis and model-building.">
+<meta property="og:url" content="/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="The curse of dimensionality and the weak law of large numbers">
+<meta name="twitter:description" content="I was recently re-reading some fantastic course notes by the peerless Terence Tao on basic statistics from a fairly high mathematical standpoint as I wanted a quick refresher on a couple of things, and came across a very nice connection between two important and beautiful results which are fundamental to statistics and machine learning.
+The weak law of large numbers The weak law of large numbers is an important theorem in statistics which underpins a lot of analysis and model-building.">
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "/#/schema/person/1",
+      "name":  null ,
+      "url": "/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "/#/schema/image/1",
+        "url": "/\u003cnil\u003e",
+        "width": null ,
+        "height": null ,
+        "caption":  null 
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "/#/schema/website/1",
+      "url": "/",
+      "name": "Clinton Boys",
+      "description":  null ,
+      "publisher": {
+        "@id": "/#/schema/person/1"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/",
+      "url": "/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/",
+      "name": "The curse of dimensionality and the weak law of large numbers",
+      "description":  null ,
+      "isPartOf": {
+        "@id": "/#/schema/website/1"
+      },
+      "about": {
+        "@id": "/#/schema/person/1"
+      },
+      "datePublished": "0001-01-01T00:00:00+00:00",
+      "dateModified": "0001-01-01T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/#/schema/image/2"
+      },
+      "inLanguage":  null ,
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "",
+          "url": "",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "/posts/",
+          "url": "/posts/",
+          "name": "Posts"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/"
+          }
+        }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "/#/schema/article/1",
+          "headline": "The curse of dimensionality and the weak law of large numbers",
+          "description": "",
+          "isPartOf": {
+            "@id": "/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/"
+          },
+          "mainEntityOfPage": {
+            "@id": "/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/"
+          },
+          "datePublished": "0001-01-01T00:00:00+00:00",
+          "dateModified": "0001-01-01T00:00:00+00:00",
+          "author": {
+            "@id": "/#/schema/person/1"
+          },          
+          "publisher": {
+            "@id": "/#/schema/person/1"
+          },
+          "image": {
+            "@id": "/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/#/schema/image/2"
+          }
+        }
+      ]
+    },{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/#/schema/image/2",
+          "url":  null ,
+          "contentUrl":  null ,
+          "caption": "The curse of dimensionality and the weak law of large numbers"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  
+
+  
+
+</head><body>
+    <header class="container">
+  <nav class="main-nav" id="js-navbar">
+    <a class="logo" href="">Clinton Boys</a>
+    <ul class="menu" id="js-menu">
+      
+      
+      
+        <li class="menu-item">
+          <a href="/about/" class="menu-link">About</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="http://mtsolitary.com" class="menu-link">Digital Garden</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/now/" class="menu-link">Now</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/projects/" class="menu-link">Projects</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/writing/" class="menu-link">Writing</a>
+        </li>
+      
+      
+      <li class="menu-item--align">
+        <div class="switch">
+          <input class="switch-input" type="checkbox" id="themeSwitch">
+          <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+          <div aria-hidden="true" class="switch-marker"></div>
+        </div>
+      </li>
+    </ul>
+    <span class="nav-toggle" id="js-navbar-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+    </span>
+  </nav>
+</header><main class="section">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">The curse of dimensionality and the weak law of large numbers</h1>
+    <div class="post-list-meta">
+      <div class="post-list-dates">Jan 1, 0001&nbsp;&middot;&nbsp;4 min.</div>
+      
+      
+    </div>
+    <p class="page-header-desc"></p>
+    <div class="single-terms">
+      
+    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+</div>
+    <article class="markdown">
+        <p>I was recently re-reading some fantastic course <a href="https://terrytao.wordpress.com/2015/10/23/275a-notes-3-the-weak-and-strong-law-of-large-numbers/" target="_blank" rel="noopener">notes</a> by the peerless Terence Tao on basic statistics from a fairly high mathematical standpoint as I wanted a quick refresher on a couple of things, and came across a very nice connection between two important and beautiful results which are fundamental to statistics and machine learning.</p>
+<h3 id="the-weak-law-of-large-numbers"></h>The weak law of large numbers<a href="#the-weak-law-of-large-numbers">
+    
+  </a>
+</h3><p>The weak law of large numbers is an important theorem in statistics which underpins a lot of analysis and model-building. It tells us that the sample mean of independently, identically distributed random variables converges in probability to the expected value, with very weak assumptions on the random variable itself. This allows us to &ldquo;assume normality&rdquo; in a large number of cases, and lets us use the power of statistical tests based on the normal distribution in a large number of contexts. If you&rsquo;re not familiar with random variables, just think of rolling a dice: the weak law of large numbers tells us that if we roll a die enough times, and look at the proportion of times we rolled a 6 out of all the rolls, this proportion will approach $$\frac16$$ as we roll the die more and more times.</p>
+<p>We can state the weak law of large numbers more formally as follows. Suppose we are given a sequence $$X_1, X_2, \ldots$$ of <a href="https://en.wikipedia.org/wiki/Independent_and_identically_distributed_random_variables" target="_blank" rel="noopener">iid</a> copies of a random variable $$X$$ with expected value $$\mathbb{E}X=\mu$$. If for each $$n$$ we denote by $$Y_n$$ the sum $$X_1+X_2+\ldots+X_n$$, then the random variables $$Y_n/n$$ converge in probability to $$\mu$$, the true mean.</p>
+<p>The weak law of large numbers is of enormous consolation to casino operators. Indeed, suppose that the random variable $$X$$ models the result of spinning a roulette wheel. Then at any given spin, let&rsquo;s denote it by $$X_i$$, there is a chance of a significant loss; but over time we are guaranteed that the total loss per spin will converge to some $$\mu$$, and we can calibrate the payouts accordingly so our bottom line is positive.</p>
+<h3 id="the-curse-of-dimensionality"></h>The curse of dimensionality<a href="#the-curse-of-dimensionality">
+    
+  </a>
+</h3><p>If you think about a point in space being represented by three numbers (a simple generalisation of the familiar Cartesian plane from high-school geometry), then collections of $$n$$ numbers represent points in some theoretical $$n$$-dimensional space which has no spatially interpretable meaning for $$n&gt;3$$. The curse of dimensionality is a catch-all used by statisticians and mathematicians to describe a bunch of highly counterintuitive behaviours which occur at these &ldquo;non-spatial&rdquo; dimensions, particularly when $$n$$ is very large (i.e. thousands or even millions of dimensions).</p>
+<p>The most well-known, and most prone to cause issues, is the strange density property of high-dimensional space: in a very vague sense, paraphrasing Wikipedia, there is no space in the &ldquo;middle&rdquo; of a unit hypercube; and it is almost all &ldquo;pushed&rdquo; out to the corners. This is a weird idea, and it&rsquo;s even weirder that we can use the weak law of large numbers, a concept from statistics with seemingly little relation to high-dimensional geometry, elegantly to make this notion precise.</p>
+<p>Let&rsquo;s state the connection now. Choose some quantity $$1 &gt; \epsilon &gt; 0$$. Then for $$n$$ sufficiently large, at least $$100(1-\epsilon)%$$ of the unit hypercube $$[-1,1]^n$$ is contained in the set</p>
+<p>$$
+{x\in \mathbb{R}^n\mid (1-\epsilon)\sqrt{n/3}\leq \left|x\right| \leq (1+\epsilon)\sqrt{n/3}}.
+$$</p>
+<p>This equation might be a little hard to understand at first, particularly if you have never seen a set written like this before. It&rsquo;s describing the set of all points in $$n$$-dimensional space whose &ldquo;distance&rdquo; (denoted by the bars $$\mid$$ around $$x$$) satisfies some inequality: that it is larger than what is on the left and smaller than what is on the right. Now think about what happens if we choose a very very small $$\epsilon$$. So then $$1-\epsilon$$ is just a tiny bit smaller than $$1$$ and $$1+\epsilon$$ just a tiny bit larger, and we&rsquo;re saying that almost 100% of the hypercube&rsquo;s volume is contained in the infinitesimally small strip of points whose distance from zero is between $$(1-\epsilon)\sqrt{n/3}$$ and $$(1+\epsilon)\sqrt{n/3}$$.</p>
+<h2 id="proof"></h>Proof<a href="#proof">
+    
+  </a>
+</h2><p>Following Terence Tao&rsquo;s notes, we let $$X_1,X_2,\ldots$$ be drawn uniformly from the interval $$[-1,1]$$ which gives
+a vector $$(X_1,X_2,\ldots,X_n)$$ uniformly distributed on $$[-1,1]^n$$.
+Their squares $$X_1^2,X_2^2,\ldots$$ are also iid random variables and so if we let $$\mu$$ represent
+the uniform measure on $$[-1,1]^n$$ we can compute their expectations as</p>
+<p>$$
+\mathbb{E}(X_i^2) = \int_{\Omega}X_i^2d\mu = \int_{[-1,1]^n}X_i^2d\mu = 2^{-n}\int_{[-1,1]^n}x_i^2dx_1dx_2\cdots dx_n
+$$</p>
+<p>since the uniform probability measure on $$[-1,1]^n$$ is $$2^{-n} \prod_{i=1}^n dx_i$$
+(since each interval has length 2). This then equals</p>
+<p>$$
+2^{-n}\int_{-1}^1\int_{-1}^1\cdots\int_{-1}^1 x_i^2dx_1dx_2\cdots dx_n = \frac{1}{2} \int_{-1}^1 x_i^2 dx_i = \int_0^1 x_i^2 dx_i = \frac{1}{3}.
+$$</p>
+<p>The weak law of large numbers tells us that the quantity $\frac{X_1^2+\ldots+X_n^2}{n}$ converges in probability to $\frac{1}{n}\sum_{i=1}^n\frac13=\frac13$, which means that for a given epsilon we can find $n$ such that</p>
+<p>$$
+P\Bigl(\frac{X_1^2+\ldots+X_n^2}{n} - \frac13\Bigr) &lt; \epsilon,
+$$</p>
+<p>i.e. $$P(X_1^2+\ldots+X_n^2 - \frac{n}{3}) &lt; \epsilon$$, and taking square roots of both sides we see this is precisely the definition
+of $(X_1,\ldots,X_n)$ lying in the region described above.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="/posts/the-green-chain-walk/">&laquo; The Green Chain Walk</a>
+      
+      
+        <a class="next" href="/posts/the-constituencies-of-israel/">The constituencies of Israel &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+
+<script src="/main.min.js"></script>
+
+
+
+  
+</body>
+</html>

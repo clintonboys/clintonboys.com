@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+<link rel="stylesheet" href="/scss/main.min.css" />
+
+
+  
+<meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+
+<title>The wonders of org-mode</title>
+
+
+<meta name="author" content="">
+
+<meta name="description" content="">
+<link rel="canonical" href="/posts/the-wonders-of-org-mode/">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The wonders of org-mode">
+<meta property="og:description" content="I wrote [last year]({% post_url 2020-05-20-emacs-i %}) about how I finally got around to building my own system of organising my notes, thoughts, writings and to-do lists based on emacs and org mode, and in the months since then I&rsquo;ve only become more certain that I&rsquo;m building a system that&rsquo;s going to last me for life.
+Org mode is an emacs &ldquo;major mode&rdquo; (basically just a set of functionalities to extend the editor) that serves as an outliner and markup language for editing text.">
+<meta property="og:url" content="/posts/the-wonders-of-org-mode/">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="The wonders of org-mode">
+<meta name="twitter:description" content="I wrote [last year]({% post_url 2020-05-20-emacs-i %}) about how I finally got around to building my own system of organising my notes, thoughts, writings and to-do lists based on emacs and org mode, and in the months since then I&rsquo;ve only become more certain that I&rsquo;m building a system that&rsquo;s going to last me for life.
+Org mode is an emacs &ldquo;major mode&rdquo; (basically just a set of functionalities to extend the editor) that serves as an outliner and markup language for editing text.">
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "/#/schema/person/1",
+      "name":  null ,
+      "url": "/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "/#/schema/image/1",
+        "url": "/\u003cnil\u003e",
+        "width": null ,
+        "height": null ,
+        "caption":  null 
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "/#/schema/website/1",
+      "url": "/",
+      "name": "Clinton Boys",
+      "description":  null ,
+      "publisher": {
+        "@id": "/#/schema/person/1"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "/posts/the-wonders-of-org-mode/",
+      "url": "/posts/the-wonders-of-org-mode/",
+      "name": "The wonders of org-mode",
+      "description":  null ,
+      "isPartOf": {
+        "@id": "/#/schema/website/1"
+      },
+      "about": {
+        "@id": "/#/schema/person/1"
+      },
+      "datePublished": "0001-01-01T00:00:00+00:00",
+      "dateModified": "0001-01-01T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "/posts/the-wonders-of-org-mode/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "/posts/the-wonders-of-org-mode/#/schema/image/2"
+      },
+      "inLanguage":  null ,
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["/posts/the-wonders-of-org-mode/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/posts/the-wonders-of-org-mode/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "",
+          "url": "",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "/posts/",
+          "url": "/posts/",
+          "name": "Posts"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "/posts/the-wonders-of-org-mode/"
+          }
+        }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "/#/schema/article/1",
+          "headline": "The wonders of org-mode",
+          "description": "",
+          "isPartOf": {
+            "@id": "/posts/the-wonders-of-org-mode/"
+          },
+          "mainEntityOfPage": {
+            "@id": "/posts/the-wonders-of-org-mode/"
+          },
+          "datePublished": "0001-01-01T00:00:00+00:00",
+          "dateModified": "0001-01-01T00:00:00+00:00",
+          "author": {
+            "@id": "/#/schema/person/1"
+          },          
+          "publisher": {
+            "@id": "/#/schema/person/1"
+          },
+          "image": {
+            "@id": "/posts/the-wonders-of-org-mode/#/schema/image/2"
+          }
+        }
+      ]
+    },{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "/posts/the-wonders-of-org-mode/#/schema/image/2",
+          "url":  null ,
+          "contentUrl":  null ,
+          "caption": "The wonders of org-mode"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  
+
+  
+
+</head><body>
+    <header class="container">
+  <nav class="main-nav" id="js-navbar">
+    <a class="logo" href="">Clinton Boys</a>
+    <ul class="menu" id="js-menu">
+      
+      
+      
+        <li class="menu-item">
+          <a href="/about/" class="menu-link">About</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="http://mtsolitary.com" class="menu-link">Digital Garden</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/now/" class="menu-link">Now</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/projects/" class="menu-link">Projects</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/writing/" class="menu-link">Writing</a>
+        </li>
+      
+      
+      <li class="menu-item--align">
+        <div class="switch">
+          <input class="switch-input" type="checkbox" id="themeSwitch">
+          <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+          <div aria-hidden="true" class="switch-marker"></div>
+        </div>
+      </li>
+    </ul>
+    <span class="nav-toggle" id="js-navbar-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+    </span>
+  </nav>
+</header><main class="section">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">The wonders of org-mode</h1>
+    <div class="post-list-meta">
+      <div class="post-list-dates">Jan 1, 0001&nbsp;&middot;&nbsp;2 min.</div>
+      
+      
+    </div>
+    <p class="page-header-desc"></p>
+    <div class="single-terms">
+      
+    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+</div>
+    <article class="markdown">
+        <p>I wrote [last year]({% post_url 2020-05-20-emacs-i %}) about how I finally got around to building my own system of organising my notes, thoughts, writings and to-do lists based on <a href="http://en.wikipedia.org/wiki/emacs" target="_blank" rel="noopener">emacs</a> and <a href="https://orgmode.org" target="_blank" rel="noopener">org mode</a>, and in the months since then I&rsquo;ve only become more certain that I&rsquo;m building a system that&rsquo;s going to last me for life.</p>
+<p>Org mode is an emacs &ldquo;major mode&rdquo; (basically just a set of functionalities to extend the editor) that serves as an outliner and markup language for editing text. This is selling it a little short though, as org mode has so many capabilities and extensions that it is possible to use it for almost anything you can imagine writing in an editor. I use org files as my environment for taking notes, writing my journal, writing any longer form prose, managing my personal and work task lists, writing literate programs and LaTeX documents, writing posts for this website, and more.</p>
+<p>Of course there already exists a very popular, lightweight and functional text markup language called <a href="https://daringfireball.net/projects/markdown/" target="_blank" rel="noopener">Markdown</a> which has become extremely popular in the last ten years as a kind of default text format. Any text editor or notetaking platform worth its salt among power users will support, or better be entirely built around, Markdown (Ulysses, Bear, Agenda, iAWriter, Notion, etc). As a markup language in and of itself, org is very similar to Markdown, and I guess suffers from the fact that it is less widely used and maybe has slightly less clean syntax for some common formatting operations. But the fact that it has all sorts of crazy integrations with emacs and other emacs packages is what makes it unquestionably superior to Markdown as a text <em>ecosystem</em>.</p>
+<p>Used properly, org mode can form the basis of a bespoke productivity tool that has every feature you&rsquo;ve ever wanted from any existing tool you care to mention, built exactly how you want it and without anything you don&rsquo;t want. This &ldquo;build it your way&rdquo; is core to the emacs experience, at least for people who enjoy it as much as I do, and if you fully embrace this with org mode then there truly is no limit how deep into the rabbit hole you can go making your setup exactly how you want it. You can find a very detailed write-up of my org mode setup <a href="https://www.mtsolitary.com/20210309194647-my-org-mode-setup/" target="_blank" rel="noopener">here</a>.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="/posts/this-is-your-brain-on-chatgpt/">&laquo; This is your brain on ChatGPT</a>
+      
+      
+        <a class="next" href="/posts/the-ubiquity-of-linear-programming/">The ubiquity of linear programming &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+
+<script src="/main.min.js"></script>
+
+
+
+  
+</body>
+</html>

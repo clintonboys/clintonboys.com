@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+<link rel="stylesheet" href="/scss/main.min.css" />
+
+
+  
+<meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="bingbot" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  
+
+<title>Getting started with emacs</title>
+
+
+<meta name="author" content="">
+
+<meta name="description" content="">
+<link rel="canonical" href="/posts/getting-started-with-emacs/">
+<meta property="og:locale" content="">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Getting started with emacs">
+<meta property="og:description" content="I&rsquo;ve been looking for a system of organising my notes, which represent a sort of &ldquo;second brain&rdquo; for my thoughts, for many years. I have thousands of text files on my computer, containing all sorts of to-do lists, journal snippets, ideas, things I&rsquo;ve learned and half-started projects that have moved between different platforms looking for a way to become a single system. I&rsquo;ve tried simply using Apple Notes and its built-in search.">
+<meta property="og:url" content="/posts/getting-started-with-emacs/">
+
+
+
+
+
+
+
+
+
+<meta name="twitter:title" content="Getting started with emacs">
+<meta name="twitter:description" content="I&rsquo;ve been looking for a system of organising my notes, which represent a sort of &ldquo;second brain&rdquo; for my thoughts, for many years. I have thousands of text files on my computer, containing all sorts of to-do lists, journal snippets, ideas, things I&rsquo;ve learned and half-started projects that have moved between different platforms looking for a way to become a single system. I&rsquo;ve tried simply using Apple Notes and its built-in search.">
+
+
+
+  <meta name="twitter:card" content="summary">
+
+
+
+
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "/#/schema/person/1",
+      "name":  null ,
+      "url": "/",
+      "image": {
+        "@type": "ImageObject",
+        "@id": "/#/schema/image/1",
+        "url": "/\u003cnil\u003e",
+        "width": null ,
+        "height": null ,
+        "caption":  null 
+      }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "/#/schema/website/1",
+      "url": "/",
+      "name": "Clinton Boys",
+      "description":  null ,
+      "publisher": {
+        "@id": "/#/schema/person/1"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "/posts/getting-started-with-emacs/",
+      "url": "/posts/getting-started-with-emacs/",
+      "name": "Getting started with emacs",
+      "description":  null ,
+      "isPartOf": {
+        "@id": "/#/schema/website/1"
+      },
+      "about": {
+        "@id": "/#/schema/person/1"
+      },
+      "datePublished": "0001-01-01T00:00:00+00:00",
+      "dateModified": "0001-01-01T00:00:00+00:00",
+      "breadcrumb": {
+        "@id": "/posts/getting-started-with-emacs/#/schema/breadcrumb/1"
+      },
+      "primaryImageOfPage": {
+        "@id": "/posts/getting-started-with-emacs/#/schema/image/2"
+      },
+      "inLanguage":  null ,
+      "potentialAction": [{
+        "@type": "ReadAction", "target": ["/posts/getting-started-with-emacs/"]
+      }]
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "/posts/getting-started-with-emacs/#/schema/breadcrumb/1",
+      "name": "Breadcrumbs",
+      "itemListElement": [{
+        "@type": "ListItem",
+        "position":  1 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "",
+          "url": "",
+          "name": "Home"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  3 ,
+        "item": {
+          "@type": "WebPage",
+          "@id": "/posts/",
+          "url": "/posts/",
+          "name": "Posts"
+          }
+        },{
+        "@type": "ListItem",
+        "position":  4 ,
+        "item": {
+          "@id": "/posts/getting-started-with-emacs/"
+          }
+        }]
+    },
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Article",
+          "@id": "/#/schema/article/1",
+          "headline": "Getting started with emacs",
+          "description": "",
+          "isPartOf": {
+            "@id": "/posts/getting-started-with-emacs/"
+          },
+          "mainEntityOfPage": {
+            "@id": "/posts/getting-started-with-emacs/"
+          },
+          "datePublished": "0001-01-01T00:00:00+00:00",
+          "dateModified": "0001-01-01T00:00:00+00:00",
+          "author": {
+            "@id": "/#/schema/person/1"
+          },          
+          "publisher": {
+            "@id": "/#/schema/person/1"
+          },
+          "image": {
+            "@id": "/posts/getting-started-with-emacs/#/schema/image/2"
+          }
+        }
+      ]
+    },{
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "ImageObject",
+          "@id": "/posts/getting-started-with-emacs/#/schema/image/2",
+          "url":  null ,
+          "contentUrl":  null ,
+          "caption": "Getting started with emacs"
+        }
+      ]
+    }
+  ]
+}
+</script>
+  
+
+  
+
+</head><body>
+    <header class="container">
+  <nav class="main-nav" id="js-navbar">
+    <a class="logo" href="">Clinton Boys</a>
+    <ul class="menu" id="js-menu">
+      
+      
+      
+        <li class="menu-item">
+          <a href="/about/" class="menu-link">About</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="http://mtsolitary.com" class="menu-link">Digital Garden</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/now/" class="menu-link">Now</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/projects/" class="menu-link">Projects</a>
+        </li>
+      
+      
+      
+        <li class="menu-item">
+          <a href="/writing/" class="menu-link">Writing</a>
+        </li>
+      
+      
+      <li class="menu-item--align">
+        <div class="switch">
+          <input class="switch-input" type="checkbox" id="themeSwitch">
+          <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+          <div aria-hidden="true" class="switch-marker"></div>
+        </div>
+      </li>
+    </ul>
+    <span class="nav-toggle" id="js-navbar-toggle">
+      <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+    </span>
+  </nav>
+</header><main class="section">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">Getting started with emacs</h1>
+    <div class="post-list-meta">
+      <div class="post-list-dates">Jan 1, 0001&nbsp;&middot;&nbsp;7 min.</div>
+      
+      
+    </div>
+    <p class="page-header-desc"></p>
+    <div class="single-terms">
+      
+    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+</div>
+    <article class="markdown">
+        <p>I&rsquo;ve been looking for a system of organising my notes, which represent a sort of &ldquo;second brain&rdquo; for my thoughts, for many years. I have thousands of text files on my computer, containing all sorts of to-do lists, journal snippets, ideas, things I&rsquo;ve learned and half-started projects that have moved between different platforms looking for a way to become a single system. I&rsquo;ve tried simply using Apple Notes and its built-in search. I have extensively used and eventually given up on Evernote. I tried Notion seriously for a while: it&rsquo;s a really great idea but eventually I just couldn&rsquo;t live with the privacy concerns (your data lives unencrypted on someone else&rsquo;s server) and the Electron UI (ditto Typora). I tried Things, which is also a really great app, but something never clicked there for me and the notetaking functionality always seemed lacking. Lately I&rsquo;ve been using iAWriter, a truly fantastic writing app for Mac and iOS. I tried Bear. I&rsquo;m cautiously optimistic about Agenda. But all of these systems have had extensive lists of shortcomings, or only do one thing well, and I&rsquo;ve always dreamed of being able to find something that does everything exactly the way I want it to, which can be customised and changed to fit me and not the other way around.</p>
+<p>Let me make it a bit clearer what exactly I&rsquo;ve been looking for before I explain over a series of posts how I&rsquo;m using the venerable <a href="http://en.wikipedia.org/wiki/emacs" target="_blank" rel="noopener">emacs</a> and its <a href="http://en.wikipedia.org/wiki/Org_mode" target="_blank" rel="noopener">org mode</a> to implement a solution to pretty much all of my requirements, in a way that is based entirely on plain text and fully customisable, open-source tools. I&rsquo;m looking for an organisation and notetaking system which</p>
+<ul>
+<li>provides a comfortable, reliable, fast, attractive and well-designed way of writing plain text files (usually I write in Markdown, a markup language that is popular and easily transportable across different applications);</li>
+<li>has a heirarchical system of organising files and folders with notes and links;</li>
+<li>provides a way to keep track of projects, to-do lists, recurring tasks and reminders;</li>
+<li>works entirely or almost entirely with the keyboard;</li>
+<li>is customisable and adaptable, including scripting and automation; and</li>
+<li>is exportable to formats like PDF and HTML so I can use it directly to write reports and documents meant for others to read.</li>
+</ul>
+<!-- raw HTML omitted -->
+<!-- raw HTML omitted -->
+<h3 id="installation"></h>Installation<a href="#installation">
+    
+  </a>
+</h3><p>Like a lot of people who are first taking the plunge into emacs, I tried <a href="">Spacemacs</a> for a few days; it&rsquo;s a prepackaged version of emacs with a bunch of additional packages and extensions installed, in particular a slightly different UI and key commands based on <a href="https://en.wikipedia.org/wiki/vi_%28text_editor%29" target="_blank" rel="noopener">vi</a>. I struggled with it: it was slow and felt bloated and convoluted and eventually decided I wanted to learn how everything works from scratch so removed it from my system and installed a clean, &ldquo;vanilla&rdquo; version of GNU Emacs. Installing on my Mac (macOS 10.15 Catalina) was as simple as</p>
+
+
+  <pre><code>brew cask install emacs</code></pre>
+<p>If you&rsquo;ve already tried Spacemacs, removing it and replacing it with a vanilla version is a little trickier than this, because Spacemacs isn&rsquo;t really a replacement application, rather a series of configuration files on top of a regular emacs install. It&rsquo;s usually enough to just delete all the configuration files that Spacemacs creates on install in <code>~/.emacs.d</code> and recreate the Applications icon. If you&rsquo;re at all serious about using emacs long-term, I&rsquo;d say it&rsquo;s definitely worth spending a little bit of time setting things up the way you like them instead of trying to bend Spacemacs to your will.</p>
+<p>You should end up when you start up the program you just installed with a very ancient-looking and plain text editor:</p>
+<p><img src="/assets/emacs_blank.png"
+	alt="Vanilla emacs" 
+	class="single-post-image" 
+	loading="lazy"
+	decoding="async"
+	></p>
+<p>At this point, the emacs editor is technically installed but we will need to do some extensive configuration and customisation to get it looking and performing like a modern text editor. It&rsquo;s worth at this point at least understanding the basics of how it works.</p>
+<h3 id="how-to-use-emacs"></h>How to use emacs<a href="#how-to-use-emacs">
+    
+  </a>
+</h3><p>Emacs commands are entered with the keyboard and you should almost never need to use the mouse for anything. If this sounds weird to you, stick with it for a while and you&rsquo;ll realise how much faster it is and why you never want to reach for the mouse if you don&rsquo;t absolutely have to. <code>C-</code> stands for &ldquo;hold the control key while pressing&rdquo;, so for example the command to open a new file is <code>C-x C-f</code>; hold control and press x, and then press f (with control still held down). You will then be prompted to enter a filename; if the file exists, emacs will open it, otherwise it will create a new file. Create a new file in <code>~/Desktop/emacs_test.txt</code> and press <code>RET</code> (the enter key).</p>
+<p>This file then opens in a <em>buffer</em>. A buffer is a chunk of text that you&rsquo;re currently editing. You can save the contents of a buffer to a file. That&rsquo;s what we&rsquo;ll do now: type something using the keyboard, and then press <code>C-x C-s</code> to save the contents of this buffer to the file.</p>
+<p>You can spend some time now during the emacs tutorial; type <code>C-h t</code> to start the built-in emacs tutorial which explains basics like how to navigate with the keyboard, how to cut and paste (emacs is so old it predates the usual <!-- raw HTML omitted -->⌘-C<!-- raw HTML omitted -->, <!-- raw HTML omitted -->⌘-V<!-- raw HTML omitted --> commands for cut and paste; it has a slightly different concept of &ldquo;killing&rdquo; and &ldquo;yanking&rdquo; that takes a little while to get used to) and other common tasks. I&rsquo;m not sure it&rsquo;s 100% necessary to go through this now; it&rsquo;s a lot to learn and remember and these are the sort of things you can always figure out as you go along. It&rsquo;s also a lot nicer to configure the UI a little first so you can do the tutorial in a text editor that looks like it&rsquo;s from this millenium.</p>
+<h3 id="customisation-and-configuration"></h>Customisation and configuration<a href="#customisation-and-configuration">
+    
+  </a>
+</h3><p>If you&rsquo;re anything like me, you&rsquo;re extremely dissatisifed with the default appearance above and want, among other things</p>
+<ul>
+<li>dark mode (everything has a dark mode now so white backgrounds hurt my eyes and my brain)</li>
+<li>a more attractive fixed width font</li>
+<li>just in general a slightly less 1970s Linux look-and-feel</li>
+<li>syntax highlighting for various file formats (most importantly .md and .py)</li>
+<li>an informative and useful status bar at the bottom</li>
+</ul>
+<p>After some customisation and configuration, we&rsquo;ll set up emacs to look like this:</p>
+<p><img src="/assets/emacs_full.png"
+	alt="Vanilla emacs" 
+	class="single-post-image" 
+	loading="lazy"
+	decoding="async"
+	></p>
+<p>Configuring emacs is quite simple. All the customisation is defined in a file located at <code>~/.emacs.d/init.el</code>; if you open this file now (in emacs!) you will notice it&rsquo;s empty; this means we are using the default emacs installation. We&rsquo;re now going to add a bunch of different text to this file: actually we&rsquo;re writing lines of code in emacs Lisp, to get the customisations we want.</p>
+<h4 id="font-and-theme"></h>Font and theme<a href="#font-and-theme">
+    
+  </a>
+</h4><p>I took a bunch of my original UI configuration from <a href="https://dev.to/huytd/emacs-from-scratch-1cg6" target="_blank" rel="noopener">Huy Tr.</a>.</p>
+<h4 id="icon"></h>Icon<a href="#icon">
+    
+  </a>
+</h4><p>Again, if you&rsquo;re anything like me (and I guess if you&rsquo;ve read this far into my emacs setup you probably are), the first thing that will strike you as ugly and in desperate need of replacement is the dock icon. I guess I wasn&rsquo;t the first person to think this; I pulled a new icon from <a href="https://emacs.sexy" target="_blank" rel="noopener">Emacs is sexy</a>, and replaced it according to the instructions <a href="https://apple.stackexchange.com/questions/229524/how-do-i-change-the-icon-of-emacs-installed-via-homebrew" target="_blank" rel="noopener">here</a>.</p>
+<h4 id="minimal-ui"></h>Minimal UI<a href="#minimal-ui">
+    
+  </a>
+</h4><p>I am removing parts of the UI I don&rsquo;t find particularly useful (since I interact entirely through the keyboard). The first few lines of my <code>~/.emacs.d/init.el</code> are:</p>
+<pre><code>(scroll-bar-mode -1)
+(tool-bar-mode   -1)
+(tooltip-mode    -1)
+(menu-bar-mode   -1)
+</code></pre>
+<p>Open your <code>~/.emacs.d/init.el</code> file, add those lines, save the file and reload it with <code>M-x load-file ~/.emacs.d/init.el RET</code>.</p>
+<p>I&rsquo;m using the <a href="https://github.com/hlissner/emacs-doom-themes" target="_blank" rel="noopener">Doom</a> theme <code>doom-one</code>. I use dark themes pretty much wherever I can: MacOS Mojave, iOS 13, and this is a great dark mode theme for emacs. In the two modes that I write in the most, Markdown and Org mode, I like bright colourful syntax highlighting; for Org mode I actually use a custom series of colours for headings that I chose myself:</p>
+<pre><code>(custom-theme-set-faces 'user '(org-level-1 ((t (:foreground &quot;#BF9D7A&quot;))))) ;;D8A47F 
+(custom-theme-set-faces 'user '(org-level-2 ((t (:foreground &quot;#D4DCA9&quot;))))) ;;EF8354 
+(custom-theme-set-faces 'user '(org-level-3 ((t (:foreground &quot;#EBF2EA&quot;))))) ;;EE4B6A 
+(custom-theme-set-faces 'user '(org-level-4 ((t (:foreground &quot;#0ABDA0&quot;))))) ;;DF3B57 
+(custom-theme-set-faces 'user '(org-level-5 ((t (:foreground &quot;#80ADD7&quot;))))) ;;0F7173
+</code></pre>
+<p>These make the headings look nice and contrast well against the grey background.</p>
+<p>In future posts I will further detail my emacs setup, including how I use org-mode to implement most of the note-taking requirements I mentioned at the top.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="/posts/installing-mediawiki-on-a-digitalocean-droplet-including-wikipedia-navbars/">&laquo; Installing MediaWiki on a DigitalOcean droplet (including Wikipedia navbars)</a>
+      
+      
+        <a class="next" href="/posts/forecasting-australian-elections-the-tricky-seats/">Forecasting Australian elections - the tricky seats &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+
+<script src="/main.min.js"></script>
+
+
+
+  
+</body>
+</html>
