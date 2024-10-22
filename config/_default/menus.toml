@@ -22,11 +22,11 @@
     identifier = "projects"
     name = "Projects"
     url = "/projects/"
-    weight = 1
+    weight = 2
 
 [[main]]
     identifier = "dg"
     name = "Digital Garden"
     url = "http://mtsolitary.com"
-    weight = 1
+    weight = 3
 

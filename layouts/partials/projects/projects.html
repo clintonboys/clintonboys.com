@@ -1,0 +1,14 @@
+<div class="container">
+    <h1>Projects</h1>
+    <section>
+      {{ with .RegularPagesRecursive }}
+        <div class="project-list">
+          {{ range . }}
+            {{ partial "projects/project-entry.html" . }}
+          {{ end }}
+        </div>
+      {{ else }}
+        {{ partial "general/fallback-text.html" . }}
+      {{ end }}
+    </section>
+  </div>

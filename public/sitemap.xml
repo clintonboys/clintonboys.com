@@ -2,238 +2,84 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>/</loc>
+    <loc>//localhost:1313/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/projects/hugo-migration/</loc>
+    <loc>//localhost:1313/projects/hugo-migration/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/projects/karev/</loc>
+    <loc>//localhost:1313/projects/karev/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/project-types/personal/</loc>
+    <loc>//localhost:1313/project-types/personal/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/project-types/</loc>
+    <loc>//localhost:1313/project-types/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/projects/</loc>
+    <loc>//localhost:1313/projects/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/project-types/technical/</loc>
+    <loc>//localhost:1313/project-types/technical/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/about/</loc>
+    <loc>//localhost:1313/writing/israeli-poll-aggregator/</loc>
+    <lastmod>2015-03-13T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/aggregating-israeli-opinion-polls/</loc>
+    <loc>//localhost:1313/categories/</loc>
+    <lastmod>2015-03-13T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/australian-federal-election-post-mortem/</loc>
+    <loc>//localhost:1313/categories/elections/</loc>
+    <lastmod>2015-03-13T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/building-ios-apps-with-react-native/</loc>
+    <loc>//localhost:1313/writing/</loc>
+    <lastmod>2015-03-13T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/call-your-mum/</loc>
+    <loc>//localhost:1313/writing/gumtree-scraper/</loc>
+    <lastmod>2014-09-08T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/categories/</loc>
+    <loc>//localhost:1313/categories/web-development/</loc>
+    <lastmod>2014-09-08T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/clustering-australian-electorates-by-demographic-variables/</loc>
+    <loc>//localhost:1313/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/conquering-the-last-piece-of-the-stack-with-react/</loc>
+    <loc>//localhost:1313/now/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/correcting-for-reliability-in-australian-election-polls/</loc>
+    <loc>//localhost:1313/series/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/deep-learning-and-the-universal-approximation-theorem/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/deriving-keplers-laws-from-newtons-laws/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/difficulties-in-forecasting-elections-in-australia/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/emma-chisit/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/encrypting-files-in-emacs-org-mode/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/fifty-years-of-australian-elections-in-an-alternative-electoral-reality/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/fixing-the-trendy-scraper/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/forecasting-australian-elections-the-tricky-seats/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/getting-started-with-emacs/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/installing-mediawiki-on-a-digitalocean-droplet-including-wikipedia-navbars/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/learning-two-things-at-once-using-rust-and-ecs-to-build-a-cricket-simulator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/lifetime-flight-simulator/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/marginal-seat-polls-and-the-strong-transition-model/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/multilevel-regression/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/multilevel-regression-with-poststratification-mrp/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/notes-on-inotes-on-the-synthesis-of-form/i/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/now/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/pitchfork-and-my-itunes-library/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/regression/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/scraping-and-joining-google-trends-searches/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/scraping-gumtree/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/sentiment-analysis-of-qa-tweets/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/series/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/tags/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/tell-me-what-was-your-phd-about/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/ten-years-of-this-site/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-2016-australian-election-new-zealand-rules/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-2019-uk-election-under-av/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-bias-variance-tradeoff/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-constituencies-of-israel/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-green-chain-walk/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-relationship-between-technical-debt-and-technical-documentation/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-setup/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-setup/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-setup/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-setup/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-ubiquity-of-linear-programming/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/the-wonders-of-org-mode/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/posts/this-is-your-brain-on-chatgpt/</loc>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>/writing/</loc>
+    <loc>//localhost:1313/tags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

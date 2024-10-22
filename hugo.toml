@@ -62,14 +62,11 @@ theme = 'hugo-liftoff'
   defaultMarkdownHandler = 'goldmark' # Default (everything under [markup] is unless otherwise specified)
   [markup.goldmark]
     [markup.goldmark.extensions]
-      definitionList = true
-      footnote = true
-      linkify = true
-      linkifyProtocol = 'https'
-      strikethrough = true
-      table = true
-      taskList = true
-      typographer = true
+      [markup.goldmark.extensions.passthrough]
+        enable = true
+        [markup.goldmark.extensions.passthrough.delimiters]
+          block = [['\[', '\]'], ['$$', '$$']]
+          inline = [['\(', '\)']]
     [markup.goldmark.parser]
       autoHeadingID = true
       autoHeadingIDType = 'github'
@@ -209,3 +206,6 @@ theme = 'hugo-liftoff'
   baseName = "_headers"
   isPlainText = true
   notAlternative = true
+
+[params]
+  math = true

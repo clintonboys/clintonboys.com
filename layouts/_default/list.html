@@ -1,0 +1,14 @@
+{{ define "main" -}}
+<div class="container">
+    <h1>Writing</h1>
+  <section>
+    {{ range (.Paginate .RegularPagesRecursive).Pages }}
+      {{ partial "posts/post-entry.html" . }}
+      <div class="post-entry-divider"></div>
+    {{ else }}
+      {{ partial "general/fallback-text.html" . }}
+    {{ end }}
+    {{ template "_internal/pagination.html" . }}
+  </section>
+</div>
+{{ end }}

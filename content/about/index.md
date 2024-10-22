@@ -2,7 +2,6 @@
 type: about
 linktitle: About
 title: About me
-seo_title: About
 ---
 
 # About me
