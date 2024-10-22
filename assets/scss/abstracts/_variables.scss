@@ -7,16 +7,14 @@
   --color-inline-code: hsl(0, 81%, 35%);
   
   /* color contrasts */
-  --color-bg: rgb(227, 226, 223);
+//   --color-bg: hsl(45, 6.7%, 88.2%);
   --color-contrast-lower: rgb(227, 226, 223);
-  --color-contrast-low: rgb(227, 226, 223);
+//   --color-contrast-low: rgb(227, 226, 223);
   --color-contrast-medium-low: hsl(240, 1%, 65%);
   --color-contrast-medium: hsl(240, 1%, 48%);
   --color-contrast-medium-high: hsl(240, 2%, 34%);
   --color-contrast-high: hsl(240, 4%, 20%);
   --color-contrast-higher: black;
-
-  --color-text: var(--color-contrast-high);
 
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);

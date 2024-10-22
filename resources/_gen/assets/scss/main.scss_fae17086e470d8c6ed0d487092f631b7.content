@@ -2,15 +2,12 @@
   --color-primary: rgb(27, 27, 27);
   --color-inline-code: hsl(0, 81%, 35%);
   /* color contrasts */
-  --color-bg: rgb(227, 226, 223);
   --color-contrast-lower: rgb(227, 226, 223);
-  --color-contrast-low: rgb(227, 226, 223);
   --color-contrast-medium-low: hsl(240, 1%, 65%);
   --color-contrast-medium: hsl(240, 1%, 48%);
   --color-contrast-medium-high: hsl(240, 2%, 34%);
   --color-contrast-high: hsl(240, 4%, 20%);
   --color-contrast-higher: black;
-  --color-text: var(--color-contrast-high);
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
   --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
   --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
@@ -384,7 +381,8 @@ a {
 
 h1 {
   font-size: var(--font-size-xl);
-  line-height: calc(8px + 2ex); }
+  line-height: calc(8px + 2ex);
+  color: var(--color-contrast-medium-higher); }
 
 h2 {
   font-size: var(--font-size-lg);
@@ -559,6 +557,7 @@ body {
  * 3. Leave some space on the edges, especially valuable on small screens
  */
 .container, .single-container-post, .single-container, .container--sm {
+  background-color: var(--color-contrast-lower);
   max-width: 1180px;
   /* 1 */
   margin-left: auto;
@@ -612,7 +611,7 @@ body {
   padding: 10px 20px; }
 
 .main-nav {
-  color: var(--color-contrast-high);
+  background-color: var(--color-contrast-lower);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -634,13 +633,14 @@ body {
         /* Hide nav toggle on desktop */ } }
 .logo {
   text-transform: uppercase;
+  color: var(--color-contrast-high);
   font-family: 'PT Sans Narrow';
   font-size: var(--font-size-md);
   line-height: calc(8px + 2ex);
   margin-top: 10px; }
 
 .menu-link {
-  color: var(--color-text);
+  color: var(--color-contrast-high);
   text-transform: uppercase;
   font-family: 'PT Sans Narrow';
   font-size: large; }

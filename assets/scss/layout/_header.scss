@@ -3,7 +3,7 @@
 // -----------------------------------------------------------------------------
 
 .main-nav {
-  color: var(--color-contrast-high);
+  background-color: var(--color-contrast-lower);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,13 +30,14 @@
 
 .logo {
     text-transform: uppercase;
+    color: var(--color-contrast-high);
 	font-family: 'PT Sans Narrow';
     @include font-size('md');
     margin-top: 10px;
 }
 
 .menu-link {
-  color: var(--color-text);
+    color: var(--color-contrast-high);
     text-transform: uppercase;
 	font-family: 'PT Sans Narrow';
     font-size: large;

@@ -53,6 +53,7 @@
   
   h1 {
     @include font-size('xl');
+    color: var(--color-contrast-medium-higher);
   }
   
   h2 {

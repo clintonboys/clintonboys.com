@@ -18,7 +18,7 @@
  * 3. Leave some space on the edges, especially valuable on small screens
  */
 .container {
-  //background-color: var(--color-contrast-lower);
+  background-color: var(--color-contrast-lower);
   max-width: $max-width; /* 1 */
   margin-left: auto; /* 2 */
   margin-right: auto; /* 2 */
