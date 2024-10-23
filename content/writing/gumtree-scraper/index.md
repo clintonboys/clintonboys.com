@@ -1,7 +1,7 @@
 ---
 title: Scraping Gumtree
 seo_title: Scraping Gumtree
-slug: gumtree-scraper
+slug: 2014-08-09-gumtree-scraper
 author: Clinton Boys
 
 draft: false

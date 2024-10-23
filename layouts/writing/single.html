@@ -1,0 +1,8 @@
+{{ define "main" }}
+<div class="single-container">
+  <div class="single-feature-img">{{ partial "general/feature-image.html" . }}</div>
+  <article class="markdown">
+    {{ .Content }}
+  </article>
+</div>
+{{ end }}

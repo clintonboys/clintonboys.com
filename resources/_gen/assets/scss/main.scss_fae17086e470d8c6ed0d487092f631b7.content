@@ -617,6 +617,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  max-width: 900px;
   padding: 15px 0;
   row-gap: 20px; }
   .main-nav .nav-toggle {

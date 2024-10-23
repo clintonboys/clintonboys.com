@@ -8,7 +8,7 @@ draft: false
 date: 2015-03-13T21:21:46-05:00
 lastmod: 2015-03-13T21:21:46-05:00
 
-feature_image: sample-image-9.jpg
+feature_image: sample-image-8.jpg
 feature_image_alt: Blah
 
 categories:
