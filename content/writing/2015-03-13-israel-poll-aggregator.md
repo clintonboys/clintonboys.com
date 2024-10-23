@@ -21,6 +21,10 @@ newsletter: false
 disable_comments: false
 ---
 
+# Aggregating Israeli election polls
+
+*March 13, 2015*
+
 The Israeli electoral system is completely different to the Australian system. 120 representatives are elected to the Knesset from a single at-large electorate. Members must be registered to a party; parties submit lists of candidates in an order they want them to be elected, candidates are then elected to the Knesset from these lists based on a proportion of votes received by each party, provided the vote is greater than the electoral threshold (currently 3.25%, a significant increase from the previous election). 
 
 It is difficult to provide a probabilistic model of what the Israeli government will look like after the election, even with the significant amount of polling that exists, because Israel's proportional representation system has meant, like many European countries in the post-war period, majority governments never occur. Rather, the election is just the first phase of a process that is followed by political wrangling and deals behind closed doors to form a coalition government (and these are often very unstable: the current election is more than twelve months early because of the breakdown of a previous coalition). 
@@ -29,36 +33,42 @@ In these two posts I just want to come up with a simple poll aggregator that adj
 
 I looked at the Wikipedia pages for each election, which contain a lot of opinion polling information, and put together lists of final polls before the respective elections (historical_polls) for lots of different polling firms. I also needed the results of each election (results). 
 
-    import pandas as pd
-    from pandas import DataFrame
+{{< highlight python >}}
+import pandas as pd
+from pandas import DataFrame
 
-    historical_polls = pd.read_csv('israeli_pre_election_polls.csv',delimiter=',')
-    results = pd.read_csv('israeli_results.csv',delimiter=',')
-    results = results.set_index('year')
-    historical_polls = historical_polls.sort('pollster')
+historical_polls = pd.read_csv('israeli_pre_election_polls.csv',delimiter=',')
+results = pd.read_csv('israeli_results.csv',delimiter=',')
+results = results.set_index('year')
+historical_polls = historical_polls.sort('pollster')
+{{< /highlight >}}
+
 
 The following code produces a fairly simple weighting mechanism, where a pollster with average error receives a weight of 1; below-average pollsters receive less and above-average more. 
 
-    parties = ['Kadima', 'Likud', 'Yis Bet', 'Labor', 'Shas', 'UTJ', 'Hadash', 'Balad', 'Meretz', 'Yesh', 'Otzma', 'Am', 'Hatnuah', 'NU', 'Greens', 'Gil']
+{{< highlight python >}}
+parties = ['Kadima', 'Likud', 'Yis Bet', 'Labor', 'Shas', 'UTJ', 'Hadash', 'Balad', 'Meretz', 'Yesh', 'Otzma', 'Am', 'Hatnuah', 'NU', 'Greens', 'Gil']
 
-    final_frame = pd.DataFrame(columns = historical_polls['pollster'].unique(),index=results.index)
+final_frame = pd.DataFrame(columns = historical_polls['pollster'].unique(),index=results.index)
 
-    for firm in historical_polls['pollster'].unique():
-        sum = 0
-        for party in parties:
-            sum = sum + abs(results[party] - historical_polls[historical_polls['pollster']==firm].set_index('year')[party])*historical_polls[historical_polls['pollster']==firm].set_index('year')[party]/120
-            days = historical_polls[historical_polls['pollster']==firm].set_index('year')['days_before']
-        final_frame[firm] = sum
+for firm in historical_polls['pollster'].unique():
+    sum = 0
+    for party in parties:
+        sum = sum + abs(results[party] - historical_polls[historical_polls['pollster']==firm].set_index('year')[party])*historical_polls[historical_polls['pollster']==firm].set_index('year')[party]/120
+        days = historical_polls[historical_polls['pollster']==firm].set_index('year')['days_before']
+    final_frame[firm] = sum
 
-    for firm in historical_polls['pollster'].unique():
-        means = final_frame.mean(axis=1)
-        final_frame[firm] = abs(final_frame[firm] - means)
+for firm in historical_polls['pollster'].unique():
+    means = final_frame.mean(axis=1)
+    final_frame[firm] = abs(final_frame[firm] - means)
 
-    total_error = pd.DataFrame(final_frame.mean(axis=0))
-    av_error = total_error.mean()[0]
-    print av_error
-    df = 1- (final_frame.mean(axis=0) - av_error)
-    df.to_csv('poll_weights.csv',sep=',')
+total_error = pd.DataFrame(final_frame.mean(axis=0))
+av_error = total_error.mean()[0]
+print av_error
+df = 1- (final_frame.mean(axis=0) - av_error)
+df.to_csv('poll_weights.csv',sep=',')
+{{< /highlight >}}
+
 
 This produces the following output:
 
@@ -79,39 +89,48 @@ This produces the following output:
 
 Having produced a series of reliability weightings, I scraped Wikipedia for opinion polls for this year's election in the last thirty days (following methodology from 538 where polls beyond this period lose their utility) (israeli_2015_polls.csv). We have to combine the reliability weightings with a recency weighting: more recent polls are weighted more highly. We're going to use the brilliant datetime package to sort out all the dates. 
 
-    import datetime
-    import numpy as np
-    import pandas as pd
+{{< highlight python >}}
+import datetime
+import numpy as np
+import pandas as pd
 
-    polls = pd.read_table('israeli_2015_polls.csv',delimiter=',')
-    polls['date'] = pd.to_datetime(polls['date'],dayfirst=True)
-    poll_ratings = pd.read_csv('poll_weights.csv',delimiter=',')
-    poll_ratings.columns = ['pollster','rating']
+polls = pd.read_table('israeli_2015_polls.csv',delimiter=',')
+polls['date'] = pd.to_datetime(polls['date'],dayfirst=True)
+poll_ratings = pd.read_csv('poll_weights.csv',delimiter=',')
+poll_ratings.columns = ['pollster','rating']
 
-    today = datetime.datetime(2015,3,12)
+today = datetime.datetime(2015,3,12)
+{{< /highlight >}}
 
 The following function weights polls in the average according to their recency. 
 
-    def exp_decay(days):
-        days = getattr(days,"days",days)
-        return .5 ** (days/30.)
+{{< highlight python >}}
+def exp_decay(days):
+    days = getattr(days,"days",days)
+    return .5 ** (days/30.)
+{{< /highlight >}}
 
 We now inner-merge the poll data with the pollster reliability ratings to get a single table, and add in the recency weights to each poll (I briefly forgot the nice pandas way to add columns like this and did it the dumb way with a list). 
 
-    polls = polls.merge(poll_ratings, how="inner", on="pollster")
+{{< highlight python >}}
+polls = polls.merge(poll_ratings, how="inner", on="pollster")
 
-    recency_weights = []
-    for i in range(0,len(polls['date'])):
-        recency_weights.append(exp_decay(pd.to_datetime(today,dayfirst=True)-polls['date'][i]))
+recency_weights = []
+for i in range(0,len(polls['date'])):
+    recency_weights.append(exp_decay(pd.to_datetime(today,dayfirst=True)-polls['date'][i]))
 
-    polls['recency_weights']=recency_weights
+polls['recency_weights']=recency_weights
+{{< /highlight >}}
+
 
 Now we put everything together and add up the average to get a nice poll aggregate:
 
-    parties = ["L", "YB", "YA", "ZC", "BY", "S", "UTJ", "M", "A", "Y", "K"]
+{{< highlight python >}}
+parties = ["L", "YB", "YA", "ZC", "BY", "S", "UTJ", "M", "A", "Y", "K"]
 
-    for party in parties:
-        print party+": " + str(np.round(np.sum(polls['rating']*polls['recency_weights']*polls[party]/(polls['rating']*polls['recency_weights']).sum()),2))
+for party in parties:
+    print party+": " + str(np.round(np.sum(polls['rating']*polls['recency_weights']*polls[party]/(polls['rating']*polls['recency_weights']).sum()),2))
+{{< /highlight >}}
 
 This produced the following output on March 13, four days before the election with the inclusion of the final polls before the four-day embargo:
 

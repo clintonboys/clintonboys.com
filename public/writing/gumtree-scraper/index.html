@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+<html lang="en-us"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,7 +30,10 @@
 
 
 
-<link rel="stylesheet" href="//localhost:1313/scss/main.css" />
+  
+  
+
+<link rel="stylesheet" href="/scss/main.min.css" />
 
 
     
@@ -50,7 +53,7 @@
   </head><body>
     <header class="container">
     <nav class="main-nav" id="js-navbar">
-      <a class="logo" href="//localhost:1313/">Clinton Boys</a>
+      <a class="logo" href="/">Clinton Boys</a>
       <ul class="menu" id="js-menu">
         
         
@@ -129,118 +132,113 @@
     
   </a>
 </h2><p>I&rsquo;d not done much web scraping before but I&rsquo;d heard good things about BeautifulSoup in Python to parse the scraped html, together with the requests package to actually scrape the pages. Since I was looking for tickets to a particular show, I used the following parameters, which could of course be altered depending on the user&rsquo;s requirements:</p>
-<pre><code>artist=&quot;arctic+monkeys&quot;
-city=&quot;sydney&quot;
-URL_START='http://www.gumtree.com.au'
-OFFER_CHOICE=['k0?ad=offering','k0?ad=wanted']
-ARTIST_URL=&quot;arctic+monkeys&quot;#re.sub(&quot;\s&quot;,+,artist)
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-toml" data-lang="toml"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>    <span style="color:#a6e22e">artist</span>=<span style="color:#e6db74">&#34;arctic+monkeys&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#a6e22e">city</span>=<span style="color:#e6db74">&#34;sydney&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#a6e22e">URL_START</span>=<span style="color:#e6db74">&#39;http://www.gumtree.com.au&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    <span style="color:#a6e22e">OFFER_CHOICE</span>=[<span style="color:#e6db74">&#39;k0?ad=offering&#39;</span>,<span style="color:#e6db74">&#39;k0?ad=wanted&#39;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    <span style="color:#a6e22e">ARTIST_URL</span>=<span style="color:#e6db74">&#34;arctic+monkeys&#34;</span><span style="color:#75715e">#re.sub(&#34;\s&#34;,+,artist)</span></span></span></code></pre></div>
 <p>I then used the requests package to scrape a gumtree results page and dump the JSON output; this scrapes the $n$th result page (Gumtree limits to 10 results per page).</p>
-<pre><code>def scrape_gumtree_page_n(n):
-    current_time=int(time.time())
-    pageURL='{0}/s-{1}+{2}/page-{3}/{4}'.format(URL_START,ARTIST_URL,city,n,OFFER_CHOICE[0])
-    savePath=os.path.join(scrapings_dir,&quot;{0}.html&quot;.format(current_time))
-    results=requests.get(pageURL)
-    results_file=open(savePath,'w')
-    with results_file:
-        results_file.write(results.text.encode('utf-8',errors='ignore'))
-    return savePath
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">scrape_gumtree_page_n</span>(n):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    current_time<span style="color:#f92672">=</span>int(time<span style="color:#f92672">.</span>time())
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    pageURL<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">{0}</span><span style="color:#e6db74">/s-</span><span style="color:#e6db74">{1}</span><span style="color:#e6db74">+</span><span style="color:#e6db74">{2}</span><span style="color:#e6db74">/page-</span><span style="color:#e6db74">{3}</span><span style="color:#e6db74">/</span><span style="color:#e6db74">{4}</span><span style="color:#e6db74">&#39;</span><span style="color:#f92672">.</span>format(URL_START,ARTIST_URL,city,n,OFFER_CHOICE[<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    savePath<span style="color:#f92672">=</span>os<span style="color:#f92672">.</span>path<span style="color:#f92672">.</span>join(scrapings_dir,<span style="color:#e6db74">&#34;</span><span style="color:#e6db74">{0}</span><span style="color:#e6db74">.html&#34;</span><span style="color:#f92672">.</span>format(current_time))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    results<span style="color:#f92672">=</span>requests<span style="color:#f92672">.</span>get(pageURL)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>    results_file<span style="color:#f92672">=</span>open(savePath,<span style="color:#e6db74">&#39;w&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>    <span style="color:#66d9ef">with</span> results_file:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>        results_file<span style="color:#f92672">.</span>write(results<span style="color:#f92672">.</span>text<span style="color:#f92672">.</span>encode(<span style="color:#e6db74">&#39;utf-8&#39;</span>,errors<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;ignore&#39;</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>    <span style="color:#66d9ef">return</span> savePath</span></span></code></pre></div>
 <p>There was then a simple while loop to run this over all results pages.</p>
 <h3 id="parsing-json-using-beautifulsoup"></h>Parsing JSON using BeautifulSoup<a href="#parsing-json-using-beautifulsoup">
     
   </a>
 </h3><p>Having obtained a whole bunch of messy output from the scraper, I used the following code to parse using BeautifulSoup:</p>
-<pre><code>def html_parser(filename):
-    gumtree_file=open(filename)
-    gumtree_contents=gumtree_file.read()
-    gtsoup=BeautifulSoup(gumtree_contents)
-    master_list=[]
-    gt_li=gtsoup.findAll('li', attrs={'class': 'js-click-block'})
-    for node in gt_li:
-        if len(node.contents) &gt; 0:
-            post_dict={}
-            if node.findAll('a') is not None:
-                post_dict['title']=node.findAll('a')[0].string
-            if node.find('div',attrs={&quot;class&quot;:&quot;h-elips&quot;}) is not None:
-                post_dict['price']=node.find('div',attrs={&quot;class&quot;:&quot;h-elips&quot;}).string
-            if node.findAll('span') is not None:
-                post_dict['description']=node.findAll('span')[0].contents[0]
-            if node.find('h3',attrs={&quot;class&quot;:&quot;rs-ad-location&quot;}) is not None:
-                post_dict['location1']=node.find('h3',attrs={&quot;class&quot;:&quot;rs-ad-location-area&quot;}).contents[0]
-            if node.find('span',attrs={&quot;class&quot;:&quot;rs-ad-location-suburb&quot;}) is not None:
-                post_dict['location2']=node.find('span',attrs={&quot;class&quot;:&quot;rs-ad-location-suburb&quot;}).contents[0]
-            if node.find('div',attrs={&quot;class&quot;:&quot;rs-ad-date&quot;}) is not None:
-                post_dict['date']=node.find('div',attrs={&quot;class&quot;:&quot;rs-ad-date&quot;}).contents[0]
-            anchors=node.findAll('a')
-            for node in anchors:
-                if node.get(&quot;data-adid&quot;) is not None:
-                    post_dict['ad_id']=node.get('data-adid')
-            master_list.append(post_dict)
-    return master_list
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">html_parser</span>(filename):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    gumtree_file<span style="color:#f92672">=</span>open(filename)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    gumtree_contents<span style="color:#f92672">=</span>gumtree_file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    gtsoup<span style="color:#f92672">=</span>BeautifulSoup(gumtree_contents)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    master_list<span style="color:#f92672">=</span>[]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    gt_li<span style="color:#f92672">=</span>gtsoup<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#39;li&#39;</span>, attrs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#39;class&#39;</span>: <span style="color:#e6db74">&#39;js-click-block&#39;</span>})
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> gt_li:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#66d9ef">if</span> len(node<span style="color:#f92672">.</span>contents) <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>            post_dict<span style="color:#f92672">=</span>{}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>            <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#39;a&#39;</span>) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>                post_dict[<span style="color:#e6db74">&#39;title&#39;</span>]<span style="color:#f92672">=</span>node<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#39;a&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>string
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>            <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>,attrs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;class&#34;</span>:<span style="color:#e6db74">&#34;h-elips&#34;</span>}) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>                post_dict[<span style="color:#e6db74">&#39;price&#39;</span>]<span style="color:#f92672">=</span>node<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>,attrs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;class&#34;</span>:<span style="color:#e6db74">&#34;h-elips&#34;</span>})<span style="color:#f92672">.</span>string
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#39;span&#39;</span>) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>                post_dict[<span style="color:#e6db74">&#39;description&#39;</span>]<span style="color:#f92672">=</span>node<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#39;span&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>contents[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>            <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;h3&#39;</span>,attrs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;class&#34;</span>:<span style="color:#e6db74">&#34;rs-ad-location&#34;</span>}) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>                post_dict[<span style="color:#e6db74">&#39;location1&#39;</span>]<span style="color:#f92672">=</span>node<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;h3&#39;</span>,attrs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;class&#34;</span>:<span style="color:#e6db74">&#34;rs-ad-location-area&#34;</span>})<span style="color:#f92672">.</span>contents[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;span&#39;</span>,attrs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;class&#34;</span>:<span style="color:#e6db74">&#34;rs-ad-location-suburb&#34;</span>}) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>                post_dict[<span style="color:#e6db74">&#39;location2&#39;</span>]<span style="color:#f92672">=</span>node<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;span&#39;</span>,attrs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;class&#34;</span>:<span style="color:#e6db74">&#34;rs-ad-location-suburb&#34;</span>})<span style="color:#f92672">.</span>contents[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>            <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>,attrs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;class&#34;</span>:<span style="color:#e6db74">&#34;rs-ad-date&#34;</span>}) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>                post_dict[<span style="color:#e6db74">&#39;date&#39;</span>]<span style="color:#f92672">=</span>node<span style="color:#f92672">.</span>find(<span style="color:#e6db74">&#39;div&#39;</span>,attrs<span style="color:#f92672">=</span>{<span style="color:#e6db74">&#34;class&#34;</span>:<span style="color:#e6db74">&#34;rs-ad-date&#34;</span>})<span style="color:#f92672">.</span>contents[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>            anchors<span style="color:#f92672">=</span>node<span style="color:#f92672">.</span>findAll(<span style="color:#e6db74">&#39;a&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>            <span style="color:#66d9ef">for</span> node <span style="color:#f92672">in</span> anchors:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>                <span style="color:#66d9ef">if</span> node<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#34;data-adid&#34;</span>) <span style="color:#f92672">is</span> <span style="color:#f92672">not</span> <span style="color:#66d9ef">None</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>                    post_dict[<span style="color:#e6db74">&#39;ad_id&#39;</span>]<span style="color:#f92672">=</span>node<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;data-adid&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>            master_list<span style="color:#f92672">.</span>append(post_dict)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>    <span style="color:#66d9ef">return</span> master_list</span></span></code></pre></div>
 <p>This returned things like</p>
-<pre><code>{&quot;ad_id&quot;: &quot;1048303295&quot;, 
- &quot;description&quot;: &quot;Selling: 2 Coldplay Tickets - Sydney 19 June &quot;,
- &quot;title&quot;: null, 
- &quot;price&quot;: &quot;\n500&quot;, 
- &quot;location2&quot;: &quot;St Ives Chase&quot;, 
- &quot;date&quot;: &quot;\n04/06/2014&quot;}
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>{
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    <span style="color:#f92672">&#34;ad_id&#34;</span>: <span style="color:#e6db74">&#34;1048303295&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>	<span style="color:#f92672">&#34;description&#34;</span>: <span style="color:#e6db74">&#34;Selling: 2 Coldplay Tickets - Sydney 19 June &#34;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>	<span style="color:#f92672">&#34;title&#34;</span>: <span style="color:#66d9ef">null</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>	<span style="color:#f92672">&#34;price&#34;</span>: <span style="color:#e6db74">&#34;\n500&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>	<span style="color:#f92672">&#34;location2&#34;</span>: <span style="color:#e6db74">&#34;St Ives Chase&#34;</span>, 
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>	<span style="color:#f92672">&#34;date&#34;</span>: <span style="color:#e6db74">&#34;\n04/06/2014&#34;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>}</span></span></code></pre></div>
 <p>which contains all the relevant information. This took me a while to write as I&rsquo;d not dealt with JSON much before, so I had to figure everything out from scratch. It was very satisfying to run the parser successfully and have big page-sized chunks of horrible JSON condensed into little search result nuggets like the above.</p>
 <h3 id="mandrill-email-automation"></h>Mandrill email automation<a href="#mandrill-email-automation">
     
   </a>
 </h3><p>I wanted to run the scraper constantly in the background, preferably on an Amazon Web Server instance, and have it send automated emails every time it found a new result. I had to register a Mandrill account to use their API; once an API key was generated I wrote the following very basic email template:</p>
-<pre><code>def new_result_email(result,artist,city):
-    subj=artist+' '+city
-    body=json.dumps(result)
-    message = {
-     'from_email': '...',
-     'from_name': 'Clinton Boys',
-     'headers': {'Reply-To': '...'},
-     'important': True,
-     'preserve_recipients': None,
-     'return_path_domain': None,
-     'signing_domain': None,
-     'subject': subj,
-     'text': body,
-     'to': [{'email': '...',
-             'name': 'Clinton Boys',
-             'type': 'to'}],
-    }
-    result = mandrill_client.messages.send(message=message)
-    print(result)
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">new_result_email</span>(result,artist,city):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    subj<span style="color:#f92672">=</span>artist<span style="color:#f92672">+</span><span style="color:#e6db74">&#39; &#39;</span><span style="color:#f92672">+</span>city
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    body<span style="color:#f92672">=</span>json<span style="color:#f92672">.</span>dumps(result)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    message <span style="color:#f92672">=</span> {
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        <span style="color:#e6db74">&#39;from_email&#39;</span>: <span style="color:#e6db74">&#39;...&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>        <span style="color:#e6db74">&#39;from_name&#39;</span>: <span style="color:#e6db74">&#39;Clinton Boys&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        <span style="color:#e6db74">&#39;headers&#39;</span>: {<span style="color:#e6db74">&#39;Reply-To&#39;</span>: <span style="color:#e6db74">&#39;...&#39;</span>},
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        <span style="color:#e6db74">&#39;important&#39;</span>: <span style="color:#66d9ef">True</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        <span style="color:#e6db74">&#39;preserve_recipients&#39;</span>: <span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        <span style="color:#e6db74">&#39;return_path_domain&#39;</span>: <span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        <span style="color:#e6db74">&#39;signing_domain&#39;</span>: <span style="color:#66d9ef">None</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#e6db74">&#39;subject&#39;</span>: subj,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        <span style="color:#e6db74">&#39;text&#39;</span>: body,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        <span style="color:#e6db74">&#39;to&#39;</span>: [{<span style="color:#e6db74">&#39;email&#39;</span>: <span style="color:#e6db74">&#39;...&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>                <span style="color:#e6db74">&#39;name&#39;</span>: <span style="color:#e6db74">&#39;Clinton Boys&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>                <span style="color:#e6db74">&#39;type&#39;</span>: <span style="color:#e6db74">&#39;to&#39;</span>}],
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    }
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    result <span style="color:#f92672">=</span> mandrill_client<span style="color:#f92672">.</span>messages<span style="color:#f92672">.</span>send(message<span style="color:#f92672">=</span>message)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    print(result)</span></span></code></pre></div>
 <p>which I called in my function &ldquo;regular_scraping&rdquo;:</p>
-<pre><code>def regular_scraping():
-    json_file=open('master_file.text',&quot;r&quot;)
-    json_file_contents= json_file.read()
-    if not os.stat('master_file.text')[6]==0:
-        old_data=json.loads(json_file_contents)
-    else:
-        old_data=[]
-    this_scrape=[]
-    for n in range(1,pages_to_scrape()+1):
-        this_scrape.append(html_parser(scrape_gumtree_page_n(n)))
-        data_ids=[]
-        new_entries=[]
-        new_entry_count=0
-        for entry in old_data:
-            data_ids.append(entry[u'ad_id'])
-        for entry in this_scrape[n-1]:
-            if entry[u'ad_id'] not in data_ids:
-                old_data.append(entry)
-                new_entry_count += 1
-                new_entries.append(entry)
-                new_result_email(entry,artist,city)
-    json_file.close()
-    json_file=open('master_file.text',&quot;w&quot;)
-    json_file.write(json.dumps(old_data))
-    json_file.close()
-</code></pre>
-<p>The last step was to set this up on an Amazon Web Server instance: I made a master file which put all these ingredients together: every </p>
-$$x$$<p> seconds (by default I chose 120), it ran the scraper across all results pages, looked through the neatened JSON for results, compared these to a master results file on disk, and if there were any new results, added to the file and sent an email through Mandrill. This was easy enough to set up, although there&rsquo;s still a bunch of memory leak issues because my code isn&rsquo;t great; after a while it will eventually crash the AWS instance. It did solve my initial problem though, which was the whole point of the exercise, and I did learn a whole lot of new techniques.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">regular_scraping</span>():
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    json_file<span style="color:#f92672">=</span>open(<span style="color:#e6db74">&#39;master_file.text&#39;</span>,<span style="color:#e6db74">&#34;r&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    json_file_contents<span style="color:#f92672">=</span> json_file<span style="color:#f92672">.</span>read()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#66d9ef">if</span> <span style="color:#f92672">not</span> os<span style="color:#f92672">.</span>stat(<span style="color:#e6db74">&#39;master_file.text&#39;</span>)[<span style="color:#ae81ff">6</span>]<span style="color:#f92672">==</span><span style="color:#ae81ff">0</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>        old_data<span style="color:#f92672">=</span>json<span style="color:#f92672">.</span>loads(json_file_contents)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>        old_data<span style="color:#f92672">=</span>[]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    this_scrape<span style="color:#f92672">=</span>[]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#66d9ef">for</span> n <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">1</span>,pages_to_scrape()<span style="color:#f92672">+</span><span style="color:#ae81ff">1</span>):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        this_scrape<span style="color:#f92672">.</span>append(html_parser(scrape_gumtree_page_n(n)))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        data_ids<span style="color:#f92672">=</span>[]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        new_entries<span style="color:#f92672">=</span>[]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>        new_entry_count<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> old_data:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            data_ids<span style="color:#f92672">.</span>append(entry[<span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;ad_id&#39;</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">for</span> entry <span style="color:#f92672">in</span> this_scrape[n<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>]:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            <span style="color:#66d9ef">if</span> entry[<span style="color:#e6db74">u</span><span style="color:#e6db74">&#39;ad_id&#39;</span>] <span style="color:#f92672">not</span> <span style="color:#f92672">in</span> data_ids:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>                old_data<span style="color:#f92672">.</span>append(entry)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>                new_entry_count <span style="color:#f92672">+=</span> <span style="color:#ae81ff">1</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>                new_entries<span style="color:#f92672">.</span>append(entry)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>                new_result_email(entry,artist,city)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    json_file<span style="color:#f92672">.</span>close()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    json_file<span style="color:#f92672">=</span>open(<span style="color:#e6db74">&#39;master_file.text&#39;</span>,<span style="color:#e6db74">&#34;w&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>    json_file<span style="color:#f92672">.</span>write(json<span style="color:#f92672">.</span>dumps(old_data))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    json_file<span style="color:#f92672">.</span>close()</span></span></code></pre></div>
+<p>The last step was to set this up on an Amazon Web Server instance: I made a master file which put all these ingredients together: every \(x\) seconds (by default I chose 120), it ran the scraper across all results pages, looked through the neatened JSON for results, compared these to a master results file on disk, and if there were any new results, added to the file and sent an email through Mandrill. This was easy enough to set up, although there&rsquo;s still a bunch of memory leak issues because my code isn&rsquo;t great; after a while it will eventually crash the AWS instance. It did solve my initial problem though, which was the whole point of the exercise, and I did learn a whole lot of new techniques.</p>
 
     </article>
     <aside>
@@ -258,7 +256,7 @@ $$x$$<p> seconds (by default I chose 120), it ran the scraper across all results
     <div class="single-next-previous">
       
       
-        <a class="next" href="//localhost:1313/writing/israeli-poll-aggregator/">Aggregating Israeli opinion polls &raquo;</a>
+        <a class="next" href="/writing/israeli-poll-aggregator/">Aggregating Israeli opinion polls &raquo;</a>
       
     </div>
   </section>
@@ -278,20 +276,24 @@ $$x$$<p> seconds (by default I chose 120), it ran the scraper across all results
     
   </div>
 </footer>
-  
-  
-
-
-
-
-
-
-
 
   
 
-<script src="//localhost:1313/main.js"></script>
 
 
+
+
+
+
+
+  
+  
+    
+
+<script src="/main.min.js"></script>
+
+
+
+  
 </body>
 </html>

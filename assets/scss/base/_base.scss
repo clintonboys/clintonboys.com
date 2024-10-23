@@ -6,6 +6,7 @@
  * Set up a decent box model on the root element
  */
  html {
+    background-color: var(--color-contrast-lower);
     box-sizing: border-box;
   }
   
@@ -42,8 +43,8 @@
   }
   
   a {
-    color: var(--color-contrast-medium-low);
-    text-decoration: none;
+    color: var(--color-contrast-high);
+    text-decoration: underline;
   
     @include on-event {
       color: var(--color-text);
@@ -52,28 +53,38 @@
   }
   
   h1 {
-    @include font-size('xl');
-    color: var(--color-contrast-medium-higher);
+    text-transform: uppercase;
+    @include font-size('lg');
+    color: var(--color-contrast-high);
+    font-family: 'PT Sans Narrow';
+    font-weight: 500;
+    text-decoration: none;
   }
   
   h2 {
-    @include font-size('lg');
+    @include font-size('md');
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow';
   }
   
   h3 {
-    @include font-size('md');
+    @include font-size('base');
+    text-transform: uppercase;
+    font-family: 'PT Sans Narrow';
   }
   
   h4 {
-    @include font-size('base');
+    @include font-size('sm');
   }
   
   h5 {
     @include font-size('sm');
+    color: var(--color-contrast-medium);
   }
   
   h6 {
     @include font-size('sm');
+    color: var(--color-contrast-medium-low);
   }
   
   table {
