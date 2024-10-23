@@ -24,9 +24,9 @@
   --color-primary: rgb(227, 226, 223);
   --color-inline-code: hsl(0, 81%, 70%);
   /* color contrasts */
-  --color-bg: hsl(240, 6%, 15%);
-  --color-contrast-lower: hsl(240, 6%, 15%);
-  --color-contrast-low: hsl(252, 4%, 25%);
+  --color-bg: rgb(53,58,63);
+  --color-contrast-lower: rgb(53,58,63);
+  --color-contrast-low: rgb(53,58,63);
   --color-contrast-medium-low: hsl(240, 2%, 34%);
   --color-contrast-medium: hsl(240, 1%, 57%);
   --color-contrast-medium-high: hsl(240, 1%, 65%);
@@ -381,7 +381,6 @@ a {
     text-decoration: underline; }
 
 h1 {
-  text-transform: uppercase;
   font-size: var(--font-size-lg);
   line-height: calc(8px + 2ex);
   color: var(--color-contrast-high);
@@ -392,13 +391,11 @@ h1 {
 h2 {
   font-size: var(--font-size-md);
   line-height: calc(8px + 2ex);
-  text-transform: uppercase;
   font-family: 'PT Sans Narrow'; }
 
 h3 {
   font-size: var(--font-size-base);
   line-height: calc(8px + 2ex);
-  text-transform: uppercase;
   font-family: 'PT Sans Narrow'; }
 
 h4 {
@@ -513,12 +510,6 @@ form {
   font-style: normal;
   font-weight: 400;
   src: local("PT Serif"), local("PTSerif-Regular"), url(http://fonts.gstatic.com/s/ptserif/v7/I-OtoJZa3TeyH6D9oli3ifesZW2xOQ-xsNqO47m55DA.woff2) format("woff2"), url(http://fonts.gstatic.com/s/ptserif/v7/sDRi4fY9bOiJUbgq53yZCfesZW2xOQ-xsNqO47m55DA.woff) format("woff"); }
-
-@font-face {
-  font-family: 'PT Serif';
-  font-style: normal;
-  font-weight: 700;
-  src: local("PT Serif Bold"), local("PTSerif-Bold"), url(http://fonts.gstatic.com/s/ptserif/v7/QABk9IxT-LFTJ_dQzv7xpI4P5ICox8Kq3LLUNMylGO4.woff2) format("woff2"), url(http://fonts.gstatic.com/s/ptserif/v7/QABk9IxT-LFTJ_dQzv7xpIbN6UDyHWBl620a-IRfuBk.woff) format("woff"); }
 
 @font-face {
   font-family: 'PT Serif';
@@ -1058,7 +1049,8 @@ body {
       padding: 80px 0; } }
 .index-content {
   color: var(--color-contrast-higher);
-  font-size: var(--font-size-base); }
+  font-size: var(--font-size-base);
+  font-family: 'PT Serif'; }
 
 .image-wrap {
   position: relative;
@@ -1269,13 +1261,16 @@ body {
 .post-list-title {
   font-weight: 400;
   margin: 0;
+  font-family: 'PT Sans Narrow';
   font-size: var(--font-size-md);
-  line-height: calc(8px + 2ex); }
+  line-height: calc(8px + 2ex);
+  text-transform: none; }
   .post-list-title a {
     text-decoration: none;
     color: var(--color-contrast-high); }
     .post-list-title a:hover {
-      color: var(--color-primary); }
+      color: var(--color-primary);
+      text-decoration: underline; }
 
 .post-list-summary {
   margin: 10px 0 0 0; }

@@ -53,7 +53,7 @@
   }
   
   h1 {
-    text-transform: uppercase;
+    // text-transform: uppercase;
     @include font-size('lg');
     color: var(--color-contrast-high);
     font-family: 'PT Sans Narrow';
@@ -63,13 +63,13 @@
   
   h2 {
     @include font-size('md');
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-family: 'PT Sans Narrow';
   }
   
   h3 {
     @include font-size('base');
-    text-transform: uppercase;
+    // text-transform: uppercase;
     font-family: 'PT Sans Narrow';
   }
   

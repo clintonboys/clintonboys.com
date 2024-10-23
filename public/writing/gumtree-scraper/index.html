@@ -101,19 +101,11 @@
     </nav>
   </header>
 <main class="section">
-<div class="single-container-post">
-  
-
-  <div class="single-post-contents">
-    <div class="single-feature-img">
-
-
-
-  
-
+<div class="container">
 </div>
-    <article class="markdown">
-        <h1 id="scraping-gumtree"></h>Scraping Gumtree<a href="#scraping-gumtree">
+<section class="generic-single">
+  <div class="single-container markdown">
+    <h1 id="scraping-gumtree"></h>Scraping Gumtree<a href="#scraping-gumtree">
     
   </a>
 </h1><p><em>September 8, 2014</em></p>
@@ -240,31 +232,8 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    json_file<span style="color:#f92672">.</span>close()</span></span></code></pre></div>
 <p>The last step was to set this up on an Amazon Web Server instance: I made a master file which put all these ingredients together: every \(x\) seconds (by default I chose 120), it ran the scraper across all results pages, looked through the neatened JSON for results, compared these to a master results file on disk, and if there were any new results, added to the file and sent an email through Mandrill. This was easy enough to set up, although there&rsquo;s still a bunch of memory leak issues because my code isn&rsquo;t great; after a while it will eventually crash the AWS instance. It did solve my initial problem though, which was the whole point of the exercise, and I did learn a whole lot of new techniques.</p>
 
-    </article>
-    <aside>
-      <div class="single-terms">
-        
-      </div>
-    
-
-  
-  
-
-    
-  <section>
-    <h2>Read Next</h2>
-    <div class="single-next-previous">
-      
-      
-        <a class="next" href="/writing/israeli-poll-aggregator/">Aggregating Israeli opinion polls &raquo;</a>
-      
-    </div>
-  </section>
-
-      
-    </aside>
   </div>
-</div>
+</section>
 
     </main><footer>
   
