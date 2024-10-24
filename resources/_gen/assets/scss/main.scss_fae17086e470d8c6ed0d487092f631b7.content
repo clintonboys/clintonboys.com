@@ -5,7 +5,7 @@
   --color-contrast-lower: rgb(227, 226, 223);
   --color-contrast-medium-low: hsl(240, 1%, 65%);
   --color-contrast-medium: hsl(240, 1%, 48%);
-  --color-contrast-medium-high: hsl(240, 2%, 34%);
+  --color-contrast-medium-high: rgb(78,78,78);
   --color-contrast-high: hsl(240, 4%, 20%);
   --color-contrast-higher: black;
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
@@ -617,7 +617,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  max-width: 900px;
+  margin-top: 20;
   padding: 15px 0;
   row-gap: 20px; }
   .main-nav .nav-toggle {
@@ -635,18 +635,20 @@ body {
         /* Hide nav toggle on desktop */ } }
 .logo {
   text-transform: uppercase;
-  color: var(--color-contrast-high);
+  color: var(--color-contrast-medium-high);
   font-family: 'PT Sans Narrow';
   font-size: var(--font-size-base);
   line-height: calc(8px + 2ex);
-  font-weight: 1000;
+  font-weight: 700;
   text-decoration: none; }
 
 .menu-link {
-  color: var(--color-contrast-high);
   text-transform: uppercase;
+  color: var(--color-contrast-medium-high);
   font-family: 'PT Sans Narrow';
-  font-size: large; }
+  font-size: var(--font-size-base);
+  line-height: calc(8px + 2ex);
+  font-weight: 700; }
   .menu-link:hover {
     color: var(--color-contrast-lower); }
 
@@ -668,7 +670,12 @@ body {
   .menu .menu-link {
     display: flex;
     font-size: 1rem;
-    font-weight: 500;
+    text-transform: uppercase;
+    color: var(--color-contrast-medium-high);
+    font-family: 'PT Sans Narrow';
+    font-size: var(--font-size-base);
+    line-height: calc(8px + 2ex);
+    font-weight: 700;
     text-align: center;
     text-decoration: none;
     cursor: pointer;
