@@ -1166,9 +1166,6 @@ body {
   justify-content: flex-start;
   margin-top: 20px; }
 
-.single-container {
-  max-width: 900px; }
-
 .single-container-post {
   max-width: 900px; }
   @media (min-width: 1200px) {

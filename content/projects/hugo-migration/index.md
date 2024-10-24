@@ -1,6 +1,6 @@
 ---
 title: Hugo migration
-seo_title: cb.com2
+seo_title: cbcom2
 summary: I recently migrated my personal website to Hugo after ten years of blogging with Jekyll. 
 description: This is the first full description of a constructed language I have created. It's a hobby I have dabbled in for over twenty years. 
 slug: hugo-migration
