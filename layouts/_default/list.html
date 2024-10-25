@@ -1,6 +1,7 @@
 {{ define "main" -}}
 <div class="container">
-    <h1>Writing</h1>
+    <div class="single-feature-img">{{ partial "general/feature-image.html" . }}</div>
+    {{ .Content }}
   <section>
     {{ range (.Paginate .RegularPagesRecursive).Pages }}
       {{ partial "posts/post-entry.html" . }}

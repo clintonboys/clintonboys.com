@@ -33,7 +33,7 @@
   
   
 
-<link rel="stylesheet" href="https://cb-com-new.vercel.app/scss/main.min.css" />
+<link rel="stylesheet" href="/scss/main.min.css" />
 
 
     
@@ -53,7 +53,7 @@
   </head><body>
     <header class="container">
     <nav class="main-nav" id="js-navbar">
-      <a class="logo" href="https://cb-com-new.vercel.app/">Clinton Boys</a>
+      <a class="logo" href="/">Clinton Boys</a>
       <ul class="menu" id="js-menu">
         
         
@@ -102,31 +102,45 @@
   </header>
 <main class="section">
 <div class="container">
-    <div class="image-wrap">
-    <img src="https://www.clintonboys.com/images/mts9-1-grey.jpg" alt=" feature image">
-</div>
-<div class="about">
+    <div class="single-feature-img">
+
+
+
   
-  <article class="single-container markdown">
+
+
+<img class="feature-image" 
+     srcset="/about/mts9-1-grey.jpg 480w, /about/mts9-1-grey.jpg 800w"
+     sizes="(max-width: 600px) 480px, 800px"
+     src="/about/mts9-1-grey.jpg"
+     alt="Blah">
+</div>
+</div>
+<section class="generic-single">
+  <div class="single-container markdown">
     <h1 id="about-me"></h>About me<a href="#about-me">
     
   </a>
-</h1><p>Hey there, I&rsquo;m Clinton. I am an Australian mathematician and software engineer living in London (formerly Tel Aviv, and before that, Sydney). You can visit my <a href="https://cb-com-new.vercel.app/now/">now</a> page to see what I&rsquo;m up to and what&rsquo;s on my mind at the moment.</p>
-<p>I graduated from the University of Sydney in 2011 with a First Class Honours degree in Pure Mathematics, and then in 2015 with a PhD in Mathematics. You can find answers to some frequently asked questions about my PhD here.</p>
+</h1><p>Hey there, I&rsquo;m Clinton. I am an Australian mathematician and software engineer living in London (formerly Tel Aviv, and before that, Sydney). You can visit my <a href="/now/">now</a> page to see what I&rsquo;m up to and what&rsquo;s on my mind at the moment: I try to keep it up to date.</p>
+<p>I like hacking away at interesting problems in lots of different areas: mathematics, statistics, programming, data and data science, elections and electoral systems, and many more. I am a keen writer and an amateur musician.</p>
+<h2 id="work-and-skills"></h>Work and skills<a href="#work-and-skills">
+    
+  </a>
+</h2><p>I graduated from the University of Sydney in 2011 with a First Class Honours degree in Pure Mathematics, and then in 2015 with a PhD in Mathematics. You can find answers to some frequently asked questions about my PhD here.</p>
 <p>In 2015 I moved from Sydney to Tel Aviv and worked there for eight years at various startups, ending up at <a href="http://ridewithvia.com" target="_blank" rel="noopener">Via</a>. In 2023 I relocated with Via to London with my family.</p>
-<p>After my move to working in technology, I initially called myself a data scientist, but in my nine years&rsquo; experience I have become more and more of an <a href="https://en.wikipedia.org/wiki/All-rounder" target="_blank" rel="noopener">all-rounder</a>, incorporating software engineering, algorithm development and a lot of other tools into my toolkit. If you&rsquo;re interested in more details, you can find my resume here. My <a href="https://cb-com-new.vercel.app/writing/">blog</a> also contains a long history of posts about things I have been interested in over the years.</p>
+<p>After my move to working in technology, I initially called myself a data scientist, but in my nine years&rsquo; experience I have become more and more of an <a href="https://en.wikipedia.org/wiki/All-rounder" target="_blank" rel="noopener">all-rounder</a>, incorporating software engineering, algorithm development and a lot of other tools into my toolkit. If you&rsquo;re interested in more details, you can find my resume here. My <a href="/writing/">blog</a> also contains a long history of posts about things I have been interested in over the years.</p>
 <p>If you&rsquo;d like to know more about the tools I use to get things done, you can find my answers to the <a href="http://usesthis.com" target="_blank" rel="noopener">usesthis</a> questionnaire here. You can also explore my <a href="http://mtsolitary.com" target="_blank" rel="noopener">digital garden</a>.</p>
 <h2 id="contact-me"></h>Contact me<a href="#contact-me">
     
   </a>
 </h2><p>You can send me an email at <code>me</code> at this domain, or find me on <a href="https://www.linkedin.com/in/clintonboys/" target="_blank" rel="noopener">LinkedIn</a> or <a href="https://www.github.com/clintonboys" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="colophon"></h>Colophon<a href="#colophon">
+<h3 id="colophon"></h>Colophon<a href="#colophon">
     
   </a>
-</h2><p>This site is served off Vercel, using Hugo with the Liftoff theme by Will Holmes with some small customisations.</p>
+</h3><p>This site is served off Vercel, using Hugo with the Liftoff theme by Will Holmes with some small customisations.</p>
 
-  </article>
-</div>
+  </div>
+</section>
 
     </main><footer>
   
@@ -152,7 +166,7 @@
   
     
 
-<script src="https://cb-com-new.vercel.app/main.min.js"></script>
+<script src="/main.min.js"></script>
 
 
 

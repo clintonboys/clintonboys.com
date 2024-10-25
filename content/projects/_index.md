@@ -1,7 +1,8 @@
 ---
 title: Projects
-summary: A list of things I have built over the years. 
-description: Explore some of the projects I've worked on.
+feature_image: mts9-1-grey.jpg
 ---
 
-blah
+# Projects
+
+On this page I keep a portfolio of various things I have built over the years. Some of them are more finished than others.

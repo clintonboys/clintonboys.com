@@ -1,7 +1,7 @@
 ---
-type: about
 linktitle: Now
 title: Now
+feature_image: mts9-1-grey.jpg
 seo_title: Now
 ---
 

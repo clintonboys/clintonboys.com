@@ -381,7 +381,7 @@ a {
     text-decoration: underline; }
 
 h1 {
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-xl);
   line-height: calc(8px + 2ex);
   color: var(--color-contrast-high);
   font-family: 'PT Sans Narrow';
@@ -566,10 +566,6 @@ body {
   /* 2 */
   margin-right: auto;
   /* 2 */
-  padding-left: 16px;
-  /* 3 */
-  padding-right: 16px;
-  /* 3 */
   width: 100%;
   /* 1 */
   border-color: aqua;
@@ -1272,12 +1268,12 @@ body {
   font-weight: 400;
   margin: 0;
   font-family: 'PT Sans Narrow';
-  font-size: var(--font-size-md);
+  font-size: var(--font-size-lg);
   line-height: calc(8px + 2ex);
   text-transform: none; }
   .post-list-title a {
     text-decoration: none;
-    color: var(--color-contrast-high); }
+    color: var(--color-contrast-medium-high); }
     .post-list-title a:hover {
       color: var(--color-primary);
       text-decoration: underline; }

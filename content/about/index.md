@@ -1,5 +1,4 @@
 ---
-type: about
 linktitle: About
 title: About me
 feature_image: mts9-1-grey.jpg
@@ -8,7 +7,11 @@ feature_image_alt: Blah
 
 # About me
 
-Hey there, I'm Clinton. I am an Australian mathematician and software engineer living in London (formerly Tel Aviv, and before that, Sydney). You can visit my [now]({{< ref "now" >}}) page to see what I'm up to and what's on my mind at the moment.
+Hey there, I'm Clinton. I am an Australian mathematician and software engineer living in London (formerly Tel Aviv, and before that, Sydney). You can visit my [now]({{< ref "now" >}}) page to see what I'm up to and what's on my mind at the moment: I try to keep it up to date. 
+
+I like hacking away at interesting problems in lots of different areas: mathematics, statistics, programming, data and data science, elections and electoral systems, and many more. I am a keen writer and an amateur musician. 
+
+## Work and skills
 
 I graduated from the University of Sydney in 2011 with a First Class Honours degree in Pure Mathematics, and then in 2015 with a PhD in Mathematics. You can find answers to some frequently asked questions about my PhD here.
 
@@ -22,6 +25,6 @@ If you'd like to know more about the tools I use to get things done, you can fin
 
 You can send me an email at `me` at this domain, or find me on [LinkedIn](https://www.linkedin.com/in/clintonboys/) or [GitHub](https://www.github.com/clintonboys). 
 
-## Colophon
+### Colophon
 
 This site is served off Vercel, using Hugo with the Liftoff theme by Will Holmes with some small customisations. 

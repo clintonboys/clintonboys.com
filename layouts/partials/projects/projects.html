@@ -1,5 +1,6 @@
 <div class="container">
-    <h1>Projects</h1>
+    <div class="single-feature-img">{{ partial "general/feature-image.html" . }}</div>
+    {{ .Content }}
     <section>
       {{ with .RegularPagesRecursive }}
         <div class="project-list">

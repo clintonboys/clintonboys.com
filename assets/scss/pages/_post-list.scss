@@ -16,12 +16,12 @@
     font-weight: 400;
     margin: 0;
     font-family: 'PT Sans Narrow';
-    @include font-size('md');
+    @include font-size('lg');
     text-transform: none;
   
     a {
       text-decoration: none;
-      color: var(--color-contrast-high);
+      color: var(--color-contrast-medium-high);
   
       &:hover {
         color: var(--color-primary);

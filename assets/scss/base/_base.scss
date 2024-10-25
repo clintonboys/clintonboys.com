@@ -54,7 +54,7 @@
   
   h1 {
     // text-transform: uppercase;
-    @include font-size('lg');
+    @include font-size('xl');
     color: var(--color-contrast-high);
     font-family: 'PT Sans Narrow';
     font-weight: 500;
