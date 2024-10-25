@@ -2,6 +2,8 @@
 type: about
 linktitle: About
 title: About me
+feature_image: mts9-1-grey.jpg
+feature_image_alt: Blah
 ---
 
 # About me

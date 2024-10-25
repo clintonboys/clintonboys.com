@@ -25,6 +25,8 @@
   padding-left: 16px; /* 3 */
   padding-right: 16px; /* 3 */
   width: 100%; /* 1 */
+  border-color: aqua;
+  border-width: 2px;
 
   @include respond-to('small') {
     padding-left: 20px; /* 3 */
