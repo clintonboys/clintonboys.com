@@ -2,94 +2,109 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>//localhost:1313/</loc>
+    <loc>https://cb-com-new.vercel.app/</loc>
     <lastmod>2024-08-06T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/writing/ten-years/</loc>
+    <loc>https://cb-com-new.vercel.app/writing/ten-years/</loc>
     <lastmod>2024-08-06T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/writing/</loc>
+    <loc>https://cb-com-new.vercel.app/writing/</loc>
     <lastmod>2024-08-06T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/categories/</loc>
+    <loc>https://cb-com-new.vercel.app/categories/</loc>
     <lastmod>2024-06-06T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/categories/elections/</loc>
+    <loc>https://cb-com-new.vercel.app/categories/elections/</loc>
     <lastmod>2024-06-06T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/writing/israeli-constituencies/</loc>
+    <loc>https://cb-com-new.vercel.app/writing/israeli-constituencies/</loc>
     <lastmod>2024-06-06T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/projects/hugo-migration/</loc>
+    <loc>https://cb-com-new.vercel.app/categories/books/</loc>
+    <lastmod>2024-05-15T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://cb-com-new.vercel.app/categories/design/</loc>
+    <lastmod>2024-05-15T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://cb-com-new.vercel.app/writing/synthesis-of-form/</loc>
+    <lastmod>2024-05-15T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>https://cb-com-new.vercel.app/projects/hugo-migration/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/projects/karev/</loc>
+    <loc>https://cb-com-new.vercel.app/projects/karev/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/project-types/personal/</loc>
+    <loc>https://cb-com-new.vercel.app/project-types/personal/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/project-types/</loc>
+    <loc>https://cb-com-new.vercel.app/project-types/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/projects/</loc>
+    <loc>https://cb-com-new.vercel.app/projects/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/project-types/technical/</loc>
+    <loc>https://cb-com-new.vercel.app/project-types/technical/</loc>
     <lastmod>2019-02-20T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/writing/israeli-poll-aggregator/</loc>
+    <loc>https://cb-com-new.vercel.app/writing/israeli-poll-aggregator/</loc>
     <lastmod>2015-03-13T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/writing/2014-08-09-gumtree-scraper/</loc>
+    <loc>https://cb-com-new.vercel.app/writing/2014-08-09-gumtree-scraper/</loc>
     <lastmod>2014-09-08T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/categories/web-development/</loc>
+    <loc>https://cb-com-new.vercel.app/categories/web-development/</loc>
     <lastmod>2014-09-08T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/about/</loc>
+    <loc>https://cb-com-new.vercel.app/about/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/now/</loc>
+    <loc>https://cb-com-new.vercel.app/now/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/series/</loc>
+    <loc>https://cb-com-new.vercel.app/series/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>//localhost:1313/tags/</loc>
+    <loc>https://cb-com-new.vercel.app/tags/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

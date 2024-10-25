@@ -9,7 +9,7 @@
   --color-contrast-high: hsl(240, 4%, 20%);
   --color-contrast-higher: black;
   --font-size-sm: clamp(0.8rem, 0.17vw + 0.76rem, 0.89rem);
-  --font-size-base: clamp(1rem, 0.34vw + 0.91rem, 1.19rem);
+  --font-size-base: clamp(0.9rem, 0.34vw + 0.91rem, 1.19rem);
   --font-size-md: clamp(1.25rem, 0.61vw + 1.1rem, 1.58rem);
   --font-size-lg: clamp(1.56rem, 1vw + 1.31rem, 2.11rem);
   --font-size-xl: clamp(1.95rem, 1.56vw + 1.56rem, 2.81rem);
@@ -1304,22 +1304,23 @@ body {
     flex: 1 1 350px; }
 
 .project-entry {
-  border: 1px solid var(--color-contrast-low);
+  border: 1px solid var(--color-contrast-medium-low);
   border-radius: 10px;
   box-shadow: 0 0 20px -10px var(--color-contrast-low), 0 0 20px -10px var(--color-contrast-low);
   max-width: 750px; }
 
 .project-entry-img {
   position: relative;
-  border-radius: 10px 10px 0 0;
-  min-height: 1rem; }
+  border-radius: 5px 5px 0 0;
+  min-height: 1rem;
+  max-height: 200px; }
   .project-entry-img img {
     width: 100%;
-    height: 20vh;
+    height: 15vh;
     object-fit: cover;
-    border-radius: 10px 10px 0 0;
+    border-radius: 5px 5px 0 0;
     border-bottom: 1px solid var(--color-contrast-low);
-    z-index: -1;
+    z-index: 1;
     position: relative;
     filter: grayscale(50%); }
 
@@ -1327,11 +1328,12 @@ body {
   position: absolute;
   top: 0;
   right: 0;
-  padding: 0.2rem 0.4rem;
-  background-color: var(--color-bg);
-  border-left: 1px solid var(--color-contrast-low);
-  border-bottom: 1px solid var(--color-contrast-low);
-  border-top-right-radius: 10px; }
+  z-index: 2;
+  padding: 0rem 0.2rem;
+  background-color: var(--color-contrast-medium-low);
+  border-left: 1px solid var(--color-contrast-medium-low);
+  border-bottom: 1px solid var(--color-contrast-medium-low);
+  border-top-right-radius: 5px; }
   .project-entry-type a {
     font-size: var(--font-size-sm);
     line-height: calc(8px + 2ex); }
