@@ -10,6 +10,7 @@
   margin-top: 25px;
   padding: 15px 0;
   row-gap: 20px;
+  max-width: 780px;
 
   .nav-toggle {
     position: absolute;
@@ -35,6 +36,7 @@
     @include font-size('base');
     font-weight: 700;
     text-decoration: none;
+    // margin-left: 20px;
 }
 
 .menu-link {

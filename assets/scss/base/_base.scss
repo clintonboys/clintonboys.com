@@ -88,13 +88,15 @@
   }
   
   table {
+    display: grid;
+    grid-template-columns: auto;
+    justify-items: center;
     border-collapse: collapse;    
-    display: block;
     overflow-x: auto;
   }
   
   td, th {
-    border: 1px solid var(--color-contrast-medium-low);
+    // border: 1px solid var(--color-contrast-medium-low);
     padding: 10px 20px;
     font-size: 0.9rem;
     line-height: 1.4rem;
@@ -188,4 +190,8 @@
     button {
       cursor: pointer;
     }
+  }
+
+  img {
+    width: "100%"
   }

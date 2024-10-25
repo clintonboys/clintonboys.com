@@ -1,0 +1,10 @@
+    <div class="section footer">
+        <div class="iteminvisible"></div>
+      <p class="footer-copyright"><i>&copy; 2014 - {{ now.Format "2006" }}
+        {{ .Site.Title }}</i>
+        {{ with .Site.Params.footer_text | markdownify }}
+          <span>&middot; {{ . }}</span>
+        {{ end }}
+      </p>
+      <div class="iteminvisible"></div>
+    </div>

@@ -413,12 +413,13 @@ h6 {
   color: var(--color-contrast-medium-low); }
 
 table {
+  display: grid;
+  grid-template-columns: auto;
+  justify-items: center;
   border-collapse: collapse;
-  display: block;
   overflow-x: auto; }
 
 td, th {
-  border: 1px solid var(--color-contrast-medium-low);
   padding: 10px 20px;
   font-size: 0.9rem;
   line-height: 1.4rem; }
@@ -493,6 +494,9 @@ form {
   form button {
     cursor: pointer; }
 
+img {
+  width: "100%"; }
+
 @font-face {
   font-family: 'PT Sans Narrow';
   font-style: normal;
@@ -566,6 +570,10 @@ body {
   /* 2 */
   margin-right: auto;
   /* 2 */
+  padding-left: 16px;
+  /* 3 */
+  padding-right: 16px;
+  /* 3 */
   width: 100%;
   /* 1 */
   border-color: aqua;
@@ -617,7 +625,8 @@ body {
   justify-content: space-between;
   margin-top: 25px;
   padding: 15px 0;
-  row-gap: 20px; }
+  row-gap: 20px;
+  max-width: 780px; }
   .main-nav .nav-toggle {
     position: absolute;
     right: 20px;
@@ -707,16 +716,24 @@ body {
       box-shadow: rgba(9, 30, 66, 0.25) 0px 4px 8px -2px, rgba(9, 30, 66, 0.08) 0px 0px 0px 1px; }
       .sub-menu--active {
         display: none; } }
-.footer-socials {
-  max-width: 300px;
-  margin: 0 auto; }
+.footer {
+  color: var(--color-contrast-medium-high);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
 
 .footer-copyright {
   text-align: left;
   font-size: var(--font-size-sm);
   line-height: calc(8px + 2ex);
   margin-left: 20px;
+  max-width: 780px;
   color: var(--color-contrast-medium-high); }
+
+.iteminvisible {
+  width: 100px;
+  height: 1px;
+  visibility: hidden; }
 
 :root {
   /* style */
@@ -731,9 +748,7 @@ body {
   margin-bottom: 2px;
   flex-shrink: 0;
   align-items: center;
-  width: 48px;
   width: var(--switch-width);
-  height: 24px;
   height: var(--switch-height);
   border-radius: 50em;
   border-color: aqua;
@@ -741,8 +756,8 @@ body {
   padding: 3px 0;
   padding: var(--switch-padding) 0;
   position: absolute;
-  top: 65px;
-  right: 20px; }
+  top: 94px;
+  right: 18px; }
   @media (min-width: 900px) {
     .switch {
       position: relative;

@@ -12,9 +12,7 @@
     margin-bottom: 2px;
     flex-shrink: 0;
     align-items: center;
-    width: 48px;
     width: var(--switch-width);
-    height: 24px;
     height: var(--switch-height);
     border-radius: 50em;
     border-color: aqua;
@@ -23,8 +21,8 @@
     padding: var(--switch-padding) 0;
   
     position: absolute;
-    top: 65px;
-    right: 20px;
+    top: 94px;
+    right: 18px;
   
     @include respond-to('m-large') {
       position:relative;

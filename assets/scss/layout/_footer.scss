@@ -3,16 +3,23 @@
 // -----------------------------------------------------------------------------
 
 .footer {
-  }
-  
-  .footer-socials {
-    max-width: 300px;
-    margin: 0 auto;
-  }
-  
+    color: var(--color-contrast-medium-high);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    }
+    
   .footer-copyright {
     text-align: left;
     @include font-size('sm');
     margin-left: 20px;
+    max-width: 780px;
     color: var(--color-contrast-medium-high);
   }
+
+  .iteminvisible {
+    width: 100px;
+    height: 1px;
+    visibility: hidden;
+  }
+  
