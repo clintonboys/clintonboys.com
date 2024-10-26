@@ -1,8 +1,7 @@
 ---
 title: Karev
 seo_title: conlang
-summary: Karev is a constructed language designed for argument and precision of thought. 
-description: This is the first full description of a constructed language I have created. It's a hobby I have dabbled in for over twenty years. 
+summary: Karev is a constructed language designed for precision of thought. 
 slug: karev
 author: Clinton Boys
 

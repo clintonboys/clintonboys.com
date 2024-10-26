@@ -1,6 +1,7 @@
 ---
-title: The constituencies of Israel
-seo_title: The constituencies of Israel
+title: Israeli electorates
+seo_title: Israeli electorates
+summary: Designing a map of electorates for Israeli elections. 
 slug: israeli-constituencies
 author: Clinton Boys
 
@@ -11,8 +12,12 @@ lastmod: 2024-06-06T21:21:46-05:00
 feature_image: sample-image-56.jpg
 feature_image_alt: Makhtesh Ramon, Israel, 2014
 
-categories:
-  - Elections
+project types: 
+    - Elections
+
+techstack:
+    - Python
+    - ILPs
 
 toc: false
 related: true
