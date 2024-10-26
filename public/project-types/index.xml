@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clinton Boys</title>
-    <link>http://localhost:1313/project-types/</link>
+    <link>https://cb-com-new.vercel.app/project-types/</link>
     <description>Recent content in Project Types on Clinton Boys</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 10 Oct 2023 03:52:30 -0500</lastBuildDate><atom:link href="http://localhost:1313/project-types/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Oct 2024 03:52:30 -0500</lastBuildDate><atom:link href="https://cb-com-new.vercel.app/project-types/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

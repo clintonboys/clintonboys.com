@@ -9,7 +9,7 @@ draft: false
 date: 2024-06-06T21:21:46-05:00
 lastmod: 2024-06-06T21:21:46-05:00
 
-feature_image: sample-image-56.jpg
+feature_image: map.png
 feature_image_alt: Makhtesh Ramon, Israel, 2014
 
 project types: 

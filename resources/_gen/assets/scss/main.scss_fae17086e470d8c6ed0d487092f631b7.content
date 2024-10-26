@@ -564,7 +564,7 @@ body {
  */
 .container, .single-container-post, .single-container, .container--sm {
   background-color: var(--color-contrast-lower);
-  max-width: 780px;
+  max-width: 850px;
   /* 1 */
   margin-left: auto;
   /* 2 */
@@ -1193,7 +1193,7 @@ body {
   max-width: 900px; }
   @media (min-width: 1200px) {
     .single-container-post {
-      max-width: 780px;
+      max-width: 850px;
       display: grid;
       grid-template-columns: 1fr 15em;
       gap: 1rem; } }

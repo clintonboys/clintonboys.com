@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Clinton Boys</title>
-    <link>http://localhost:1313/categories/llms/</link>
+    <link>https://cb-com-new.vercel.app/categories/llms/</link>
     <description>Recent content in LLMs on Clinton Boys</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 21 Apr 2023 21:21:46 -0500</lastBuildDate><atom:link href="http://localhost:1313/categories/llms/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 21 Apr 2023 21:21:46 -0500</lastBuildDate><atom:link href="https://cb-com-new.vercel.app/categories/llms/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
