@@ -15,18 +15,18 @@
   .post-list-title {
     font-weight: 400;
     margin: 0;
-    font-family: 'PT Sans Narrow';
-    @include font-size('lg');
+    font-family: 'PT Serif';
+    @include font-size('md');
     text-transform: none;
   
     a {
       text-decoration: none;
-      color: var(--color-contrast-medium-high);
+      color: var(--color-contrast-high);
+      text-decoration: underline;
   
       &:hover {
-        color: var(--color-primary);
-        text-decoration: underline;
-      }
+        color: var(--color-contrast-medium);
+    }
     }
   }
   

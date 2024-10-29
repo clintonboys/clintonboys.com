@@ -1,7 +1,7 @@
 ---
 title: Hugo migration
 seo_title: hugo-migration
-summary: Upgrading my personal website with Hugo. 
+summary: Adventures upgrading my personal website with Hugo. 
 description: This is the first full description of a constructed language I have created. It's a hobby I have dabbled in for over twenty years. 
 slug: hugo-migration
 author: Clinton Boys

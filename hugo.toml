@@ -1,6 +1,7 @@
 baseURL = "https://cb-com-new.vercel.app/"
 languageCode = 'en-us'
 title = 'Clinton Boys'
+body_font = "PT Serif"
 
 ### SEO, Analytics & 3rd-party
 enableRobotsTXT = true # To overwrite the theme's robots.txt, add your own in the /layouts/ directory
