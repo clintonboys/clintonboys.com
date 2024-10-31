@@ -34,17 +34,19 @@
 .logo {
     // text-transform: uppercase;
     color: var(--color-contrast-medium-high);
-	font-family: 'PT Serif';
-    @include font-size('lg');
-    font-weight: 200;
+	font-family: 'PT Sans Narrow';
+    text-transform: uppercase;
+    @include font-size('md');
+    font-weight: 600;
     text-decoration: none;
-    // margin-left: 20px;
+    margin-left: 20px;
 }
 
 .menu-link {
     // text-transform: uppercase;
     color: var(--color-contrast-medium-high);
-	font-family: 'PT Serif';
+	font-family: 'PT Sans Narrow';
+    text-transform: uppercase;
     @include font-size('md');
     font-weight: 700;
 
@@ -80,7 +82,8 @@
     font-size: 1rem;
     // text-transform: uppercase;
     color: var(--color-contrast-medium-high);
-	font-family: 'PT Serif';
+	font-family: 'PT Sans Narrow';
+    text-transform: uppercase;
     @include font-size('base');
     font-weight: 300;
     text-align: center;

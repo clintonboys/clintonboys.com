@@ -13,9 +13,9 @@
 
 [[main]]
     # Top-level menu entry
-    identifier = "writing"
+    identifier = "posts"
     name = "Writing"
-    url = "/writing/"
+    url = "/posts/"
     weight = 1
 
 [[main]]

@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
+
+
+    
+
+    
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+  </head><body>
+    <header class="container">
+    <nav class="main-nav" id="js-navbar">
+      <a class="logo" href="http://localhost:1313/">Clinton Boys</a>
+      <ul class="menu" id="js-menu">
+        
+        
+        
+          <li class="menu-item">
+            <a href="/about/" class="menu-link">About</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/now/" class="menu-link">Now</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/posts/" class="menu-link">Writing</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/projects/" class="menu-link">Projects</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="http://mtsolitary.com" class="menu-link">Notes</a>
+          </li>
+        
+        
+        <li class="menu-item--align">
+          <div class="switch">
+            <input class="switch-input" type="checkbox" id="themeSwitch">
+            <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+            <div aria-hidden="true" class="switch-marker"></div>
+          </div>
+        </li>
+      </ul>
+      <span class="nav-toggle" id="js-navbar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+      </span>
+    </nav>
+  </header>
+<main class="section">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">Aggregating Israeli opinion polls</h1>
+    <div class="post-list-meta">
+      <div class="post-list-dates">Mar 13, 2015&nbsp;&middot;&nbsp;5 min.</div>
+      
+      <div class="post-list-categories">
+        
+          <a href="http://localhost:1313/categories/elections/">Elections</a>
+        
+      </div>
+      
+      
+    </div>
+    <p class="page-header-desc"></p>
+    <div class="single-terms">
+      
+    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+
+<img class="feature-image" 
+     srcset="/posts/israeli-poll-aggregator/sample-image-8.jpg 480w, /posts/israeli-poll-aggregator/sample-image-8.jpg 800w"
+     sizes="(max-width: 600px) 480px, 800px"
+     src="/posts/israeli-poll-aggregator/sample-image-8.jpg"
+     alt="Blah">
+</div>
+    <article class="markdown">
+        <h1 id="aggregating-israeli-election-polls"></h>Aggregating Israeli election polls<a href="#aggregating-israeli-election-polls">
+    
+  </a>
+</h1><p><em>March 13, 2015</em></p>
+<p>The Israeli electoral system is completely different to the Australian system. 120 representatives are elected to the Knesset from a single at-large electorate. Members must be registered to a party; parties submit lists of candidates in an order they want them to be elected, candidates are then elected to the Knesset from these lists based on a proportion of votes received by each party, provided the vote is greater than the electoral threshold (currently 3.25%, a significant increase from the previous election).</p>
+<p>It is difficult to provide a probabilistic model of what the Israeli government will look like after the election, even with the significant amount of polling that exists, because Israel&rsquo;s proportional representation system has meant, like many European countries in the post-war period, majority governments never occur. Rather, the election is just the first phase of a process that is followed by political wrangling and deals behind closed doors to form a coalition government (and these are often very unstable: the current election is more than twelve months early because of the breakdown of a previous coalition).</p>
+<p>In these two posts I just want to come up with a simple poll aggregator that adjusts for accuracy in previous contests. There&rsquo;s a whole bunch of opinion polls floating around but most aggregators (like the one on HaAretz) just seem to take a simple average (although I imagine there&rsquo;s plenty of sites in Hebrew that I can&rsquo;t read yet). For this first step, I want to look at the final poll all the polling firms did before the 2013, 2009 and 2006  elections and come up with an accuracy score for each polling firm which will then translate into a weight in the aggregator.</p>
+<p>I looked at the Wikipedia pages for each election, which contain a lot of opinion polling information, and put together lists of final polls before the respective elections (historical_polls) for lots of different polling firms. I also needed the results of each election (results).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span><span style="color:#f92672">from</span> pandas <span style="color:#f92672">import</span> DataFrame
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>historical_polls <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;israeli_pre_election_polls.csv&#39;</span>,delimiter<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>results <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;israeli_results.csv&#39;</span>,delimiter<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>results <span style="color:#f92672">=</span> results<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;year&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>historical_polls <span style="color:#f92672">=</span> historical_polls<span style="color:#f92672">.</span>sort(<span style="color:#e6db74">&#39;pollster&#39;</span>)</span></span></code></pre></div>
+<p>The following code produces a fairly simple weighting mechanism, where a pollster with average error receives a weight of 1; below-average pollsters receive less and above-average more.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>parties <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;Kadima&#39;</span>, <span style="color:#e6db74">&#39;Likud&#39;</span>, <span style="color:#e6db74">&#39;Yis Bet&#39;</span>, <span style="color:#e6db74">&#39;Labor&#39;</span>, <span style="color:#e6db74">&#39;Shas&#39;</span>, <span style="color:#e6db74">&#39;UTJ&#39;</span>, <span style="color:#e6db74">&#39;Hadash&#39;</span>, <span style="color:#e6db74">&#39;Balad&#39;</span>, <span style="color:#e6db74">&#39;Meretz&#39;</span>, <span style="color:#e6db74">&#39;Yesh&#39;</span>, <span style="color:#e6db74">&#39;Otzma&#39;</span>, <span style="color:#e6db74">&#39;Am&#39;</span>, <span style="color:#e6db74">&#39;Hatnuah&#39;</span>, <span style="color:#e6db74">&#39;NU&#39;</span>, <span style="color:#e6db74">&#39;Greens&#39;</span>, <span style="color:#e6db74">&#39;Gil&#39;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>final_frame <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(columns <span style="color:#f92672">=</span> historical_polls[<span style="color:#e6db74">&#39;pollster&#39;</span>]<span style="color:#f92672">.</span>unique(),index<span style="color:#f92672">=</span>results<span style="color:#f92672">.</span>index)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span><span style="color:#66d9ef">for</span> firm <span style="color:#f92672">in</span> historical_polls[<span style="color:#e6db74">&#39;pollster&#39;</span>]<span style="color:#f92672">.</span>unique():
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    sum <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    <span style="color:#66d9ef">for</span> party <span style="color:#f92672">in</span> parties:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>        sum <span style="color:#f92672">=</span> sum <span style="color:#f92672">+</span> abs(results[party] <span style="color:#f92672">-</span> historical_polls[historical_polls[<span style="color:#e6db74">&#39;pollster&#39;</span>]<span style="color:#f92672">==</span>firm]<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;year&#39;</span>)[party])<span style="color:#f92672">*</span>historical_polls[historical_polls[<span style="color:#e6db74">&#39;pollster&#39;</span>]<span style="color:#f92672">==</span>firm]<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;year&#39;</span>)[party]<span style="color:#f92672">/</span><span style="color:#ae81ff">120</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>        days <span style="color:#f92672">=</span> historical_polls[historical_polls[<span style="color:#e6db74">&#39;pollster&#39;</span>]<span style="color:#f92672">==</span>firm]<span style="color:#f92672">.</span>set_index(<span style="color:#e6db74">&#39;year&#39;</span>)[<span style="color:#e6db74">&#39;days_before&#39;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    final_frame[firm] <span style="color:#f92672">=</span> sum
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span><span style="color:#66d9ef">for</span> firm <span style="color:#f92672">in</span> historical_polls[<span style="color:#e6db74">&#39;pollster&#39;</span>]<span style="color:#f92672">.</span>unique():
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    means <span style="color:#f92672">=</span> final_frame<span style="color:#f92672">.</span>mean(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>    final_frame[firm] <span style="color:#f92672">=</span> abs(final_frame[firm] <span style="color:#f92672">-</span> means)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>total_error <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>DataFrame(final_frame<span style="color:#f92672">.</span>mean(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>av_error <span style="color:#f92672">=</span> total_error<span style="color:#f92672">.</span>mean()[<span style="color:#ae81ff">0</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>print av_error
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>df <span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span><span style="color:#f92672">-</span> (final_frame<span style="color:#f92672">.</span>mean(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>) <span style="color:#f92672">-</span> av_error)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;poll_weights.csv&#39;</span>,sep<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>)</span></span></code></pre></div>
+<p>This produces the following output:</p>
+<pre><code>Dahaf               1.412384
+Dialog              1.303897
+Geocartography      1.352617
+Jpost               1.425932
+Maagar Mochot       1.137197
+Midgam              1.271375
+New Wave            0.831736
+Panels              1.176537
+Shvakim Panorama    0.585856
+Smith               0.635624
+Sof Hashavua        0.470412
+Teleseker           0.396433
+dtype: float64
+[Finished in 1.2s]
+</code></pre>
+<p>Having produced a series of reliability weightings, I scraped Wikipedia for opinion polls for this year&rsquo;s election in the last thirty days (following methodology from 538 where polls beyond this period lose their utility) (israeli_2015_polls.csv). We have to combine the reliability weightings with a recency weighting: more recent polls are weighted more highly. We&rsquo;re going to use the brilliant datetime package to sort out all the dates.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#f92672">import</span> datetime
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span><span style="color:#f92672">import</span> numpy <span style="color:#66d9ef">as</span> np
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span><span style="color:#f92672">import</span> pandas <span style="color:#66d9ef">as</span> pd
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>polls <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_table(<span style="color:#e6db74">&#39;israeli_2015_polls.csv&#39;</span>,delimiter<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>polls[<span style="color:#e6db74">&#39;date&#39;</span>] <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>to_datetime(polls[<span style="color:#e6db74">&#39;date&#39;</span>],dayfirst<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>poll_ratings <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;poll_weights.csv&#39;</span>,delimiter<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;,&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>poll_ratings<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#39;pollster&#39;</span>,<span style="color:#e6db74">&#39;rating&#39;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>today <span style="color:#f92672">=</span> datetime<span style="color:#f92672">.</span>datetime(<span style="color:#ae81ff">2015</span>,<span style="color:#ae81ff">3</span>,<span style="color:#ae81ff">12</span>)</span></span></code></pre></div>
+<p>The following function weights polls in the average according to their recency.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">exp_decay</span>(days):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>    days <span style="color:#f92672">=</span> getattr(days,<span style="color:#e6db74">&#34;days&#34;</span>,days)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">.5</span> <span style="color:#f92672">**</span> (days<span style="color:#f92672">/</span><span style="color:#ae81ff">30.</span>)</span></span></code></pre></div>
+<p>We now inner-merge the poll data with the pollster reliability ratings to get a single table, and add in the recency weights to each poll (I briefly forgot the nice pandas way to add columns like this and did it the dumb way with a list).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>polls <span style="color:#f92672">=</span> polls<span style="color:#f92672">.</span>merge(poll_ratings, how<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;inner&#34;</span>, on<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;pollster&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>recency_weights <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>,len(polls[<span style="color:#e6db74">&#39;date&#39;</span>])):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>    recency_weights<span style="color:#f92672">.</span>append(exp_decay(pd<span style="color:#f92672">.</span>to_datetime(today,dayfirst<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)<span style="color:#f92672">-</span>polls[<span style="color:#e6db74">&#39;date&#39;</span>][i]))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>polls[<span style="color:#e6db74">&#39;recency_weights&#39;</span>]<span style="color:#f92672">=</span>recency_weights</span></span></code></pre></div>
+<p>Now we put everything together and add up the average to get a nice poll aggregate:</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>parties <span style="color:#f92672">=</span> [<span style="color:#e6db74">&#34;L&#34;</span>, <span style="color:#e6db74">&#34;YB&#34;</span>, <span style="color:#e6db74">&#34;YA&#34;</span>, <span style="color:#e6db74">&#34;ZC&#34;</span>, <span style="color:#e6db74">&#34;BY&#34;</span>, <span style="color:#e6db74">&#34;S&#34;</span>, <span style="color:#e6db74">&#34;UTJ&#34;</span>, <span style="color:#e6db74">&#34;M&#34;</span>, <span style="color:#e6db74">&#34;A&#34;</span>, <span style="color:#e6db74">&#34;Y&#34;</span>, <span style="color:#e6db74">&#34;K&#34;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span><span style="color:#66d9ef">for</span> party <span style="color:#f92672">in</span> parties:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>    print party<span style="color:#f92672">+</span><span style="color:#e6db74">&#34;: &#34;</span> <span style="color:#f92672">+</span> str(np<span style="color:#f92672">.</span>round(np<span style="color:#f92672">.</span>sum(polls[<span style="color:#e6db74">&#39;rating&#39;</span>]<span style="color:#f92672">*</span>polls[<span style="color:#e6db74">&#39;recency_weights&#39;</span>]<span style="color:#f92672">*</span>polls[party]<span style="color:#f92672">/</span>(polls[<span style="color:#e6db74">&#39;rating&#39;</span>]<span style="color:#f92672">*</span>polls[<span style="color:#e6db74">&#39;recency_weights&#39;</span>])<span style="color:#f92672">.</span>sum()),<span style="color:#ae81ff">2</span>))</span></span></code></pre></div>
+<p>This produced the following output on March 13, four days before the election with the inclusion of the final polls before the four-day embargo:</p>
+<pre><code>L: 22.66
+YB: 5.56
+YA: 12.04
+ZC: 23.76
+BY: 12.05
+S: 6.87
+UTJ: 6.77
+M: 5.24
+A: 12.49
+Y: 4.2
+K: 8.49
+[Finished in 1.0s]
+</code></pre>
+<p>There&rsquo;s a few other intricacies I&rsquo;d like to add to the model in the coming days if I have time:</p>
+<ul>
+<li>performing the aggregate on votes rather than seats and then assigning seats using the Knesset method, including surplus-vote agreements</li>
+<li>adding in weighting for sample sizes (these are very hard to come by for Israeli polls which doesn&rsquo;t sit well with me)</li>
+<li>adjusting for trends to give a forecast for election day (the current model gives a snapshot of what would happen if the election were held today)</li>
+<li>change to a probabilistic model which simulates 10 000 elections and gives probabilities of winning</li>
+<li>add some sort of analysis of Phase 2 of the electoral process, including potential coalitions etc (this is fraught with difficulty however)</li>
+</ul>
+<p><strong>UPDATE</strong> (after the election): My model, like all the polls it aggregated, did not perform very well. Even adding the trend adjustment could not have anticipated the morally questionable tactics used by Netanyahu to increase his seat count in the Knesset. The main lesson I took out of this, other than learning how to build a poll aggregator, is how difficult Israeli elections are to predict. It should be mentioned that the two main sources of error are my estimates of Likud and Habayit Hayehudi; without Netanyahu&rsquo;s last-minute cannibalisation of these votes, my model would have been fairly accurate.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+  
+  
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="http://localhost:1313/posts/2014-08-09-gumtree-scraper/">&laquo; Scraping Gumtree</a>
+      
+      
+        <a class="next" href="http://localhost:1313/posts/the-wonders-of-org-mode/">The wonders of org-mode &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+<script src="http://localhost:1313/main.js"></script>
+
+
+</body>
+</html>

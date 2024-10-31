@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
+
+
+    
+
+    
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+  </head><body>
+    <header class="container">
+    <nav class="main-nav" id="js-navbar">
+      <a class="logo" href="http://localhost:1313/">Clinton Boys</a>
+      <ul class="menu" id="js-menu">
+        
+        
+        
+          <li class="menu-item">
+            <a href="/about/" class="menu-link">About</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/now/" class="menu-link">Now</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/posts/" class="menu-link">Writing</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/projects/" class="menu-link">Projects</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="http://mtsolitary.com" class="menu-link">Notes</a>
+          </li>
+        
+        
+        <li class="menu-item--align">
+          <div class="switch">
+            <input class="switch-input" type="checkbox" id="themeSwitch">
+            <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+            <div aria-hidden="true" class="switch-marker"></div>
+          </div>
+        </li>
+      </ul>
+      <span class="nav-toggle" id="js-navbar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+      </span>
+    </nav>
+  </header>
+<main class="section">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">Conquering the last piece of the stack with React</h1>
+    <div class="post-list-meta">
+      <div class="post-list-dates">Aug 18, 2022&nbsp;&middot;&nbsp;3 min.</div>
+      
+      <div class="post-list-categories">
+        
+          <a href="http://localhost:1313/categories/react/">React</a>
+        
+          <a href="http://localhost:1313/categories/software-development/">Software development</a>
+        
+      </div>
+      
+      
+    </div>
+    <p class="page-header-desc"></p>
+    <div class="single-terms">
+      
+    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+
+<img class="feature-image" 
+     srcset="/posts/react/sample-image-67.jpg 480w, /posts/react/sample-image-67.jpg 800w"
+     sizes="(max-width: 600px) 480px, 800px"
+     src="/posts/react/sample-image-67.jpg"
+     alt="Blah">
+</div>
+    <article class="markdown">
+        <h1 id="conquering-the-last-piece-of-the-stack-with-react"></h>Conquering the last piece of the stack with React<a href="#conquering-the-last-piece-of-the-stack-with-react">
+    
+  </a>
+</h1><p><em>August 18, 2022</em></p>
+<p>I first started programming when I was 16 (so 20 years ago). I have been writing mostly Python for a living, alongside SQL and a bunch of other backend and data things, for 8 years, did quite a bit of other hacky programming during the 4 years of my PhD, and have dabbled in many other programming languages and frameworks for fun and profit over the years. So I have quite a bit of experience writing code. But until very recently I had never touched anything close to the mythical front-end (aside from building and deploying static sites like this one, but I hardly think that counts).</p>
+<p>Learning front-end development as an experienced developer is strange. I learnt React, a Javascript web application framework, and wrote Typescript, which was also new to me and which I quite like. Because I already know how to program, and picking up a new programming language comes fairly easily to me, most of the real difficulty is conceptual, and you do really have to think differently when programming front-end. Performance is crucial, since users feel it as lag between their mouse clicks. Separating state from flow becomes imperative, since without it there is no way to keep track of everything and to manage the abstractions.</p>
+<p>React, and particularly if you add Redux to the mix, really gives an ergonomic and satisfying way to do this. It handles all of the rendering, making the behaviour of the program and how it updates and manages the state of components all automatic, according to some (ostensibly) very simple inheritance rules.</p>
+<p>If you&rsquo;re like me, a technical person with a fair amount of programming experience but has not written a line of front-end code in their life, I think React and Typescript are a good place to start. In fact even if you have been writing Python for ten years (or twenty!), I think it&rsquo;s a better idea to learn something new for front-end development, instead of trying to learn Django or Flask or some other Python-based framework.</p>
+<p>Just like there is a &ldquo;stack&rdquo; in backend / systems programming, most of which you never interact with (TCP/IP, machine code, compilation, garbage collection, etc), the same is true of front-end programming. Frameworks like React handle rendering, dynamic sizing between devices, communication with backend APIs, and the dynamic building of HTML components based on user input and state. It&rsquo;s a very different world but it&rsquo;s fun out there.</p>
+<h2 id="links-and-resources"></h>Links and resources<a href="#links-and-resources">
+    
+  </a>
+</h2><ul>
+<li>A nice <a href="https://www.joshwcomeau.com/react/why-react-re-renders/" target="_blank" rel="noopener">explanation</a> of the most counter-intuitive bit of React and similar frameworks coming from the backend: its re-rendering logic.</li>
+<li><a href="https://redux.js.org/tutorials/essentials/part-2-app-structure" target="_blank" rel="noopener">redux</a> seems to be the state-of-the-art way to manage state in a React app of a certain complexity.</li>
+<li><a href="https://vxlabs.com/2022/06/12/typescript-development-with-emacs-tree-sitter-and-lsp-in-2022/" target="_blank" rel="noopener">Guide</a> to Typescript development in emacs.</li>
+</ul>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+  
+  
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="http://localhost:1313/posts/the-ubiquity-of-linear-programming/">&laquo; The ubiquity of linear programming</a>
+      
+      
+        <a class="next" href="http://localhost:1313/posts/building-ios-apps-with-react-native/">Building iOS apps with React Native &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+<script src="http://localhost:1313/main.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
+
+
+    
+
+    
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+  </head><body>
+    <header class="container">
+    <nav class="main-nav" id="js-navbar">
+      <a class="logo" href="http://localhost:1313/">Clinton Boys</a>
+      <ul class="menu" id="js-menu">
+        
+        
+        
+          <li class="menu-item">
+            <a href="/about/" class="menu-link">About</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/now/" class="menu-link">Now</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/posts/" class="menu-link">Writing</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/projects/" class="menu-link">Projects</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="http://mtsolitary.com" class="menu-link">Notes</a>
+          </li>
+        
+        
+        <li class="menu-item--align">
+          <div class="switch">
+            <input class="switch-input" type="checkbox" id="themeSwitch">
+            <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+            <div aria-hidden="true" class="switch-marker"></div>
+          </div>
+        </li>
+      </ul>
+      <span class="nav-toggle" id="js-navbar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+      </span>
+    </nav>
+  </header>
+<main class="section">
+<div class="container">
+  <section class="page-header">
+    <h1 class="page-header-title">The ubiquity of linear programming</h1>
+    <div class="post-list-meta">
+      <div class="post-list-dates">Jan 8, 2022&nbsp;&middot;&nbsp;2 min.</div>
+      
+      <div class="post-list-categories">
+        
+          <a href="http://localhost:1313/categories/maths/">Maths</a>
+        
+      </div>
+      
+      
+    </div>
+    <p class="page-header-desc"></p>
+    <div class="single-terms">
+      
+    </div>
+  </section>
+</div>
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+  
+
+
+<img class="feature-image" 
+     srcset="/posts/the-ubiquity-of-linear-programming/sample-image-64.jpg 480w, /posts/the-ubiquity-of-linear-programming/sample-image-64.jpg 800w"
+     sizes="(max-width: 600px) 480px, 800px"
+     src="/posts/the-ubiquity-of-linear-programming/sample-image-64.jpg"
+     alt="Golan Heights, Israel, 2021">
+</div>
+    <article class="markdown">
+        <h1 id="the-ubiquity-of-linear-programming"></h>The ubiquity of linear programming<a href="#the-ubiquity-of-linear-programming">
+    
+  </a>
+</h1><p><em>January 8, 2022</em></p>
+<p><a href="https://stackoverflow.com/questions/1857244/what-are-the-differences-between-np-np-complete-and-np-hard" target="_blank" rel="noopener">NP-hard</a> problems are the most interesting and important class of computational problems. In my experience (and many others&rsquo; I imagine), most hard optimization problems that arise in real applications, and remain interesting enough to keep looking at after an initial investigation, while also being approachable with heuristic methods, are NP-hard.</p>
+<p>There are many different and equivalent ways to state NP-hard problems in general. Indeed there is a famous <a href="https://en.wikipedia.org/wiki/Karp%27s_21_NP-complete_problems" target="_blank" rel="noopener">list</a> written by Karp in the early &rsquo;70s of common NP-complete problems that any NP-hard problem can be “reduced to in polynomial time” to any one on the list. This has a precise meaning, but really just means you can just choose your favourite NP-complete problem and pretend that all NP-hard problems are just instances of it, up to some “Karp reduction” that is (at least theoretically) trivial.</p>
+<p>One of the problems on this list is “integer linear programming”, and I have always thought this gives the most natural language for formulating and understanding NP-hard problems. Most of the other problems on the list require some additional structure to be present: a graph, usually. But to write out a linear program formulation you just need to decide what your variables are, and write down all the constraints between them. It&rsquo;s very explicit, which can certainly help in the formulation stage when the precise definition of every single constraint in the problem may not be clear.</p>
+<p>Which problem from the list you use as the template for your specific problem, when it comes to actually <em>implementing</em> it, may be a different story altogether, one which depends on data structures, available commercial solvers, pre-existing additional structure in the problem, programming language choice and many other things. But I think that in the ideation and formulation stage, it is usually much easier to think about every problem as just a very large integer linear program.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="http://localhost:1313/posts/my-setup/">&laquo; My setup</a>
+      
+      
+        <a class="next" href="http://localhost:1313/posts/react/">Conquering the last piece of the stack with React &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+<script src="http://localhost:1313/main.js"></script>
+
+
+</body>
+</html>

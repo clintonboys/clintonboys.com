@@ -7,5 +7,113 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Mon, 08 Sep 2014 21:21:46 -0500</lastBuildDate><atom:link href="http://localhost:1313/categories/web-development/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Ten years of this site</title>
+      <link>http://localhost:1313/posts/ten-years/</link>
+      <pubDate>Tue, 06 Aug 2024 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/ten-years/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Notes on Notes on the Synthesis of Form</title>
+      <link>http://localhost:1313/posts/notes-on-notes-on-the-synthesis-of-form/</link>
+      <pubDate>Wed, 15 May 2024 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/notes-on-notes-on-the-synthesis-of-form/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The Green Chain Walk</title>
+      <link>http://localhost:1313/posts/green-chain-walk/</link>
+      <pubDate>Fri, 08 Mar 2024 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/green-chain-walk/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The relationship between technical debt and technical documentation</title>
+      <link>http://localhost:1313/posts/the-relationship-between-technical-debt-and-technical-documentation/</link>
+      <pubDate>Sat, 02 Dec 2023 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/the-relationship-between-technical-debt-and-technical-documentation/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>This is your brain on ChatGPT</title>
+      <link>http://localhost:1313/posts/this-is-your-brain-on-chatgpt/</link>
+      <pubDate>Fri, 21 Apr 2023 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/this-is-your-brain-on-chatgpt/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Building iOS apps with React Native</title>
+      <link>http://localhost:1313/posts/building-ios-apps-with-react-native/</link>
+      <pubDate>Fri, 10 Feb 2023 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/building-ios-apps-with-react-native/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Conquering the last piece of the stack with React</title>
+      <link>http://localhost:1313/posts/react/</link>
+      <pubDate>Thu, 18 Aug 2022 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/react/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The ubiquity of linear programming</title>
+      <link>http://localhost:1313/posts/the-ubiquity-of-linear-programming/</link>
+      <pubDate>Sat, 08 Jan 2022 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/the-ubiquity-of-linear-programming/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>My setup</title>
+      <link>http://localhost:1313/posts/my-setup/</link>
+      <pubDate>Tue, 23 Mar 2021 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/my-setup/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>The wonders of org-mode</title>
+      <link>http://localhost:1313/posts/the-wonders-of-org-mode/</link>
+      <pubDate>Wed, 20 Jan 2021 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/the-wonders-of-org-mode/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Aggregating Israeli opinion polls</title>
+      <link>http://localhost:1313/posts/israeli-poll-aggregator/</link>
+      <pubDate>Fri, 13 Mar 2015 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/israeli-poll-aggregator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scraping Gumtree</title>
+      <link>http://localhost:1313/posts/2014-08-09-gumtree-scraper/</link>
+      <pubDate>Mon, 08 Sep 2014 21:21:46 -0500</pubDate>
+      
+      <guid>http://localhost:1313/posts/2014-08-09-gumtree-scraper/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

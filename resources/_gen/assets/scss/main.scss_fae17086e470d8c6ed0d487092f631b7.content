@@ -645,15 +645,18 @@ body {
         /* Hide nav toggle on desktop */ } }
 .logo {
   color: var(--color-contrast-medium-high);
-  font-family: 'PT Serif';
-  font-size: var(--font-size-lg);
+  font-family: 'PT Sans Narrow';
+  text-transform: uppercase;
+  font-size: var(--font-size-md);
   line-height: calc(8px + 2ex);
-  font-weight: 200;
-  text-decoration: none; }
+  font-weight: 600;
+  text-decoration: none;
+  margin-left: 20px; }
 
 .menu-link {
   color: var(--color-contrast-medium-high);
-  font-family: 'PT Serif';
+  font-family: 'PT Sans Narrow';
+  text-transform: uppercase;
   font-size: var(--font-size-md);
   line-height: calc(8px + 2ex);
   font-weight: 700; }
@@ -679,7 +682,8 @@ body {
     display: flex;
     font-size: 1rem;
     color: var(--color-contrast-medium-high);
-    font-family: 'PT Serif';
+    font-family: 'PT Sans Narrow';
+    text-transform: uppercase;
     font-size: var(--font-size-base);
     line-height: calc(8px + 2ex);
     font-weight: 300;

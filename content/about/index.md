@@ -17,7 +17,7 @@ I graduated from the University of Sydney in 2011 with a First Class Honours deg
 
 In 2015 I moved from Sydney to Tel Aviv and worked there for eight years at various startups, ending up at [Via](http://ridewithvia.com). In 2023 I relocated with Via to London with my family. 
 
-After my move to working in technology, I initially called myself a data scientist, but over the years I have become more and more of an [all-rounder](https://en.wikipedia.org/wiki/All-rounder), incorporating software engineering, algorithm development and a lot of other tools into my toolkit. If you're interested in more details, you can find my resume here. My [blog]({{< ref "writing" >}}) also contains a long history of posts about things I have been interested in over the years. 
+After my move to working in technology, I initially called myself a data scientist, but over the years I have become more and more of an [all-rounder](https://en.wikipedia.org/wiki/All-rounder), incorporating software engineering, algorithm development and a lot of other tools into my toolkit. If you're interested in more details, you can find my resume here. My [blog]({{< ref "posts" >}}) also contains a long history of posts about things I have been interested in over the years. 
 
 If you'd like to know more about the tools I use to get things done, you can find my answers to the [usesthis](http://usesthis.com) questionnaire here. You can also explore my [digital garden](http://mtsolitary.com). 
 
