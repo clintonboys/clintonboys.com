@@ -11,7 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-feature_image: logo.png
+portfolio_image: logo.png
 feature_image_alt: New website
 
 project types: 

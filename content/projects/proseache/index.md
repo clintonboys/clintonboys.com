@@ -11,7 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-feature_image: proseache.png
+portfolio_image: proseache.png
 feature_image_alt: New website
 
 project types: 

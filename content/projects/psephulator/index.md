@@ -12,7 +12,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-feature_image: pseph.png
+portfolio_image: pseph.png
 feature_image_alt: New website
 
 project types: 

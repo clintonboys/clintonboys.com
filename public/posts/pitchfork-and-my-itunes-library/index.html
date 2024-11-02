@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
+
+
+    
+
+    
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+  </head><body>
+    <header class="container">
+    <nav class="main-nav" id="js-navbar">
+      <a class="logo" href="http://localhost:1313/">Clinton Boys</a>
+      <ul class="menu" id="js-menu">
+        
+        
+        
+          <li class="menu-item">
+            <a href="/about/" class="menu-link">About</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/now/" class="menu-link">Now</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/posts/" class="menu-link">Writing</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/projects/" class="menu-link">Projects</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="http://mtsolitary.com" class="menu-link">Notes</a>
+          </li>
+        
+        
+        <li class="menu-item--align">
+          <div class="switch">
+            <input class="switch-input" type="checkbox" id="themeSwitch">
+            <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+            <div aria-hidden="true" class="switch-marker"></div>
+          </div>
+        </li>
+      </ul>
+      <span class="nav-toggle" id="js-navbar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+      </span>
+    </nav>
+  </header>
+<main class="section">
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+
+  
+
+
+<div class="feature-image-wrap">
+<img class="feature-image" 
+     srcset="/posts/pitchfork-and-my-itunes-library/sample-image-7.jpg 480w, /posts/pitchfork-and-my-itunes-library/sample-image-7.jpg 800w"
+     sizes="(max-width: 600px) 480px, 800px"
+     src="/posts/pitchfork-and-my-itunes-library/sample-image-7.jpg"
+     alt="Spencer Butte, Oregon, 2013">
+     <div class="feature-image-text">Spencer Butte, Oregon, 2013</div>
+    </div>
+</div>
+    <article class="markdown">
+        <h1 id="pitchfork-and-my-itunes-library"></h>Pitchfork and my iTunes library<a href="#pitchfork-and-my-itunes-library">
+    
+  </a>
+</h1><p><em>March 30, 2015</em></p>
+<p>I listen to a lot of music and for more than a decade now my main source of discovering new music has been <a href="http://www.pitchfork.com" target="_blank" rel="noopener">Pitchfork.com</a>, particularly since all my friends only listen to hard trap and hip-hop so getting diverse recommendations from them can be difficult.</p>
+<p>Pitchfork is a fairly divisive source of musical recommendations. Some people swear by it; some people hate it. I think Pitchfork is quite a useful source of music discovery, and I think they have some great writers on staff, especially for many of the genres I like. I don&rsquo;t swear by it, and I do try to read other sources for recommendations, but I think my musical tastes are heavily influenced by the website.</p>
+<p>I decided to try and quantify exactly how much of my music taste and listening preferences are influenced by Pitchfork.com.</p>
+<p>This required me to obtain two things:</p>
+<ul>
+<li>Pitchfork review data. Thankfully someone had already scraped this <a href="http://jmduke.com/posts/analysing-pitchfork-using-pandas/" target="_blank" rel="noopener">here</a> (this page is worth a read).</li>
+<li>My iTunes library data. I got a new computer quite recently so I unfortunately only have about 18 months of listening data, and I listen to more than half of my music in Spotify now. This should be enough to get an idea of my listening habits however. I used the <a href="https://github.com/liamks/pyitunes" target="_blank" rel="noopener">pyiTunes</a> tool to convert the iTunes XML export to a useful Python object.</li>
+</ul>
+<p>First we look at the average score associated to a Pitchfork review:</p>
+<pre><code>reviews = pd.read_csv('reviews.csv')
+print np.round(np.mean(reviews['score']),3)
+
+6.974
+[Finished in 0.5s]
+</code></pre>
+<p>This is a pretty high average score! It turns out the artists that I listen to have a higher average score though:</p>
+<pre><code>library = Library('Library.xml')
+artists_with_plays = []
+for id, song in library.songs.items():
+    if song.play_count &gt; 0:
+        artists_with_plays.append(song.artist)
+artists_with_plays=list(set(artists_with_plays))
+means = []
+for artist in artists_with_plays:
+    means.append(np.mean(reviews[reviews['artist']==artist]['score']))
+means = [x for x in means if not math.isnan(x)]
+print &quot;Average Pitchfork score of artists: &quot; + str(np.round(np.mean(means),3))
+
+Average Pitchfork score of artists: 7.427
+[Finished in 16.7s]
+</code></pre>
+<p>This isn&rsquo;t a huge increase; only about 6.5%. Let&rsquo;s work out the average <strong>weighted by play count</strong> now. We change the code a little bit:</p>
+<pre><code>def GetMeanRating(artist):
+    return np.mean(reviews['score'][reviews['artist']==artist])
+
+artists_with_plays = {}
+for id, song in library.songs.items():
+    if song.play_count &gt; 0:
+        artists_with_plays[song.artist] = artists_with_plays.get(song.artist,0)+song.play_count
+means = []
+total_plays = 0
+for artist in artists_with_plays.keys():
+    means.append(GetMeanRating(artist)*artists_with_plays[artist])
+    if not math.isnan(GetMeanRating(artist)):
+        total_plays = total_plays + artists_with_plays[artist]
+means = [x for x in means if not math.isnan(x)]
+print &quot;Average play-weighted Pitchfork score of artists: &quot; + str(np.round(np.sum(means)/total_plays,3))
+
+Average play-weighted Pitchfork score of artists: 7.590
+[Finished in 16.3s]
+</code></pre>
+<p>This is an increase of nearly 9% on the review mean. This analysis is a little imperfect because I haven&rsquo;t compensated for the fact that the artist names in the two different datasets may not be the same (for example even if they are capitalised differently they won&rsquo;t match with the code I&rsquo;ve written above). This is a small issue however. I&rsquo;d like to add in my Spotify listening data and old Last.fm data if I get a chance to get a fuller picture of precisely how much of a Pitchfork sycophant I am. I&rsquo;d also like an idea of how my listening habits have changed over time.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="http://localhost:1313/posts/israeli-poll-aggregator/">&laquo; Aggregating Israeli opinion polls</a>
+      
+      
+        <a class="next" href="http://localhost:1313/posts/my-setup-2015/">My setup (2015) &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+<script src="http://localhost:1313/main.js"></script>
+
+
+</body>
+</html>

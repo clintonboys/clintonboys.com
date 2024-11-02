@@ -12,7 +12,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-feature_image: cricket-sim.png
+portfolio_image: cricket-sim.png
 feature_image_alt: New website
 
 project types: 

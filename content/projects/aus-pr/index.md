@@ -11,8 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-feature_image: governments.png
-feature_image_alt: New website
+portfolio_image: governments.png
 
 project types: 
     - Elections

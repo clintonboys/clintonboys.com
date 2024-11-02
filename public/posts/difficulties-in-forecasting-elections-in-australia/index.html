@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
+
+
+    
+
+    
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+  </head><body>
+    <header class="container">
+    <nav class="main-nav" id="js-navbar">
+      <a class="logo" href="http://localhost:1313/">Clinton Boys</a>
+      <ul class="menu" id="js-menu">
+        
+        
+        
+          <li class="menu-item">
+            <a href="/about/" class="menu-link">About</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/now/" class="menu-link">Now</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/posts/" class="menu-link">Writing</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/projects/" class="menu-link">Projects</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="http://mtsolitary.com" class="menu-link">Notes</a>
+          </li>
+        
+        
+        <li class="menu-item--align">
+          <div class="switch">
+            <input class="switch-input" type="checkbox" id="themeSwitch">
+            <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+            <div aria-hidden="true" class="switch-marker"></div>
+          </div>
+        </li>
+      </ul>
+      <span class="nav-toggle" id="js-navbar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+      </span>
+    </nav>
+  </header>
+<main class="section">
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+
+  
+
+
+<div class="feature-image-wrap">
+<img class="feature-image" 
+     srcset="/posts/difficulties-in-forecasting-elections-in-australia/sample-image-8.jpg 480w, /posts/difficulties-in-forecasting-elections-in-australia/sample-image-8.jpg 800w"
+     sizes="(max-width: 600px) 480px, 800px"
+     src="/posts/difficulties-in-forecasting-elections-in-australia/sample-image-8.jpg"
+     alt="Blue Mountains, New South Wales, 2014">
+     <div class="feature-image-text">Blue Mountains, New South Wales, 2014</div>
+    </div>
+</div>
+    <article class="markdown">
+        <h1 id="difficulties-in-forecasting-elections-in-australia"></h>Difficulties in forecasting elections in Australia<a href="#difficulties-in-forecasting-elections-in-australia">
+    
+  </a>
+</h1><p><em>October 6, 2014</em></p>
+<p>In this post I will outline several of the difficulties involved in creating a model for forecasting Australian parliamentary elections.</p>
+<h3 id="introduction"></h>Introduction<a href="#introduction">
+    
+  </a>
+</h3><p>In recent years, statistical approaches to electoral forecasting have become particularly popular. The most famous example in the past decade has been the rise of Nate Silver and his FiveThirtyEight model, which has been immensely successful in predicting outcomes of American elections, as well as bringing the notion of precise and robust electoral forecasting to the forefront of public discourse.</p>
+<p>In such an environment it is natural to ask why there has been no equally sophisticated and successful attempt to replicate Silver&rsquo;s approach outside of the United States. The answer is that, by and large, the United States as a country, and its political system, are particularly well-suited for the type of analysis provided by Silver.</p>
+<p>On the other hand, the Australian electoral system, and its child systems in various Australian states, together with Australia&rsquo;s geographic and demographic make up, make it particularly poorly suited for the robust regression analysis of opinion polls propounded by Silver. In this post I want to discuss the main reasons for these difficulties, and present some comments and suggestions towards a solution. The hope is that I can recast the discussion towards formulating a different model, specifically designed for the Australian system, that is able to provide a similarly accurate and robust analysis of Australian elections (this has always been an ongoing long-term project of mine!). Such a model would ostensibly be adaptable to elections in the UK, with some changes (the UK also presents some other unique challenges).</p>
+<p>In order to begin discussing any kind of analysis of polls for Australian elections, it is necessary to concede that sample sizes and poll frequencies here are nowhere near those achieved in the United States. This will have an unavoidable and significant effect on accuracy of results and sizes of confidence intervals that <strong>cannot be compensated for</strong>, without actually physically conducting more polls.</p>
+<p>There is an understandable desire for electoral forecasting to be accurate. Nate Silver has done his own craft a disservice in a sense: his two phenomenally accurate predictions of US presidential elections were still to some extent the result of luck: there is always inaccuracy when attempting to predict a complicated process with limited data, and this is something that needs to be accepted will be a greater trade-off in the Australian case (I&rsquo;m still dreading the time that one of Silver&rsquo;s forecasts is wrong and people write off the statistical method forever, even though he&rsquo;s bound to be wrong 1/20th of the time). Nevertheless, I am confident that a fair level of accuracy can be obtained with a careful approach that uses all possible data:</p>
+<ul>
+<li>an average of opinion polls, weighted for pollster past accuracy</li>
+<li>demographic data at a seat level</li>
+<li>past election data</li>
+<li>redistribution data</li>
+<li>preference data</li>
+<li>an economic index</li>
+</ul>
+<p>to obtain probabilistic forecasts for each seat (this is my ultimate goal).</p>
+<h3 id="constituency-sizes"></h>Constituency sizes<a href="#constituency-sizes">
+    
+  </a>
+</h3><p>It is worthwhile noting that FiveThirtyEight does <strong>not</strong> attempt to forecast US congressional elections on a district-by-district basis (instead providing a probabilistic model for the Congressional makeup as a whole). This however is the sort of analysis one would expect in Australian elections to provide an analog to Silver&rsquo;s presidential forecasts. Except on an occasional, one-off basis, individual seats are <strong>never</strong> polled in Australia, so seat-by-seat data is non-existent (and when it is available, is too sporadic to be worthwhile).</p>
+<p>The most robust and accurate opinion polling is conducted on a <strong>countrywide</strong> basis; often these countrywide results are broken down into states, but never into electoral districts. There should be a way to use clustering and nearest-neighbour analysis to obtain extrapolated polling estimates for individual districts. Indeed, FiveThirtyEight.com does a similar thing, using polls in &ldquo;similar&rdquo; states (where clustering is used to obtain a measure of similarity) as proxies for polls. For example, if a poll is released in New Mexico, and New Mexico has quite similar demographic features to Arkansas, the New Mexican poll probably has some bearing on trends in Arkansas.</p>
+<p>In Australia, my idea is to turn each national poll into one hundred and fifty simulated seat polls, based on trends and demographic data, and then to perform the usual aggregation and regression on these polls.</p>
+<h3 id="preferential-voting"></h>Preferential voting<a href="#preferential-voting">
+    
+  </a>
+</h3><p>A successful forecasting model for elections in Australia needs to take into account its unique preferential voting system. In federal elections, voters are required to number all candidates in order of preference: only numbering a first preference results in an informal vote (in various states, preferential voting is optional, and there is a significant movement, particularly among prominent psephologists, to move to optional preferential voting on a federal level).</p>
+<p>The deciding metric in the election of an Australian Member of Parliament is his/her two-party preferred vote, which is obtained through a complicated process of simulating multiple elections using preferences from voters, discarding the least popular option at each run-off until only two candidates remain and it becomes a simple first-past-the-post race. Data on preferences is very difficult to obtain precisely, since it changes from year-to-year quite significantly, usually based on &ldquo;how-to-vote cards&rdquo;, which are materials handed out by party volunteers at polling places suggesting preference orderings.</p>
+<p>This is a difficult problem without an optimal solution. The best solution would be to obtain historical preference profiles for individual seats and use these to simulate each election as a series of run-off elections like the AEC does, performing this a number of times to obtain some sort of probabilistic estimate.</p>
+<h3 id="redistributions"></h>Redistributions<a href="#redistributions">
+    
+  </a>
+</h3><p>As a fantastic bulwark against gerrymandering, and in a democratic statement that should be the envy of democracies worldwide, electoral districts in Australia are not fixed, but have boundaries which change according to shifting demographics as measured by census data. This makes precise comparisons between historical elections extremely difficult on a seat-by-seat basis, as many seats cease to exist between elections, or have become so distorted from their original boundaries that there is no meaning in comparing them.</p>
+<p>If possible, I would like to obtain historical election data for, and extrapolate polling data to, polling places rather than just electoral districts. Since it is always entire polling places that are reassigned to new or different districts, this will allow a more accurate calculation of the model on redistributed seats (Antony Green regularly performs the explicit calculation of &ldquo;redoing&rdquo; elections on new boundaries: a model would need to be built, preferably using demographic data from the census, to project opinion polling data onto polling places).</p>
+<p>It should be clear that this would be an extremely lengthy and time-consuming process not without significant complications:</p>
+<ul>
+<li>there are <a href="http://www.aec.gov.au/about_aec/cea-notices/election-pp.htm" target="_blank" rel="noopener">nearly 8,000</a> polling places in the country for federal elections</li>
+<li>census data can be obtained grouped by federal district (and in some states, by state district), but <strong>not</strong> by polling place</li>
+<li>I&rsquo;m not sure if state electoral commissions publish results by polling place</li>
+</ul>
+<p>It seems to me that, given the infeasibility of performing the above task, a better idea would be to perform some sort of correction for redistributions similar to what Antony Green does when calculating &ldquo;nominal swings&rdquo; (his figures get used by all media outlets all over the country).</p>
+<h3 id="existing-models"></h>Existing models<a href="#existing-models">
+    
+  </a>
+</h3><p>There are plenty of existing models on the web for forecasting elections, or at the very least analysing and aggregating polls. As far as I&rsquo;m aware, none provide the full model that I am proposing.</p>
+<ul>
+<li><a href="http://kevinbonham.blogspot.com.au" target="_blank" rel="noopener">Kevin Bonham</a>. This is the best model in my opinion, combining a fairly simple model with interesting and thoughtful analysis of elections and polls. He was also nice enough to send me some of his data.</li>
+<li><a href="http://blogs.crikey.com.au/pollbludger/" target="_blank" rel="noopener">The Poll Bludger</a> (Crikey). Does a fairly simple poll aggregator. Otherwise lots of good analysis of elections and Australian politics.</li>
+<li><a href="http://www.phantomtrend.com/" target="_blank" rel="noopener">The Phantom Trend</a>. A sophisticated aggregator with some accuracy weightings. Has the humility to refer to themselves as &ldquo;Like Nate Silver, only less accurate.&rdquo;</li>
+</ul>
+<h3 id="economic-index"></h>Economic index<a href="#economic-index">
+    
+  </a>
+</h3><p>Finally, I&rsquo;ll explain why it&rsquo;s difficult to economic index to include in our model. In the FiveThirtyEight model, the underlying idea is that a strong economy tends to help the incumbent party. I haven&rsquo;t done a huge amount of research but I would assume this assumption is weaker in Australian parliamentary elections than in American presidential elections.</p>
+<p>The FiveThirtyEight model uses only a few variables to come up with an economic index:</p>
+<ul>
+<li>nonfarm payrolls (this variable measures unemployment)</li>
+<li>personal income</li>
+<li>industrial production</li>
+<li>personal consumption expenditure</li>
+<li>inflation</li>
+<li>forecasted GDP</li>
+<li>stock market</li>
+</ul>
+<p>The problem with trying to use this data (or similar data) in Australia is that very few economic variables are published monthly or more frequently by the ABS. This makes using the economic index to guide a forecast built with poll data problematic, as the economic index is operating on a different timescale. I spent a bit of time trying to come up with analogous variables to these to use, but there just aren&rsquo;t enough variables released on small timescales to make what I would think is a reasonable index.</p>
+<p>For this reason, at least at first, I&rsquo;m not going to include an economic index in my model, until I can find a way to make a more meaningful one, and until I have done more research to test which particular economic variables are correlated strongly with election results. This again highlights the significant difficulties in aping the FiveThirtyEight model, and is another reason why I&rsquo;m planning on coming up with a different idea.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="http://localhost:1313/posts/2014-08-09-gumtree-scraper/">&laquo; Scraping Gumtree</a>
+      
+      
+        <a class="next" href="http://localhost:1313/posts/correcting-for-reliability-in-australian-election-polls/">Correcting for reliability in Australian election polls &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+<script src="http://localhost:1313/main.js"></script>
+
+
+</body>
+</html>

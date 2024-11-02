@@ -11,7 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-feature_image: nbcom.png
+portfolio_image: nbcom.png
 feature_image_alt: New website
 
 project types: 

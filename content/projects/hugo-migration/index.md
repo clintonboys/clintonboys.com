@@ -12,6 +12,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
+portfolio_image: mts9-1-grey.jpg
 feature_image: mts9-1-grey.jpg
 feature_image_alt: Mt. Solitary, Blue Mountains, Australia
 
@@ -31,4 +32,14 @@ techstack:
 
 ## Introduction
 
-I recently migrated my personal website to Hugo after ten years of blogging with Jekyll. 
+As foreshadowed in [this post]({{< ref "posts/ten-years" >}}), I recently migrated my personal website to Hugo after ten years of blogging with Jekyll. 
+
+## New features
+
+- Portfolio
+- Dark mode
+- 
+
+## Process
+
+

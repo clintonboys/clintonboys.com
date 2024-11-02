@@ -15,7 +15,7 @@ feature_image_alt: Berlin, Germany, 2012
 
 *November 30, 2019*
 
-In this post I answer the interview questions from [The Setup](http://usesthis.com/). This is an updated version of [this post]({{ site.baseurl }}{% link _posts/2016-10-15-uses-this-old.md %}) which I wrote in 2016, which is itself an updated version of a [post]({{ site.baseurl }}{% link _posts/2015-04-02-uses-this-very_old.md %}) which I wrote in 2015. 
+In this post I answer the interview questions from [The Setup](http://usesthis.com/). This is an updated version of [this post]({{< ref "posts/uses-this-2016" >}}) which I wrote in 2016, which is itself an updated version of a [post]({{< ref "posts/uses-this-2015" >}}) which I wrote in 2015. 
 
 **Who are you and what do you do?**
 

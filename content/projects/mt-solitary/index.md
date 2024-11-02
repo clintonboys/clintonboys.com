@@ -11,8 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-feature_image: mtsol.png
-feature_image_alt: New website
+portfolio_image: mtsol.png
 
 project types: 
     - Technical

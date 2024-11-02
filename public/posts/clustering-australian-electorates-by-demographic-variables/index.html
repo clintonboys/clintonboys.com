@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
+
+
+    
+
+    
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+  </head><body>
+    <header class="container">
+    <nav class="main-nav" id="js-navbar">
+      <a class="logo" href="http://localhost:1313/">Clinton Boys</a>
+      <ul class="menu" id="js-menu">
+        
+        
+        
+          <li class="menu-item">
+            <a href="/about/" class="menu-link">About</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/now/" class="menu-link">Now</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/posts/" class="menu-link">Writing</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/projects/" class="menu-link">Projects</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="http://mtsolitary.com" class="menu-link">Notes</a>
+          </li>
+        
+        
+        <li class="menu-item--align">
+          <div class="switch">
+            <input class="switch-input" type="checkbox" id="themeSwitch">
+            <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+            <div aria-hidden="true" class="switch-marker"></div>
+          </div>
+        </li>
+      </ul>
+      <span class="nav-toggle" id="js-navbar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+      </span>
+    </nav>
+  </header>
+<main class="section">
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+
+  
+
+
+<div class="feature-image-wrap">
+<img class="feature-image" 
+     srcset="/posts/clustering-australian-electorates-by-demographic-variables/sample-image-18.jpg 480w, /posts/clustering-australian-electorates-by-demographic-variables/sample-image-18.jpg 800w"
+     sizes="(max-width: 600px) 480px, 800px"
+     src="/posts/clustering-australian-electorates-by-demographic-variables/sample-image-18.jpg"
+     alt="Cradle Mountain, Tasmania, 2014">
+     <div class="feature-image-text">Cradle Mountain, Tasmania, 2014</div>
+    </div>
+</div>
+    <article class="markdown">
+        <h1 id="clustering-australian-electorates-by-demographic-variables"></h>Clustering Australian electorates by demographic variables<a href="#clustering-australian-electorates-by-demographic-variables">
+    
+  </a>
+</h1><p><em>February 13, 2015</em></p>
+<p>In this post we&rsquo;ll use census data to cluster Australian federal electorates according to their demographic similarity. This is a good exercise for me to use some basic clustering algorithms, and it&rsquo;s a component I&rsquo;d like to use in my final model.</p>
+<p>Remember that the important quantity in Australian parliamentary elections is the <strong>swing</strong> in each seat. If we can estimate the swing in each seat, we can assign seats using the Mackerras pendulum and get an election result.</p>
+<p>Suppose we have come up with a nation-wide (or state-wide, or nation-wide but broken down by state) measure of swing. In a basic model, there may be an adjustment on a seat-by-seat basis based on a number of factors. Clustering seats together aims to eliminate this guesswork (such as assigning seats a classification like &ldquo;rural&rdquo; or &ldquo;urban&rdquo;). We will make small swing adjustments based on which clusters our seats belong to, calibrated by their mean collective swing as cluster at previous contests. As we mentioned in a previous [post]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %}), this is all made much more complicated by redistributions.</p>
+<p>Here I just want to choose the demographic variables we want to feed into the clustering algorithm, and come up with a sensible number of clusters.</p>
+<p>Below is a list of the census demographic variables which for the 2006 census are most highly correlated with two-party preferred Labor vote at the 2007 Federal election (or equivalently with two-party preferred Coalition vote, since COA = 100 – ALP).</p>
+<ol>
+<li>Percentage of labour force in electorate aged 45 and above</li>
+<li>Migrant index (the migrant index is an average of four statistics which are presumably highly interdependent and which all have very similar correlation coefficients: percentage overseas born, percentage non-English speaking born, percentage speaking English badly or not at all, percentage speaking language other than English at home)</li>
+<li>Percentage of electorate employed in agriculture</li>
+<li>Percentage of electorate who are unemployed</li>
+<li>Median age in electorate</li>
+<li><a href="http://en.wikipedia.org/wiki/Dependency_ratio" target="_blank" rel="noopener">Total dependency ratio</a></li>
+<li>Percentage of electorate aged between 15 and 24</li>
+<li>Percentage of electorate who are Catholic</li>
+<li>Logarithm of population density of electorate (The logarithm gives a more intuitive statistic given the highly skewed nature of Australian electorates and the rural/urban divide)</li>
+</ol>
+<p>I thought the most interesting thing on this list was the first statistic, which had the highest correlation coefficient of -0.7267, and is plotted below:</p>
+<p><img src="https://github.com/clintonboys/clintonboys.github.io/blob/master/_posts/labour.png?raw=true"
+	alt="Labour force and Labor vote" 
+	class="single-post-image" 
+	loading="lazy"
+	decoding="async"
+	></p>
+<p>Personally, if I had to guess, I would have thought these two variables were positively correlated – persons over 45 in the labour force would seem to be prime candidates for old-school union movement Labor voters to me. But as you can see, the higher the proportion of the electorate in this category, the lower the Labor vote. And this relationship explains nearly 3/4 of the variance in 2PP Labor vote. There&rsquo;s probably some confounding going on to explain this.</p>
+<p>There is an obvious issue here that I&rsquo;m only using data from 2006, which is nearly 10 years ago. I&rsquo;m in the process of obtaining the 2011 census data by electoral district to see how these variables look at the 2013 election, but the ABS doesn&rsquo;t make it as easy as it could. For the moment let&rsquo;s just use these as a proof-of-concept.</p>
+<p>So now we want to cluster seats according to these nine variables. This should provide a more sophisticated framework for swing and trend adjustment than I&rsquo;ve seen in other models, which might take into account the rural/urban divide (which is accounted for mainly in variables 2, 3 and 5 above). They also usually take into account &ldquo;sophomore surges&rdquo; for members on their first reelection (variable 10 above); this is something I&rsquo;ll talk about in another post.</p>
+<p>I just want to use simple <em>k</em>-means clustering, and I&rsquo;m going to use R. The main difficulty with <em>k</em>-means clustering is to choose the right value of <em>k</em>, the number of clusters. This requires a bit of trial-and-error to get right and needs to be calibrated against my own knowledge of Australian electorates.</p>
+<p>The file I have here, called <code>2006_census_data_by_division.csv</code>, is available in the GitHub repository. It took me a while to make, and contains columns for a bunch of interesting demographic variables, with rows labelled by the Commonwealth Electoral Divisions used in the 2007 election. I&rsquo;m still in the process of making this work for the 2011 census data (which is harder to get at).</p>
+<pre><code>census &lt;- read.csv('2006_census_data_by_division.csv')
+pop &lt;- as.numeric(as.character(census$Total_population[1:150]))
+</code></pre>
+<p>Need to do a whole bunch of coercion; notice that we convert to character before numeric otherwise we get the numeric value of the ASCII characters.</p>
+<pre><code>Var1 &lt;- as.numeric(as.character(census$Labour_force_aged_45_years_and_over22[1:150]))/pop
+</code></pre>
+<p>Get the four variables that are part of our Migrant Index and average them up.</p>
+<pre><code>Mig1 &lt;- as.numeric(as.character(census$Overseas[1:150]))
+Mig2 &lt;- as.numeric(as.character(census$NonEngBorn.[1:150]))
+Mig3 &lt;- as.numeric(as.character(census$Persons_who_speak_English_not_well_or_not_at_all[1:150]))/pop
+Mig4 &lt;- as.numeric(as.character(census$Persons_speaking_a_language_other_than_English_at_home[1:150]))/pop
+Var2 &lt;- (Mig1+Mig2+Mig3+Mig4)/4
+</code></pre>
+<p>Get the remaining variables.</p>
+<pre><code>Var3 &lt;- as.numeric(as.character(census$Persons_employed_in_agriculture[1:150]))/pop
+Var4 &lt;- as.numeric(as.character(census$Unemployed_persons[1:150]))/pop
+Var5 &lt;- as.numeric(as.character(census$Median_age[1:150]))
+Var6 &lt;- as.numeric(as.character(census$Total_dependency_ratio3[1:150]))
+Var7 &lt;- as.numeric(as.character(census$Persons_aged_15_to_24_years[1:150]))/pop
+Var8 &lt;- as.numeric(as.character(census$Catholic.[1:150]))
+Var9 &lt;- log(as.numeric(as.character(census$Population_density1[1:150])))
+divs &lt;- census$division[1:150]
+</code></pre>
+<p>Put everything into a dataframe that allows us to cluster.</p>
+<pre><code>df = data.frame(divs, Var1, Var2, Var3, Var4, Var5, Var6, Var7, Var8, Var9)
+</code></pre>
+<p>If we start with two clusters, the algorithm seems smart enough to give us some sort of urban/rural divide.</p>
+<pre><code>two_clusters &lt;- kmeans(df[,2:10],2)
+
+two_clusters
+
+K-means clustering with 2 clusters of sizes 94, 56
+</code></pre>
+<p>The differences between the means on <code>Var3</code>  and <code>Var9</code> (workers in agriculture and population density, respectively) in the two clusters is illuminating:</p>
+<pre><code>&gt; two_clusters$centers[,'Var3']
+          1           2 
+0.002537473 0.033720529 
+&gt; two_clusters$centers[,'Var9']
+       1        2 
+6.789696 1.967118 
+</code></pre>
+<p>as it gives a good picture of the urban/rural divide.</p>
+<p>I think that a larger number of clusters will give a much more useful interpretation of what&rsquo;s going on, and a more useful component to my eventual model. I want to use the largest number of clusters that gives a clustering so that I can still give some sort of qualitative description of each cluster (the way I&rsquo;ve described the two clusters above as urban and rural). Let&rsquo;s see if I can do this with six clusters.</p>
+<p>In the spirit of including this as a piece in my Emma Chisit model, I translated this code to Python using scikit-learn (which also has a great out-of-the-box kmeans algorithm) and came up with the following groups:</p>
+<ul>
+<li>leafy outer suburban seats</li>
+<li>regional seats</li>
+<li>inner city seats</li>
+<li>poorer suburban seats</li>
+<li>wealthy suburban seats</li>
+<li>&ldquo;Bigger than Peru&rdquo; seats (Durack and Lingiari)</li>
+</ul>
+<p>Trying with numbers larger than six gave me more groups than I could reasonably name, so these seem like good clusters to go with.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="http://localhost:1313/posts/correcting-for-reliability-in-australian-election-polls/">&laquo; Correcting for reliability in Australian election polls</a>
+      
+      
+        <a class="next" href="http://localhost:1313/posts/israeli-poll-aggregator/">Aggregating Israeli opinion polls &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+<script src="http://localhost:1313/main.js"></script>
+
+
+</body>
+</html>

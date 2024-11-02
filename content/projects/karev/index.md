@@ -6,13 +6,12 @@ slug: karev
 author: Clinton Boys
 
 draft: false
-date: 2024-10-20T03:52:30-05:00
+date: 2025-02-20T03:52:30-05:00
 lastmod: 
 expiryDate: 
 publishDate: 
 
-feature_image: conlang.png
-feature_image_alt: Conlang
+portfolio_image: conlang.png
 
 project types: 
     - Personal
@@ -24,5 +23,5 @@ techstack:
 
 # Karev
 
-*November 2024*
+*February 2025*
 

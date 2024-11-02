@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us"><head>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,10 +30,7 @@
 
 
 
-  
-  
-
-<link rel="stylesheet" href="https://cb-com-new.vercel.app/scss/main.min.css" />
+<link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
 
 
     
@@ -53,7 +50,7 @@
   </head><body>
     <header class="container">
     <nav class="main-nav" id="js-navbar">
-      <a class="logo" href="https://cb-com-new.vercel.app/">Clinton Boys</a>
+      <a class="logo" href="http://localhost:1313/">Clinton Boys</a>
       <ul class="menu" id="js-menu">
         
         
@@ -112,9 +109,9 @@
 
 <div class="feature-image-wrap">
 <img class="feature-image" 
-     srcset="/projects/israeli-constituencies/map.png 480w, /projects/israeli-constituencies/map.png 800w"
+     srcset="/projects/israeli-constituencies/sample-image-56.jpg 480w, /projects/israeli-constituencies/sample-image-56.jpg 800w"
      sizes="(max-width: 600px) 480px, 800px"
-     src="/projects/israeli-constituencies/map.png"
+     src="/projects/israeli-constituencies/sample-image-56.jpg"
      alt="Makhtesh Ramon, Israel, 2014">
      <div class="feature-image-text">Makhtesh Ramon, Israel, 2014</div>
     </div>
@@ -130,159 +127,184 @@
 <li><a href="https://media22.bechirot.gov.il/files/expb.csv" target="_blank" rel="noopener">Votes</a> by polling place. A table of votes for each of the 39 &ldquo;ptakim&rdquo;, or symbols representing party tickets in the elections for the 24th Knesset in March 2021, aggregated by &ldquo;kalpi&rdquo;, or polling place. There are over 12,000 of these around the country, including all around the West Bank, in all the settlements where Israeli citizens live. This data is available from the Knesset&rsquo;s <a href="https://votes22.bechirot.gov.il/cityresults" target="_blank" rel="noopener">website</a>.</li>
 <li><a href="https://bechirot24.bechirot.gov.il/election/Kneset24/Documents/%d7%9b%d7%a0%d7%a1%d7%aa%2024/statistic_report_tofes_b_15_3_21.xlsx" target="_blank" rel="noopener">Addresses</a> of polling places. A list of all the polling places and their physical address, in Hebrew. This is also available from the Knesset&rsquo;s <a href="https://bechirot24.bechirot.gov.il/election/Kneset24/Pages/BallotsList.aspx" target="_blank" rel="noopener">website</a>.</li>
 </ul>
-<h3 id="statistical-areas"></h>Statistical areas<a href="#statistical-areas">
+<h2 id="statistical-areas"></h>Statistical areas<a href="#statistical-areas">
     
   </a>
-</h3><p>We read the file containing the &ldquo;layer&rdquo; of the statistical areas. This is a Geodatabase file containing geometric information about each area, stored as a polygon in the <code>geometry</code> column, some metadata about each area, and demographic statistics (breakdowns by gender and age, and whether the area is populated by Jews or not). Of the demographic data, we only require the total population column for this project, to allow us to cluster statistical areas together into electorates, so we only select the metadata, the total population and the geometry.</p>
+</h2><p>We read the file containing the &ldquo;layer&rdquo; of the statistical areas. This is a Geodatabase file containing geometric information about each area, stored as a polygon in the <code>geometry</code> column, some metadata about each area, and demographic statistics (breakdowns by gender and age, and whether the area is populated by Jews or not). Of the demographic data, we only require the total population column for this project, to allow us to cluster statistical areas together into electorates, so we only select the metadata, the total population and the geometry.</p>
 <p>We plot these areas coloured by the population column just to check we are onto something.</p>
-<p><img src="/assets/areas_by_pop_total.png"
+<p>
+	
+		
+	
+	
+	<img src="/projects/israeli-constituencies/areas_by_pop_total_hu460002463200063607.webp"
+	width="800"
+	height="480"
+	
 	alt="Statistical areas by population" 
 	class="single-post-image" 
 	loading="lazy"
 	decoding="async"
-	></p>
-<h3 id="polling-place-locations"></h>Polling place locations<a href="#polling-place-locations">
+	>
+</p>
+<h2 id="polling-place-locations"></h>Polling place locations<a href="#polling-place-locations">
     
   </a>
-</h3><p>The data from the Knesset website gives addresses (in Hebrew) for each polling place. We are going to use a <a href="https://en.wikipedia.org/wiki/Address_geocoding" target="_blank" rel="noopener">geocoding</a> API to get the latitude and longitude coordinates of each polling place. This will allow us to associate each polling place to a unique statistical area.</p>
+</h2><p>The data from the Knesset website gives addresses (in Hebrew) for each polling place. We are going to use a <a href="https://en.wikipedia.org/wiki/Address_geocoding" target="_blank" rel="noopener">geocoding</a> API to get the latitude and longitude coordinates of each polling place. This will allow us to associate each polling place to a unique statistical area.</p>
 <p>I first tried using <a href="https://developer.here.com" target="_blank" rel="noopener">Here</a> for the geocoding API. It actually took some searching to find something that worked well in Hebrew, was decently accurate, free and not Google. I got what seemed like pretty decent results with this free API, with the geocoding succeeding 84% of the time. Note that&rsquo;s still almost seven hundred addresses I would need to encode manually (or with a better API) however.</p>
 <p>Then I looked at the data, and noticed much of it was completely wrong. At first I used just the address and town fields to build the address; with this I managed to tag 84% of the polling places. When I added the &ldquo;location&rdquo; field as well, I actually got worse results, I guess because I was confusing the API.</p>
 <p>So in the end, with my tail between my legs, I signed up for Google Cloud Platform and used about 30 of my 300 USD credits doing the geocoding through the best geocoding API money can buy. You really cannot come close to Google and it&rsquo;s a bit scary how good they are. I got 97.2% of the addresses coded, leaving me with only 122 to encode manually.</p>
-<pre><code>def get_geopoints_for_polling_places(df) -&gt; pd.DataFrame:
-    token = config['tokens']['here_api_key']
-    google_token = config['tokens']['google_key']
-    geopoints = {}
-    df['address'] = df['מקום קלפי'] + ', ' + df['כתובת קלפי'].str.replace(',',' ') + ', ' + df['שם ישוב בחירות']
-    num_unique_addresses = len(df['address'].unique())
-    total_addresses = len(df['address'])
-    print(f'Starting for {num_unique_addresses} unique addresses ({total_addresses} total)')
-    for address in df['address'].unique():
-        url = f'https://maps.googleapis.com/maps/api/geocode/json?address={address}&amp;key={google_token}'
-        response = requests.get(url).json()
-        try:
-            pt = response.get('results')[0].get('geometry').get('location')
-            lat, lng = pt['lat'], pt['lng']
-            print(f'Got lat,lng ({lat}, {lng}) for address {address}')
-        except:
-            lat, lng = 0, 0
-            print(f'Failed to get lat,lng for address {address}')            
-        geopoints[address] = [lat, lng]
-        time.sleep(1)            
-    df['geo_pts'] = df['address'].apply(lambda x: geopoints.get(x, None))
-    df.to_csv('with_geopts.csv')
-    return df
-pp_locs = get_geopoints_for_polling_places(pp_locs)
-
-#+RESULTS:
-Starting for 4352 unique addresses (12127 total)
-Got lat,lng (31.7946846, 35.2223086) for address סמינר בית יעקב - עטרת חן, מגן האלף 1 , ירושלים
-Got lat,lng (31.7945351, 35.2202451) for address ת&quot;ת זיכרו תורת משה, פישל אהרן 29 , ירושלים
-Got lat,lng (31.78370409999999, 35.2245094) for address משרד החינוך, שבטי ישראל 27 , ירושלים
-Got lat,lng (31.7948576, 35.2201558) for address בי&quot;ס יסודי בית מרגלית, נטר 40 , ירושלים
-...
-: Found locations for 11971 out of 12127 polling places (98.7%).
-: Found locations for 4230 out of 4352 unique addresses (97.2%).
-</code></pre>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_geopoints_for_polling_places</span>(df) <span style="color:#f92672">-&gt;</span> pd<span style="color:#f92672">.</span>DataFrame:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    token <span style="color:#f92672">=</span> config[<span style="color:#e6db74">&#39;tokens&#39;</span>][<span style="color:#e6db74">&#39;here_api_key&#39;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    google_token <span style="color:#f92672">=</span> config[<span style="color:#e6db74">&#39;tokens&#39;</span>][<span style="color:#e6db74">&#39;google_key&#39;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    geopoints <span style="color:#f92672">=</span> {}
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    df[<span style="color:#e6db74">&#39;address&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;מקום קלפי&#39;</span>] <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;, &#39;</span> <span style="color:#f92672">+</span> df[<span style="color:#e6db74">&#39;כתובת קלפי&#39;</span>]<span style="color:#f92672">.</span>str<span style="color:#f92672">.</span>replace(<span style="color:#e6db74">&#39;,&#39;</span>,<span style="color:#e6db74">&#39; &#39;</span>) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;, &#39;</span> <span style="color:#f92672">+</span> df[<span style="color:#e6db74">&#39;שם ישוב בחירות&#39;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>    num_unique_addresses <span style="color:#f92672">=</span> len(df[<span style="color:#e6db74">&#39;address&#39;</span>]<span style="color:#f92672">.</span>unique())
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>    total_addresses <span style="color:#f92672">=</span> len(df[<span style="color:#e6db74">&#39;address&#39;</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>    print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Starting for </span><span style="color:#e6db74">{</span>num_unique_addresses<span style="color:#e6db74">}</span><span style="color:#e6db74"> unique addresses (</span><span style="color:#e6db74">{</span>total_addresses<span style="color:#e6db74">}</span><span style="color:#e6db74"> total)&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>    <span style="color:#66d9ef">for</span> address <span style="color:#f92672">in</span> df[<span style="color:#e6db74">&#39;address&#39;</span>]<span style="color:#f92672">.</span>unique():
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>        url <span style="color:#f92672">=</span> <span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;https://maps.googleapis.com/maps/api/geocode/json?address=</span><span style="color:#e6db74">{</span>address<span style="color:#e6db74">}</span><span style="color:#e6db74">&amp;key=</span><span style="color:#e6db74">{</span>google_token<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>        response <span style="color:#f92672">=</span> requests<span style="color:#f92672">.</span>get(url)<span style="color:#f92672">.</span>json()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>            pt <span style="color:#f92672">=</span> response<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;results&#39;</span>)[<span style="color:#ae81ff">0</span>]<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;geometry&#39;</span>)<span style="color:#f92672">.</span>get(<span style="color:#e6db74">&#39;location&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>            lat, lng <span style="color:#f92672">=</span> pt[<span style="color:#e6db74">&#39;lat&#39;</span>], pt[<span style="color:#e6db74">&#39;lng&#39;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Got lat,lng (</span><span style="color:#e6db74">{</span>lat<span style="color:#e6db74">}</span><span style="color:#e6db74">, </span><span style="color:#e6db74">{</span>lng<span style="color:#e6db74">}</span><span style="color:#e6db74">) for address </span><span style="color:#e6db74">{</span>address<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>        <span style="color:#66d9ef">except</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>            lat, lng <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>, <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>            print(<span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;Failed to get lat,lng for address </span><span style="color:#e6db74">{</span>address<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)            
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>        geopoints[address] <span style="color:#f92672">=</span> [lat, lng]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        time<span style="color:#f92672">.</span>sleep(<span style="color:#ae81ff">1</span>)            
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    df[<span style="color:#e6db74">&#39;geo_pts&#39;</span>] <span style="color:#f92672">=</span> df[<span style="color:#e6db74">&#39;address&#39;</span>]<span style="color:#f92672">.</span>apply(<span style="color:#66d9ef">lambda</span> x: geopoints<span style="color:#f92672">.</span>get(x, <span style="color:#66d9ef">None</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;with_geopts.csv&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    <span style="color:#66d9ef">return</span> df
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>pp_locs <span style="color:#f92672">=</span> get_geopoints_for_polling_places(pp_locs)</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>#+RESULTS:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>Starting for 4352 unique addresses (12127 total)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>Got lat,lng (31.7946846, 35.2223086) for address סמינר בית יעקב - עטרת חן, מגן האלף 1 , ירושלים
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4</span><span>Got lat,lng (31.7945351, 35.2202451) for address ת&#34;ת זיכרו תורת משה, פישל אהרן 29 , ירושלים
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5</span><span>Got lat,lng (31.78370409999999, 35.2245094) for address משרד החינוך, שבטי ישראל 27 , ירושלים
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6</span><span>Got lat,lng (31.7948576, 35.2201558) for address בי&#34;ס יסודי בית מרגלית, נטר 40 , ירושלים
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7</span><span>...
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8</span><span>: Found locations for 11971 out of 12127 polling places (98.7%).
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">9</span><span>: Found locations for 4230 out of 4352 unique addresses (97.2%).</span></span></code></pre></div>
 <p>Let&rsquo;s plot the points we got just to see everything looks right.</p>
-<p><img src="/assets/pp_locs.png"
+<p>
+	
+		
+	
+	
+	<img src="/projects/israeli-constituencies/pp_locs_hu12207999778432604340.webp"
+	width="800"
+	height="480"
+	
 	alt="Statistical areas by population" 
 	class="single-post-image" 
 	loading="lazy"
 	decoding="async"
-	></p>
-<h3 id="get-the-statistical-area-for-each-polling-place"></h>Get the statistical area for each polling place<a href="#get-the-statistical-area-for-each-polling-place">
+	>
+</p>
+<h2 id="get-the-statistical-area-for-each-polling-place"></h>Get the statistical area for each polling place<a href="#get-the-statistical-area-for-each-polling-place">
     
   </a>
-</h3><p>The statistical areas file is in a special <a href="https://epsg.io/2039" target="_blank" rel="noopener">Israeli</a> projection and we need to convert it to the usual <a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank" rel="noopener">WSG84</a> system using <code>.to_crs()</code> before we are able to run the &ldquo;within&rdquo; command to see which area the polling places belong to.</p>
-<pre><code>from shapely.geometry import Point, MultiPolygon
-pts = []
-polys = []
-poly_ids = []
-
-statistical_areas = statistical_areas.to_crs(&quot;EPSG:4326&quot;)
-statistical_areas['area_id'] = statistical_areas['YISHUV_STAT11']
-statistical_areas_polygons = [(MultiPolygon(row['geometry']), row['area_id']) for _, row in statistical_areas.iterrows()]
-for i, row in pp_locs.iterrows():
-    pt = Point(float(row['Longitude']), float(row['Latitude']))
-    pts.append(pt)
-    polys_containing = [statistical_areas_polygon for statistical_areas_polygon in statistical_areas_polygons if pt.within(statistical_areas_polygon[0])]
-    if len(polys_containing) &gt;= 1:
-        polys.append(polys_containing[0][0])
-        poly_ids.append(polys_containing[0][1])
-    else:
-        polys.append(0)
-        poly_ids.append(0)
-pp_locs['pt'] = pts
-pp_locs['poly'] = polys
-pp_locs['poly_id'] = poly_ids
-pp_locs.to_csv('with_polys.csv')
-
-: Found a single polygon match for 11718 out of 12127 polling places (96.6%).
-: Found a single polygon match for 4103 out of 4352 (unique) polling place addresses (94.3%).
-</code></pre>
+</h2><p>The statistical areas file is in a special <a href="https://epsg.io/2039" target="_blank" rel="noopener">Israeli</a> projection and we need to convert it to the usual <a href="https://en.wikipedia.org/wiki/World_Geodetic_System" target="_blank" rel="noopener">WSG84</a> system using <code>.to_crs()</code> before we are able to run the &ldquo;within&rdquo; command to see which area the polling places belong to.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#f92672">from</span> shapely.geometry <span style="color:#f92672">import</span> Point, MultiPolygon
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>pts <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>polys <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>poly_ids <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>statistical_areas <span style="color:#f92672">=</span> statistical_areas<span style="color:#f92672">.</span>to_crs(<span style="color:#e6db74">&#34;EPSG:4326&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>statistical_areas[<span style="color:#e6db74">&#39;area_id&#39;</span>] <span style="color:#f92672">=</span> statistical_areas[<span style="color:#e6db74">&#39;YISHUV_STAT11&#39;</span>]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>statistical_areas_polygons <span style="color:#f92672">=</span> [(MultiPolygon(row[<span style="color:#e6db74">&#39;geometry&#39;</span>]), row[<span style="color:#e6db74">&#39;area_id&#39;</span>]) <span style="color:#66d9ef">for</span> _, row <span style="color:#f92672">in</span> statistical_areas<span style="color:#f92672">.</span>iterrows()]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span><span style="color:#66d9ef">for</span> i, row <span style="color:#f92672">in</span> pp_locs<span style="color:#f92672">.</span>iterrows():
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>    pt <span style="color:#f92672">=</span> Point(float(row[<span style="color:#e6db74">&#39;Longitude&#39;</span>]), float(row[<span style="color:#e6db74">&#39;Latitude&#39;</span>]))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>    pts<span style="color:#f92672">.</span>append(pt)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>    polys_containing <span style="color:#f92672">=</span> [statistical_areas_polygon <span style="color:#66d9ef">for</span> statistical_areas_polygon <span style="color:#f92672">in</span> statistical_areas_polygons <span style="color:#66d9ef">if</span> pt<span style="color:#f92672">.</span>within(statistical_areas_polygon[<span style="color:#ae81ff">0</span>])]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>    <span style="color:#66d9ef">if</span> len(polys_containing) <span style="color:#f92672">&gt;=</span> <span style="color:#ae81ff">1</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>        polys<span style="color:#f92672">.</span>append(polys_containing[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">0</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        poly_ids<span style="color:#f92672">.</span>append(polys_containing[<span style="color:#ae81ff">0</span>][<span style="color:#ae81ff">1</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#66d9ef">else</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>        polys<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>        poly_ids<span style="color:#f92672">.</span>append(<span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>pp_locs[<span style="color:#e6db74">&#39;pt&#39;</span>] <span style="color:#f92672">=</span> pts
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>pp_locs[<span style="color:#e6db74">&#39;poly&#39;</span>] <span style="color:#f92672">=</span> polys
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>pp_locs[<span style="color:#e6db74">&#39;poly_id&#39;</span>] <span style="color:#f92672">=</span> poly_ids
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>pp_locs<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;with_polys.csv&#39;</span>)</span></span></code></pre></div>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-md" data-lang="md"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>: Found a single polygon match for 11718 out of 12127 polling places (96.6%).
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>: Found a single polygon match for 4103 out of 4352 (unique) polling place addresses (94.3%).</span></span></code></pre></div>
 <p>Note that we expected to see fewer matches here (an additional 117 on top of the 122 the geocoding failed for), since there are polling places scattered throughout the West Bank clearly not associated to any statistical area.</p>
-<h3 id="load-the-results"></h>Load the results<a href="#load-the-results">
+<h2 id="load-the-results"></h>Load the results<a href="#load-the-results">
     
   </a>
-</h3><p>We are going to load the results and then join the statistical area data and group by.</p>
-<pre><code>def get_votes_by_polling_place() -&gt; pd.DataFrame:
-    votes_pp = pd.read_csv(config['files']['polling_place_results'])
-    votes_pp.columns = VOTES_COLUMNS
-    return votes_pp
-
-results = get_votes_by_polling_place()
-results['id'] = results['Semel Yishuv'].astype(str) + '_' + results['Kalpi'].astype(str)
-pp_locs['id'] = pp_locs['סמל ישוב בחירות'].astype(str) + '_' + pp_locs['סמל קלפי'].astype(str)
-master_df = results.merge(pp_locs, on='id')
-master_df.to_csv('master.csv')
-
-master_df = pd.read_csv('/Users/clinton/Documents/technical/dev/israel_constituencies/master.csv')
-master_df_grouped = master_df.groupby('poly').agg('sum').reset_index()
-master_df_grouped.to_csv('/Users/clinton/Documents/technical/dev/israel_constituencies/master_agged.csv')
-master_df_grouped['winner'] = master_df_grouped[['Labor-Meretz-Gesher', 'Yamina', 'UTJ', 'Joint List', 'The Israelis',
-    'Tzomet', 'Religious Zionism', 'Pensioners', 'New Economic',
-    'Common Alliance', 'Human Dignity', 'Bible Bloc', 'Social Leadership',
-    'Jewish Heart', 'Me and You', 'Blue and White', 'Yisrael Beiteinu',
-    'Likud', 'Meretz', 'Kama', 'New World', 'Us', 'UAL', 'Yesh Atid',
-    'Pirate Party', 'Atzmeinu', 'Maan', 'Hetz', 'Daam',
-    'Impossible Possible', 'Shama', 'New Order', 'Mishpat Tzedek',
-    'Rapeh only Health', 'Hope for Change', 'Am Shalem', 'Democratic',
-    'Shas', 'New Hope']].idxmax(axis=1)
-geometries = []
-for i, row in master_df_grouped.iterrows():
-    try:
-        geometries.append(shapely.wkt.loads(row['poly']))
-    except Exception as e:
-        print(e)
-        geometries.append(shapely.geometry.Point(0,0))
-master_df_grouped['geometry'] = geometries
-gdf = gpd.GeoDataFrame(master_df_grouped, geometry=master_df_grouped['geometry'])
-gdf.plot('winner', figsize=(100, 80), legend=True)
-fname = '/Users/clinton/roam/img/winner_by_area.png'
-plt.savefig(fname)
-</code></pre>
-<p><img src="/assets/winner_by_area.png"
+</h2><p>We are going to load the results and then join the statistical area data and group by.</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">get_votes_by_polling_place</span>() <span style="color:#f92672">-&gt;</span> pd<span style="color:#f92672">.</span>DataFrame:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    votes_pp <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(config[<span style="color:#e6db74">&#39;files&#39;</span>][<span style="color:#e6db74">&#39;polling_place_results&#39;</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    votes_pp<span style="color:#f92672">.</span>columns <span style="color:#f92672">=</span> VOTES_COLUMNS
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>    <span style="color:#66d9ef">return</span> votes_pp
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>results <span style="color:#f92672">=</span> get_votes_by_polling_place()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>results[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">=</span> results[<span style="color:#e6db74">&#39;Semel Yishuv&#39;</span>]<span style="color:#f92672">.</span>astype(str) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_&#39;</span> <span style="color:#f92672">+</span> results[<span style="color:#e6db74">&#39;Kalpi&#39;</span>]<span style="color:#f92672">.</span>astype(str)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>pp_locs[<span style="color:#e6db74">&#39;id&#39;</span>] <span style="color:#f92672">=</span> pp_locs[<span style="color:#e6db74">&#39;סמל ישוב בחירות&#39;</span>]<span style="color:#f92672">.</span>astype(str) <span style="color:#f92672">+</span> <span style="color:#e6db74">&#39;_&#39;</span> <span style="color:#f92672">+</span> pp_locs[<span style="color:#e6db74">&#39;סמל קלפי&#39;</span>]<span style="color:#f92672">.</span>astype(str)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>master_df <span style="color:#f92672">=</span> results<span style="color:#f92672">.</span>merge(pp_locs, on<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;id&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>master_df<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;master.csv&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>master_df <span style="color:#f92672">=</span> pd<span style="color:#f92672">.</span>read_csv(<span style="color:#e6db74">&#39;/Users/clinton/Documents/technical/dev/israel_constituencies/master.csv&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>master_df_grouped <span style="color:#f92672">=</span> master_df<span style="color:#f92672">.</span>groupby(<span style="color:#e6db74">&#39;poly&#39;</span>)<span style="color:#f92672">.</span>agg(<span style="color:#e6db74">&#39;sum&#39;</span>)<span style="color:#f92672">.</span>reset_index()
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>master_df_grouped<span style="color:#f92672">.</span>to_csv(<span style="color:#e6db74">&#39;/Users/clinton/Documents/technical/dev/israel_constituencies/master_agged.csv&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>master_df_grouped[<span style="color:#e6db74">&#39;winner&#39;</span>] <span style="color:#f92672">=</span> master_df_grouped[[<span style="color:#e6db74">&#39;Labor-Meretz-Gesher&#39;</span>, <span style="color:#e6db74">&#39;Yamina&#39;</span>, <span style="color:#e6db74">&#39;UTJ&#39;</span>, <span style="color:#e6db74">&#39;Joint List&#39;</span>, <span style="color:#e6db74">&#39;The Israelis&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>    <span style="color:#e6db74">&#39;Tzomet&#39;</span>, <span style="color:#e6db74">&#39;Religious Zionism&#39;</span>, <span style="color:#e6db74">&#39;Pensioners&#39;</span>, <span style="color:#e6db74">&#39;New Economic&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>    <span style="color:#e6db74">&#39;Common Alliance&#39;</span>, <span style="color:#e6db74">&#39;Human Dignity&#39;</span>, <span style="color:#e6db74">&#39;Bible Bloc&#39;</span>, <span style="color:#e6db74">&#39;Social Leadership&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span>    <span style="color:#e6db74">&#39;Jewish Heart&#39;</span>, <span style="color:#e6db74">&#39;Me and You&#39;</span>, <span style="color:#e6db74">&#39;Blue and White&#39;</span>, <span style="color:#e6db74">&#39;Yisrael Beiteinu&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#e6db74">&#39;Likud&#39;</span>, <span style="color:#e6db74">&#39;Meretz&#39;</span>, <span style="color:#e6db74">&#39;Kama&#39;</span>, <span style="color:#e6db74">&#39;New World&#39;</span>, <span style="color:#e6db74">&#39;Us&#39;</span>, <span style="color:#e6db74">&#39;UAL&#39;</span>, <span style="color:#e6db74">&#39;Yesh Atid&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>    <span style="color:#e6db74">&#39;Pirate Party&#39;</span>, <span style="color:#e6db74">&#39;Atzmeinu&#39;</span>, <span style="color:#e6db74">&#39;Maan&#39;</span>, <span style="color:#e6db74">&#39;Hetz&#39;</span>, <span style="color:#e6db74">&#39;Daam&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>    <span style="color:#e6db74">&#39;Impossible Possible&#39;</span>, <span style="color:#e6db74">&#39;Shama&#39;</span>, <span style="color:#e6db74">&#39;New Order&#39;</span>, <span style="color:#e6db74">&#39;Mishpat Tzedek&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>    <span style="color:#e6db74">&#39;Rapeh only Health&#39;</span>, <span style="color:#e6db74">&#39;Hope for Change&#39;</span>, <span style="color:#e6db74">&#39;Am Shalem&#39;</span>, <span style="color:#e6db74">&#39;Democratic&#39;</span>,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>    <span style="color:#e6db74">&#39;Shas&#39;</span>, <span style="color:#e6db74">&#39;New Hope&#39;</span>]]<span style="color:#f92672">.</span>idxmax(axis<span style="color:#f92672">=</span><span style="color:#ae81ff">1</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span>geometries <span style="color:#f92672">=</span> []
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span><span style="color:#66d9ef">for</span> i, row <span style="color:#f92672">in</span> master_df_grouped<span style="color:#f92672">.</span>iterrows():
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>    <span style="color:#66d9ef">try</span>:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>        geometries<span style="color:#f92672">.</span>append(shapely<span style="color:#f92672">.</span>wkt<span style="color:#f92672">.</span>loads(row[<span style="color:#e6db74">&#39;poly&#39;</span>]))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>    <span style="color:#66d9ef">except</span> <span style="color:#a6e22e">Exception</span> <span style="color:#66d9ef">as</span> e:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span>        print(e)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>        geometries<span style="color:#f92672">.</span>append(shapely<span style="color:#f92672">.</span>geometry<span style="color:#f92672">.</span>Point(<span style="color:#ae81ff">0</span>,<span style="color:#ae81ff">0</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>master_df_grouped[<span style="color:#e6db74">&#39;geometry&#39;</span>] <span style="color:#f92672">=</span> geometries
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>gdf <span style="color:#f92672">=</span> gpd<span style="color:#f92672">.</span>GeoDataFrame(master_df_grouped, geometry<span style="color:#f92672">=</span>master_df_grouped[<span style="color:#e6db74">&#39;geometry&#39;</span>])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>gdf<span style="color:#f92672">.</span>plot(<span style="color:#e6db74">&#39;winner&#39;</span>, figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">100</span>, <span style="color:#ae81ff">80</span>), legend<span style="color:#f92672">=</span><span style="color:#66d9ef">True</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span>fname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;/Users/clinton/roam/img/winner_by_area.png&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>plt<span style="color:#f92672">.</span>savefig(fname)</span></span></code></pre></div>
+<p><img src="winner_by_area.png"
 	alt="Statistical areas by population" 
 	class="single-post-image" 
 	loading="lazy"
 	decoding="async"
 	></p>
 <p>This map has a lot of holes, and it&rsquo;s because of this:</p>
-<pre><code>: Statistical areas: 3187.\nStatistical areas with no polling place: 2232
-</code></pre>
+
+
+  <pre><code>: Statistical areas: 3187.\nStatistical areas with no polling place: 2232</code></pre>
 <p>There are 955 &ldquo;statistical areas&rdquo; without a single polling place inside. These areas are presumably unsettled. Again, note also most of the West Bank polling places are not in statistical areas.</p>
-<h3 id="clustering-statistical-areas-into-electorates"></h>Clustering statistical areas into electorates<a href="#clustering-statistical-areas-into-electorates">
+<h2 id="clustering-statistical-areas-into-electorates"></h>Clustering statistical areas into electorates<a href="#clustering-statistical-areas-into-electorates">
     
   </a>
-</h3><p>Our next task is to create 120 electorates. I want to do this by creating 120 electorates of roughly equal population by combining statistical areas together. I hadn&rsquo;t really thought about it, but when I started thinking about how to implement this and researching stuff online, I pretty soon realised that this is exactly how actual electoral districts are drawn up in countries that have them, and there is quite a large body of research into this interesting and difficult problem.</p>
+</h2><p>Our next task is to create 120 electorates. I want to do this by creating 120 electorates of roughly equal population by combining statistical areas together. I hadn&rsquo;t really thought about it, but when I started thinking about how to implement this and researching stuff online, I pretty soon realised that this is exactly how actual electoral districts are drawn up in countries that have them, and there is quite a large body of research into this interesting and difficult problem.</p>
 <p>I found quite a lot of papers on this topic, and decided to implement one of them for this project.</p>
-<p><img src="/assets/population_by_area_hist.png"
+<p>
+	
+		
+	
+	
+	<img src="/projects/israeli-constituencies/population_by_area_hist_hu6164456767330932575.webp"
+	width="800"
+	height="480"
+	
 	alt="Statistical areas by population" 
 	class="single-post-image" 
 	loading="lazy"
 	decoding="async"
-	></p>
-<pre><code>                            pt        lat        lon     pop
+	>
+</p>
+
+
+  <pre><code>                            pt        lat        lon     pop
 1832  POINT (34.84705 32.11380)  34.847047  32.113803     0.0
 1106  POINT (35.06788 31.83234)  35.067884  31.832340   459.0
 1158  POINT (34.96183 32.05623)  34.961826  32.056226  8265.0
@@ -292,22 +314,21 @@ plt.savefig(fname)
 278   POINT (35.01032 32.79270)  35.010324  32.792704  3876.0
 2470  POINT (34.81190 31.94621)  34.811897  31.946212  5259.0
 728   POINT (35.51253 32.71081)  35.512529  32.710809  4333.0
-189   POINT (35.38535 32.95847)  35.385350  32.958470     0.0
-</code></pre>
-<h3 id="implementing-some-districting-algorithms"></h>Implementing some districting algorithms<a href="#implementing-some-districting-algorithms">
+189   POINT (35.38535 32.95847)  35.385350  32.958470     0.0</code></pre>
+<h2 id="implementing-some-districting-algorithms"></h>Implementing some districting algorithms<a href="#implementing-some-districting-algorithms">
     
   </a>
-</h3><p>We are going to be using the following method from <a href="https://arxiv.org/pdf/1710.03358.pdf" target="_blank" rel="noopener">Cohen-Addad et al</a>&rsquo;s paper (p12):</p>
-<h4 id="computing-a-balanced-centroidal-power-diagram-for-p"></h>Computing a balanced centroidal power diagram for $P$<a href="#computing-a-balanced-centroidal-power-diagram-for-p">
+</h2><p>We are going to be using the following method from <a href="https://arxiv.org/pdf/1710.03358.pdf" target="_blank" rel="noopener">Cohen-Addad et al</a>&rsquo;s paper (p12):</p>
+<h3 id="computing-a-balanced-centroidal-power-diagram-for-p"></h>Computing a balanced centroidal power diagram for \(P\)<a href="#computing-a-balanced-centroidal-power-diagram-for-p">
     
   </a>
-</h4><p>A balanced centroidal power diagram is an augmented power diagram $P(C,w,f)$ such that $f$ is both balanced and centroidal. We implement the following capacitated variant of Lloyd’s method to compute such a diagram, given $P$ and the desired number $k$ of centers. Starting with a sequence $C$ of $k$ randomly chosen centers, repeat the following steps until Step (2) doesn’t change C:</p>
+</h3><p>A balanced centroidal power diagram is an augmented power diagram \(P(C,w,f)\) such that \(f\) is both balanced and centroidal. We implement the following capacitated variant of Lloyd’s method to compute such a diagram, given \(P\) and the desired number \(k\) of centers. Starting with a sequence \(C\) of \(k\) randomly chosen centers, repeat the following steps until Step (2) doesn’t change C:</p>
 <ol>
-<li>Given $C$, compute a minimum-cost balanced assignment $f: P \to C$.</li>
-<li>Move each center $x\in C$ to the centroid of the residents that $f$ assigns to it.</li>
+<li>Given \(C\), compute a minimum-cost balanced assignment $f: P \to C$.</li>
+<li>Move each center $x\in C$ to the centroid of the residents that \(f\) assigns to it.</li>
 </ol>
-<p>Each iteration except the last reduces the cost, $\sum_{y\in P} d^2(y,f(y))$, and at termination, the pair $(C,f)$ is a local minimum in the following sense: by just moving the centers in $C$, or just changing $f$ (while respecting the balance constraint), it is not possible to reduce the cost.</p>
-<p>We solve the problem in Step (1) by reducing it to minimum-cost flow; yielding both the stipulated f and (via the dual variables) weights $w$ such that $P(C,w,f)$ is a balanced power diagram. Note that the solution obtained by minimum-cost flow assigns assigns each person to a single district. In the last iteration, Step (2) does not change $C$, so $f$ is also centroidal, and at termination $P(C,w,f)$ is a balanced centroidal power diagram, as desired.</p>
+<p>Each iteration except the last reduces the cost, $\sum_{y\in P} d^2(y,f(y))$, and at termination, the pair \((C,f)\) is a local minimum in the following sense: by just moving the centers in \(C\), or just changing \(f\) (while respecting the balance constraint), it is not possible to reduce the cost.</p>
+<p>We solve the problem in Step (1) by reducing it to minimum-cost flow; yielding both the stipulated f and (via the dual variables) weights \(w\) such that \(P(C,w,f)\) is a balanced power diagram. Note that the solution obtained by minimum-cost flow assigns assigns each person to a single district. In the last iteration, Step (2) does not change \(C\), so \(f\) is also centroidal, and at termination \(P(C,w,f)\) is a balanced centroidal power diagram, as desired.</p>
 <p>So our steps will be:</p>
 <ul>
 <li>create an initial random collection of centres
@@ -319,91 +340,98 @@ plt.savefig(fname)
 <li>implement the MCF balanced assignment optimizer</li>
 <li>implement the iteration</li>
 </ul>
-<h4 id="creating-an-initial-random-collection-of-centres"></h>Creating an initial random collection of centres<a href="#creating-an-initial-random-collection-of-centres">
+<h3 id="creating-an-initial-random-collection-of-centres"></h>Creating an initial random collection of centres<a href="#creating-an-initial-random-collection-of-centres">
     
   </a>
-</h4><pre><code>statistical_areas['const'] = 0
-fig, ax = plt.subplots(figsize=(15, 15))
-
-full_country = statistical_areas.dissolve(by='const').to_crs(&quot;EPSG:4326&quot;)
-full_country.plot(ax=ax)
-fname = 'israel_polygon.png'
-x_min, y_min, x_max, y_max = full_country.total_bounds
-
-n = 500
-x = np.random.uniform(x_min, x_max, n)
-y = np.random.uniform(y_min, y_max, n)
-
-gdf_points = gpd.GeoSeries(gpd.points_from_xy(x, y))
-gdf_points = gdf_points[gdf_points.within(full_country['geometry'].iloc[0])].head(120)
-assert len(gdf_points) == 120
-gdf_points.plot(ax=ax, color='red')
-plt.savefig(fname)
-</code></pre>
-<p><img src="/assets/israel_polygon.png"
+</h3><div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>statistical_areas[<span style="color:#e6db74">&#39;const&#39;</span>] <span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>fig, ax <span style="color:#f92672">=</span> plt<span style="color:#f92672">.</span>subplots(figsize<span style="color:#f92672">=</span>(<span style="color:#ae81ff">15</span>, <span style="color:#ae81ff">15</span>))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span>full_country <span style="color:#f92672">=</span> statistical_areas<span style="color:#f92672">.</span>dissolve(by<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;const&#39;</span>)<span style="color:#f92672">.</span>to_crs(<span style="color:#e6db74">&#34;EPSG:4326&#34;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>full_country<span style="color:#f92672">.</span>plot(ax<span style="color:#f92672">=</span>ax)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>fname <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;israel_polygon.png&#39;</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>x_min, y_min, x_max, y_max <span style="color:#f92672">=</span> full_country<span style="color:#f92672">.</span>total_bounds
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>n <span style="color:#f92672">=</span> <span style="color:#ae81ff">500</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>x <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>uniform(x_min, x_max, n)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>y <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>random<span style="color:#f92672">.</span>uniform(y_min, y_max, n)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>gdf_points <span style="color:#f92672">=</span> gpd<span style="color:#f92672">.</span>GeoSeries(gpd<span style="color:#f92672">.</span>points_from_xy(x, y))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>gdf_points <span style="color:#f92672">=</span> gdf_points[gdf_points<span style="color:#f92672">.</span>within(full_country[<span style="color:#e6db74">&#39;geometry&#39;</span>]<span style="color:#f92672">.</span>iloc[<span style="color:#ae81ff">0</span>])]<span style="color:#f92672">.</span>head(<span style="color:#ae81ff">120</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span><span style="color:#66d9ef">assert</span> len(gdf_points) <span style="color:#f92672">==</span> <span style="color:#ae81ff">120</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>gdf_points<span style="color:#f92672">.</span>plot(ax<span style="color:#f92672">=</span>ax, color<span style="color:#f92672">=</span><span style="color:#e6db74">&#39;red&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>plt<span style="color:#f92672">.</span>savefig(fname)</span></span></code></pre></div>
+<p>
+	
+		
+	
+	
+	<img src="/projects/israeli-constituencies/israel_polygon_hu1837745751018438957.webp"
+	width="800"
+	height="800"
+	
 	alt="Statistical areas by population" 
 	class="single-post-image" 
 	loading="lazy"
 	decoding="async"
-	></p>
-<h4 id="implementing-the-mcf-balanced-assignment-optimizer"></h>Implementing the MCF balanced assignment optimizer<a href="#implementing-the-mcf-balanced-assignment-optimizer">
+	>
+</p>
+<h3 id="implementing-the-mcf-balanced-assignment-optimizer"></h>Implementing the MCF balanced assignment optimizer<a href="#implementing-the-mcf-balanced-assignment-optimizer">
     
   </a>
-</h4><p>At the start I wanted to use Python MIP to formulate the LP.</p>
-<p>I am currently stuck trying to understand how to get this to work with &ldquo;census blocks&rdquo; like the data I have: even though this is how they have the data in the paper too, I don&rsquo;t understand the $\mu_x$ in their MCF formulation.</p>
-<p>This is an important quote: Fix a threshold $\lambda$. The dynamic program will determine whether there is an assignment of census blocks to districts so that the maximum discrepancy is at most $\lambda$.</p>
-<pre><code>for_districting_algo['pop'] = for_districting_algo['pop'] / 10.0
-model = mip.Model(solver_name=mip.CBC)
-ayxs = np.full((int(sum(for_districting_algo['pop'])), 120), fill_value=None)
-for i in range(0, len(for_districting_algo)):
-    for j in range(0, int(for_districting_algo['pop'].iloc[i])):
-        for k in range(120):
-            ayxs[i+j][k] = model.add_var(var_type=mip.BINARY,
-                                        name=f'a_{i}+{j}_{k}')
-
-mu_xs = [model.add_var(var_type=mip.INTEGER,
-                        name=f'mu_{i}')
-        for i in range(120)]
-
-under = [model.add_var(name=f'under_{i}')
-        for i in range(120)]
-
-dist_matrix = np.full((int(sum(for_districting_algo['pop'])), 120), fill_value=0)
-for i in range(0, len(for_districting_algo)):
-    for j in range(0, int(for_districting_algo['pop'].iloc[i])):
-        for k in range(120):
-            dist_matrix[i+j][k] = for_districting_algo['pt'].iloc[i].distance(gdf_points.iloc[j])
-
-
-for k in range(120):
-    model += mip.xsum([for_districting_algo['pop'].iloc[i] * ayxs[i+j][k]
-                        for i in range(0, len(for_districting_algo))
-                        for j in range(0, int(for_districting_algo['pop'].iloc[i]))]) == mu_xs[j]
-
-for j in range(112):
-    model += (mu_xs[j] - X &lt;= under[j])
-    model += (X - mu_xs[j] &lt;= under[j])
-    #model += (mu_xs[j] - over[j] == X)
-
-for j in [112, 113, 114, 115, 116, 117, 118, 119]:
-    model += (mu_xs[j] - X - 1 &lt;= under[j])
-    model += (X + 1 - mu_xs[j] &lt;= under[j])
-    #model += (mu_xs[j] - over[j] == X + 1)
-
-model += mip.xsum(mu_xs) == M
-
-for i in range(0, len(for_districting_algo)):
-    for j in range(0, int(for_districting_algo['pop'].iloc[i])):
-        model += mip.xsum([ayxs[i+j][k] for k in range(120)]) == 1    
-
-model.objective = mip.minimize(mip.xsum([dist_matrix[i+j][k] * ayxs[i+j][k] for i in range(0, len(for_districting_algo))
-                                        for j in range(0, int(for_districting_algo['pop'].iloc[i]))
-                                        for k in range(120)]) + 10 * mip.xsum([under[i] for i in range(120)]))
-
-status = model.optimize(max_seconds=10800)
-</code></pre>
+</h3><p>At the start I wanted to use Python MIP to formulate the LP.</p>
+<p>I am currently stuck trying to understand how to get this to work with &ldquo;census blocks&rdquo; like the data I have: even though this is how they have the data in the paper too, I don&rsquo;t understand the \(\mu_x\) in their MCF formulation.</p>
+<p>This is an important quote: Fix a threshold \(\lambda\). The dynamic program will determine whether there is an assignment of census blocks to districts so that the maximum discrepancy is at most \(\lambda\).</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>for_districting_algo[<span style="color:#e6db74">&#39;pop&#39;</span>] <span style="color:#f92672">=</span> for_districting_algo[<span style="color:#e6db74">&#39;pop&#39;</span>] <span style="color:#f92672">/</span> <span style="color:#ae81ff">10.0</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>model <span style="color:#f92672">=</span> mip<span style="color:#f92672">.</span>Model(solver_name<span style="color:#f92672">=</span>mip<span style="color:#f92672">.</span>CBC)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>ayxs <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>full((int(sum(for_districting_algo[<span style="color:#e6db74">&#39;pop&#39;</span>])), <span style="color:#ae81ff">120</span>), fill_value<span style="color:#f92672">=</span><span style="color:#66d9ef">None</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4</span><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(for_districting_algo)):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5</span><span>    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, int(for_districting_algo[<span style="color:#e6db74">&#39;pop&#39;</span>]<span style="color:#f92672">.</span>iloc[i])):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6</span><span>        <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">120</span>):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7</span><span>            ayxs[i<span style="color:#f92672">+</span>j][k] <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>add_var(var_type<span style="color:#f92672">=</span>mip<span style="color:#f92672">.</span>BINARY,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8</span><span>                                        name<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;a_</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">+</span><span style="color:#e6db74">{</span>j<span style="color:#e6db74">}</span><span style="color:#e6db74">_</span><span style="color:#e6db74">{</span>k<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10</span><span>mu_xs <span style="color:#f92672">=</span> [model<span style="color:#f92672">.</span>add_var(var_type<span style="color:#f92672">=</span>mip<span style="color:#f92672">.</span>INTEGER,
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11</span><span>                        name<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;mu_</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12</span><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">120</span>)]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>under <span style="color:#f92672">=</span> [model<span style="color:#f92672">.</span>add_var(name<span style="color:#f92672">=</span><span style="color:#e6db74">f</span><span style="color:#e6db74">&#39;under_</span><span style="color:#e6db74">{</span>i<span style="color:#e6db74">}</span><span style="color:#e6db74">&#39;</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">120</span>)]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17</span><span>dist_matrix <span style="color:#f92672">=</span> np<span style="color:#f92672">.</span>full((int(sum(for_districting_algo[<span style="color:#e6db74">&#39;pop&#39;</span>])), <span style="color:#ae81ff">120</span>), fill_value<span style="color:#f92672">=</span><span style="color:#ae81ff">0</span>)
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18</span><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(for_districting_algo)):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19</span><span>    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, int(for_districting_algo[<span style="color:#e6db74">&#39;pop&#39;</span>]<span style="color:#f92672">.</span>iloc[i])):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20</span><span>        <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">120</span>):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21</span><span>            dist_matrix[i<span style="color:#f92672">+</span>j][k] <span style="color:#f92672">=</span> for_districting_algo[<span style="color:#e6db74">&#39;pt&#39;</span>]<span style="color:#f92672">.</span>iloc[i]<span style="color:#f92672">.</span>distance(gdf_points<span style="color:#f92672">.</span>iloc[j])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24</span><span><span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">120</span>):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25</span><span>    model <span style="color:#f92672">+=</span> mip<span style="color:#f92672">.</span>xsum([for_districting_algo[<span style="color:#e6db74">&#39;pop&#39;</span>]<span style="color:#f92672">.</span>iloc[i] <span style="color:#f92672">*</span> ayxs[i<span style="color:#f92672">+</span>j][k]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26</span><span>                        <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(for_districting_algo))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27</span><span>                        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, int(for_districting_algo[<span style="color:#e6db74">&#39;pop&#39;</span>]<span style="color:#f92672">.</span>iloc[i]))]) <span style="color:#f92672">==</span> mu_xs[j]
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29</span><span><span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">112</span>):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30</span><span>    model <span style="color:#f92672">+=</span> (mu_xs[j] <span style="color:#f92672">-</span> X <span style="color:#f92672">&lt;=</span> under[j])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31</span><span>    model <span style="color:#f92672">+=</span> (X <span style="color:#f92672">-</span> mu_xs[j] <span style="color:#f92672">&lt;=</span> under[j])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32</span><span>    <span style="color:#75715e">#model += (mu_xs[j] - over[j] == X)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34</span><span><span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> [<span style="color:#ae81ff">112</span>, <span style="color:#ae81ff">113</span>, <span style="color:#ae81ff">114</span>, <span style="color:#ae81ff">115</span>, <span style="color:#ae81ff">116</span>, <span style="color:#ae81ff">117</span>, <span style="color:#ae81ff">118</span>, <span style="color:#ae81ff">119</span>]:
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">35</span><span>    model <span style="color:#f92672">+=</span> (mu_xs[j] <span style="color:#f92672">-</span> X <span style="color:#f92672">-</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">&lt;=</span> under[j])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">36</span><span>    model <span style="color:#f92672">+=</span> (X <span style="color:#f92672">+</span> <span style="color:#ae81ff">1</span> <span style="color:#f92672">-</span> mu_xs[j] <span style="color:#f92672">&lt;=</span> under[j])
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">37</span><span>    <span style="color:#75715e">#model += (mu_xs[j] - over[j] == X + 1)</span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">38</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">39</span><span>model <span style="color:#f92672">+=</span> mip<span style="color:#f92672">.</span>xsum(mu_xs) <span style="color:#f92672">==</span> M
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">40</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">41</span><span><span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(for_districting_algo)):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">42</span><span>    <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, int(for_districting_algo[<span style="color:#e6db74">&#39;pop&#39;</span>]<span style="color:#f92672">.</span>iloc[i])):
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">43</span><span>        model <span style="color:#f92672">+=</span> mip<span style="color:#f92672">.</span>xsum([ayxs[i<span style="color:#f92672">+</span>j][k] <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">120</span>)]) <span style="color:#f92672">==</span> <span style="color:#ae81ff">1</span>    
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">44</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">45</span><span>model<span style="color:#f92672">.</span>objective <span style="color:#f92672">=</span> mip<span style="color:#f92672">.</span>minimize(mip<span style="color:#f92672">.</span>xsum([dist_matrix[i<span style="color:#f92672">+</span>j][k] <span style="color:#f92672">*</span> ayxs[i<span style="color:#f92672">+</span>j][k] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, len(for_districting_algo))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">46</span><span>                                        <span style="color:#66d9ef">for</span> j <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">0</span>, int(for_districting_algo[<span style="color:#e6db74">&#39;pop&#39;</span>]<span style="color:#f92672">.</span>iloc[i]))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">47</span><span>                                        <span style="color:#66d9ef">for</span> k <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">120</span>)]) <span style="color:#f92672">+</span> <span style="color:#ae81ff">10</span> <span style="color:#f92672">*</span> mip<span style="color:#f92672">.</span>xsum([under[i] <span style="color:#66d9ef">for</span> i <span style="color:#f92672">in</span> range(<span style="color:#ae81ff">120</span>)]))
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>
+</span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>status <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>optimize(max_seconds<span style="color:#f92672">=</span><span style="color:#ae81ff">10800</span>)</span></span></code></pre></div>
 <p>But after I went through the paper again I realised the whole point of the first &ldquo;phase&rdquo; of their algorithm is that you allow census blocks to be split, so you need LP variables for each of the population. So probably I need to use a MCF implementation; I would like to try OR-tools at first.</p>
-<p><img src="/assets/winner_by_electorate.png"
+<p><img src="winner_by_electorate.png"
 	alt="Statistical areas by population" 
 	class="single-post-image" 
 	loading="lazy"
@@ -424,24 +452,20 @@ status = model.optimize(max_seconds=10800)
     
   </div>
 </footer>
-
-  
-
-
-
-
-
-
-
-
   
   
-    
 
-<script src="https://cb-com-new.vercel.app/main.min.js"></script>
+
+
+
+
 
 
 
   
+
+<script src="http://localhost:1313/main.js"></script>
+
+
 </body>
 </html>

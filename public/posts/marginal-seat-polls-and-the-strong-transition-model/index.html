@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+<link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
+
+
+    
+
+    
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+  </head><body>
+    <header class="container">
+    <nav class="main-nav" id="js-navbar">
+      <a class="logo" href="http://localhost:1313/">Clinton Boys</a>
+      <ul class="menu" id="js-menu">
+        
+        
+        
+          <li class="menu-item">
+            <a href="/about/" class="menu-link">About</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/now/" class="menu-link">Now</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/posts/" class="menu-link">Writing</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/projects/" class="menu-link">Projects</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="http://mtsolitary.com" class="menu-link">Notes</a>
+          </li>
+        
+        
+        <li class="menu-item--align">
+          <div class="switch">
+            <input class="switch-input" type="checkbox" id="themeSwitch">
+            <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+            <div aria-hidden="true" class="switch-marker"></div>
+          </div>
+        </li>
+      </ul>
+      <span class="nav-toggle" id="js-navbar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+      </span>
+    </nav>
+  </header>
+<main class="section">
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+
+  
+
+
+<div class="feature-image-wrap">
+<img class="feature-image" 
+     srcset="/posts/marginal-seat-polls-and-the-strong-transition-model/sample-image-2.jpg 480w, /posts/marginal-seat-polls-and-the-strong-transition-model/sample-image-2.jpg 800w"
+     sizes="(max-width: 600px) 480px, 800px"
+     src="/posts/marginal-seat-polls-and-the-strong-transition-model/sample-image-2.jpg"
+     alt="Cradle Mountain National Park, Tasmania, 2014">
+     <div class="feature-image-text">Cradle Mountain National Park, Tasmania, 2014</div>
+    </div>
+</div>
+    <article class="markdown">
+        <h1 id="marginal-seat-polls-and-the-strong-transition-model"></h>Marginal seat polls and the strong transition model<a href="#marginal-seat-polls-and-the-strong-transition-model">
+    
+  </a>
+</h1><p><em>May 21, 2015</em></p>
+<p>As I&rsquo;ve recently (and finally) become gainfully employed, I haven&rsquo;t been able to devote a huge amount of time to my [model]({{ site.baseurl }}{% link _posts/2015-05-14-aus-election-model-9.md %}) for forecasting Australian elections. I have spent some time rewriting my sloppy code, fixing some redundancies and bugs, and improving the model to include the first few things on my to-do list.</p>
+<p>The major theoretical improvement I&rsquo;ve been thinking about over the last month is the <a href="http://www.electoralcalculus.co.uk/strongmodel.html" target="_blank" rel="noopener">strong transition model</a> which I learnt about while reading about the May 2015 UK general election (I was planning to write a post about why the polls failed so miserably to predict the result but I read so many good summaries of this I don&rsquo;t really think it&rsquo;s necessary).</p>
+<p>This model of voter behaviour at multi-party elections caught my eye after my initial model performed poorly in seats where the PUP candidate had a particularly strong showing. The thinking behind the model is that political parties generally have a two-tiered system of support: their dyed-in-the-wool followers who will vote for the party no matter what, and other supporters, who are more flakey and prone to switching teams. The proportion of a party&rsquo;s supporters in the former group is an unknown, and difficult to estimate, parameter of the model: the May2015 website put it at 20%. When a party loses support in the polls, it loses it from the <em>non-strong</em> group first. The <a href="http://www.electoralcalculus.co.uk/strongmodel.html" target="_blank" rel="noopener">page</a> at Electoral Calculus explains the idea with the help of some graphs. So this is being incorporated into the model at the moment.</p>
+<p>The second thing is the use of marginal seat polls to improve the model. It has always been my intention to include demographic data in the model, and using marginal seat polls allows me to do this in the following way.</p>
+<p>Suppose we cluster seats according to demographic data, like I did [here]({{ site.baseurl }}{% link _posts/2015-02-13-aus-election-model-8.md %}). And suppose we have some national (or state-level) swing that we want to adjust to a local level. I think the right way to combine these two pieces is using marginal seat polls: they give the link between the clusters and the swing adjustments. That is, if we have a marginal seat poll for one seat in a cluster, we can adjust the whole cluster away from the national swing by the amount the marginal seat within deviates. This is essentially the same thing that the FiveThirtyEight model does for states which are not polled frequently.</p>
+<p>The main theoretical issue with this idea is the margin of error associated with the marginal polls, as well as their frequency and comparability across elections. I&rsquo;m working on scraping marginal poll data and my next post will be an analysis of how it can fit into my model.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="http://localhost:1313/posts/sentiment-analysis-of-qa-tweets/">&laquo; Sentiment analysis of Q&amp;A tweets</a>
+      
+      
+        <a class="next" href="http://localhost:1313/posts/forecasting-australian-elections-the-tricky-seats/">Forecasting Australian elections - the tricky seats &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+  
+  
+
+
+
+
+
+
+
+
+  
+
+<script src="http://localhost:1313/main.js"></script>
+
+
+</body>
+</html>

@@ -11,8 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-feature_image: cbcom.png
-feature_image_alt: The old version of my site, launched in 2014. 
+portfolio_image: cbcom.png
 
 project types: 
     - Technical
