@@ -1076,7 +1076,8 @@ body {
     .hero {
       padding: 80px 0; } }
 .index-content {
-  color: var(--color-contrast-higher); }
+  color: var(--color-contrast-higher);
+  font-size: var(--font-size-base); }
 
 .image-wrap {
   position: relative;

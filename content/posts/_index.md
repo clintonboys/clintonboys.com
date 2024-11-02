@@ -1,5 +1,5 @@
 ---
-title: Writing
+title: Posts
 feature_image: mts9-1-grey.jpg
 ---
 
