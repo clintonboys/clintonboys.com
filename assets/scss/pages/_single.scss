@@ -3,6 +3,7 @@
   
     img {
       margin: 30px 0;
+      margin-bottom: 0;
       max-width: 100%;
       height: auto;
       filter: grayscale(50%);
@@ -77,4 +78,18 @@
   .related-posts {
     @include font-size('base');
   }
+
+  .feature-image-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
   
+  .feature-image-text {
+    @include font-size('sm');
+    font-family: "PT Serif";
+    font-style: italic;
+    text-align: right;
+    margin-top: 0;
+    color: var(--color-contrast-high);
+  }
