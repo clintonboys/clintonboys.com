@@ -9,7 +9,7 @@ date: 2014-09-08T21:21:46-05:00
 lastmod: 2014-09-08T21:21:46-05:00
 
 feature_image: sample-image-9.jpg
-feature_image_alt: Blah
+feature_image_alt: Cascade Mountains, Oregon, USA, 2013
 
 categories:
   - Web development

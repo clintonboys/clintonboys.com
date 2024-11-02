@@ -1,6 +1,7 @@
 ---
 title: Projects
 feature_image: mts9-1-grey.jpg
+feature_image_alt: Mt. Solitary, Blue Mountains, Australia
 ---
 
 # Projects

@@ -2,14 +2,14 @@
 linktitle: About
 title: About me
 feature_image: mts9-1-grey.jpg
-feature_image_alt: Blah
+feature_image_alt: Mt. Solitary, Blue Mountains, Australia
 ---
 
 # About me
 
 Hey there, I'm Clinton. I am an Australian mathematician and software engineer living in London (formerly Tel Aviv, and before that, Sydney). You can visit my [now]({{< ref "now" >}}) page to see what I'm up to and what's on my mind at the moment: I try to keep it up to date. 
 
-I like hacking away at interesting problems in lots of different areas: mathematics, statistics, programming, data and data science, elections and electoral systems, and many more. I am a keen writer and an amateur musician. 
+I like hacking away at interesting problems in lots of different areas: mathematics, statistics, programming, data and data science, elections and electoral systems, and many more. I am a keen writer and an amateur musician and photographer: all the photographs across this website were taken by me. 
 
 ## Work and skills
 

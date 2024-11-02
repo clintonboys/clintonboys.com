@@ -9,7 +9,7 @@ date: 2022-08-18T21:21:46-05:00
 lastmod: 2022-08-18T21:21:46-05:00
 
 feature_image: sample-image-67.jpg
-feature_image_alt: Blah
+feature_image_alt: Akureyri, Iceland, 2018
 
 categories:
   - React
