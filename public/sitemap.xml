@@ -242,6 +242,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/posts/multilevel-regression/</loc>
+    <lastmod>2020-06-17T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/getting-started-with-emacs/</loc>
+    <lastmod>2020-05-20T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/projects/emma-chisit/</loc>
     <lastmod>2018-07-19T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>

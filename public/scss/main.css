@@ -371,7 +371,8 @@ main {
   color: var(--color-primary); }
 
 footer {
-  flex-shrink: 0; }
+  flex-shrink: 0;
+  background-color: aqua; }
 
 a {
   color: var(--color-contrast-high);
@@ -731,7 +732,7 @@ body {
   font-size: var(--font-size-sm);
   line-height: calc(8px + 2ex);
   margin-left: 20px;
-  max-width: 780px;
+  max-width: 900px;
   color: var(--color-contrast-medium-high); }
 
 .iteminvisible {
