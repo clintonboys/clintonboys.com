@@ -3,6 +3,12 @@
     max-width: 750px;
   }
   
+  .list-header {
+    margin-bottom: 50px;
+    @include font-size('base');
+  }
+
+
   .post-entry-divider {
     background-color: var(--color-contrast-low);
     content: "";

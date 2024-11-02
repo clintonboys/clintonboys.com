@@ -5,7 +5,7 @@ date: 2021-01-20T21:21:46-05:00
 lastmod: 2021-01-20T21:21:46-05:00
 
 categories:
-  - Setup
+  - emacs
 
 feature_image: sample-image-69.jpg
 feature_image_alt: Tel Aviv, Israel, 2021

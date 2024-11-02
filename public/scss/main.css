@@ -1274,6 +1274,11 @@ body {
   margin: 20px 0;
   max-width: 750px; }
 
+.list-header {
+  margin-bottom: 50px;
+  font-size: var(--font-size-base);
+  line-height: calc(8px + 2ex); }
+
 .post-entry-divider {
   background-color: var(--color-contrast-low);
   content: "";
