@@ -12,7 +12,7 @@ expiryDate:
 publishDate: 
 
 feature_image: cbcom.png
-feature_image_alt: New website
+feature_image_alt: The old version of my site, launched in 2014. 
 
 project types: 
     - Technical
@@ -25,7 +25,9 @@ techstack:
 
 # clintonboys.com
 
-*July 16, 2014*
+*July 2014*
+
+
 
 
 
