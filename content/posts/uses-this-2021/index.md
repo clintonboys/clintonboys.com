@@ -1,6 +1,6 @@
 ---
 layout: post
-title: My setup
+title: My setup (2021)
 date: 2021-03-23T21:21:46-05:00
 lastmod: 2021-03-23T21:21:46-05:00
 
@@ -15,7 +15,7 @@ feature_image_alt: Tel Aviv, Israel, 2018
 
 *March 23, 2021*
 
-In this post I answer the interview questions from [The Setup](http://usesthis.com/) - again. This is an updated version of [this post]({{ site.baseurl }}{% link _posts/2019-11-30-uses-this-previous.md %}) which I wrote in 2019.
+In this post I answer the interview questions from [The Setup](http://usesthis.com/) - again. This is an updated version of [this post]({{< ref "posts/uses-this-2019" >}}) which I wrote in 2019.
 
 **Who are you and what do you do?**
 

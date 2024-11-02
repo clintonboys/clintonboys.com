@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en-us"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+    
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+
+<link rel="stylesheet" href="https://cb-com-new.vercel.app/scss/main.min.css" />
+
+
+    
+
+    
+
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<script>
+  MathJax = {
+    tex: {
+      displayMath: [['\\[', '\\]'], ['$$', '$$']],  
+      inlineMath: [['\\(', '\\)']]                  
+    }
+  };
+</script>
+
+  </head><body>
+    <header class="container">
+    <nav class="main-nav" id="js-navbar">
+      <a class="logo" href="https://cb-com-new.vercel.app/">Clinton Boys</a>
+      <ul class="menu" id="js-menu">
+        
+        
+        
+          <li class="menu-item">
+            <a href="/about/" class="menu-link">About</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/now/" class="menu-link">Now</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/posts/" class="menu-link">Writing</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="/projects/" class="menu-link">Projects</a>
+          </li>
+        
+        
+        
+          <li class="menu-item">
+            <a href="http://mtsolitary.com" class="menu-link">Notes</a>
+          </li>
+        
+        
+        <li class="menu-item--align">
+          <div class="switch">
+            <input class="switch-input" type="checkbox" id="themeSwitch">
+            <label aria-hidden="true" class="switch-label" for="themeSwitch">On</label>
+            <div aria-hidden="true" class="switch-marker"></div>
+          </div>
+        </li>
+      </ul>
+      <span class="nav-toggle" id="js-navbar-toggle">
+        <svg xmlns="http://www.w3.org/2000/svg" id="Outline" viewBox="0 0 24 24" width="30" height="30" fill="var(--color-contrast-high)"><rect y="11" width="24" height="2" rx="1"/><rect y="4" width="24" height="2" rx="1"/><rect y="18" width="24" height="2" rx="1"/></svg>
+      </span>
+    </nav>
+  </header>
+<main class="section">
+<div class="single-container-post">
+  
+
+  <div class="single-post-contents">
+    <div class="single-feature-img">
+
+
+
+
+  
+
+
+<div class="feature-image-wrap">
+<img class="feature-image" 
+     srcset="/posts/deep-learning-and-the-universal-approximation-theorem/sample-image-49.jpg 480w, /posts/deep-learning-and-the-universal-approximation-theorem/sample-image-49.jpg 800w"
+     sizes="(max-width: 600px) 480px, 800px"
+     src="/posts/deep-learning-and-the-universal-approximation-theorem/sample-image-49.jpg"
+     alt="Eden, New South Wales, 2018">
+     <div class="feature-image-text">Eden, New South Wales, 2018</div>
+    </div>
+</div>
+    <article class="markdown">
+        <h1 id="deep-learning-and-the-universal-approximation-theorem"></h>Deep learning and the universal approximation theorem<a href="#deep-learning-and-the-universal-approximation-theorem">
+    
+  </a>
+</h1><p><em>May 28, 2018</em></p>
+<p>Deep learning, and in particular deep neural networks, is one of the most popular and
+powerful tools of modern data science. Using analogies from neuroscience, neural networks
+provide a framework for building predictive models whose predictive power is seemingly
+limitless. They are at the heart of modern &ldquo;artificial intelligence&rdquo; wonders like smart
+assistants (Siri, Cortana, Google Assistant), smart speakers, self-driving cars and most
+modern image detection algorithms (Google image search, IBM Watson).</p>
+<p>This post will give a mathematically-slanted overview to neural networks, with the goal
+of proving what could be referred to as the &ldquo;Fundamental Theorem of Neural Networks&rdquo;. This
+remarkable theorem is fairly accessible, and explains beautifully and precisely why neural
+networks are so powerful.</p>
+<h2 id="the-mathematics-of-neural-networks"></h>The mathematics of neural networks<a href="#the-mathematics-of-neural-networks">
+    
+  </a>
+</h2><p>A neural network is essentially a function approximation algorithm, modelled at a basic level
+on the behaviour of neurons in the human brain. Although it is not a particularly common
+way of thinking as a data scientist, from a mathematical perspective machine learning
+is nothing more than function approximation with a probabilistic flavour. Under the assumption
+that the &ldquo;true&rdquo; relationship between a set of features </p>
+$$X$$<p> and an output variable </p>
+$$y$$<p> can be specified
+by a function </p>
+$$f(X, \theta)$$<p> which may depend further on some parameters </p>
+$$\theta$$<p>, the problem
+of machine learning can be expressed as an attempt to approximate </p>
+$$f$$<p> in a way which minimizes
+a specified cost function (the choice of cost function is usually motivated probabilistically).</p>
+<p>For a given input </p>
+$$X\in\mathbb{R}^n$$<p>, a <strong>neural network with a single hidden layer</strong> is a finite linear combination of the form</p>
+$$
+\sum_{j=1}^N\alpha_j\sigma(y_j^TX+\theta_j)
+$$<p>where </p>
+$$N,\alpha_j\in \mathbb{R}$$<p>, </p>
+$$y_j\in\mathbb{R}^n$$<p> and </p>
+$$\sigma$$<p> is a special type of non-linear function we will discuss later. The </p>
+$$\alpha_j$$<p>&rsquo;s are called the <em>weights</em>, the </p>
+$$\theta_j$$<p> the <em>biases</em> and </p>
+$$\sigma$$<p> is called the <em>activation function</em>.</p>
+<p><img src="https://github.com/clintonboys/clintonboys.github.io/blob/master/_posts/nn.png?raw=true"
+	alt="Neural network" 
+	class="single-post-image" 
+	loading="lazy"
+	decoding="async"
+	></p>
+<p>The above picture explains the analogy with the human brain; given an input vector $X$ (touch input from skin, audio input from the ears, etc.), signals are sent to various
+neurons which &ldquo;activate&rdquo; according to these inputs and a collection of weights. This behaviour then cascades through
+various layers of the network, resulting finally in an output (don&rsquo;t touch the fire, say &ldquo;yes&rdquo;, etc.).</p>
+<p>We will be less concerned in this article with the &ldquo;machine learning&rdquo; theory behind neural networks &ndash; for
+example I don&rsquo;t want to discuss the algorithms which are used to train the networks, or techniques for
+feature selection or choosing the right activation function or number of &ldquo;hidden layers&rdquo;. Rather, we will
+discuss a mathematical theorem which provides a solid theoretical basis for why neural networks are so powerful.</p>
+<h2 id="the-universal-approximation-theorem"></h>The universal approximation theorem<a href="#the-universal-approximation-theorem">
+    
+  </a>
+</h2><p>Universality theorems are omnipresent in mathematics. The setup is classic, and gives the illusion of a genius mind
+at work, inventing a solution from thin air and then proceeding to prove it is the unique one which suits
+a given set of circumstances. In actuality, the <em>workflow</em> is entirely opposite: first a family of functions or a
+mathematical object is studied by its occurrences in specific examples. Through careful study of these examples,
+its utility becomes clear and the question of generalisation and universality arises.</p>
+<p>So seeing the above family of functions occurring in many different places, the natural question is: what can we use
+them for? The answer turns out to be just about everything: in a way which can be made mathematically precise,
+neural networks with a single layer can be used to approximate any continuous function. Let&rsquo;s state this theorem a
+little more clearly. The following theorem comes from a <a href="https://www.dartmouth.edu/~gvc/Cybenko_MCSS.pdf" target="_blank" rel="noopener">paper</a> of Cybenko. A <strong>sigmoidal</strong> function is one which &ldquo;looks&rdquo; like a sigmoid: </p>
+$$\sigma(x)\to1$$<p> as </p>
+$$x\to\infty$$<p> and </p>
+$$\sigma(x)\to0$$<p> as </p>
+$$x\to-\infty$$<p>.</p>
+<hr>
+<p><strong>Universal approximation theorem for neural networks (Cybenko)</strong></p>
+<p>Let </p>
+$$\sigma$$<p> be any continuous sigmoidal function. Then finite sums of the form</p>
+$$
+G(x) = \sum_{j=1}^N \alpha_j\sigma(y_j^Tx + \theta_j)
+$$<p>are dense in the set </p>
+$$C(I_n)$$<p> of continuous functions on the unit cube.</p>
+<hr>
+<p>For those who don&rsquo;t remember their undergraduate analysis, there is a theoretical definition of
+density <a href="https://en.wikipedia.org/wiki/Dense_set" target="_blank" rel="noopener">here</a>, but for our purposes it is enough to think of it
+as meaning that there are &ldquo;enough&rdquo; of these functions to be able to use them as &ldquo;building blocks&rdquo; to build
+any function to any required level of accuracy.</p>
+<p>The proof of this remarkable theorem uses fairly standard functional analysis techniques. First we show that
+a slightly weaker but easier-to-work with family of functions (called <strong>discriminatory</strong> functions)
+satisfy the conditions of the theorem. Then it proceeds to prove, using a standard functional analysis method,
+that sigmoidal functions belong to this category.</p>
+
+    </article>
+    <aside>
+      <div class="single-terms">
+        
+      </div>
+      
+        
+
+        
+  <section>
+    <h2>Read Next</h2>
+    <div class="single-next-previous">
+      
+        <a class="previous" href="https://cb-com-new.vercel.app/posts/the-bias-variance-tradeoff/">&laquo; The Bias-Variance tradeoff</a>
+      
+      
+        <a class="next" href="https://cb-com-new.vercel.app/posts/the-curse-of-dimensionality-and-the-weak-law-of-large-numbers/">The curse of dimensionality and the weak law of large numbers &raquo;</a>
+      
+    </div>
+  </section>
+
+      
+    </aside>
+  </div>
+</div>
+
+    </main><footer>
+  
+  <div class="section footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys</i>
+      
+    </p>
+    
+  </div>
+</footer>
+
+  
+
+
+
+
+
+
+
+
+  
+  
+    
+
+<script src="https://cb-com-new.vercel.app/main.min.js"></script>
+
+
+
+  
+</body>
+</html>

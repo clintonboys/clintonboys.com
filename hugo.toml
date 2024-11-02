@@ -13,7 +13,7 @@ rssLimit = -1 # -1 is unlimited RSS entries
 # Please see https://gohugo.io/getting-started/configuration/ for detailed explanations
 buildDrafts = false # Default
 buildExpired = false # Default 
-buildFuture = false # Default
+buildFuture = true # Default
 canonifyURLs = false # Default
 defaultContentLanguage = 'en' # Default
 disableAliases = true # Set to true if using server (Netlify, .htaccess) for redirects instead of Hugo

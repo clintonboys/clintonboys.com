@@ -1,6 +1,5 @@
 {{ $images := $.Resources.ByType "image" -}}
-{{ $custom_file := .Params.feature_image }}
-{{ $alt := .Params.feature_image_alt }}
+{{ $custom_file := .Params.portfolio_image }}
 {{ $custom_image := $images.GetMatch $custom_file }}
 {{ $feature_image := $images.GetMatch "*feature*" -}}
 {{ $img_src := "" }}
@@ -16,7 +15,6 @@
 <img class="feature-image" 
      srcset="{{ $img_src }} 480w, {{ $img_src }} 800w"
      sizes="(max-width: 600px) 480px, 800px"
-     src="{{ $img_src }}"
-     {{ with $.Params.feature_image_alt }}alt="{{ . }}"{{ else }}alt="Feature image"{{ end }}>
+     src="{{ $img_src }}">
     </div>
 {{ end }}
