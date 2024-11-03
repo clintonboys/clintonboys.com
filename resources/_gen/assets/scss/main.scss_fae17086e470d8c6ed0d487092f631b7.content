@@ -653,7 +653,12 @@ body {
   font-weight: 600;
   text-decoration: none;
   margin-left: 20px; }
-
+  @media (min-width: 1200px) {
+    .logo {
+      margin-left: 0px; } }
+  @media (min-width: 900px) {
+    .logo {
+      margin-left: 0px; } }
 .menu-link {
   color: var(--color-contrast-medium-high);
   font-family: 'PT Sans Narrow';
