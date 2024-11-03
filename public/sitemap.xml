@@ -307,6 +307,16 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/project-types/script/</loc>
+    <lastmod>2017-02-11T03:52:30-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/projects/trendyscraper/</loc>
+    <lastmod>2017-02-11T03:52:30-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/posts/installing-mediawiki-on-a-digitalocean-droplet-including-wikipedia-navbars/</loc>
     <lastmod>2016-10-25T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -337,13 +347,43 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/posts/forecasting-australian-elections-the-tricky-seats/</loc>
+    <lastmod>2015-05-28T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/marginal-seat-polls-and-the-strong-transition-model/</loc>
+    <lastmod>2015-05-21T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/sentiment-analysis-of-qa-tweets/</loc>
+    <lastmod>2015-05-07T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/posts/my-setup-2015/</loc>
     <lastmod>2015-04-02T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/posts/pitchfork-and-my-itunes-library/</loc>
+    <lastmod>2015-03-30T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/posts/israeli-poll-aggregator/</loc>
     <lastmod>2015-03-13T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/clustering-australian-electorates-by-demographic-variables/</loc>
+    <lastmod>2015-02-13T21:21:46-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/correcting-for-reliability-in-australian-election-polls/</loc>
+    <lastmod>2015-01-25T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
@@ -354,6 +394,11 @@
   </url><url>
     <loc>http://localhost:1313/projects/phd/</loc>
     <lastmod>2015-01-19T03:52:30-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/posts/difficulties-in-forecasting-elections-in-australia/</loc>
+    <lastmod>2014-10-06T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>

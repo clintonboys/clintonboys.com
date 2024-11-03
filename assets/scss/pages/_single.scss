@@ -28,14 +28,15 @@
   
     @include respond-to('x-large') {
       max-width: $max-width;
-      display: grid;
-      grid-template-columns: 1fr 15em;
-      gap: 1rem;
+    //   display: grid;
+    //   grid-template-columns: 1fr 15em;
+    //   gap: 1rem;
     }
   }
   
   .single-post-contents {
     overflow: auto;
+    // max-width: 900px;
   }
   
   .series {

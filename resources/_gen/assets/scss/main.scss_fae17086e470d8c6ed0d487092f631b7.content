@@ -1198,10 +1198,7 @@ body {
   max-width: 900px; }
   @media (min-width: 1200px) {
     .single-container-post {
-      max-width: 850px;
-      display: grid;
-      grid-template-columns: 1fr 15em;
-      gap: 1rem; } }
+      max-width: 850px; } }
 .single-post-contents {
   overflow: auto; }
 
