@@ -12,6 +12,8 @@ expiryDate:
 publishDate: 
 
 portfolio_image: conlang.png
+feature_image: IMG_3407.jpeg
+feature_image_alt: Near Hastings, England, 2024
 
 project types: 
     - Personal

@@ -12,6 +12,8 @@ expiryDate:
 publishDate: 
 
 portfolio_image: governments.png
+feature_image: sample-image-65.jpg
+feature_image_alt: Beowa National Park, NSW, Australia, 2015
 
 project types: 
     - Elections
@@ -38,9 +40,7 @@ The system I chose to compare with is [proportional representation](https://en.w
 
 A geographically divided system, where the country is split into many electorates, is less likely to produce such governments since small parties must come first at least somewhere in the country, rather than maintain a small but broad level of support nationwide, to win representation. Australia's preferential voting system, and its degeneration over the years into "[how-to-vote cards](https://en.wikipedia.org/wiki/How-to-vote_card)", has further entrenched the two major parties, the Liberal/National Coalition (not a coalition in the PR sense since these parties have agreements to avoid three-cornered contests) and the Australian Labor Party. The result is that although the Australian electoral system has more in common with the British system, its federal lower house looks a lot closer to the United States House of Representatives. 
 
-| ![Seats and quota by year](/seats_and_quotas.png) |
-|:--:|
-| *Figure 1: Seats and quotas by year.* |
+![Seats and quota by year](/seats_and_quotas.png)
 
 So what would Australian political history look like if we'd had a party list PR system? Let's set the ground rules for our alternative universe. A party list system with a single vote per person (so no preferences) and no threshold: even if you get enough votes to receive a single seat, you're in. I'm going to look at nineteen elections in the last fifty years, from 1972 to 2019. In Figure 1 you can see how the number of seats in parliament has changed (on the left $y$-axis), and the corresponding total number of votes required nationwide to win a single seat (on the right $y$-axis); this is called the *quota* (it's mostly increasing because of population growth and sometimes decreasing because seats were added to the parliament). 
 
@@ -98,9 +98,7 @@ Whitlam didn't disappear after the Dismissal: he continued on as opposition lead
 
 Under PR things get interesting - this is our first election where the government formed under PR is different than what happened in reality. Whitlam wins back the Prime Ministership, with the help of the recently formed Australian Democrats, whose 12 seats join with Whitlam's 49 to give 61, the same as the Liberal / Country / DLP opposition. The two remaining members - taken by the Progress party and the Socialist party - would probably have been controversial in the anti-Communist furor of the late 70s, but a left-wing Coalition (maybe with Socialist abstentions) seems like the only real option. 
 
-| ![Real and imagined governments by year](governments.png) |
-|:--:|
-| *Figure 2: Real and imagined governments by year.* |
+![Real and imagined governments by year](governments.png)
 
 ### 1980
 ---
@@ -175,9 +173,7 @@ After years of damaging infighting and bitterness between Hawke and his Treasure
 
 Having formed in 1992, this election marks the first appearance of the Australian Greens, long a force in Tasmanian state politics, at the federal level. They win two seats here, and with the Democrats' six (the dramatic reduction in support is another nice analogue to the 2010 UK election) Keating has a small but comfortable majority for his left-wing bloc, and having won back eight seats for his own party, has to make fewer concessions to the Democrats than Hawke did. 
 
-| ![Real and imagined results by year](real_and_imagined.png) |
-|:--:|
-| *Figure 3: Real and imagined results by year. The ability of PR to force interesting coalitions is evident.* |
+![Real and imagined results by year](real_and_imagined.png)
 
 ### 1996
 ---
@@ -317,7 +313,7 @@ I really enjoyed looking back at Australian elections, some of which I'd experie
 
 Would PR necessarily mean a shift leftward? Is there something structurally wrong with the current system that biases it towards the right (like the American Electoral College) that PR is balancing out? I personally think it's a quirk of how much variance there is among population of Australian electorates and the resulting power bias to rural electorates, which tend to lean right. PR removes this advantage and means that the vote each of the 144,391 electors from Canberra, Australia's most populous electorate is equal to the vote of each of the 65,752 electors from Lingiari. 
 
-### Footnotes
+## Footnotes
 
 [^1]: After running all the analysis I started to think it might be interesting to think about the results under PR systems with different electoral threshholds. I didn't end up running the numbers, but it looks to me like there is a spectrum from full PR to the current system which can be thought of as a one-parameter space parametrised by the "electoral threshhold". So the preferential voting essentially looks like what PR would look like with a threshhold around 30%, but with an extra "layer" afforded by the preferences, to attempt to fairly handle all those thrown-away votes. 
 

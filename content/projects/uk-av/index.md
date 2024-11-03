@@ -2,7 +2,7 @@
 title: The 2019 UK election under AV
 seo_title: ukav
 summary: Simulating different 2019 UK election results under an AV system
-slug: auspr
+slug: ukav
 author: Clinton Boys
 
 draft: false
@@ -53,7 +53,7 @@ I ran the runoff simulations for all 573 seats in England and Wales, for differe
  
 If I simulate a range of values of these percentages, we obtain a grid of different outcomes for the different imaginary scenarios, summarised in the table below. 
  
-![England and Wales](/assets/england_wales.png)
+![England and Wales](england_wales.png)
  
 In the actual election, the Conservatives won 359 seats (62.7%) in England and Wales, and by adjusting the different preference flows we see the result could have been anywhere between 307 (53.6%) and 414 (72.3%) seats. 
  
@@ -67,7 +67,7 @@ The political situation in Scotland is quite different to England and Wales. Sin
 
 To run the simulations in Scotland, I tweaked two parameters: the percentage of Liberal Democrat preferences flowing to the SNP, and the percentage of Labour preferences flowing to the SNP, showing Labour's status as a third party in Scotland since the post-referendum realignment. Below I plot for each combination of these parameters, the projected number of Conservative seats in Scotland, which ranges from 1 to 24 (they won 6). 
 
-![Scotland](/assets/scotland.png)
+![Scotland](scotland.png)
 
 The SNP and the Conservatives' visions for the future of the United Kingdom do not align and it would be hard to see them working together in a coalition government. So a very low performance here and in England and Wales could still deny the Conservatives an outright majority without looking to Northern Ireland and the DUP. 
 
@@ -77,7 +77,7 @@ Northern Irish Westminster politics is different again, and I have to say I am t
 
 Here, I run scenarios with combinations of two parameters: the percentage of Irish nationalist Sinn Fein's preferences which flow to the SDLP, and the percentage of the centrist liberal Alliance Party of Northern Ireland (APNI). Below I plot the projected number of seats won by the DUP, which ranges from 7 to 9 (they won 8). 
 
-![Northern Ireland](/assets/northern_ireland.png)
+![Northern Ireland](northern_ireland.png)
 
 So in the worst case in which over 90% of both Sinn Fein and APNI voters preference the SDLP over the DUP, the Tories can count on only 7 seats here, and will need 319 from the remainder of the country to form their Coalition government, or 326 to govern outright. A very strong SNP performance in Scotland (helped by tactical preferential voting from Labour and Liberal Democrat voters) will mean that some of the England and Wales scenarios inside the green boundary in the first image are still in play: certainly if the aim is only to deny an outright majority government. 
 

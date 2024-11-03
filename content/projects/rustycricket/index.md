@@ -13,7 +13,8 @@ expiryDate:
 publishDate: 
 
 portfolio_image: cricket-sim.png
-feature_image_alt: New website
+feature_image: IMG_3351.jpeg
+feature_image_alt: Lord's Cricket Ground, London, 2024
 
 project types: 
     - Technical
@@ -38,9 +39,7 @@ Initially I had thought to just build out a scoreboard that updates as you click
 
 To do all of this, I used [rltk](https://github.com/amethyst/bracket-lib), a game engine for Rust, originally designed for "Roguelikes", a type of retro computer game with procedurally generated graphics and a "dungeon crawl" RPG mechanic. rltk provides a lot of very helpful structures to get you up and running; I just render a simple black square and use ASCII art to fill out my field, players, pitch, stumps and scoreboard. 
 
-| ![Cricket sim](/assets/cricket-sim.png) |
-|:--:|
-| *Figure 1: The start of a new cricket match.* |
+![Cricket sim](cricket-sim.png)
 
 At first I just hardcoded to make sure it rendered correctly. Then I set about replacing all of the things you see in the image above with *entities*, *components* and *systems* according to the ECS paradigm. 
 
@@ -48,15 +47,13 @@ For example, there is a `DisplayGlyph` component which contains the information 
 
 Similarly, we have `bowling_system`, `batting_system`, `fielding_system` which moves everything around the map according to logic, alongside the `scoreboard_system` which updates the scoreboard and the `match_system` which determines the ultimate winning logic and ends the game. 
 
-| ![Cricket sim 1](/assets/cricket-sim-2.png) |
-|:--:|
-| *Figure 2: Through midwicket for 1 run.* |
+![Cricket sim 1](cricket-sim-2.png)
 
 Overall this exercise was really fun and it taught me a lot about game development, ECS and in particular Rust. Rust feels really well suited to building games: its neat "structs", cruel but fair type system and ingenious borrow checker are all very useful when you are writing code that needs to be performant and run every click. Writing a game also makes you think a lot harder about the loops you write, about data structures and memory and CPU efficiency. I enjoyed it a lot. 
 
 The code for this project is available on my [Github](https://github.com/clintonboys/rustycricket). 
 
-### Links and resources
+## Links and resources
 
 - A very quick [half-hour](https://fasterthanli.me/articles/a-half-hour-to-learn-rust) introduction to Rust. 
 - A really nice [tutorial](https://os.phil-opp.com/) on writing a bare-bones operating system in Rust. 

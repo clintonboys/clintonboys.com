@@ -38,6 +38,6 @@ I hope I still find myself writing here in another ten years' time. I wonder if 
 
 And for now I have brought the images back. Life is too short, and the internet is too precious a thing, to not add a little bit of colour when you can. Who else are these little corners of the web we build for, after all? 
 
-### Footnotes
+## Footnotes
 
 [^1]: I couldn't resist the urge to do a bit of a cleanup, fix a bunch of hardcoded things and unncessary cruft in the repository, upgrade some packages, and move the deployment to Vercel from Github Pages - I have been using Vercel for my [digital garden](https://www.mtsolitary.com) for a few years and it's really nice. 

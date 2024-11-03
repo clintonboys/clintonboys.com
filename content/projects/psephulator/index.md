@@ -13,7 +13,8 @@ expiryDate:
 publishDate: 
 
 portfolio_image: pseph.png
-feature_image_alt: New website
+feature_image: IMG_2785.jpeg
+feature_image_alt: Rottingdean, England, 2024
 
 project types: 
     - Elections

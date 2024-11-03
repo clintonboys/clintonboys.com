@@ -12,7 +12,8 @@ expiryDate:
 publishDate: 
 
 portfolio_image: nbcom.png
-feature_image_alt: New website
+feature_image: IMG_0671.jpeg
+feature_image_alt: Beckenham Place Park, England, 2023
 
 project types: 
     - Technical

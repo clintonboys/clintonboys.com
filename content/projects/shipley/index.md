@@ -12,7 +12,8 @@ expiryDate:
 publishDate: 
 
 portfolio_image: logo.png
-feature_image_alt: New website
+feature_image: IMG_6511.jpeg
+feature_image_alt: Megalong Valley, NSW, Australia, 2015
 
 project types: 
     - App
