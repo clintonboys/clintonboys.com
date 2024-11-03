@@ -4,6 +4,10 @@ title: Sentiment analysis of Q&A tweets
 date: 2015-05-07T21:21:46-05:00
 lastmod: 2015-05-07T21:21:46-05:00
 
+categories:
+  - Machine learning
+  - Python
+
 feature_image: sample-image-6.jpg
 feature_image_alt: Big Sur National Park, California, 2013
 ---

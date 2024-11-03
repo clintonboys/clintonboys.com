@@ -4,6 +4,10 @@ title: Call your mum
 date: 2016-08-24T21:21:46-05:00
 lastmod: 2016-08-24T21:21:46-05:00
 
+categories:
+  - Programming
+  - Personal
+
 feature_image: sample-image-39.jpg
 feature_image_alt: Prague, Czech Republic, 2016
 ---

@@ -4,6 +4,10 @@ title: Lifetime flight simulator
 date: 2015-07-02T21:21:46-05:00
 lastmod: 2015-07-02T21:21:46-05:00
 
+categories:
+  - Programming
+  - Games
+
 feature_image: sample-image-22.jpg
 feature_image_alt: Royal National Park, New South Wales, 2014
 ---

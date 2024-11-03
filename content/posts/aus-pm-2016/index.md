@@ -4,6 +4,9 @@ title: Australian federal election post-mortem
 date: 2016-08-17T21:21:46-05:00
 lastmod: 2016-08-17T21:21:46-05:00
 
+categories:
+  - Elections
+
 feature_image: sample-image-17.jpg
 feature_image_alt: Mt Ossa, Tasmania, 2014
 ---

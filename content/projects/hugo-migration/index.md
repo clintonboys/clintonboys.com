@@ -12,8 +12,8 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-portfolio_image: mts9-1-grey.jpg
-feature_image: mts9-1-grey.jpg
+portfolio_image: mt_sol_thin.jpg
+feature_image: mt_sol_thin.jpg
 feature_image_alt: Mt. Solitary, Blue Mountains, Australia
 
 project types: 

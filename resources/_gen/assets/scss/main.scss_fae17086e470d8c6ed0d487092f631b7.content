@@ -667,7 +667,7 @@ body {
   line-height: calc(8px + 2ex);
   font-weight: 700; }
   .menu-link:hover {
-    color: var(--color-contrast-lower); }
+    text-transform: underline; }
 
 .menu {
   display: none;
@@ -1189,8 +1189,7 @@ body {
     margin: 30px 0;
     margin-bottom: 0;
     max-width: 100%;
-    height: auto;
-    filter: grayscale(50%); }
+    height: auto; }
 
 .single-terms {
   display: flex;
@@ -1358,8 +1357,7 @@ body {
     border-radius: 5px 5px 0 0;
     border-bottom: 1px solid var(--color-contrast-low);
     z-index: 1;
-    position: relative;
-    filter: grayscale(50%); }
+    position: relative; }
 
 .project-entry-type {
   position: absolute;

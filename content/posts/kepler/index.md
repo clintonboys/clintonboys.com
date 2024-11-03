@@ -5,7 +5,7 @@ date: 2020-09-01T21:21:46-05:00
 lastmod: 2020-09-01T21:21:46-05:00
 
 categories:
-  - Maths
+  - Mathematics
   - Physics
 
 feature_image: sample-image-70.jpg

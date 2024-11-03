@@ -5,7 +5,7 @@ date: 2022-01-08T21:21:46-05:00
 lastmod: 2022-01-08T21:21:46-05:00
 
 categories:
-  - Maths
+  - Mathematics
 
 feature_image: sample-image-64.jpg
 feature_image_alt: Golan Heights, Israel, 2021
