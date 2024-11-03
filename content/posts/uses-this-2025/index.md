@@ -11,7 +11,7 @@ feature_image: sample_image_100.jpeg
 feature_image_alt: Near Hastings, England, 2024. 
 ---
 
-# My Setup
+# My setup
 
 *January 2025*
 

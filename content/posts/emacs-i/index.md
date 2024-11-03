@@ -46,7 +46,7 @@ If you've already tried Spacemacs, removing it and replacing it with a vanilla v
 
 You should end up when you start up the program you just installed with a very ancient-looking and plain text editor:
 
-![Vanilla emacs](/assets/emacs_blank.png)
+![Vanilla emacs](emacs_blank.png)
 
 At this point, the emacs editor is technically installed but we will need to do some extensive configuration and customisation to get it looking and performing like a modern text editor. It's worth at this point at least understanding the basics of how it works.
 
@@ -70,7 +70,7 @@ If you're anything like me, you're extremely dissatisifed with the default appea
 
 After some customisation and configuration, we'll set up emacs to look like this:
 
-![Vanilla emacs](/assets/emacs_full.png)
+![Vanilla emacs](emacs_full.png)
 
 Configuring emacs is quite simple. All the customisation is defined in a file located at `~/.emacs.d/init.el`; if you open this file now (in emacs!) you will notice it's empty; this means we are using the default emacs installation. We're now going to add a bunch of different text to this file: actually we're writing lines of code in emacs Lisp, to get the customisations we want. 
 

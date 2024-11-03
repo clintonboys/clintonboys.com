@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-us"><head>
+<html lang="en-us"><head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,10 +30,7 @@
 
 
 
-  
-  
-
-<link rel="stylesheet" href="https://cb-com-new.vercel.app/scss/main.min.css" />
+<link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
 
 
     
@@ -53,7 +50,7 @@
   </head><body>
     <header class="container">
     <nav class="main-nav" id="js-navbar">
-      <a class="logo" href="https://cb-com-new.vercel.app/">Clinton Boys</a>
+      <a class="logo" href="http://localhost:1313/">Clinton Boys</a>
       <ul class="menu" id="js-menu">
         
         
@@ -136,28 +133,27 @@
 <li>the ratio of the square of a planet&rsquo;s orbital period and the cube of its semi-major axis is constant (Kepler&rsquo;s third law).</li>
 </ul>
 <p>These laws are extremely accurate in predicting the motion of planets in our solar system, and gave elegant explanations for many phenomena, but for many years the <em>reason why</em> they hold remained a mystery. It took the genius of Isaac Newton to <em>derive</em> Kepler&rsquo;s laws from the simpler, more axiomatic laws of motion that formed the centrepiece of his <em>Principia Mathematicae</em>. These days, it&rsquo;s a fundamental piece of an undergraduate physics education, and a nice exercise in vector arithmetic and thinking mechanically.</p>
-<h3 id="centre-of-mass-coordinates"></h>Centre-of-mass coordinates<a href="#centre-of-mass-coordinates">
+<h2 id="centre-of-mass-coordinates"></h>Centre-of-mass coordinates<a href="#centre-of-mass-coordinates">
     
   </a>
-</h3><p>The first insight is that one may treat a &ldquo;two-body problem&rdquo;, like finding the orbital loci of the Sun and the Earth, as a one-body problem where the <em>reduced mass</em> \(\mu\) moves about a fixed <em>centre of mass</em> \(M\). Explicitly, let&rsquo;s write \(m_1\) and \(m_2\) for our two masses (you can think of \(m_1\) as representing the Earth and \(m_2\) the Sun); then</p>
+</h2><p>The first insight is that one may treat a &ldquo;two-body problem&rdquo;, like finding the orbital loci of the Sun and the Earth, as a one-body problem where the <em>reduced mass</em> \(\mu\) moves about a fixed <em>centre of mass</em> \(M\). Explicitly, let&rsquo;s write \(m_1\) and \(m_2\) for our two masses (you can think of \(m_1\) as representing the Earth and \(m_2\) the Sun); then</p>
 $$
 \mu = \frac{m_1m_2}{m_1+m_2};\quad \quad M=m_1+m_2.
-$$<h3 id="angular-momentum"></h>Angular momentum<a href="#angular-momentum">
+$$<h2 id="angular-momentum"></h>Angular momentum<a href="#angular-momentum">
     
   </a>
-</h3><p>Momentum is a pretty intuitive concept: the momentum of an object is equal to its mass times its velocity. Similarly, the <em>angular</em> momentum of an object is equal to its mass times its <em>angular velocity</em>, the vector representing the rate at which the object&rsquo;s angular position is changing with respect to its centre of mass (strictly speaking we&rsquo;re discussing <em>orbital angular velocity</em>; there is also <em>spin angular velocity</em> which measures how fast an object itself rotates).</p>
+</h2><p>Momentum is a pretty intuitive concept: the momentum of an object is equal to its mass times its velocity. Similarly, the <em>angular</em> momentum of an object is equal to its mass times its <em>angular velocity</em>, the vector representing the rate at which the object&rsquo;s angular position is changing with respect to its centre of mass (strictly speaking we&rsquo;re discussing <em>orbital angular velocity</em>; there is also <em>spin angular velocity</em> which measures how fast an object itself rotates).</p>
 <p>It&rsquo;s a general fact that the angular momentum \(\mathbf{L}\) of an object in three dimensions is equal to the <a href="https://en.wikipedia.org/wiki/Cross_product" target="_blank" rel="noopener">cross product</a> \(\mathbf{r}\times\mathbf{p}\) of its position vector \(\mathbf{r}\) and its positional momentum </p>
-$$\mathbf{p} = m\mathbf{v}$$<p>.</p>
-<h3 id="keplers-first-law"></h>Kepler&rsquo;s first law<a href="#keplers-first-law">
+$$\mathbf{p} = m\mathbf{v}.$$<h2 id="keplers-first-law"></h>Kepler&rsquo;s first law<a href="#keplers-first-law">
     
   </a>
-</h3><p>We want to consider the effect of the gravitational force of \(M\) on \(\mu\)&rsquo;s angular momentum. Let&rsquo;s suppose this is the only force acting on \(\mu\), and try to find an expression for the rate of change of angular momentum. Using the product rule on the definition of \(\mathbf{L}\),</p>
+</h2><p>We want to consider the effect of the gravitational force of \(M\) on \(\mu\)&rsquo;s angular momentum. Let&rsquo;s suppose this is the only force acting on \(\mu\), and try to find an expression for the rate of change of angular momentum. Using the product rule on the definition of \(\mathbf{L}\),</p>
 $$
 \frac{d\mathbf{L}}{dt} = \frac{d\mathbf{r}}{dt}\times\mathbf{p} + \mathbf{r}\times\frac{d\mathbf{p}}{dt} = \mathbf{v}\times \mathbf{p}+\mathbf{r}\times \mathbf{F},
 $$<p>where </p>
 $$\mathbf{F}=\mu\mathbf{a} = \mu\frac{d\mathbf{v}}{dt} = \frac{d\mathbf{p}}{dt}$$<p> by <a href="https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion#Newton%27s_second_law" target="_blank" rel="noopener">Newton&rsquo;s second law</a>.</p>
 <p>Note that both of the terms on the right-hand-side are zero: </p>
-$$\mathbf{v}\times \mathbf{p} = \mu \mathbf{v}\times \mathbf{v} = 0$$<p>, since the cross-product of parallel vectors is zero, and since \(\mathbf{F}\) is a central force directed inwards along \(\mathbf{r}\), the second term is zero for the same reason. This means \(\frac{d\mathbf{L}}{dt}=0\), so the angular momentum is constant. Let&rsquo;s try to compute it explicitly. We write \(\mathbf{r}=r\mathbf{r}'\), where \(\mathbf{r}'\) is the unit vector pointing in \(\mathbf{r}\)&rsquo;s direction.</p>
+$$\mathbf{v}\times \mathbf{p} = \mu \mathbf{v}\times \mathbf{v} = 0,$$<p> since the cross-product of parallel vectors is zero, and since \(\mathbf{F}\) is a central force directed inwards along \(\mathbf{r}\), the second term is zero for the same reason. This means \(\frac{d\mathbf{L}}{dt}=0\), so the angular momentum is constant. Let&rsquo;s try to compute it explicitly. We write \(\mathbf{r}=r\mathbf{r}'\), where \(\mathbf{r}'\) is the unit vector pointing in \(\mathbf{r}\)&rsquo;s direction.</p>
 $$
 \begin{align*}
 \mathbf{L} &= \mathbf{r}\times\mathbf{p}\\
@@ -166,8 +162,7 @@ $$
 &= \mu r \mathbf{r}' \times \Bigl(\frac{dr}{dt}\mathbf{r}' + r\frac{d}{dt}\mathbf{r}'\Bigr)\\
 &= \mu r^2\mathbf{r}' \times \frac{d}{dt}\mathbf{r}'.
 \end{align*}
-$$<p>where we have again used the fact that </p>
-$$\mathbf{r}'\times \mathbf{r}'=0$$<p>.</p>
+$$<p>where we have again used the fact that \(\mathbf{r}'\times \mathbf{r}'=0\).</p>
 <p>It&rsquo;s a general fact from Newtonian mechanics about &ldquo;central forces&rdquo; like the gravitational force that the acceleration due to the force is directed radially inwards and is proportional to the inverse square of the distance from the center. For gravity we can use the <em>universal gravitational constant</em> \(G\) to write this acceleration explicitly as</p>
 $$
 \mathbf{a}=-\frac{GM}{r^2}\mathbf{r}'.
@@ -197,18 +192,17 @@ $$
 $$<p>and we can rearrange the left-hand side using the vector identity and simplify the right-hand side, assuming that \(\theta\) is the angle between \(\mathbf{r}\) and \(\mathbf{C}\) to give</p>
 $$
 (\mathbf{r}\times\mathbf{v})\cdot \mathbf{L} = GM\mu r + r C\cos\theta. 
-$$<p>But by definition of angular momentum, </p>
-$$\mathbf{L}=\mu\mathbf{r}\times \mathbf{v}$$<p>. Writing \(L=\left\|\mathbf{L}\right\|\)  the left-hand side is equal to \(\frac{L^2}\mu\) and so we have the scalar equation</p>
+$$<p>But by definition of angular momentum, \(\mathbf{L}=\mu\mathbf{r}\times \mathbf{v}\). Writing \(L=\left\|\mathbf{L}\right\|\)  the left-hand side is equal to \(\frac{L^2}\mu\) and so we have the scalar equation</p>
 $$
 \frac{L^2}{\mu} = GM\mu r\Bigl(1 + \frac{C\cos\theta}{GM\mu}\Bigr)
 $$<p>which, if we rearrange to make \(r\) the subject and write \(e=D/GM\mu\) gives</p>
 $$
 r = \frac{L^2/\mu^2}{GM(1+e\cos\theta)}
 $$<p>which is precisely the equation of an ellipse in spherical coordinates, where \(e\) is the eccentricity of the ellipse. So this is Kepler&rsquo;s first law!</p>
-<h3 id="keplers-second-law"></h>Kepler&rsquo;s second law<a href="#keplers-second-law">
+<h2 id="keplers-second-law"></h>Kepler&rsquo;s second law<a href="#keplers-second-law">
     
   </a>
-</h3><p>Let&rsquo;s think about the infinitesimal change in area swept out by an infinitesimal change in angle \(\theta\); a standard polar coordinates diagram should convince you that \(dA=\frac12r^2d\theta\), so</p>
+</h2><p>Let&rsquo;s think about the infinitesimal change in area swept out by an infinitesimal change in angle \(\theta\); a standard polar coordinates diagram should convince you that \(dA=\frac12r^2d\theta\), so</p>
 $$
 \frac{dA}{dt}=\frac12r^2\frac{d\theta}{dt}.
 $$<p>Notice that we can decompose the orbital velocity vector \(\mathbf{v}\) into radial and angular components:</p>
@@ -228,10 +222,10 @@ $$<p>and so we see</p>
 $$
 \frac{dA}{dt}=\frac12\frac{L}\mu,
 $$<p>which is independent of \(t\), proving Kepler&rsquo;s second law.</p>
-<h3 id="keplers-third-law"></h>Kepler&rsquo;s third law<a href="#keplers-third-law">
+<h2 id="keplers-third-law"></h>Kepler&rsquo;s third law<a href="#keplers-third-law">
     
   </a>
-</h3><p>If we integrate the above expression over one orbital period, i.e. from \(0\) to \(P\) we get the total area of the ellipse as</p>
+</h2><p>If we integrate the above expression over one orbital period, i.e. from \(0\) to \(P\) we get the total area of the ellipse as</p>
 $$
 A = \int_0^P\frac12\frac{L}\mu dt = \frac12\frac{L}\mu P.
 $$<p>Writing \(a\) and \(b\) for the semimajor and semiminor axes of the ellipse, the formula for the area of an ellipse is </p>
@@ -256,10 +250,10 @@ $$<p>This is the statement of Kepler&rsquo;s third law, but crucially we actuall
     <h2>Read Next</h2>
     <div class="single-next-previous">
       
-        <a class="previous" href="https://cb-com-new.vercel.app/posts/encrypting-files-in-emacs-org-mode/">&laquo; Encrypting files in emacs org-mode</a>
+        <a class="previous" href="http://localhost:1313/posts/encrypting-files-in-emacs-org-mode/">&laquo; Encrypting files in emacs org-mode</a>
       
       
-        <a class="next" href="https://cb-com-new.vercel.app/posts/multilevel-regression-with-poststratification-mrp/">Multilevel regression with poststratification (MRP) &raquo;</a>
+        <a class="next" href="http://localhost:1313/posts/multilevel-regression-with-poststratification-mrp/">Multilevel regression with poststratification (MRP) &raquo;</a>
       
     </div>
   </section>
@@ -279,24 +273,20 @@ $$<p>This is the statement of Kepler&rsquo;s third law, but crucially we actuall
     
   </div>
 </footer>
-
-  
-
-
-
-
-
-
-
-
   
   
-    
 
-<script src="https://cb-com-new.vercel.app/main.min.js"></script>
+
+
+
+
 
 
 
   
+
+<script src="http://localhost:1313/main.js"></script>
+
+
 </body>
 </html>

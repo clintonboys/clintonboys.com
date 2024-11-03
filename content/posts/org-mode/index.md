@@ -15,7 +15,7 @@ feature_image_alt: Tel Aviv, Israel, 2021
 
 *January 20, 2021*
 
-I wrote [last year]({% post_url 2020-05-20-emacs-i %}) about how I finally got around to building my own system of organising my notes, thoughts, writings and to-do lists based on [emacs](http://en.wikipedia.org/wiki/emacs) and [org mode](https://orgmode.org), and in the months since then I've only become more certain that I'm building a system that's going to last me for life. 
+I wrote [last year]({{< ref "posts/emacs-i" >}}) about how I finally got around to building my own system of organising my notes, thoughts, writings and to-do lists based on [emacs](http://en.wikipedia.org/wiki/emacs) and [org mode](https://orgmode.org), and in the months since then I've only become more certain that I'm building a system that's going to last me for life. 
 
 Org mode is an emacs "major mode" (basically just a set of functionalities to extend the editor) that serves as an outliner and markup language for editing text. This is selling it a little short though, as org mode has so many capabilities and extensions that it is possible to use it for almost anything you can imagine writing in an editor. I use org files as my environment for taking notes, writing my journal, writing any longer form prose, managing my personal and work task lists, writing literate programs and LaTeX documents, writing posts for this website, and more. 
 

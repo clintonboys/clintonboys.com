@@ -28,7 +28,7 @@ In this post I wanted to outline from a mathematical perspective the derivation 
 
 These laws are extremely accurate in predicting the motion of planets in our solar system, and gave elegant explanations for many phenomena, but for many years the *reason why* they hold remained a mystery. It took the genius of Isaac Newton to *derive* Kepler's laws from the simpler, more axiomatic laws of motion that formed the centrepiece of his *Principia Mathematicae*. These days, it's a fundamental piece of an undergraduate physics education, and a nice exercise in vector arithmetic and thinking mechanically.  
 
-### Centre-of-mass coordinates
+## Centre-of-mass coordinates
 
 The first insight is that one may treat a "two-body problem", like finding the orbital loci of the Sun and the Earth, as a one-body problem where the *reduced mass* \(\mu\) moves about a fixed *centre of mass* \(M\). Explicitly, let's write \(m_1\) and \(m_2\) for our two masses (you can think of \(m_1\) as representing the Earth and \(m_2\) the Sun); then 
 
@@ -36,13 +36,13 @@ $$
 \mu = \frac{m_1m_2}{m_1+m_2};\quad \quad M=m_1+m_2.
 $$
 
-### Angular momentum
+## Angular momentum
 
 Momentum is a pretty intuitive concept: the momentum of an object is equal to its mass times its velocity. Similarly, the *angular* momentum of an object is equal to its mass times its *angular velocity*, the vector representing the rate at which the object's angular position is changing with respect to its centre of mass (strictly speaking we're discussing *orbital angular velocity*; there is also *spin angular velocity* which measures how fast an object itself rotates). 
 
-It's a general fact that the angular momentum \(\mathbf{L}\) of an object in three dimensions is equal to the [cross product](https://en.wikipedia.org/wiki/Cross_product) \(\mathbf{r}\times\mathbf{p}\) of its position vector \(\mathbf{r}\) and its positional momentum $$\mathbf{p} = m\mathbf{v}$$. 
+It's a general fact that the angular momentum \(\mathbf{L}\) of an object in three dimensions is equal to the [cross product](https://en.wikipedia.org/wiki/Cross_product) \(\mathbf{r}\times\mathbf{p}\) of its position vector \(\mathbf{r}\) and its positional momentum $$\mathbf{p} = m\mathbf{v}.$$
 
-### Kepler's first law
+## Kepler's first law
 
 We want to consider the effect of the gravitational force of \(M\) on \(\mu\)'s angular momentum. Let's suppose this is the only force acting on \(\mu\), and try to find an expression for the rate of change of angular momentum. Using the product rule on the definition of \(\mathbf{L}\), 
 
@@ -52,7 +52,7 @@ $$
 
 where $$\mathbf{F}=\mu\mathbf{a} = \mu\frac{d\mathbf{v}}{dt} = \frac{d\mathbf{p}}{dt}$$ by [Newton's second law](https://en.wikipedia.org/wiki/Newton%27s_laws_of_motion#Newton's_second_law). 
 
-Note that both of the terms on the right-hand-side are zero: $$\mathbf{v}\times \mathbf{p} = \mu \mathbf{v}\times \mathbf{v} = 0$$, since the cross-product of parallel vectors is zero, and since \(\mathbf{F}\) is a central force directed inwards along \(\mathbf{r}\), the second term is zero for the same reason. This means \(\frac{d\mathbf{L}}{dt}=0\), so the angular momentum is constant. Let's try to compute it explicitly. We write \(\mathbf{r}=r\mathbf{r}'\), where \(\mathbf{r}'\) is the unit vector pointing in \(\mathbf{r}\)'s direction. 
+Note that both of the terms on the right-hand-side are zero: $$\mathbf{v}\times \mathbf{p} = \mu \mathbf{v}\times \mathbf{v} = 0,$$ since the cross-product of parallel vectors is zero, and since \(\mathbf{F}\) is a central force directed inwards along \(\mathbf{r}\), the second term is zero for the same reason. This means \(\frac{d\mathbf{L}}{dt}=0\), so the angular momentum is constant. Let's try to compute it explicitly. We write \(\mathbf{r}=r\mathbf{r}'\), where \(\mathbf{r}'\) is the unit vector pointing in \(\mathbf{r}\)'s direction. 
 
 $$
 \begin{align*}
@@ -64,7 +64,7 @@ $$
 \end{align*}
 $$
 
-where we have again used the fact that $$\mathbf{r}'\times \mathbf{r}'=0$$. 
+where we have again used the fact that \(\mathbf{r}'\times \mathbf{r}'=0\). 
 
 It's a general fact from Newtonian mechanics about "central forces" like the gravitational force that the acceleration due to the force is directed radially inwards and is proportional to the inverse square of the distance from the center. For gravity we can use the *universal gravitational constant* \(G\) to write this acceleration explicitly as 
 
@@ -122,7 +122,7 @@ $$
 (\mathbf{r}\times\mathbf{v})\cdot \mathbf{L} = GM\mu r + r C\cos\theta. 
 $$
 
-But by definition of angular momentum, $$\mathbf{L}=\mu\mathbf{r}\times \mathbf{v}$$. Writing \(L=\left\|\mathbf{L}\right\|\)  the left-hand side is equal to \(\frac{L^2}\mu\) and so we have the scalar equation
+But by definition of angular momentum, \(\mathbf{L}=\mu\mathbf{r}\times \mathbf{v}\). Writing \(L=\left\|\mathbf{L}\right\|\)  the left-hand side is equal to \(\frac{L^2}\mu\) and so we have the scalar equation
 
 $$
 \frac{L^2}{\mu} = GM\mu r\Bigl(1 + \frac{C\cos\theta}{GM\mu}\Bigr)
@@ -136,7 +136,7 @@ $$
 
 which is precisely the equation of an ellipse in spherical coordinates, where \(e\) is the eccentricity of the ellipse. So this is Kepler's first law!
 
-### Kepler's second law
+## Kepler's second law
 
 Let's think about the infinitesimal change in area swept out by an infinitesimal change in angle \(\theta\); a standard polar coordinates diagram should convince you that \(dA=\frac12r^2d\theta\), so
 
@@ -176,7 +176,7 @@ $$
 
 which is independent of \(t\), proving Kepler's second law. 
 
-### Kepler's third law
+## Kepler's third law
 
 If we integrate the above expression over one orbital period, i.e. from \(0\) to \(P\) we get the total area of the ellipse as 
 

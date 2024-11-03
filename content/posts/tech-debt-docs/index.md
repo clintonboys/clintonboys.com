@@ -24,6 +24,6 @@ Think about what happens when you take out a mortgage. It's a very standardised 
 
 I think creating a huge amount of technical documentation, things like the design documents which Google is equally famous and infamous for, is the right thing to do when you are building things. You can't really write too much, provided you are actually thinking about what you are writing, honing what you have already written, and constantly getting feedback and input. If this is done correctly, the resulting documentation provides a very thorough account of the decisions and reasoning behind the acquisition of technical debt in the project. 
 
-### Links and resources
+## Links and resources
 
 - This is a decent [article](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9520328) with a bit more detail about different approaches to managing technical debt. 
