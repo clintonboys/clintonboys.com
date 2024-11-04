@@ -120,27 +120,54 @@
     <h1 id="migrating-my-personal-site-to-hugo"></h>Migrating my personal site to Hugo<a href="#migrating-my-personal-site-to-hugo">
     
   </a>
-</h1><p><em>October 25, 2024</em></p>
+</h1><p><em>January 1, 2025</em></p>
 <h2 id="introduction"></h>Introduction<a href="#introduction">
     
   </a>
-</h2><p>As foreshadowed in <a href="http://localhost:1313/posts/ten-years/">this post</a>, I recently migrated my personal website to Hugo after ten years of blogging with Jekyll.</p>
-<h2 id="new-features"></h>New features<a href="#new-features">
-    
-  </a>
-</h2><ul>
-<li>Portfolio</li>
-<li>Dark mode</li>
-<li>Hugo</li>
-<li>Reading time indication</li>
-<li>Vercel (already done)</li>
+</h2><p>As foreshadowed in my <a href="http://localhost:1313/posts/ten-years/">post</a> reflecting on ten years of running my personal website, I recently migrated the site to Hugo after more than ten years of blogging with Jekyll.</p>
+<p>There were quite a few reasons for the change:</p>
+<ul>
+<li><strong>Something new</strong>. I enjoy constantly reshaping, rewriting and rebuilding things I have made. It means I am continuously polishing and improving this site, shaving off little things that shouldn&rsquo;t be there, going over all the copy again, and just generally spending time honing something - <a href="https://blog.jim-nielsen.com/2024/sanding-ui/" target="_blank" rel="noopener">sanding</a> it - which is a very calming and enjoyable pastime for me.</li>
+<li><strong>Portfolio</strong>. This was the big one. My old Jekyll theme (which was a <em>heavily</em> customised fork of <a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank" rel="noopener">Minimal Mistakes</a> by Michael Rose) didn&rsquo;t have a built-in portfolio section, and I didn&rsquo;t really feel like sinking time into learning enough Jekyll to shoehorn one in myself. My new site has a shiny <a href="http://localhost:1313/projects/">portfolio</a> section, with pride of place in the top navigation bar, showcasing a bunch of projects I have managed to finish or half finish in some form over the years.</li>
+<li><strong>Dark mode</strong>. It seems like you can&rsquo;t have a techy personal website these days without a fancy switch that toggles between light and dark mode, defaulting to the setting of the user&rsquo;s browser. Hugo-liftoff came with this built in, so all I had to do was tweak the exact theme colours to my liking. I ended up using the same background colour for dark mode that I have used for five years over at <a href="https://www.mtsolitary.com/" target="_blank" rel="noopener">Mt Solitary</a>.</li>
+<li><strong>Hugo</strong>. I&rsquo;m sure there&rsquo;s lots of arguments in the Hugo versus Jekyll debate. I chose Jekyll ten years ago, but Hugo feels a lot more modern, is significantly faster, and doesn&rsquo;t have the Ruby dependency, which always gave me trouble. I also have used Hugo to successfully build <a href="http://localhost:1313/projects/nitzanboys-com/">other</a> <a href="http://localhost:1313/projects/mt-solitary/">websites</a> in the last few years so I&rsquo;ve built up a bit of experience and comfort with it.</li>
+<li><strong>Reading time indication</strong>. Another nice little feature of the theme I built around was a built-in reading time indication for <a href="http://localhost:1313/posts/">posts</a>. Of course this would have been easy to add myself, but it was nice that it came out of the box.</li>
+<li><strong>Vercel</strong>. I had already done this in my ten-year revamp of the Jekyll site, but deployment is now done through Vercel instead of Github Pages, removing my dependency on Github (and of course adding a new dependency on Vercel, but it feels like an easier one to move away from in the future).</li>
 </ul>
-<h2 id="process"></h>Process<a href="#process">
-    
-  </a>
-</h2>  <div class="footer">
+<p>Here&rsquo;s a picture of the two sites side-by-side. On the left, the new Hugo site, on the right, the old Jekyll site (now archived <a href="https://clintonboys-github-io.vercel.app" target="_blank" rel="noopener">here</a>).</p>
+<p>
+	
+		
+	
+	
+	<img src="/projects/hugo-migration/side-by-side_hu5469722756134403643.webp"
+	width="800"
+	height="455"
+	
+	alt="Side by side comparison" 
+	class="single-post-image" 
+	loading="lazy"
+	decoding="async"
+	>
+</p>
+<p>I did the migration very manually, copying pages over one by one and fixing up things that needed to be fixed. For each page, the things I had to change were</p>
+<ul>
+<li>front matter</li>
+<li>mathematics typesetting</li>
+<li>internal links</li>
+</ul>
+<p>The things I had to tweak globally were</p>
+<ul>
+<li>theme colours</li>
+<li>web fonts</li>
+<li>mathematics typesetting</li>
+<li>Goatcounter support</li>
+<li>completely rejigged the navigation bar</li>
+<li>changed the &ldquo;feature image&rdquo; to be more like I had on my old site, including an image caption</li>
+</ul>
+  <div class="footer">
     <p class="footer-copyright"><i>&copy; 2014 - 2024
-      Clinton Boys. Built by hand, without the use of generative AI.</i>
+      Clinton Boys. Written, designed and built without the use of generative AI.</i>
       
     </p>
   </div>

@@ -134,8 +134,13 @@
 <li>is customisable and adaptable, including scripting and automation; and</li>
 <li>is exportable to formats like PDF and HTML so I can use it directly to write reports and documents meant for others to read.</li>
 </ul>
-<!-- raw HTML omitted -->
-<!-- raw HTML omitted -->
+<!-- ### What is emacs?
+
+Emacs is a text editor, but describing it in that simple way does not do justice to how complex and powerful a tool it is. It started its life more than thirty years ago, as a text editor for unix systems implemented as the interpreter of a [lisp](https://en.wikipedia.org/wiki/Lisp_(programming_language)), which allows it to be almost infinitely customisable and extensible. It has around 10,000 built in commands, which you can assign to keybindings that allow you to automate common tasks as macros. A common joke which goes a long way to describing how deep the emacs rabbit hole goes is that emacs is an operating system with a decent text editor. 
+
+I've been using emacs for a month or so, and am already finding that I am editing and managing text files significantly faster and more fluently, in an attractive and stable editor which feels like I "built myself" because of the extensive customisation, and which any problem I have I can solve myself without having to compromise. 
+
+I'll describe below the process I went through to get my current emacs setup up-and-running: my `~/.emacs.d/init.el` file is available on [Github](http://github.com/XXXX). -->
 <h2 id="installation"></h>Installation<a href="#installation">
     
   </a>
@@ -164,7 +169,7 @@
   </a>
 </h2><p>Emacs commands are entered with the keyboard and you should almost never need to use the mouse for anything. If this sounds weird to you, stick with it for a while and you&rsquo;ll realise how much faster it is and why you never want to reach for the mouse if you don&rsquo;t absolutely have to. <code>C-</code> stands for &ldquo;hold the control key while pressing&rdquo;, so for example the command to open a new file is <code>C-x C-f</code>; hold control and press x, and then press f (with control still held down). You will then be prompted to enter a filename; if the file exists, emacs will open it, otherwise it will create a new file. Create a new file in <code>~/Desktop/emacs_test.txt</code> and press <code>RET</code> (the enter key).</p>
 <p>This file then opens in a <em>buffer</em>. A buffer is a chunk of text that you&rsquo;re currently editing. You can save the contents of a buffer to a file. That&rsquo;s what we&rsquo;ll do now: type something using the keyboard, and then press <code>C-x C-s</code> to save the contents of this buffer to the file.</p>
-<p>You can spend some time now during the emacs tutorial; type <code>C-h t</code> to start the built-in emacs tutorial which explains basics like how to navigate with the keyboard, how to cut and paste (emacs is so old it predates the usual <!-- raw HTML omitted -->⌘-C<!-- raw HTML omitted -->, <!-- raw HTML omitted -->⌘-V<!-- raw HTML omitted --> commands for cut and paste; it has a slightly different concept of &ldquo;killing&rdquo; and &ldquo;yanking&rdquo; that takes a little while to get used to) and other common tasks. I&rsquo;m not sure it&rsquo;s 100% necessary to go through this now; it&rsquo;s a lot to learn and remember and these are the sort of things you can always figure out as you go along. It&rsquo;s also a lot nicer to configure the UI a little first so you can do the tutorial in a text editor that looks like it&rsquo;s from this millenium.</p>
+<p>You can spend some time now during the emacs tutorial; type <code>C-h t</code> to start the built-in emacs tutorial which explains basics like how to navigate with the keyboard, how to cut and paste (emacs is so old it predates the usual <kbd>⌘-C</kbd>, <kbd>⌘-V</kbd> commands for cut and paste; it has a slightly different concept of &ldquo;killing&rdquo; and &ldquo;yanking&rdquo; that takes a little while to get used to) and other common tasks. I&rsquo;m not sure it&rsquo;s 100% necessary to go through this now; it&rsquo;s a lot to learn and remember and these are the sort of things you can always figure out as you go along. It&rsquo;s also a lot nicer to configure the UI a little first so you can do the tutorial in a text editor that looks like it&rsquo;s from this millenium.</p>
 <h2 id="customisation-and-configuration"></h>Customisation and configuration<a href="#customisation-and-configuration">
     
   </a>
@@ -182,7 +187,7 @@
 		
 	
 	
-	<img src="/posts/getting-started-with-emacs/emacs_full_hu11804955058255489036.webp"
+	<img src="/posts/getting-started-with-emacs/emacs_full_hu10752976779672182260.webp"
 	width="800"
 	height="437"
 	
@@ -244,7 +249,7 @@
     </aside>
   </div>  <div class="footer">
     <p class="footer-copyright"><i>&copy; 2014 - 2024
-      Clinton Boys. Built by hand, without the use of generative AI.</i>
+      Clinton Boys. Written, designed and built without the use of generative AI.</i>
       
     </p>
   </div>
