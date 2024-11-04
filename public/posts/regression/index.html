@@ -166,10 +166,12 @@ $$<p>In order to better understand statistical properties of this estimate, let&
 <p>Let&rsquo;s assume for the moment that this model captures the true underlying behaviour; that is, \(y=\beta X + \epsilon\) for some normally-distributed errors \(\epsilon\sim \mathcal{N}(0,\sigma^2)\).
 Then</p>
 $$
+\begin{align*}
 \mathbb{E}\hat\beta &= \mathbb{E}(\underbrace{(X^TX)^{-1}X^Ty}_{\text{definition of }\hat\beta}) = \mathbb{E}((X^TX)^{-1}X^T(\underbrace{\beta X + \epsilon}_{\text{def'n of } y}))\\
 &= \underbrace{(X^TX)^{-1}X^TX\mathbb{E}(\beta) + (X^TX)^{-1}X^T\mathbb{E}(\epsilon)}_{\text{linearity of }\mathbb{E}}\\
 &= I\beta + 0\\
 &= \beta.
+\end{align*}
 $$<p>So \(\hat\beta\) is an <em>unbiased</em> estimator for the parameters \(\beta\).</p>
 <p>An estimator for the variance \(\sigma^2\) of \(y\) is</p>
 $$
@@ -207,6 +209,7 @@ $$
 CX = [(X^TX)^{-1}X^T +G]X = (X^TX)^{-1}(X^TX) + GX = I + GX =I,
 $$<p>so \(GX=0\). The rest is algebra:</p>
 $$
+\begin{align*}
 \mathrm{Var}\tilde\beta &=& \mathrm{Var}(Cy)\\	
 &=& C(\mathrm{Var}y) C^T\\
 &=& \sigma^2 CC^T\\
@@ -216,6 +219,7 @@ $$
 &=&\sigma^2\Bigl[\Bigl((X^TX)^{-1}\Bigr)^T + GG^T\Bigr]\\
 &=& \mathrm{Var}\hat\beta + \sigma^2 GG^T \\
 &\geq& \mathrm{Var}\hat\beta
+\end{align*}
 $$<p>since \(GG^T\) is positive definite.</p>
 <h2 id="next-steps"></h>Next steps<a href="#next-steps">
     
@@ -295,15 +299,19 @@ and take its logarithm (log-likelihood)</li>
 </h2><p>Ridge regression is a method for shrinking coefficients by imposing a penalty on their combined size.</p>
 <p>Instead of the usual linear regression least-squares solution \(\hat\beta_{\mathrm{OLS}}=\mathrm{argmin}_\beta \Bigl\{\sum_{i=1}^N\Bigl(y_i-\sum_{j=0}^p x_{ij}\beta_j\Bigr)^2\Bigr\}\) we instead solve</p>
 $$
+\begin{align*}
 \hat\beta_{\mathrm{ridge}}&=\mathrm{argmin}_\beta \Bigl\{\sum_{i=1}^N\Bigl(y_i-\sum_{j=0}^p x_{ij}\beta_j\Bigr)^2\Bigr\}\\
 &\mathrm{subject \;to}\;\; \sum_{j=1}^p \beta_j^2\leq t.
+\end{align*}
 $$<h2 id="the-lasso"></h>The LASSO<a href="#the-lasso">
     
   </a>
 </h2><p>Another option is the LASSO (Least Absolute Shrinkage and Selection Operator), which solves the optimisation problem</p>
 $$
+\begin{align*}
 \hat\beta_{\mathrm{ridge}}&=\mathrm{argmin}_\beta \Bigl\{\sum_{i=1}^N\Bigl(y_i-\sum_{j=0}^p x_{ij}\beta_j\Bigr)^2\Bigr\}\\
 &\mathrm{subject \;to}\;\; \sum_{j=1}^p \left|\beta_j\right|\leq t.
+\end{align*}
 $$<p>In turns out that ridge regression and the LASSO behave similarly, but the LASSO is often preferable as it has a nice geometric property which allows some coefficients to be actually set to exactly zero.</p>
 <p>Why do we need to do this?</p>
 <h2 id="principal-component-analysis"></h>Principal component analysis<a href="#principal-component-analysis">
@@ -318,8 +326,10 @@ $$
 X\hat\beta_{\mathrm{OLS}} = UU^Ty
 $$<p>and similarly that the ridge regression estimator can be written as</p>
 $$
+\begin{align*}
 X\hat\beta_{\mathrm{ridge}} &= UD(D^2+\lambda I)DU^Ty\\
 &= \sum_{i=1}^p u_j\frac{d_j^2}{d_j^2+\lambda}u_j^T y.
+\end{align*}
 $$<p>This shows that ridge regression</p>
 <ul>
 <li>computes the coordinates of \(y\) with respect to the orthonormal basis \(U\) (just like OLS regression)</li>

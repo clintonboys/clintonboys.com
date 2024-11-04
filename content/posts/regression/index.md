@@ -86,10 +86,12 @@ Let's assume for the moment that this model captures the true underlying behavio
 Then
 
 $$
+\begin{align*}
 \mathbb{E}\hat\beta &= \mathbb{E}(\underbrace{(X^TX)^{-1}X^Ty}_{\text{definition of }\hat\beta}) = \mathbb{E}((X^TX)^{-1}X^T(\underbrace{\beta X + \epsilon}_{\text{def'n of } y}))\\
 &= \underbrace{(X^TX)^{-1}X^TX\mathbb{E}(\beta) + (X^TX)^{-1}X^T\mathbb{E}(\epsilon)}_{\text{linearity of }\mathbb{E}}\\
 &= I\beta + 0\\
 &= \beta.
+\end{align*}
 $$
 
 So \(\hat\beta\) is an *unbiased* estimator for the parameters \(\beta\). 
@@ -151,6 +153,7 @@ $$
 so \(GX=0\). The rest is algebra:
 
 $$
+\begin{align*}
 \mathrm{Var}\tilde\beta &=& \mathrm{Var}(Cy)\\	
 &=& C(\mathrm{Var}y) C^T\\
 &=& \sigma^2 CC^T\\
@@ -160,6 +163,7 @@ $$
 &=&\sigma^2\Bigl[\Bigl((X^TX)^{-1}\Bigr)^T + GG^T\Bigr]\\
 &=& \mathrm{Var}\hat\beta + \sigma^2 GG^T \\
 &\geq& \mathrm{Var}\hat\beta
+\end{align*}
 $$
 
 since \(GG^T\) is positive definite. 
@@ -249,8 +253,10 @@ Instead of the usual linear regression least-squares solution \(\hat\beta_{\math
 
 
 $$
+\begin{align*}
 \hat\beta_{\mathrm{ridge}}&=\mathrm{argmin}_\beta \Bigl\{\sum_{i=1}^N\Bigl(y_i-\sum_{j=0}^p x_{ij}\beta_j\Bigr)^2\Bigr\}\\
 &\mathrm{subject \;to}\;\; \sum_{j=1}^p \beta_j^2\leq t.
+\end{align*}
 $$
 
 ## The LASSO
@@ -258,8 +264,10 @@ $$
 Another option is the LASSO (Least Absolute Shrinkage and Selection Operator), which solves the optimisation problem
 
 $$
+\begin{align*}
 \hat\beta_{\mathrm{ridge}}&=\mathrm{argmin}_\beta \Bigl\{\sum_{i=1}^N\Bigl(y_i-\sum_{j=0}^p x_{ij}\beta_j\Bigr)^2\Bigr\}\\
 &\mathrm{subject \;to}\;\; \sum_{j=1}^p \left|\beta_j\right|\leq t.
+\end{align*}
 $$
 
 In turns out that ridge regression and the LASSO behave similarly, but the LASSO is often preferable as it has a nice geometric property which allows some coefficients to be actually set to exactly zero. 
@@ -285,8 +293,10 @@ $$
 and similarly that the ridge regression estimator can be written as
 
 $$
+\begin{align*}
 X\hat\beta_{\mathrm{ridge}} &= UD(D^2+\lambda I)DU^Ty\\
 &= \sum_{i=1}^p u_j\frac{d_j^2}{d_j^2+\lambda}u_j^T y.
+\end{align*}
 $$
 
 This shows that ridge regression
