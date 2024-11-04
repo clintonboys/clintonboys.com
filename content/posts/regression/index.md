@@ -155,14 +155,14 @@ so \(GX=0\). The rest is algebra:
 $$
 \begin{align*}
 \mathrm{Var}\tilde\beta &=& \mathrm{Var}(Cy)\\	
-&=& C(\mathrm{Var}y) C^T\\
-&=& \sigma^2 CC^T\\
-&=& \sigma^2\Bigl[(X^TX)^{-1}X^T + G\Bigr]\Bigl[X\Bigl((X^TX)^{-1}\Bigr)^T + G^T\Bigr]\\
-&=& \sigma^2\Bigl[(X^TX)^{-1}X^TX\Bigl((X^TX)^{-1}\Bigr)^T + GX\Bigl((X^TX)^{-1}\Bigr)^T \\
-&\qquad&+ \;\;(X^TX)^{-1}X^TG^T + GG^T\Bigr]\\
-&=&\sigma^2\Bigl[\Bigl((X^TX)^{-1}\Bigr)^T + GG^T\Bigr]\\
-&=& \mathrm{Var}\hat\beta + \sigma^2 GG^T \\
-&\geq& \mathrm{Var}\hat\beta
+&= C(\mathrm{Var}y) C^T\\
+&= \sigma^2 CC^T\\
+&= \sigma^2\Bigl[(X^TX)^{-1}X^T + G\Bigr]\Bigl[X\Bigl((X^TX)^{-1}\Bigr)^T + G^T\Bigr]\\
+&= \sigma^2\Bigl[(X^TX)^{-1}X^TX\Bigl((X^TX)^{-1}\Bigr)^T + GX\Bigl((X^TX)^{-1}\Bigr)^T \\
+&\qquad+ \;\;(X^TX)^{-1}X^TG^T + GG^T\Bigr]\\
+&=\sigma^2\Bigl[\Bigl((X^TX)^{-1}\Bigr)^T + GG^T\Bigr]\\
+&= \mathrm{Var}\hat\beta + \sigma^2 GG^T \\
+&\geq \mathrm{Var}\hat\beta,
 \end{align*}
 $$
 
