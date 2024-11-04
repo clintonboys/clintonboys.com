@@ -13,7 +13,7 @@ I like hacking away at interesting problems in lots of different areas: mathemat
 
 ## Work and skills
 
-I graduated from the University of Sydney in 2011 with a First Class Honours degree in Pure Mathematics, and then in 2015 with a PhD in Mathematics. You can find answers to some frequently asked questions about my PhD here.
+I graduated from the University of Sydney in 2011 with a First Class Honours degree in Pure Mathematics, and then in 2015 with a PhD in Mathematics. You can find answers to some frequently asked questions about my PhD [here]({{< ref "projects/phd" >}}).
 
 In 2015 I moved from Sydney to Tel Aviv and worked there for eight years at various startups, ending up at [Via](http://ridewithvia.com). In 2023 I relocated with Via to London with my family. 
 
