@@ -38,7 +38,9 @@ As foreshadowed in [this post]({{< ref "posts/ten-years" >}}), I recently migrat
 
 - Portfolio
 - Dark mode
-- 
+- Hugo 
+- Reading time indication
+- Vercel (already done)
 
 ## Process
 

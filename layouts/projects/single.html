@@ -3,6 +3,7 @@
   <div class="single-feature-img">{{ partial "general/feature-image.html" . }}</div>
   <article class="markdown">
     {{ .Content }}
+    {{- partial "footer/footer.html" . -}}
   </article>
 </div>
 {{ end }}

@@ -5,6 +5,7 @@
 <section class="generic-single">
   <div class="single-container markdown">
     {{ .Content }}
+    {{- partial "footer/footer.html" . -}}
   </div>
 </section>
 {{ end }}
