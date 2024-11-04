@@ -48,14 +48,23 @@ Their squares \(X_1^2,X_2^2,\ldots\) are also iid random variables and so if we 
 the uniform measure on \([-1,1]^n\) we can compute their expectations as
 
 $$
-\mathbb{E}(X_i^2) = \int_{\Omega}X_i^2d\mu = \int_{[-1,1]^n}X_i^2d\mu = 2^{-n}\int_{[-1,1]^n}x_i^2dx_1dx_2\cdots dx_n
+\begin{align*}
+\mathbb{E}(X_i^2) &= \int_{\Omega}X_i^2d\mu \\
+&= \int_{[-1,1]^n}X_i^2d\mu \\
+&= 2^{-n}\int_{[-1,1]^n}x_i^2dx_1dx_2\cdots dx_n,
+\end{align*}
 $$
 
 since the uniform probability measure on \([-1,1]^n\) is $$2^{-n} \prod_{i=1}^n dx_i$$
  (since each interval has length 2). This then equals
  
 $$
-2^{-n}\int_{-1}^1\int_{-1}^1\cdots\int_{-1}^1 x_i^2dx_1dx_2\cdots dx_n = \frac{1}{2} \int_{-1}^1 x_i^2 dx_i = \int_0^1 x_i^2 dx_i = \frac{1}{3}. 
+\begin{align*}
+2^{-n}&\int_{-1}^1\int_{-1}^1\cdots\int_{-1}^1 x_i^2dx_1dx_2\cdots dx_n \\
+&= \frac{1}{2} \int_{-1}^1 x_i^2 dx_i \\
+&= \int_0^1 x_i^2 dx_i\\
+&= \frac{1}{3}. 
+\end{align*}
 $$ 
 
 The weak law of large numbers tells us that the quantity $\frac{X_1^2+\ldots+X_n^2}{n}$ converges in probability to $\frac{1}{n}\sum_{i=1}^n\frac13=\frac13$, which means that for a given epsilon we can find $n$ such that

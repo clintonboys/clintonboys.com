@@ -36,18 +36,18 @@ A neural network is essentially a function approximation algorithm, modelled at 
 on the behaviour of neurons in the human brain. Although it is not a particularly common 
 way of thinking as a data scientist, from a mathematical perspective machine learning 
 is nothing more than function approximation with a probabilistic flavour. Under the assumption 
-that the "true" relationship between a set of features $$X$$ and an output variable $$y$$ can be specified
-by a function $$f(X, \theta)$$ which may depend further on some parameters $$\theta$$, the problem
-of machine learning can be expressed as an attempt to approximate $$f$$ in a way which minimizes
+that the "true" relationship between a set of features \(X\) and an output variable \(y\) can be specified
+by a function $$f(X, \theta)$$ which may depend further on some parameters \(\theta\), the problem
+of machine learning can be expressed as an attempt to approximate \(f\) in a way which minimizes
 a specified cost function (the choice of cost function is usually motivated probabilistically). 
 
-For a given input $$X\in\mathbb{R}^n$$, a **neural network with a single hidden layer** is a finite linear combination of the form
+For a given input \(X\in\mathbb{R}^n\), a **neural network with a single hidden layer** is a finite linear combination of the form
 
 $$
 \sum_{j=1}^N\alpha_j\sigma(y_j^TX+\theta_j)
 $$
 
-where $$N,\alpha_j\in \mathbb{R}$$, $$y_j\in\mathbb{R}^n$$ and $$\sigma$$ is a special type of non-linear function we will discuss later. The $$\alpha_j$$'s are called the *weights*, the $$\theta_j$$ the *biases* and $$\sigma$$ is called the *activation function*. 
+where \(N,\alpha_j\in \mathbb{R}\), \(y_j\in\mathbb{R}^n\) and \(\sigma\) is a special type of non-linear function we will discuss later. The \(\alpha_j\)'s are called the *weights*, the \(\theta_j\) the *biases* and \(\sigma\) is called the *activation function*. 
 
 ![Neural network](https://github.com/clintonboys/clintonboys.github.io/blob/master/_posts/nn.png?raw=true)
 
@@ -71,19 +71,19 @@ its utility becomes clear and the question of generalisation and universality ar
 So seeing the above family of functions occurring in many different places, the natural question is: what can we use 
 them for? The answer turns out to be just about everything: in a way which can be made mathematically precise,
 neural networks with a single layer can be used to approximate any continuous function. Let's state this theorem a 
-little more clearly. The following theorem comes from a [paper](https://www.dartmouth.edu/~gvc/Cybenko_MCSS.pdf) of Cybenko. A **sigmoidal** function is one which "looks" like a sigmoid: $$\sigma(x)\to1$$ as $$x\to\infty$$ and $$\sigma(x)\to0$$ as $$x\to-\infty$$.  
+little more clearly. The following theorem comes from a [paper](https://www.dartmouth.edu/~gvc/Cybenko_MCSS.pdf) of Cybenko. A **sigmoidal** function is one which "looks" like a sigmoid: \(\sigma(x)\to1\) as \(x\to\infty\) and \(\sigma(x)\to0\) as \(x\to-\infty\).  
 
 ---
 
 **Universal approximation theorem for neural networks (Cybenko)**
 
-Let $$\sigma$$ be any continuous sigmoidal function. Then finite sums of the form 
+Let \(\sigma\) be any continuous sigmoidal function. Then finite sums of the form 
 
 $$
 G(x) = \sum_{j=1}^N \alpha_j\sigma(y_j^Tx + \theta_j)
 $$
 
-are dense in the set $$C(I_n)$$ of continuous functions on the unit cube. 
+are dense in the set \(C(I_n)\) of continuous functions on the unit cube. 
 
 ---
 

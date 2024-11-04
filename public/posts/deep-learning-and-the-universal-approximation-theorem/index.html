@@ -141,26 +141,15 @@ networks are so powerful.</p>
 on the behaviour of neurons in the human brain. Although it is not a particularly common
 way of thinking as a data scientist, from a mathematical perspective machine learning
 is nothing more than function approximation with a probabilistic flavour. Under the assumption
-that the &ldquo;true&rdquo; relationship between a set of features </p>
-$$X$$<p> and an output variable </p>
-$$y$$<p> can be specified
+that the &ldquo;true&rdquo; relationship between a set of features \(X\) and an output variable \(y\) can be specified
 by a function </p>
-$$f(X, \theta)$$<p> which may depend further on some parameters </p>
-$$\theta$$<p>, the problem
-of machine learning can be expressed as an attempt to approximate </p>
-$$f$$<p> in a way which minimizes
+$$f(X, \theta)$$<p> which may depend further on some parameters \(\theta\), the problem
+of machine learning can be expressed as an attempt to approximate \(f\) in a way which minimizes
 a specified cost function (the choice of cost function is usually motivated probabilistically).</p>
-<p>For a given input </p>
-$$X\in\mathbb{R}^n$$<p>, a <strong>neural network with a single hidden layer</strong> is a finite linear combination of the form</p>
+<p>For a given input \(X\in\mathbb{R}^n\), a <strong>neural network with a single hidden layer</strong> is a finite linear combination of the form</p>
 $$
 \sum_{j=1}^N\alpha_j\sigma(y_j^TX+\theta_j)
-$$<p>where </p>
-$$N,\alpha_j\in \mathbb{R}$$<p>, </p>
-$$y_j\in\mathbb{R}^n$$<p> and </p>
-$$\sigma$$<p> is a special type of non-linear function we will discuss later. The </p>
-$$\alpha_j$$<p>&rsquo;s are called the <em>weights</em>, the </p>
-$$\theta_j$$<p> the <em>biases</em> and </p>
-$$\sigma$$<p> is called the <em>activation function</em>.</p>
+$$<p>where \(N,\alpha_j\in \mathbb{R}\), \(y_j\in\mathbb{R}^n\) and \(\sigma\) is a special type of non-linear function we will discuss later. The \(\alpha_j\)&rsquo;s are called the <em>weights</em>, the \(\theta_j\) the <em>biases</em> and \(\sigma\) is called the <em>activation function</em>.</p>
 <p><img src="https://github.com/clintonboys/clintonboys.github.io/blob/master/_posts/nn.png?raw=true"
 	alt="Neural network" 
 	class="single-post-image" 
@@ -185,19 +174,13 @@ its utility becomes clear and the question of generalisation and universality ar
 <p>So seeing the above family of functions occurring in many different places, the natural question is: what can we use
 them for? The answer turns out to be just about everything: in a way which can be made mathematically precise,
 neural networks with a single layer can be used to approximate any continuous function. Let&rsquo;s state this theorem a
-little more clearly. The following theorem comes from a <a href="https://www.dartmouth.edu/~gvc/Cybenko_MCSS.pdf" target="_blank" rel="noopener">paper</a> of Cybenko. A <strong>sigmoidal</strong> function is one which &ldquo;looks&rdquo; like a sigmoid: </p>
-$$\sigma(x)\to1$$<p> as </p>
-$$x\to\infty$$<p> and </p>
-$$\sigma(x)\to0$$<p> as </p>
-$$x\to-\infty$$<p>.</p>
+little more clearly. The following theorem comes from a <a href="https://www.dartmouth.edu/~gvc/Cybenko_MCSS.pdf" target="_blank" rel="noopener">paper</a> of Cybenko. A <strong>sigmoidal</strong> function is one which &ldquo;looks&rdquo; like a sigmoid: \(\sigma(x)\to1\) as \(x\to\infty\) and \(\sigma(x)\to0\) as \(x\to-\infty\).</p>
 <hr>
 <p><strong>Universal approximation theorem for neural networks (Cybenko)</strong></p>
-<p>Let </p>
-$$\sigma$$<p> be any continuous sigmoidal function. Then finite sums of the form</p>
+<p>Let \(\sigma\) be any continuous sigmoidal function. Then finite sums of the form</p>
 $$
 G(x) = \sum_{j=1}^N \alpha_j\sigma(y_j^Tx + \theta_j)
-$$<p>are dense in the set </p>
-$$C(I_n)$$<p> of continuous functions on the unit cube.</p>
+$$<p>are dense in the set \(C(I_n)\) of continuous functions on the unit cube.</p>
 <hr>
 <p>For those who don&rsquo;t remember their undergraduate analysis, there is a theoretical definition of
 density <a href="https://en.wikipedia.org/wiki/Dense_set" target="_blank" rel="noopener">here</a>, but for our purposes it is enough to think of it
