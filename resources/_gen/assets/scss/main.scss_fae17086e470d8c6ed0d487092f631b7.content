@@ -572,7 +572,7 @@ body {
  */
 .container, .single-container-post, .single-container, .container--sm {
   background-color: var(--color-contrast-lower);
-  max-width: 850px;
+  max-width: 900px;
   /* 1 */
   margin-left: auto;
   /* 2 */
@@ -1202,7 +1202,7 @@ body {
   max-width: 900px; }
   @media (min-width: 1200px) {
     .single-container-post {
-      max-width: 850px; } }
+      max-width: 900px; } }
 .single-post-contents {
   overflow: auto; }
 

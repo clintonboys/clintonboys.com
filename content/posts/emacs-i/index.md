@@ -34,7 +34,7 @@ I've been using emacs for a month or so, and am already finding that I am editin
 
 I'll describe below the process I went through to get my current emacs setup up-and-running: my `~/.emacs.d/init.el` file is available on [Github](http://github.com/XXXX). -->
 
-### Installation
+## Installation
 
 Like a lot of people who are first taking the plunge into emacs, I tried [Spacemacs]() for a few days; it's a prepackaged version of emacs with a bunch of additional packages and extensions installed, in particular a slightly different UI and key commands based on [vi](https://en.wikipedia.org/wiki/vi_(text_editor)). I struggled with it: it was slow and felt bloated and convoluted and eventually decided I wanted to learn how everything works from scratch so removed it from my system and installed a clean, "vanilla" version of GNU Emacs. Installing on my Mac (macOS 10.15 Catalina) was as simple as 
 
@@ -50,7 +50,7 @@ You should end up when you start up the program you just installed with a very a
 
 At this point, the emacs editor is technically installed but we will need to do some extensive configuration and customisation to get it looking and performing like a modern text editor. It's worth at this point at least understanding the basics of how it works.
 
-### How to use emacs
+## How to use emacs
 
 Emacs commands are entered with the keyboard and you should almost never need to use the mouse for anything. If this sounds weird to you, stick with it for a while and you'll realise how much faster it is and why you never want to reach for the mouse if you don't absolutely have to. `C-` stands for "hold the control key while pressing", so for example the command to open a new file is `C-x C-f`; hold control and press x, and then press f (with control still held down). You will then be prompted to enter a filename; if the file exists, emacs will open it, otherwise it will create a new file. Create a new file in `~/Desktop/emacs_test.txt` and press `RET` (the enter key). 
 
@@ -58,7 +58,7 @@ This file then opens in a *buffer*. A buffer is a chunk of text that you're curr
 
 You can spend some time now during the emacs tutorial; type `C-h t` to start the built-in emacs tutorial which explains basics like how to navigate with the keyboard, how to cut and paste (emacs is so old it predates the usual <kbd>&#8984;-C</kbd>, <kbd>&#8984;-V</kbd> commands for cut and paste; it has a slightly different concept of "killing" and "yanking" that takes a little while to get used to) and other common tasks. I'm not sure it's 100% necessary to go through this now; it's a lot to learn and remember and these are the sort of things you can always figure out as you go along. It's also a lot nicer to configure the UI a little first so you can do the tutorial in a text editor that looks like it's from this millenium. 
 
-### Customisation and configuration
+## Customisation and configuration
 
 If you're anything like me, you're extremely dissatisifed with the default appearance above and want, among other things
 
@@ -74,15 +74,15 @@ After some customisation and configuration, we'll set up emacs to look like this
 
 Configuring emacs is quite simple. All the customisation is defined in a file located at `~/.emacs.d/init.el`; if you open this file now (in emacs!) you will notice it's empty; this means we are using the default emacs installation. We're now going to add a bunch of different text to this file: actually we're writing lines of code in emacs Lisp, to get the customisations we want. 
 
-#### Font and theme
+## Font and theme
 
 I took a bunch of my original UI configuration from [Huy Tr.](https://dev.to/huytd/emacs-from-scratch-1cg6).
 
-#### Icon
+## Icon
 
 Again, if you're anything like me (and I guess if you've read this far into my emacs setup you probably are), the first thing that will strike you as ugly and in desperate need of replacement is the dock icon. I guess I wasn't the first person to think this; I pulled a new icon from [Emacs is sexy](https://emacs.sexy), and replaced it according to the instructions [here](https://apple.stackexchange.com/questions/229524/how-do-i-change-the-icon-of-emacs-installed-via-homebrew).
 
-#### Minimal UI
+## Minimal UI
 
 I am removing parts of the UI I don't find particularly useful (since I interact entirely through the keyboard). The first few lines of my `~/.emacs.d/init.el` are:
 

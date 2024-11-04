@@ -136,10 +136,10 @@
 </ul>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<h3 id="installation"></h>Installation<a href="#installation">
+<h2 id="installation"></h>Installation<a href="#installation">
     
   </a>
-</h3><p>Like a lot of people who are first taking the plunge into emacs, I tried <a href="">Spacemacs</a> for a few days; it&rsquo;s a prepackaged version of emacs with a bunch of additional packages and extensions installed, in particular a slightly different UI and key commands based on <a href="https://en.wikipedia.org/wiki/vi_%28text_editor%29" target="_blank" rel="noopener">vi</a>. I struggled with it: it was slow and felt bloated and convoluted and eventually decided I wanted to learn how everything works from scratch so removed it from my system and installed a clean, &ldquo;vanilla&rdquo; version of GNU Emacs. Installing on my Mac (macOS 10.15 Catalina) was as simple as</p>
+</h2><p>Like a lot of people who are first taking the plunge into emacs, I tried <a href="">Spacemacs</a> for a few days; it&rsquo;s a prepackaged version of emacs with a bunch of additional packages and extensions installed, in particular a slightly different UI and key commands based on <a href="https://en.wikipedia.org/wiki/vi_%28text_editor%29" target="_blank" rel="noopener">vi</a>. I struggled with it: it was slow and felt bloated and convoluted and eventually decided I wanted to learn how everything works from scratch so removed it from my system and installed a clean, &ldquo;vanilla&rdquo; version of GNU Emacs. Installing on my Mac (macOS 10.15 Catalina) was as simple as</p>
 
 
   <pre><code>brew cask install emacs</code></pre>
@@ -159,16 +159,16 @@
 	>
 </p>
 <p>At this point, the emacs editor is technically installed but we will need to do some extensive configuration and customisation to get it looking and performing like a modern text editor. It&rsquo;s worth at this point at least understanding the basics of how it works.</p>
-<h3 id="how-to-use-emacs"></h>How to use emacs<a href="#how-to-use-emacs">
+<h2 id="how-to-use-emacs"></h>How to use emacs<a href="#how-to-use-emacs">
     
   </a>
-</h3><p>Emacs commands are entered with the keyboard and you should almost never need to use the mouse for anything. If this sounds weird to you, stick with it for a while and you&rsquo;ll realise how much faster it is and why you never want to reach for the mouse if you don&rsquo;t absolutely have to. <code>C-</code> stands for &ldquo;hold the control key while pressing&rdquo;, so for example the command to open a new file is <code>C-x C-f</code>; hold control and press x, and then press f (with control still held down). You will then be prompted to enter a filename; if the file exists, emacs will open it, otherwise it will create a new file. Create a new file in <code>~/Desktop/emacs_test.txt</code> and press <code>RET</code> (the enter key).</p>
+</h2><p>Emacs commands are entered with the keyboard and you should almost never need to use the mouse for anything. If this sounds weird to you, stick with it for a while and you&rsquo;ll realise how much faster it is and why you never want to reach for the mouse if you don&rsquo;t absolutely have to. <code>C-</code> stands for &ldquo;hold the control key while pressing&rdquo;, so for example the command to open a new file is <code>C-x C-f</code>; hold control and press x, and then press f (with control still held down). You will then be prompted to enter a filename; if the file exists, emacs will open it, otherwise it will create a new file. Create a new file in <code>~/Desktop/emacs_test.txt</code> and press <code>RET</code> (the enter key).</p>
 <p>This file then opens in a <em>buffer</em>. A buffer is a chunk of text that you&rsquo;re currently editing. You can save the contents of a buffer to a file. That&rsquo;s what we&rsquo;ll do now: type something using the keyboard, and then press <code>C-x C-s</code> to save the contents of this buffer to the file.</p>
 <p>You can spend some time now during the emacs tutorial; type <code>C-h t</code> to start the built-in emacs tutorial which explains basics like how to navigate with the keyboard, how to cut and paste (emacs is so old it predates the usual <!-- raw HTML omitted -->⌘-C<!-- raw HTML omitted -->, <!-- raw HTML omitted -->⌘-V<!-- raw HTML omitted --> commands for cut and paste; it has a slightly different concept of &ldquo;killing&rdquo; and &ldquo;yanking&rdquo; that takes a little while to get used to) and other common tasks. I&rsquo;m not sure it&rsquo;s 100% necessary to go through this now; it&rsquo;s a lot to learn and remember and these are the sort of things you can always figure out as you go along. It&rsquo;s also a lot nicer to configure the UI a little first so you can do the tutorial in a text editor that looks like it&rsquo;s from this millenium.</p>
-<h3 id="customisation-and-configuration"></h>Customisation and configuration<a href="#customisation-and-configuration">
+<h2 id="customisation-and-configuration"></h>Customisation and configuration<a href="#customisation-and-configuration">
     
   </a>
-</h3><p>If you&rsquo;re anything like me, you&rsquo;re extremely dissatisifed with the default appearance above and want, among other things</p>
+</h2><p>If you&rsquo;re anything like me, you&rsquo;re extremely dissatisifed with the default appearance above and want, among other things</p>
 <ul>
 <li>dark mode (everything has a dark mode now so white backgrounds hurt my eyes and my brain)</li>
 <li>a more attractive fixed width font</li>
@@ -193,18 +193,18 @@
 	>
 </p>
 <p>Configuring emacs is quite simple. All the customisation is defined in a file located at <code>~/.emacs.d/init.el</code>; if you open this file now (in emacs!) you will notice it&rsquo;s empty; this means we are using the default emacs installation. We&rsquo;re now going to add a bunch of different text to this file: actually we&rsquo;re writing lines of code in emacs Lisp, to get the customisations we want.</p>
-<h4 id="font-and-theme"></h>Font and theme<a href="#font-and-theme">
+<h2 id="font-and-theme"></h>Font and theme<a href="#font-and-theme">
     
   </a>
-</h4><p>I took a bunch of my original UI configuration from <a href="https://dev.to/huytd/emacs-from-scratch-1cg6" target="_blank" rel="noopener">Huy Tr.</a>.</p>
-<h4 id="icon"></h>Icon<a href="#icon">
+</h2><p>I took a bunch of my original UI configuration from <a href="https://dev.to/huytd/emacs-from-scratch-1cg6" target="_blank" rel="noopener">Huy Tr.</a>.</p>
+<h2 id="icon"></h>Icon<a href="#icon">
     
   </a>
-</h4><p>Again, if you&rsquo;re anything like me (and I guess if you&rsquo;ve read this far into my emacs setup you probably are), the first thing that will strike you as ugly and in desperate need of replacement is the dock icon. I guess I wasn&rsquo;t the first person to think this; I pulled a new icon from <a href="https://emacs.sexy" target="_blank" rel="noopener">Emacs is sexy</a>, and replaced it according to the instructions <a href="https://apple.stackexchange.com/questions/229524/how-do-i-change-the-icon-of-emacs-installed-via-homebrew" target="_blank" rel="noopener">here</a>.</p>
-<h4 id="minimal-ui"></h>Minimal UI<a href="#minimal-ui">
+</h2><p>Again, if you&rsquo;re anything like me (and I guess if you&rsquo;ve read this far into my emacs setup you probably are), the first thing that will strike you as ugly and in desperate need of replacement is the dock icon. I guess I wasn&rsquo;t the first person to think this; I pulled a new icon from <a href="https://emacs.sexy" target="_blank" rel="noopener">Emacs is sexy</a>, and replaced it according to the instructions <a href="https://apple.stackexchange.com/questions/229524/how-do-i-change-the-icon-of-emacs-installed-via-homebrew" target="_blank" rel="noopener">here</a>.</p>
+<h2 id="minimal-ui"></h>Minimal UI<a href="#minimal-ui">
     
   </a>
-</h4><p>I am removing parts of the UI I don&rsquo;t find particularly useful (since I interact entirely through the keyboard). The first few lines of my <code>~/.emacs.d/init.el</code> are:</p>
+</h2><p>I am removing parts of the UI I don&rsquo;t find particularly useful (since I interact entirely through the keyboard). The first few lines of my <code>~/.emacs.d/init.el</code> are:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1</span><span>(scroll-bar-mode <span style="color:#ae81ff">-1</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2</span><span>(tool-bar-mode   <span style="color:#ae81ff">-1</span>)
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3</span><span>(tooltip-mode    <span style="color:#ae81ff">-1</span>)
@@ -242,19 +242,15 @@
 
       
     </aside>
+  </div>  <div class="footer">
+    <p class="footer-copyright"><i>&copy; 2014 - 2024
+      Clinton Boys. Built by hand, without the use of generative AI.</i>
+      
+    </p>
   </div>
 </div>
 
-    </main><footer>
-  
-  <div class="section footer">
-    <p class="footer-copyright"><i>&copy; 2014 - 2024
-      Clinton Boys</i>
-      
-    </p>
-    
-  </div>
-</footer>
+    </main>
   
   
 
