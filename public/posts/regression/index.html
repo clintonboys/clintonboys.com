@@ -166,10 +166,10 @@ $$<p>In order to better understand statistical properties of this estimate, let&
 <p>Let&rsquo;s assume for the moment that this model captures the true underlying behaviour; that is, \(y=\beta X + \epsilon\) for some normally-distributed errors \(\epsilon\sim \mathcal{N}(0,\sigma^2)\).
 Then</p>
 $$
-\mathbb{E}\hat\beta &=& \mathbb{E}(\underbrace{(X^TX)^{-1}X^Ty}_{\text{definition of }\hat\beta}) = \mathbb{E}((X^TX)^{-1}X^T(\underbrace{\beta X + \epsilon}_{\text{def'n of } y}))\\
-&=& \underbrace{(X^TX)^{-1}X^TX\mathbb{E}(\beta) + (X^TX)^{-1}X^T\mathbb{E}(\epsilon)}_{\text{linearity of }\mathbb{E}}\\
-&=& I\beta + 0\\
-&=& \beta.
+\mathbb{E}\hat\beta &= \mathbb{E}(\underbrace{(X^TX)^{-1}X^Ty}_{\text{definition of }\hat\beta}) = \mathbb{E}((X^TX)^{-1}X^T(\underbrace{\beta X + \epsilon}_{\text{def'n of } y}))\\
+&= \underbrace{(X^TX)^{-1}X^TX\mathbb{E}(\beta) + (X^TX)^{-1}X^T\mathbb{E}(\epsilon)}_{\text{linearity of }\mathbb{E}}\\
+&= I\beta + 0\\
+&= \beta.
 $$<p>So \(\hat\beta\) is an <em>unbiased</em> estimator for the parameters \(\beta\).</p>
 <p>An estimator for the variance \(\sigma^2\) of \(y\) is</p>
 $$

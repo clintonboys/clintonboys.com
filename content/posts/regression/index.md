@@ -86,10 +86,10 @@ Let's assume for the moment that this model captures the true underlying behavio
 Then
 
 $$
-\mathbb{E}\hat\beta &=& \mathbb{E}(\underbrace{(X^TX)^{-1}X^Ty}_{\text{definition of }\hat\beta}) = \mathbb{E}((X^TX)^{-1}X^T(\underbrace{\beta X + \epsilon}_{\text{def'n of } y}))\\
-&=& \underbrace{(X^TX)^{-1}X^TX\mathbb{E}(\beta) + (X^TX)^{-1}X^T\mathbb{E}(\epsilon)}_{\text{linearity of }\mathbb{E}}\\
-&=& I\beta + 0\\
-&=& \beta.
+\mathbb{E}\hat\beta &= \mathbb{E}(\underbrace{(X^TX)^{-1}X^Ty}_{\text{definition of }\hat\beta}) = \mathbb{E}((X^TX)^{-1}X^T(\underbrace{\beta X + \epsilon}_{\text{def'n of } y}))\\
+&= \underbrace{(X^TX)^{-1}X^TX\mathbb{E}(\beta) + (X^TX)^{-1}X^T\mathbb{E}(\epsilon)}_{\text{linearity of }\mathbb{E}}\\
+&= I\beta + 0\\
+&= \beta.
 $$
 
 So \(\hat\beta\) is an *unbiased* estimator for the parameters \(\beta\). 
