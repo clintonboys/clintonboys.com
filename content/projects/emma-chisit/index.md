@@ -43,7 +43,7 @@ The model uses the following data:
 
 **Poll aggregator to swings**
 
-The current heart of the model is a poll aggregator. I'm using the same code that I wrote for my [Israeli poll aggregator]({{ site.baseurl }}{% link _posts/2015-03-13-israel-poll-aggregator.md %}), which accounts for pollster reliability (measured across my entire poll database, including state polls) and recency. The model computes a poll aggregate (which has a much greater historical tendency for accuracy than the individual pollsters) and then the implied swing (percentage change) from the previous election's results. 
+The current heart of the model is a poll aggregator. I'm using the same code that I wrote for my [Israeli poll aggregator]({{< ref "posts/israel-poll-aggregator" >}}), which accounts for pollster reliability (measured across my entire poll database, including state polls) and recency. The model computes a poll aggregate (which has a much greater historical tendency for accuracy than the individual pollsters) and then the implied swing (percentage change) from the previous election's results. 
 
 **Four-party model and runoff simulator**
 
@@ -73,14 +73,14 @@ In order of priority, the next steps for the model are as follows:
 - clean up the code so the modules work faster and together better (at the moment it has all been built ad hoc on top of itself so it's a little messy)
 - add the ability for two-party preferred contests between parties other than the ALP and the Coalition
 - add the option for a strong fourth party (like PUP in the 2013 election, and previous parties like Family First, One Nation and the Democrats)
-- use historical data (and polling data) to better estimate [preference flows]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %}) (in particular, to obtain preference flows for non TPP contests)
-- incorporate [clustering]({{ site.baseurl }}{% link _posts/2015-02-13-aus-election-model-8.md %}) by demographic data into the model to more accurately individualise the swing estimate to seat clusters
+- use historical data (and polling data) to better estimate [preference flows]({{< ref "posts/aus-forecasting" >}}) (in particular, to obtain preference flows for non TPP contests)
+- incorporate [clustering]({{< ref "posts/aus-cluster" >}}) by demographic data into the model to more accurately individualise the swing estimate to seat clusters
 - incorporate state polls into the federal model
 - incorporate marginal seat polls into the model
 - account for personal votes of popular and long-incumbent members
 - get the model working for individual states
 - instead of providing a numerical estimate for each seat, provide a probabilistic estimate and a confidence interval
-- account for [redistributions]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %}) by reassigning polling places
+- account for [redistributions]({{< ref "posts/aus-forecasting" >}}) by reassigning polling places
 - add a trend feature to extrapolate results to the nearest election rather than just providing a nowcast
-- incorporate an [economic index]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %})
+- incorporate an [economic index]({{< ref "posts/aus-forecasting" >}})
 

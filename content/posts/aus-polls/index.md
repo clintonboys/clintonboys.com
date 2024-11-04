@@ -12,7 +12,7 @@ feature_image_alt: Blue Mountains, New South Wales, 2011
 
 *January 25, 2015*
 
-In a [post]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %}) last year, I discussed the difficulties in building a model for predicting Australian elections. In the next series of posts, I want to build a few basic pieces of this model. 
+In a [post]({{< ref "posts/aus-forecasting" >}}) last year, I discussed the difficulties in building a model for predicting Australian elections. In the next series of posts, I want to build a few basic pieces of this model. 
 
 The first piece of the model I want to build is a series of reliability weights for pollsters. First let's have a look at who the main pollsters are in Australian elections.
 

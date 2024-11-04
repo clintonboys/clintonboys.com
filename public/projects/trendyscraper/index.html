@@ -121,7 +121,7 @@
     
   </a>
 </h1><p><em>November 2, 2017</em></p>
-<p>My [Google trends scraper]({{ site.baseurl }}{% link _posts/2015-01-12-google-trends-scraper.md %}) is the most popular post on this site, and I&rsquo;ve been getting questions about it for the last year or so, ever since Google changed the way the data is pulled and displayed on the <a href="https://trends.google.com/trends/explore" target="_blank" rel="noopener">trends site</a>.</p>
+<p>My Google trends scraper is the most popular post on this site, and I&rsquo;ve been getting questions about it for the last year or so, ever since Google changed the way the data is pulled and displayed on the <a href="https://trends.google.com/trends/explore" target="_blank" rel="noopener">trends site</a>.</p>
 <p>I finally found some free time, worked out how Google had changed the API behind the scenes, and changed my trendy scraper to work with the new version. I dramatically improved the code at the same time. Thanks to everyone who was interested!</p>
 <h1 id="changes-to-the-code"></h>Changes to the code<a href="#changes-to-the-code">
     
@@ -173,7 +173,7 @@ def parse_csv(csv_contents):
     print df.head()
     return df   </code></pre>
 <p>These two functions then parse the response, pull the token and the request for the CSV and then simulates the second API call, saving the results as a pandas dataframe (much better than the previous code which had to actually save all the files to a local folder).</p>
-<p>The rest of the code is basically the same: you can read about the stitching process in the original [post]({{ site.baseurl }}{% link _posts/2015-01-12-google-trends-scraper.md %}).</p>
+<p>The rest of the code is basically the same: you can read about the stitching process in the original post below.</p>
 <h2 id="old-post"></h>Old post<a href="#old-post">
     
   </a>
@@ -370,7 +370,7 @@ if not os.path.exists(path+&quot;/&quot;+scrapings_dir):
 </code></pre>
 <p>This code is available in a <a href="https://github.com/clintonboys/trendy-scraper" target="_blank" rel="noopener">Github repo</a>. There&rsquo;s definitely room for a bunch of improvements but it does what I need it to do at the moment.</p>
 <p><strong>UPDATE</strong> (24/10/2016): Google has made significant changes to their Trends product which means this code no longer works. I&rsquo;m working on updating it and will write a new post when this is done.</p>
-<p><strong>UPDATE 2</strong> (18/2/2017): I have fixed the code so the trendy scraper is now working again. The updated code is in <a href="https://github.com/clintonboys/trendy-scraper" target="_blank" rel="noopener">Github</a> and there is a post on the [blog]({{ site.baseurl }}{% link _posts/2017-02-11-google-trends-scraper-2.md %}). I made a few improvements along the way.</p>
+<p><strong>UPDATE 2</strong> (18/2/2017): I have fixed the code so the trendy scraper is now working again. The updated code is in <a href="https://github.com/clintonboys/trendy-scraper" target="_blank" rel="noopener">Github</a>. I made a few improvements along the way.</p>
   <div class="footer">
     <p class="footer-copyright"><i>&copy; 2014 - 2024
       Clinton Boys. Built by hand, without the use of generative AI.</i>

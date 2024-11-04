@@ -100,7 +100,7 @@ Interestingly, using the polling data only we arrive at the usual media narrativ
 Third parties in Australia have a very peculiar effect on the electoral process. Unlike in American elections, Australian third parties can have a significant effect on the electoral outcome, and can even win seats. This is mainly due to two factors
 
 - compulsory voting, which increases the frequency of protest votes from electors who would otherwise not turnout, and
-- [preferential voting]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %}), which gives third parties' votes real electoral power in all contests. 
+- [preferential voting]({{< ref "posts/aus-forecasting" >}}), which gives third parties' votes real electoral power in all contests. 
 
 For this reason, polling Australian parliamentary elections is a priori more uncertain than in a traditional first-past-the-post contest, since third parties can introduce "chaotic" behaviour which is difficult to account for in polls.
 

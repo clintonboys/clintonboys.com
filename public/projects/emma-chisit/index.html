@@ -124,7 +124,7 @@
 <li>preference data from Antony Green. I&rsquo;m using Antony Green&rsquo;s calculations of preference flows in the 2013 election.</li>
 </ul>
 <p><strong>Poll aggregator to swings</strong></p>
-<p>The current heart of the model is a poll aggregator. I&rsquo;m using the same code that I wrote for my [Israeli poll aggregator]({{ site.baseurl }}{% link _posts/2015-03-13-israel-poll-aggregator.md %}), which accounts for pollster reliability (measured across my entire poll database, including state polls) and recency. The model computes a poll aggregate (which has a much greater historical tendency for accuracy than the individual pollsters) and then the implied swing (percentage change) from the previous election&rsquo;s results.</p>
+<p>The current heart of the model is a poll aggregator. I&rsquo;m using the same code that I wrote for my <a href="http://localhost:1313/posts/israeli-poll-aggregator/">Israeli poll aggregator</a>, which accounts for pollster reliability (measured across my entire poll database, including state polls) and recency. The model computes a poll aggregate (which has a much greater historical tendency for accuracy than the individual pollsters) and then the implied swing (percentage change) from the previous election&rsquo;s results.</p>
 <p><strong>Four-party model and runoff simulator</strong></p>
 <p>The model then takes the swing estimate and applies it to each individual seat. At this stage, the model assumes the system consists of four parties, the Coalition, the Labor Party, the Greens and a generic &ldquo;Others&rdquo; label that encompasses everyone else. This was a decision I made early on because these are the only four options reliably included in all polls. It&rsquo;s also the biggest shortcoming of the model in predicting recent elections, mainly because of the rise of PUP.</p>
 <p><strong>Current output</strong></p>
@@ -145,16 +145,16 @@ Lindsay 49.02 | 47.01
 <li>clean up the code so the modules work faster and together better (at the moment it has all been built ad hoc on top of itself so it&rsquo;s a little messy)</li>
 <li>add the ability for two-party preferred contests between parties other than the ALP and the Coalition</li>
 <li>add the option for a strong fourth party (like PUP in the 2013 election, and previous parties like Family First, One Nation and the Democrats)</li>
-<li>use historical data (and polling data) to better estimate [preference flows]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %}) (in particular, to obtain preference flows for non TPP contests)</li>
-<li>incorporate [clustering]({{ site.baseurl }}{% link _posts/2015-02-13-aus-election-model-8.md %}) by demographic data into the model to more accurately individualise the swing estimate to seat clusters</li>
+<li>use historical data (and polling data) to better estimate <a href="http://localhost:1313/posts/difficulties-in-forecasting-elections-in-australia/">preference flows</a> (in particular, to obtain preference flows for non TPP contests)</li>
+<li>incorporate <a href="http://localhost:1313/posts/clustering-australian-electorates-by-demographic-variables/">clustering</a> by demographic data into the model to more accurately individualise the swing estimate to seat clusters</li>
 <li>incorporate state polls into the federal model</li>
 <li>incorporate marginal seat polls into the model</li>
 <li>account for personal votes of popular and long-incumbent members</li>
 <li>get the model working for individual states</li>
 <li>instead of providing a numerical estimate for each seat, provide a probabilistic estimate and a confidence interval</li>
-<li>account for [redistributions]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %}) by reassigning polling places</li>
+<li>account for <a href="http://localhost:1313/posts/difficulties-in-forecasting-elections-in-australia/">redistributions</a> by reassigning polling places</li>
 <li>add a trend feature to extrapolate results to the nearest election rather than just providing a nowcast</li>
-<li>incorporate an [economic index]({{ site.baseurl }}{% link _posts/2014-10-06-aus-election-model.md %})</li>
+<li>incorporate an <a href="http://localhost:1313/posts/difficulties-in-forecasting-elections-in-australia/">economic index</a></li>
 </ul>
   <div class="footer">
     <p class="footer-copyright"><i>&copy; 2014 - 2024

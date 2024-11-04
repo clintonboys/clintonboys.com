@@ -67,11 +67,11 @@ $$
 \end{align*}
 $$ 
 
-The weak law of large numbers tells us that the quantity $\frac{X_1^2+\ldots+X_n^2}{n}$ converges in probability to $\frac{1}{n}\sum_{i=1}^n\frac13=\frac13$, which means that for a given epsilon we can find $n$ such that
+The weak law of large numbers tells us that the quantity \(\frac{X_1^2+\ldots+X_n^2}{n}\) converges in probability to \(\frac{1}{n}\sum_{i=1}^n\frac13=\frac13\), which means that for a given epsilon we can find \(n\) such that
 
 $$
 P\Bigl(\frac{X_1^2+\ldots+X_n^2}{n} - \frac13\Bigr) < \epsilon,
 $$
 
-i.e. $$P(X_1^2+\ldots+X_n^2 - \frac{n}{3}) < \epsilon$$, and taking square roots of both sides we see this is precisely the definition
-of $(X_1,\ldots,X_n)$ lying in the region described above. 
+i.e. \(P(X_1^2+\ldots+X_n^2 - \frac{n}{3}) < \epsilon\), and taking square roots of both sides we see this is precisely the definition
+of \((X_1,\ldots,X_n)\) lying in the region described above. 
