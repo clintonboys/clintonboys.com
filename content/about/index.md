@@ -27,4 +27,4 @@ You can send me an email at `me` at this domain, or find me on [LinkedIn](https:
 
 ### Colophon
 
-This site is served off Vercel, using Hugo with the Liftoff theme by Will Holmes with some small customisations. 
+This site is served off Vercel, using [Hugo](https://gohugo.io/ ) with the [Liftoff](https://github.com/wjh18/hugo-liftoff?tab=readme-ov-file) theme by [Will Holmes](https://github.com/wjh18) Will Holmes with some customisations. 

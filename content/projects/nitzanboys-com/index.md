@@ -29,3 +29,4 @@ techstack:
 
 *March 10, 2024*
 
+My wife is an independent psychotherapist who needed a landing page for prospective clients. Since her requirements were quite straightforward, 

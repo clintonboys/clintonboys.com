@@ -33,8 +33,8 @@
 <link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
 
 
-    
-
+    <script data-goatcounter="https://clintonboys.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
     
 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -42,7 +42,7 @@
   MathJax = {
     tex: {
       displayMath: [['\\[', '\\]'], ['$$', '$$']],  
-      inlineMath: [['\\(', '\\)']]                  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
     }
   };
 </script>
@@ -121,20 +121,18 @@
     
   </a>
 </h1><p><em>January 1, 2025</em></p>
-<h2 id="introduction"></h>Introduction<a href="#introduction">
-    
-  </a>
-</h2><p>As foreshadowed in my <a href="http://localhost:1313/posts/ten-years/">post</a> reflecting on ten years of running my personal website, I recently migrated the site to Hugo after more than ten years of blogging with Jekyll.</p>
+<p>As foreshadowed in my recent <a href="http://localhost:1313/posts/ten-years/">post</a> reflecting on ten years of running my personal website, I recently migrated the site to <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> after many years of blogging with Jekyll<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup>. I used the <a href="https://github.com/wjh18/hugo-liftoff?tab=readme-ov-file" target="_blank" rel="noopener">Liftoff</a> theme by <a href="https://github.com/wjh18" target="_blank" rel="noopener">Will Holmes</a> as my starting point, and ended up making a large number of customisations - mostly in the CSS, to get back to a similar look and feel that I had in my old site, but also some changes a bit deeper in the templating structure.</p>
 <p>There were quite a few reasons for the change:</p>
 <ul>
 <li><strong>Something new</strong>. I enjoy constantly reshaping, rewriting and rebuilding things I have made. It means I am continuously polishing and improving this site, shaving off little things that shouldn&rsquo;t be there, going over all the copy again, and just generally spending time honing something - <a href="https://blog.jim-nielsen.com/2024/sanding-ui/" target="_blank" rel="noopener">sanding</a> it - which is a very calming and enjoyable pastime for me.</li>
-<li><strong>Portfolio</strong>. This was the big one. My old Jekyll theme (which was a <em>heavily</em> customised fork of <a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank" rel="noopener">Minimal Mistakes</a> by Michael Rose) didn&rsquo;t have a built-in portfolio section, and I didn&rsquo;t really feel like sinking time into learning enough Jekyll to shoehorn one in myself. My new site has a shiny <a href="http://localhost:1313/projects/">portfolio</a> section, with pride of place in the top navigation bar, showcasing a bunch of projects I have managed to finish or half finish in some form over the years.</li>
-<li><strong>Dark mode</strong>. It seems like you can&rsquo;t have a techy personal website these days without a fancy switch that toggles between light and dark mode, defaulting to the setting of the user&rsquo;s browser. Hugo-liftoff came with this built in, so all I had to do was tweak the exact theme colours to my liking. I ended up using the same background colour for dark mode that I have used for five years over at <a href="https://www.mtsolitary.com/" target="_blank" rel="noopener">Mt Solitary</a>.</li>
-<li><strong>Hugo</strong>. I&rsquo;m sure there&rsquo;s lots of arguments in the Hugo versus Jekyll debate. I chose Jekyll ten years ago, but Hugo feels a lot more modern, is significantly faster, and doesn&rsquo;t have the Ruby dependency, which always gave me trouble. I also have used Hugo to successfully build <a href="http://localhost:1313/projects/nitzanboys-com/">other</a> <a href="http://localhost:1313/projects/mt-solitary/">websites</a> in the last few years so I&rsquo;ve built up a bit of experience and comfort with it.</li>
+<li><strong>Portfolio</strong>. This was the big one. My old Jekyll theme (which was a <em>heavily</em> customised fork of a very old version of the <a href="https://mmistakes.github.io/minimal-mistakes/" target="_blank" rel="noopener">Minimal Mistakes</a> theme by <a href="https://mademistakes.com/" target="_blank" rel="noopener">Michael Rose</a>) didn&rsquo;t have a built-in portfolio section, and I didn&rsquo;t really feel like sinking time into learning enough Jekyll to shoehorn one in myself. My new site has a shiny <a href="http://localhost:1313/projects/">portfolio</a> section, with pride of place in the top navigation bar, showcasing a bunch of projects I have managed to finish (or half finish) in some form over the years.</li>
+<li><strong>Dark mode</strong>. It seems like you can&rsquo;t have a techy personal website these days without a fancy switch that toggles between light and dark mode, defaulting to the setting of the user&rsquo;s browser. The Liftoff theme came with this built in, so all I had to do was tweak the exact theme colours to my liking. I ended up using the same background colour for dark mode that I have used for five years over at <a href="https://www.mtsolitary.com/" target="_blank" rel="noopener">Mt Solitary</a>, my digital garden.</li>
+<li><strong>Hugo</strong>. I chose Jekyll ten years ago, but Hugo feels a lot more modern, is significantly faster, and doesn&rsquo;t have the Ruby dependency, which always gave me trouble. I also have used Hugo to successfully build <a href="http://localhost:1313/projects/nitzanboys-com/">other</a> <a href="http://localhost:1313/projects/mt-solitary/">websites</a> in the last few years so I&rsquo;ve built up a bit of experience and comfort with it. It just feels a lot lighter and more future-proof.</li>
 <li><strong>Reading time indication</strong>. Another nice little feature of the theme I built around was a built-in reading time indication for <a href="http://localhost:1313/posts/">posts</a>. Of course this would have been easy to add myself, but it was nice that it came out of the box.</li>
-<li><strong>Vercel</strong>. I had already done this in my ten-year revamp of the Jekyll site, but deployment is now done through Vercel instead of Github Pages, removing my dependency on Github (and of course adding a new dependency on Vercel, but it feels like an easier one to move away from in the future).</li>
+<li><strong>Tags</strong>. There is also built-in support for tags (called &ldquo;categories&rdquo;) in Liftoff, which means you automatically get pages like <a href="http://localhost:1313/categories/setup/">this</a>.</li>
+<li><strong>Vercel</strong>. I had already done this in my ten-year revamp of the Jekyll site, but deployment is now done through <a href="https://vercel.com" target="_blank" rel="noopener">Vercel</a> instead of GitHub Pages. Vercel is a bit more flexible, offers a nice interface for managing multiple projects at once, and offers a very generous free &ldquo;hobbyist&rdquo; plan for personal project sites like mine.</li>
 </ul>
-<p>Here&rsquo;s a picture of the two sites side-by-side. On the left, the new Hugo site, on the right, the old Jekyll site (now archived <a href="https://clintonboys-github-io.vercel.app" target="_blank" rel="noopener">here</a>).</p>
+<p>Here&rsquo;s a picture of the two sites side-by-side. On the left, the new Hugo site, on the right, the old Jekyll site (now archived <a href="https://clintonboys-github-io.vercel.app" target="_blank" rel="noopener">here</a>). You can see the overall design is quite similar.</p>
 <p>
 	
 		
@@ -150,9 +148,17 @@
 	decoding="async"
 	>
 </p>
-<p>I did the migration very manually, copying pages over one by one and fixing up things that needed to be fixed. For each page, the things I had to change were</p>
+<p>As for the list of things I <em>lost</em> in the migration:</p>
 <ul>
-<li>front matter</li>
+<li>In the old site I had an author information sidebar on each post, which included email, LinkedIn and GitHub links, and a profile picture on the non-article pages.</li>
+<li>Feature images are now smaller and do not spread to the full width of the window.</li>
+<li>Text on large screens has gone from 560px to 900px wide.</li>
+<li>There are no longer year groupings in the blog section.</li>
+</ul>
+<p>I think most of these are actually desirable changes - I prefer the slightly wider look and I had got a bit sick of looking at my face all the time. If people want to see what I look like, they can click through to my LinkedIn or GitHub profiles from the <a href="http://localhost:1313/about/">about</a> page and see it there.</p>
+<p>I did the migration very manually, copying pages over one by one and fixing up things that needed to be fixed. A few times during the migration of over fifty pages, I thought about trying to automate some of the migration, but in the end I found it a much more meditative process to go over everything manually. It also let me catch a few decade-old typos. For each page, the things I had to change were</p>
+<ul>
+<li>front matter and feature image</li>
 <li>mathematics typesetting</li>
 <li>internal links</li>
 </ul>
@@ -164,7 +170,21 @@
 <li>Goatcounter support</li>
 <li>completely rejigged the navigation bar</li>
 <li>changed the &ldquo;feature image&rdquo; to be more like I had on my old site, including an image caption</li>
+<li>migrate some posts to a &ldquo;project&rdquo; format instead of a &ldquo;post&rdquo; format</li>
+<li>tweak the copyright footer to include an AI statement</li>
 </ul>
+<p>I enjoyed this project, it really forced me to take a deep look at my online presence and rethink how I want it to look for the decade to come. The end result is something that feels really suited to me, and I&rsquo;m very happy with it.</p>
+<h2 id="footnotes"></h>Footnotes<a href="#footnotes">
+    
+  </a>
+</h2><div class="footnotes" role="doc-endnotes">
+<hr>
+<ol>
+<li id="fn:1">
+<p>Hugo and Jekyll are both &ldquo;<a href="https://en.wikipedia.org/wiki/Static_site_generator" target="_blank" rel="noopener">static site generators</a>&rdquo; (SSGs). If you don&rsquo;t know what that means, unfortunately this post will probably not mean a whole lot to you.&#160;<a href="#fnref:1" class="footnote-backref" role="doc-backlink">&#x21a9;&#xfe0e;</a></p>
+</li>
+</ol>
+</div>
   <div class="footer">
     <p class="footer-copyright"><i>&copy; 2014 - 2024
       Clinton Boys. Written, designed and built without the use of generative AI.</i>

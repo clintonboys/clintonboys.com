@@ -3,29 +3,23 @@ languageCode = 'en-us'
 title = 'Clinton Boys'
 body_font = "PT Serif"
 
-### SEO, Analytics & 3rd-party
-enableRobotsTXT = true # To overwrite the theme's robots.txt, add your own in the /layouts/ directory
+enableRobotsTXT = true
 rssLimit = -1 # -1 is unlimited RSS entries
-# googleAnalytics = '' # Enter GA tracking ID to enable GA4
-# disqusShortname = '' # Enter Disqus shortname to enable comments
 
-### Content & Publishing
-# Please see https://gohugo.io/getting-started/configuration/ for detailed explanations
-buildDrafts = true # Default
-buildExpired = false # Default 
-buildFuture = true # Default
-canonifyURLs = false # Default
-defaultContentLanguage = 'en' # Default
-disableAliases = true # Set to true if using server (Netlify, .htaccess) for redirects instead of Hugo
-disableKinds = [] # Default
-enableEmoji = true # Use Emojis in content
-enableGitInfo = false # Default, enable to use git for lastmod (can be overwritten in frontmatter)
-enableInlineShortcodes = false # Default, false is more security-friendly
-ignoreFiles = [] # Default
-# newContentEditor = 'code' # Set VS Code as default editor
-paginate = 100 # Default
-paginatePath = 'page' # Default
-pluralizeListTitles = true # Default
+buildDrafts = true
+buildExpired = false
+buildFuture = true
+canonifyURLs = false
+defaultContentLanguage = 'en'
+disableAliases = true
+disableKinds = []
+enableEmoji = true
+enableGitInfo = false
+enableInlineShortcodes = false
+ignoreFiles = []
+paginate = 100
+paginatePath = 'page'
+pluralizeListTitles = true
 publishDir = 'public' # Default
 relativeURLs = false # Default
 summaryLength = 70 # Default

@@ -33,8 +33,8 @@
 <link rel="stylesheet" href="http://localhost:1313/scss/main.css" />
 
 
-    
-
+    <script data-goatcounter="https://clintonboys.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
     
 
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
@@ -42,7 +42,7 @@
   MathJax = {
     tex: {
       displayMath: [['\\[', '\\]'], ['$$', '$$']],  
-      inlineMath: [['\\(', '\\)']]                  
+      inlineMath: [['\\(', '\\)'], ['$', '$']]                  
     }
   };
 </script>
@@ -431,12 +431,21 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">48</span><span>
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">49</span><span>status <span style="color:#f92672">=</span> model<span style="color:#f92672">.</span>optimize(max_seconds<span style="color:#f92672">=</span><span style="color:#ae81ff">10800</span>)</span></span></code></pre></div>
 <p>But after I went through the paper again I realised the whole point of the first &ldquo;phase&rdquo; of their algorithm is that you allow census blocks to be split, so you need LP variables for each of the population. So probably I need to use a MCF implementation; I would like to try OR-tools at first.</p>
-<p><img src="winner_by_electorate.png"
+<p>
+	
+		
+	
+	
+	<img src="/projects/israeli-constituencies/winner_by_electorate_hu16335254826752100493.webp"
+	width="800"
+	height="640"
+	
 	alt="Statistical areas by population" 
 	class="single-post-image" 
 	loading="lazy"
 	decoding="async"
-	></p>
+	>
+</p>
 <p>I didn&rsquo;t completely get to finish this project, but the above picture gives the basic idea, it&rsquo;s just missing the final &ldquo;contiguity&rdquo; constraint which is harder to encode. I didn&rsquo;t get around to this yet, but if someone else would like to pick up from here I would be very keen to see a final map!</p>
   <div class="footer">
     <p class="footer-copyright"><i>&copy; 2014 - 2024
