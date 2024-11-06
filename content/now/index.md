@@ -20,8 +20,11 @@ I just finished revamping this site by migrating it to Hugo! I made a bunch of c
 
 I've been working at [Via](http://ridewithvia.com) since 2018, doing all sorts of different and interesting stuff, mostly related to algorithms and data science and then building interesting and useful products around these things. Lately I am spending a lot of time on more "core" engineering projects, with a focus on system design, performance, visibility and efficiency at scale. 
 
-## C
+## Thinking about AI
 
+Like everyone else in tech, I've been thinking a lot about AI in the last year or so. My natural reaction is a combination of skepticism, fear and [FOMO](https://en.wikipedia.org/wiki/Fear_of_missing_out): skepticism because I'm definitely not convinced that the current LLM technology is going to get us to "AGI", fear because I don't think the people and interests pushing for that have thought through what it would mean for our collective humanity, creativity and desire for meaning in our lives, and "FOMO" because that's what hype does to you. 
+
+## Reading and listening
 
 ### Books
 

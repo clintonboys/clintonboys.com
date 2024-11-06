@@ -25,21 +25,21 @@ I'm an Australian mathematician and software engineer living in London. I'm curr
 
 I have two 14" MacBook Pros from 2021 with the M1 Pro "Apple Silicon" processor - one from work, and one for my personal use. I never mix the two, never sign into personal accounts (iCloud, email, whatever) on my work computer, and vice versa. 
 
-At home, I use the new MacBook Air from 2020, with the M1 chip designed by Apple. I used to have a 15" Macbook Pro, the 2017 edition with the now-infamous "butterfly mechanism" keyboard, but I finally got rid of it after three difficult years and upgraded to the M1. What a fantastic machine. The fact that Apple finally admitted a mistake, fixed their keyboard, and removed the Touch Bar, makes me very happy. I have an iPhone 12 Pro, which I use to take all my photos these days. An iPad Pro 12.9" gets used when I'm making and recording music, or for video calls to relatives in far-away lands. I listen to music through AirPods Pro, which have replaced my over-ear Sony noise-cancelling headphones, and seem set to destroy the over-ear wireless headphone industry entirely. Great product, I just bought my second pair after my cat destroyed the first pair. My home stereo which gets a lot of use is a half-decent Sonyo receiver hooked up to some Wharfedale speakers. 
+TK MacBooks
 
-To record music, when I get the chance, I use Shure SM58 and 57 microphones, a Yamaha P45 digital piano, a Behringer UR-22 audio interface and some cheap but decent Samson BT3 studio monitors. It's a basic setup but it works for the basic stuff I do. I also have an OP-1 synthesizer from Teenage Engineering which is probably the nicest toy I own. I also have an Apple Watch. 
+I have an iPhone 14 Pro, which I use to take all my photos these days. An 11" iPad Air gets used when I'm making and recording music, or for video calls to relatives in far-away lands. I listen to music through AirPods Pro, which I also have in my ears most of the day for remote meetings at work. My home stereo which gets a lot of use is a half-decent Sonyo receiver hooked up to some Wharfedale speakers. 
+
+To record music, when I get the chance, I use Shure SM58 and 57 microphones, a Yamaha P-121 digital piano, a Behringer UR-22 audio interface and some cheap but decent Samson BT3 studio monitors. It's a basic setup but it works for the basic stuff I do. I also have an Apple Watch. 
 
 **And what software?**
 
-I have transitioned in the past year or so to using emacs to edit almost all of my text files, which is pretty much all I do with my computer these days. I use org mode and org agenda to manage all my tasks, to dos and notes, with the excellent Beorg app on iOS to handle everything through my phone. All my files and photos are backed up twice, through iCloud Drive and Dropbox. I keep remembering that I desperately need a proper local backup solution as well. 
-
-For data analysis and pretty much any code I write, I use Python, usually the fantastic pandas and numpy packages, as well as scikit-learn. At work I've been using a lot of serverless infrastructure like AWS Lambda to deploy and serve models. 
+I use [emacs]({{< ref "posts/emacs-i" >}}) to edit almost all of my text files, which is the majority of what I do with my personal computer these days (writing code is also editing text files). I use org mode and org agenda to manage all my tasks, to dos and notes, with the excellent Beorg app on iOS to handle everything through my phone. All my files and photos are backed up at least three times - you can read about my backup solution [here](https://www.mtsolitary.com/20230507063159-backups_public/). 
 
 I browse the web in Safari and listen to music in Apple Music, where I have a huge amount of custom playlists I've put a lot of work into and am very happy with. 
 
-I also use a bunch of utilities to keep my computer sane: f.lux so my eyes don't get burnt out, Alfred to launch applications, Divvy to move windows around using keyboard commands and  mclock to keep two time zones in my menu bar.
+I also use a bunch of utilities to keep my computer sane: f.lux so my eyes don't get burnt out, Alfred to launch applications, Divvy to move windows around using keyboard commands and mclock to keep two time zones in my menu bar.
 
-On my phone, apart from the obvious stuff like Messages, Whatsapp (ugh), Mail, Photos, Telegram, Signal and Phone, my homescreen consists of Calendar, Music, a bunch of navigation apps, Safari, Files, beorg for my todo lists and tasks, and Working Copy, a fantastic iOS git client that also doubles as a very decent text editor. I've removed all social media from my phone and deleted my Facebook account. 
+On my phone, apart from the obvious stuff like Messages, Whatsapp (ugh), Mail, Photos, Telegram, Signal and Phone, my homescreen consists of Calendar, Music, a bunch of navigation apps, Safari, Files, beorg for my todo lists and tasks, and iAWriter for editing Markdown on the go. I've removed all social media from my phone and deleted my Facebook account. 
 
 **What would be your dream setup?**
 

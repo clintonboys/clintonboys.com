@@ -29,6 +29,6 @@ You can send me an email at `me` at this domain, or find me on [LinkedIn](https:
 
 ## [Colophon](https://en.wiktionary.org/wiki/colophon)
 
-This site is served off Vercel, using [Hugo](https://gohugo.io/ ) with the [Liftoff](https://github.com/wjh18/hugo-liftoff?tab=readme-ov-file) theme by [Will Holmes](https://github.com/wjh18) Will Holmes with some customisations. 
+This site is served off [Vercel](https://www.vercel.com/), using [Hugo](https://gohugo.io/ ) with the [Liftoff](https://github.com/wjh18/hugo-liftoff?tab=readme-ov-file) theme by [Will Holmes](https://github.com/wjh18) with some customisations. 
 
 [^1]: Formerly Tel Aviv (2015-23), and before that, Sydney. 
