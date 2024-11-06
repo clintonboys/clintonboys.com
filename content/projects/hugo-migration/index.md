@@ -6,7 +6,7 @@ description: This is the first full description of a constructed language I have
 slug: hugo-migration
 author: Clinton Boys
 
-draft: true
+draft: false
 date: 2025-01-01T03:52:30-05:00
 lastmod: 
 expiryDate: 

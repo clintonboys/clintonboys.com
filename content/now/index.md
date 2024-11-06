@@ -12,7 +12,9 @@ seo_title: Now
 
 This page contains a quick overview of what I'm doing right now. I try to update it every couple of months. You can see the full history of this page [here](https://github.com/clintonboys/clintonboys.github.io/commits/master/now/index.md). 
 
-## A
+## New website
+
+I just finished revamping this site by migrating it to Hugo! I made a bunch of changes and improvements along the way - you can read more details about it [here]({{< ref "projects/hugo-migration" >}}). 
 
 ## Work
 
@@ -24,7 +26,7 @@ I've been working at [Via](http://ridewithvia.com) since 2018, doing all sorts o
 ### Books
 
 - *Thinking, Fast and Slow* by Daniel Kahneman
-- *History of English* by Kevin Stroud
+- *History of the English Language* by Kevin Stroud
 - *History of Christianity* by Diarmaid MacCulloch
 
 ### Music

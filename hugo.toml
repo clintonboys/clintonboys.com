@@ -6,7 +6,7 @@ body_font = "PT Serif"
 enableRobotsTXT = true
 rssLimit = -1 # -1 is unlimited RSS entries
 
-buildDrafts = true
+buildDrafts = false
 buildExpired = false
 buildFuture = true
 canonifyURLs = false

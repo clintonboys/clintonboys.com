@@ -5,7 +5,7 @@ summary: Karev is a constructed language designed for precision of thought.
 slug: karev
 author: Clinton Boys
 
-draft: false
+draft: true
 date: 2025-02-20T03:52:30-05:00
 lastmod: 
 expiryDate: 
