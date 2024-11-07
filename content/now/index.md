@@ -28,8 +28,8 @@ Like everyone else in tech, I've been thinking a lot about AI in the last year o
 
 ### Books
 
-- *Thinking, Fast and Slow* by Daniel Kahneman
-- *History of the English Language* by Kevin Stroud
+- *Thinking, Fast and Slow* by Daniel Kahneman (*finally* got around to reading this excellent book)
+- *History of the English Language* by Kevin Stroud (originally a podcast, but I've been reading the transcripts cause I could never get the hand of podcasts)
 - *History of Christianity* by Diarmaid MacCulloch
 
 ### Music

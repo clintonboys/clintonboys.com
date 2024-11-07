@@ -32,6 +32,21 @@
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url><url>
+    <loc>http://localhost:1313/projects/hugo-migration/</loc>
+    <lastmod>2025-01-01T03:52:30-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/project-types/</loc>
+    <lastmod>2025-01-01T03:52:30-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>http://localhost:1313/project-types/technical/</loc>
+    <lastmod>2025-01-01T03:52:30-05:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>http://localhost:1313/posts/ten-years/</loc>
     <lastmod>2024-08-06T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
@@ -43,11 +58,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/projects/israeli-constituencies/</loc>
-    <lastmod>2024-06-06T21:21:46-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/project-types/</loc>
     <lastmod>2024-06-06T21:21:46-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
@@ -68,11 +78,6 @@
     <priority>0.5</priority>
   </url><url>
     <loc>http://localhost:1313/projects/nitzanboys-com/</loc>
-    <lastmod>2024-03-10T03:52:30-05:00</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
-    <loc>http://localhost:1313/project-types/technical/</loc>
     <lastmod>2024-03-10T03:52:30-05:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
