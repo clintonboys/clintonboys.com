@@ -2,7 +2,7 @@
 title: prose.ache
 seo_title: proseache
 summary: A word game for iOS inspired by Scrabble and Tetris.
-slug: shipley
+slug: proseache
 author: Clinton Boys
 
 draft: false
@@ -12,7 +12,7 @@ expiryDate:
 publishDate: 
 
 portfolio_image: proseache.png
-feature_image_alt: New website
+feature_image: proseache.png
 
 project types: 
     - Game
@@ -26,4 +26,11 @@ techstack:
 # prose.ache
 
 *December 12, 2022*
+
+prose.ache is a word game I built for iOS using [React Native]({{< ref "posts/react-native" >}}), inspired by Scrabble and Tetris. 
+
+![First](first.png)
+![Second](second.png)
+![Third](third.png)
+![Final](final.png)
 

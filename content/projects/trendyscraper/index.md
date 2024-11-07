@@ -11,7 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-portfolio_image: sample-image-13.jpg
+portfolio_image: taylorswift.png
 feature_image: sample-image-13.jpg
 feature_image_alt: Wellington, New Zealand, 2014
 

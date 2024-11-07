@@ -11,7 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-portfolio_image: sample-image-68.jpg
+portfolio_image: scrnshot.png
 feature_image: sample-image-68.jpg
 feature_image_alt: University of Sydney, NSW, Australia, 2014
 

@@ -133,10 +133,10 @@
 <li>when the encrypted file is opened, the user is prompted to enter the passphrase for their private key (the prompt can only appear once a session, or on machine restart, or every time, depending on the user&rsquo;s needs)</li>
 </ul>
 <p>This is all relatively easy to accomplish in emacs using GPG and the EasyPG package. Worth mentioning this is all on macOS 10.15.2 Catalina with GNU Emacs 26.2.</p>
-<h3 id="setting-up-gpg"></h>Setting up GPG<a href="#setting-up-gpg">
+<h2 id="setting-up-gpg"></h>Setting up GPG<a href="#setting-up-gpg">
     
   </a>
-</h3><p>You&rsquo;ll need to download GnuPG; on macOS if you have <a href="https://www.google.com/search?hl=en&amp;q=brew" target="_blank" rel="noopener">brew</a> installed you can just</p>
+</h2><p>You&rsquo;ll need to download GnuPG; on macOS if you have <a href="https://www.google.com/search?hl=en&amp;q=brew" target="_blank" rel="noopener">brew</a> installed you can just</p>
 
 
   <pre><code>brew install gnupg21</code></pre>
@@ -153,10 +153,10 @@
 <li>And finally you&rsquo;ll need to enter a password that protects your private key. <strong>If you lose this password you will be unable to decrypt any of your encrypted files. There&rsquo;s no &ldquo;forgot my password&rdquo; feature. Unless you discover a way to crack RSA encryption, your encrypted files are lost forever if you lose your password.</strong></li>
 </ul>
 <p>It&rsquo;s also important to point out that you need to keep the actual private key file, which GnuPG stores by default in <code>~/.gnupg</code> in order to decrypt (not just the password). So if you lose the computer with the key on it, you lose the key.</p>
-<h3 id="configuring-emacs"></h>Configuring emacs<a href="#configuring-emacs">
+<h2 id="configuring-emacs"></h>Configuring emacs<a href="#configuring-emacs">
     
   </a>
-</h3><p>I added the following to my emacs <code>init.el</code> file, where <code>MY_EMAIL_ADDRESS</code> is the email address I entered when I configured the key above.</p>
+</h2><p>I added the following to my emacs <code>init.el</code> file, where <code>MY_EMAIL_ADDRESS</code> is the email address I entered when I configured the key above.</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-elisp" data-lang="elisp"><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1</span><span>(use-package epa-file
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2</span><span>    :ensure <span style="color:#66d9ef">nil</span> 
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3</span><span>    :config
@@ -173,10 +173,10 @@
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14</span><span>  :custom
 </span></span><span style="display:flex;"><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15</span><span>  (org-crypt-key <span style="color:#e6db74">&#34;MY_EMAIL_ADDRESS&#34;</span>))</span></span></code></pre></div>
 <p>With this setup, you will be prompted for your password every time you need to decrypt a file with the .org.gpg extension (i.e. whenever you open such a file). Configuring GPG to cache your password is a little more complicated (and not hugely user-friendly); if you&rsquo;re interested you can refer to <a href="https://superuser.com/questions/624343/keep-gnupg-credentials-cached-for-entire-user-session" target="_blank" rel="noopener">this</a> StackOverflow post.</p>
-<h3 id="a-certain-uneasiness"></h>A certain uneasiness<a href="#a-certain-uneasiness">
+<h2 id="a-certain-uneasiness"></h>A certain uneasiness<a href="#a-certain-uneasiness">
     
   </a>
-</h3><p>I&rsquo;ll admit I struggle with the idea of encrypting my files in such a &ldquo;hardcore&rdquo; way. There&rsquo;s something about the &ldquo;reset my password&rdquo; capabilities of cloud services, which necessarily mean your files can potentially be viewed by someone else, that give me peace of mind. The thought that if catastrophe strikes and I forget my password I can still have access to my files outweights or is at least competitive with my concerns for privacy.</p>
+</h2><p>I&rsquo;ll admit I struggle with the idea of encrypting my files in such a &ldquo;hardcore&rdquo; way. There&rsquo;s something about the &ldquo;reset my password&rdquo; capabilities of cloud services, which necessarily mean your files can potentially be viewed by someone else, that give me peace of mind. The thought that if catastrophe strikes and I forget my password I can still have access to my files outweights or is at least competitive with my concerns for privacy.</p>
 <p>This uneasiness, which I think is a fairly normal human reaction to the fear of losing access to precious files that represent and crystallise thoughts, is probably the reason that companies like Apple don&rsquo;t give hardcore security enthusiasts the end-to-end file encryption service they &ldquo;think they want&rdquo;.</p>
 <p>Another weak point for me is that in order to feel confident that my private key file is backed up, I probably want to sync this to a cloud provider, which means that the theoretical person who can read my files on Dropbox can also open my private key and use it to decrypt my files. The only real solution to this is physical backups, which are obviously vulnerable to theft and natural disaster. Like most things in the realm of digital security, it&rsquo;s a rabbit-hole that&rsquo;s hard to get out of once you go in.</p>
 <p>So at the moment I&rsquo;m fairly selective about which files I decide to encrypt. Whenever I create a new .org file I ask myself: would I be OK if someone else, somewhere, somehow, ended up reading this? If the answer is yes (even a begrudging yes), I will skip encryption. If it&rsquo;s no, and it tends to be no more for personal journal entries and the like, I will encrypt.</p>

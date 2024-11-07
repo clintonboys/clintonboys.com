@@ -21,7 +21,7 @@ After my move to working in technology, I initially worked mostly as a data scie
 
 ## This site
 
-This site hosts my [blog]({{< ref "posts" >}}), where I write about all sorts of things I am interested in, as well as a list of [projects]({{< ref "projects" >}}) I have invested my time in. If you'd like to know more about the tools I use to get things done, you can find my answers to the [usesthis](http://usesthis.com) questionnaire [here]({{< ref "posts/uses-this-2025" >}}). You can also explore my [digital garden](http://mtsolitary.com). 
+This site hosts my [blog]({{< ref "posts" >}}), where I write about all sorts of things I am interested in, as well as a list of personal [projects]({{< ref "projects" >}}) I have invested my time in (some more polished/finished than others). If you'd like to know more about the tools I use to get things done, you can find my answers to the [usesthis](http://usesthis.com) questionnaire [here]({{< ref "posts/uses-this-2025" >}}). You can also explore my [digital garden](http://mtsolitary.com). 
 
 ## Contact me
 

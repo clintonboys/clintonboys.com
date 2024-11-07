@@ -28,7 +28,7 @@ In order to work seamlessly, encryption in emacs should work as follows:
 
 This is all relatively easy to accomplish in emacs using GPG and the EasyPG package. Worth mentioning this is all on macOS 10.15.2 Catalina with GNU Emacs 26.2.
 
-### Setting up GPG
+## Setting up GPG
 
 You'll need to download GnuPG; on macOS if you have [brew](https://www.google.com/search?hl=en&q=brew) installed you can just 
 ```
@@ -48,7 +48,7 @@ and follow the prompts to create a asymmetric key pair.
 
 It's also important to point out that you need to keep the actual private key file, which GnuPG stores by default in `~/.gnupg` in order to decrypt (not just the password). So if you lose the computer with the key on it, you lose the key. 
 
-### Configuring emacs
+## Configuring emacs
 
 I added the following to my emacs `init.el` file, where `MY_EMAIL_ADDRESS` is the email address I entered when I configured the key above. 
 
@@ -72,7 +72,7 @@ I added the following to my emacs `init.el` file, where `MY_EMAIL_ADDRESS` is th
 
 With this setup, you will be prompted for your password every time you need to decrypt a file with the .org.gpg extension (i.e. whenever you open such a file). Configuring GPG to cache your password is a little more complicated (and not hugely user-friendly); if you're interested you can refer to [this](https://superuser.com/questions/624343/keep-gnupg-credentials-cached-for-entire-user-session) StackOverflow post. 
 
-### A certain uneasiness
+## A certain uneasiness
 
 I'll admit I struggle with the idea of encrypting my files in such a "hardcore" way. There's something about the "reset my password" capabilities of cloud services, which necessarily mean your files can potentially be viewed by someone else, that give me peace of mind. The thought that if catastrophe strikes and I forget my password I can still have access to my files outweights or is at least competitive with my concerns for privacy. 
 

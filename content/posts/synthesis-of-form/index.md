@@ -80,7 +80,7 @@ The next part of the text is a 36-page case study, using the methods derived in 
 <center><img src="/assets/alexander5.png" alt="Alexander" width="400"/></center>
 <p></p>
 
-After that, the maths: Alexander uses probability theory and graph theory to derive a closed-form equation for his \(R(\pi)\) function for information transfer between subsets of a partition of the nodes a line graph. I found this fascinating, but it might be over some peoples' heads; I think if you're interested the best thing to do is to read the Appendix 2. I will add the equation for good measure:
+After that, the maths: Alexander uses probability theory and graph theory to derive a closed-form equation for his \(R(\pi)\) function for information transfer between subsets of a partition of the nodes of a line graph. I found this fascinating, but it might be over some peoples' heads; I think if you're interested the best thing to do is to read the Appendix 2. I will add the equation for good measure:
 
 $$
 R(\pi)=\frac{\frac12 m(m-1)\sum_{\pi}v_{ij} - \ell \sum_{\pi}s_{\alpha}s_{\beta}}{\Bigl[\Bigl(\sum_{\pi}s_{\alpha}s_{\beta}\Bigr)\Bigl(\frac12m(m-1)\Bigr)-\sum_{\pi}s_{\alpha}s_{\beta}\Bigr]^{\frac12}}

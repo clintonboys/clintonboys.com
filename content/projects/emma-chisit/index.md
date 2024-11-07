@@ -11,7 +11,8 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-portfolio_image: emma.png
+portfolio_image: imager.png
+feature_image: emma.png
 
 project types: 
     - Elections
@@ -23,7 +24,7 @@ techstack:
     - CSS
 ---
 
-# Emma Chisit
+<!-- # Emma Chisit -->
 
 *July 19, 2018*
 

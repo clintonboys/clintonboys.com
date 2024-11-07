@@ -572,6 +572,8 @@ body {
  */
 .container, .single-container-post, .single-container, .container--sm {
   background-color: var(--color-contrast-lower);
+  font-size: var(--font-size-base);
+  line-height: calc(8px + 2ex);
   max-width: 900px;
   /* 1 */
   margin-left: auto;

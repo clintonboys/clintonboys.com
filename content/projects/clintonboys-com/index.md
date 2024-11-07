@@ -11,7 +11,9 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-portfolio_image: cbcom.png
+portfolio_image: sample-image-22.jpg
+feature_image: sample-image-22.jpg
+feature_image_alt: Royal National Park, NSW, Australia
 
 project types: 
     - Technical
