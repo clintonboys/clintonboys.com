@@ -40,7 +40,7 @@ The system I chose to compare with is [proportional representation](https://en.w
 
 A geographically divided system, where the country is split into many electorates, is less likely to produce such governments since small parties must come first at least somewhere in the country, rather than maintain a small but broad level of support nationwide, to win representation. Australia's preferential voting system, and its degeneration over the years into "[how-to-vote cards](https://en.wikipedia.org/wiki/How-to-vote_card)", has further entrenched the two major parties, the Liberal/National Coalition (not a coalition in the PR sense since these parties have agreements to avoid three-cornered contests) and the Australian Labor Party. The result is that although the Australian electoral system has more in common with the British system, its federal lower house looks a lot closer to the United States House of Representatives. 
 
-![Seats and quota by year](/seats_and_quotas.png)
+![Seats and quota by year](seats_and_quotas.png)
 
 So what would Australian political history look like if we'd had a party list PR system? Let's set the ground rules for our alternative universe. A party list system with a single vote per person (so no preferences) and no threshold: even if you get enough votes to receive a single seat, you're in. I'm going to look at nineteen elections in the last fifty years, from 1972 to 2019. In Figure 1 you can see how the number of seats in parliament has changed (on the left $y$-axis), and the corresponding total number of votes required nationwide to win a single seat (on the right $y$-axis); this is called the *quota* (it's mostly increasing because of population growth and sometimes decreasing because seats were added to the parliament). 
 

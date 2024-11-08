@@ -30,7 +30,7 @@ techstack:
 
 *January 1, 2025*
 
-As foreshadowed in my recent [post]({{< ref "posts/ten-years" >}}) reflecting on ten years of running my personal website, I recently migrated the site to [Hugo](https://gohugo.io/) after many years of blogging with Jekyll[^1]. I used the [Liftoff](https://github.com/wjh18/hugo-liftoff?tab=readme-ov-file) theme by [Will Holmes](https://github.com/wjh18) as my starting point, and ended up making a large number of customisations - mostly in the CSS, to get back to a similar look and feel that I had in my old site, but also some changes a bit deeper in the templating structure. 
+As foreshadowed in my recent [post]({{< ref "posts/ten-years" >}}) reflecting on ten years of running my personal website, I recently migrated the site to [Hugo](https://gohugo.io/) after many years of blogging with Jekyll[^1]. I used the [Liftoff](https://github.com/wjh18/hugo-liftoff?tab=readme-ov-file) theme by [Will Holmes](https://github.com/wjh18) as my starting point, and ended up making a large number of customisations - mostly in the CSS, but also some changes a bit deeper in the templating structure, to get back to a similar look and feel that I had in my old site.
 
 There were quite a few reasons for the change:
 
@@ -55,7 +55,7 @@ As for the list of things I *lost* in the migration:
 
 I think most of these are actually desirable changes - I prefer the slightly wider look and I had got a bit sick of looking at my face all the time. If people want to see what I look like, they can click through to my LinkedIn or GitHub profiles from the [about]({{< ref "about" >}}) page and see it there. 
 
-I did the migration very manually, copying pages over one by one and fixing up things that needed to be fixed. A few times during the migration of over fifty pages, I thought about trying to automate some of the migration, but in the end I found it a much more meditative process to go over everything manually. It also let me catch a few decade-old typos. For each page, the things I had to change were
+I did the migration very manually, copying pages over one by one and fixing up things that needed to be fixed. A few times during the migration of over fifty pages (and over 60,000 words!), I thought about trying to automate some of the migration, but in the end I found it a much more meditative process to go over everything manually. It also let me catch a few decade-old typos. For each page, the things I had to change were
 
 - front matter and feature image
 - mathematics typesetting

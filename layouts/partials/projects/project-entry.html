@@ -10,10 +10,15 @@
     {{ end }}
   </div>
   <div class="project-entry-info">
+    <div class="project-entry-header">
     <h3 class="project-entry-title">
       <a href="{{ .Permalink }}">{{ .Title }}</a>
       <sup>{{ partial "general/label-drafts.html" . }}</sup>
     </h3>
+    <div class="project-reading-time">
+        {{- .ReadingTime }} min.
+    </div>  
+    </div>
     <div class="project-list-meta">
       {{ with .Params.techstack }}
       {{ range . }}
@@ -26,7 +31,7 @@
         {{ . }}
       {{- else -}}
         {{- .Description -}}
-      {{- end -}}
+      {{- end -}} 
     </p>
     {{ if or (.Params.live_url) (.Params.source_url) }}
       <div class="btn-group">

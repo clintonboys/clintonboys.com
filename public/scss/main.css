@@ -1347,6 +1347,11 @@ body {
   box-shadow: 0 0 20px -10px var(--color-contrast-low), 0 0 20px -10px var(--color-contrast-low);
   max-width: 750px; }
 
+.project-reading-time {
+  font-size: var(--font-size-sm);
+  line-height: calc(8px + 2ex);
+  margin-top: 2px; }
+
 .project-entry-img {
   position: relative;
   border-radius: 5px 5px 0 0;
@@ -1380,6 +1385,11 @@ body {
   @media (min-width: 576px) {
     .project-entry-info {
       padding: 1.5rem; } }
+.project-entry-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between; }
+
 .project-entry-title {
   margin: 0;
   font-weight: 400; }

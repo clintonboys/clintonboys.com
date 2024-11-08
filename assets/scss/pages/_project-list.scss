@@ -16,6 +16,11 @@
     max-width: 750px;
   }
   
+  .project-reading-time {
+    @include font-size('sm');
+    margin-top: 2px;
+  }
+
   .project-entry-img {
     position: relative;
     border-radius: 5px 5px 0 0;
@@ -57,6 +62,12 @@
     @include respond-to('small') {
       padding: 1.5rem;
     }
+  }
+
+  .project-entry-header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
   }
   
   .project-entry-title {

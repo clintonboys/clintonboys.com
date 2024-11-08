@@ -6,7 +6,7 @@ slug: shipley
 author: Clinton Boys
 
 draft: false
-date: 2023-11-10T03:52:30-05:00
+date: 2023-09-10T03:52:30-05:00
 lastmod: 
 expiryDate: 
 publishDate: 

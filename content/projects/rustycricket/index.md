@@ -1,8 +1,7 @@
 ---
 title: Rustycricket
 seo_title: rustycricket
-summary: A simple cricket simulator written in Rust. 
-description: This is the first full description of a constructed language I have created. It's a hobby I have dabbled in for over twenty years. 
+summary: A cricket simulator with an ASCII interface written in Rust. 
 slug: rustycricket
 author: Clinton Boys
 
@@ -13,8 +12,8 @@ expiryDate:
 publishDate: 
 
 portfolio_image: cricket-sim.png
-feature_image: IMG_3351.jpeg
-feature_image_alt: Lord's Cricket Ground, London, 2024
+feature_image: sample-image-59.jpg
+feature_image_alt: Barrengarry, NSW, Australia, 2018
 
 project types: 
     - Technical
