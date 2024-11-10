@@ -132,23 +132,22 @@
 <h2 id="the-idea-for-psephulator"></h>The idea for Psephulator<a href="#the-idea-for-psephulator">
     
   </a>
-</h2><p>Psephulator<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is an open-source command-line tool for simulating elections.</p>
+</h2><p>Psephulator<sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup> is an open-source command-line tool for simulating elections. It&rsquo;s written in Rust, and you can find the code on GitHub <a href="https://github.com/clintonboys/psephulator" target="_blank" rel="noopener">here</a>. It&rsquo;s currently in a very basic state - essentially I have just written the code for the &ldquo;proof of concept&rdquo; example below. I plan to add more and more functionality as I find time to work on the project. If anyone else would like to contribute, please contact me, or just open a pull request!</p>
 <h2 id="key-components-of-psephulator"></h>Key components of Psephulator<a href="#key-components-of-psephulator">
     
   </a>
-</h2><h3 id="election-results-database"></h>Election results database<a href="#election-results-database">
+</h2><p>My idea for Psephulator consists of three key components.</p>
+<p><strong>Election results database</strong></p>
+<p>The tool will be most powerful and interesting if it has a full database of election results from around the world. Such a database already <a href="http://www.globalelectionsdatabase.com" target="_blank" rel="noopener">exists</a>, and a key early step in the development of Psephulator will be to write an interface to this database. It&rsquo;s important that the tool only knows how to read the &ldquo;raw&rdquo; results of elections, in as low resolution as possible (for example, by booth (Australia) or polling place (UK) or county (US)).</p>
+<p><strong>Electoral system engine</strong></p>
+<p>Once the tool can load the <em>raw</em> results from any election, it will need to support the ability to recreate the full results based on the specific electoral system of the country. For example, in the UK this involves aggregating the results into constituencies and determining the winner of each constituency by the simple <a href="https://en.wikipedia.org/wiki/First-past-the-post_voting" target="_blank" rel="noopener">first-past-the-post</a> system. I have currently coded up first-past-the-post and (a simplified version of) optional preferential voting into the tool, and the idea is to write an &ldquo;engine&rdquo; for every electoral system in the world, as well as theoretical and experimental ones.</p>
+<p><strong>Simulation engine</strong></p>
+<p>The simulation engine decouples the first two components, allowing you to re-run the results of any election under any electoral system you choose. You can even construct a new &ldquo;simulated&rdquo; election result, and then see how that result would be interpreted under different systems.</p>
+<h2 id="example---2024-uk-election-under-av"></h>Example - 2024 UK Election under AV<a href="#example---2024-uk-election-under-av">
     
   </a>
-</h3><h3 id="electoral-system-engine"></h>Electoral system engine<a href="#electoral-system-engine">
-    
-  </a>
-</h3><h3 id="simulation-engine"></h>Simulation engine<a href="#simulation-engine">
-    
-  </a>
-</h3><h2 id="example---2024-uk-election-under-av"></h>Example - 2024 UK Election under AV<a href="#example---2024-uk-election-under-av">
-    
-  </a>
-</h2><p>
+</h2><p>As an example of where I would like to take Psephulator, I have written enough of the code to be able to reproduce my <a href="http://localhost:1313/projects/ukav/">experiment</a> from the 2019 UK election on this year&rsquo;s election. First, we start the tool by typing <code>psephulator</code> into the console. We&rsquo;re greeted at the moment with a single option because I&rsquo;ve only loaded one election result into the tool, but in the future you can imagine a sophisticated search system allowing you to choose election results from any country (or even national subdivision like US state) from any year.</p>
+<p>
 	
 		
 	
@@ -162,8 +161,9 @@
 	loading="lazy"
 	decoding="async"
 	>
-
-
+</p>
+<p>Once we have the results, we choose the electoral system we&rsquo;d like to simulate the results with. If you choose &ldquo;First Past the Post&rdquo; the tool manages to recreate the <a href="https://commonslibrary.parliament.uk/research-briefings/cbp-10009/" target="_blank" rel="noopener">results</a> correctly. But we can also choose a different system - say &ldquo;Alternative Vote&rdquo;.</p>
+<p>
 	
 		
 	
@@ -177,8 +177,10 @@
 	loading="lazy"
 	decoding="async"
 	>
-
-
+</p>
+<p>Alternative Vote is a fairly different system from the one that the actual election was conducted under - you can see a longer discussion of why <a href="http://localhost:1313/projects/ukav/">here</a> - so to successfully simulate it we need to provide some estimated parameters, in this case: the estimated preference flows for all the parties. In a full version of the tool, the &ldquo;simulation engine&rdquo; would provide the ability to run &ldquo;grid searches&rdquo; over this parameter, like I did in my 2019 experiment.</p>
+<p>For now, I just have a single hard-coded <code>preference_flows.json</code> file (and only for England), and if we choose that the tool will simulate the AV election with these assumed preferences.</p>
+<p>
 	
 		
 	
@@ -193,6 +195,7 @@
 	decoding="async"
 	>
 </p>
+<p>And there is the result: 258 seats for the Conservatives and 344 for Labour with these preference flows, which were my best quick guess at something reasonable: most Brexit party preferences flow to the Tories, and Liberal Democrat preferences are about 50/50. This is a much different result from the actual one, in which Labour won 411 seats and the Conservatives 121.</p>
 <h2 id="footnotes"></h>Footnotes<a href="#footnotes">
     
   </a>
