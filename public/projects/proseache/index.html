@@ -121,7 +121,9 @@
     
   </a>
 </h1><p><em>December 12, 2022</em></p>
-<p>prose.ache is a word game I built for iOS using <a href="http://localhost:1313/posts/building-ios-apps-with-react-native/">React Native</a>, inspired by Scrabble and Tetris.</p>
+<p>prose.ache is a word game I built for iOS using <a href="http://localhost:1313/posts/building-ios-apps-with-react-native/">React Native</a>, inspired by Scrabble and Tetris. I chose the name because it is reminiscent of the word &ldquo;prosaic&rdquo;, and the obscure mechanic that drives the game can make your head hurt a bit.</p>
+<p>My friend and I were looking for a good way to learn React Native, and decided that making a word game would probably be a good way to do it (Wordle was big in 2022). So we started off playing around with an idea based on Conway&rsquo;s Game of Life; my friend&rsquo;s game forked into a sort of candy crush-inspired word game, and mine became this interesting mash of ideas from Tetris and Scrabble.</p>
+<p>In the first screenshot below, you can see the dual influence: the tiles are coloured according to their &ldquo;state&rdquo; in the Game of Life simulation: red tiles are about to &ldquo;die&rdquo;, and other colours are about to &ldquo;spawn&rdquo; new tiles in the next iteration.</p>
 <p>
 	
 	
@@ -134,8 +136,9 @@
 	loading="lazy"
 	decoding="async"
 	>
-
-
+</p>
+<p>I quickly realised that the randomness of Game of Life isn&rsquo;t particularly conducive to interesting word games, so I brought in a Tetris mechanic: the user is given some blocks of tiles, that can be placed on the board as a single unit. The seeds corresponded to &ldquo;wild cards&rdquo; that you could choose to be whatever letters you liked, and to win the level you needed to form the &ldquo;goal word&rdquo; written at the top. The working title at this point was &ldquo;Tetrisble&rdquo;, a mix of &ldquo;Tetris&rdquo; and &ldquo;Terrible&rdquo; because I hadn&rsquo;t worked on the design at all yet.</p>
+<p>
 	
 	
 	<img src="/projects/proseache/second.png"
@@ -147,8 +150,9 @@
 	loading="lazy"
 	decoding="async"
 	>
-
-
+</p>
+<p>This mechanic ultimately stuck, though I got rid of the seeds and made the tiles rotateable. The &ldquo;harvest&rdquo;</p>
+<p>
 	
 	
 	<img src="/projects/proseache/third.png"
@@ -160,8 +164,9 @@
 	loading="lazy"
 	decoding="async"
 	>
-
-
+</p>
+<p>Finally I managed to work on the design. I made the board look a bit like a crossword puzzle and used Scrabble-y fonts to make it all look a bit nicer. &ldquo;Harvest&rdquo; turned into a &ldquo;cut&rdquo; mechanic, where if you managed to spell a word that was in the dictionary, but not the goal word, on the board, you could cut it out and have it come down again as a tile. This mechanic actually allowed for a fairly interesting game!</p>
+<p>
 	
 		
 	

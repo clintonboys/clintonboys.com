@@ -39,7 +39,7 @@ I browse the web in Safari and listen to music in Apple Music, where I have a hu
 
 I also use a bunch of utilities to keep my computer sane: f.lux so my eyes don't get burnt out, Alfred to launch applications, Divvy to move windows around using keyboard commands and mclock to keep two time zones in my menu bar.
 
-On my phone, apart from the obvious stuff like Messages, Whatsapp (ugh), Mail, Photos, Telegram, Signal and Phone, my homescreen consists of Calendar, Music, a bunch of navigation apps, Safari, Files, beorg for my todo lists and tasks, and iAWriter for editing Markdown on the go. I've removed all social media from my phone and deleted my Facebook account. 
+On my phone, apart from the obvious stuff like Messages, Whatsapp (ugh), Mail, Photos, Telegram, Signal and Phone, my homescreen consists of Calendar, Music, a bunch of navigation apps, Safari, Files, beorg for my todo lists and tasks, and iAWriter for editing Markdown on the go. I deleted all my social media accounts years ago. 
 
 ## What would be your dream setup?
 
