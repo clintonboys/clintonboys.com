@@ -123,43 +123,19 @@
 </h1><p><em>December 12, 2022</em></p>
 <p>prose.ache is a word game I built for iOS using <a href="http://localhost:1313/posts/building-ios-apps-with-react-native/">React Native</a>, inspired by Scrabble and Tetris. I chose the name because it is reminiscent of the word &ldquo;prosaic&rdquo;, and the obscure mechanic that drives the game can make your head hurt a bit.</p>
 <p>My friend and I were looking for a good way to learn React Native, and decided that making a word game would probably be a good way to do it (Wordle was big in 2022). So we started off playing around with an idea based on Conway&rsquo;s Game of Life; my friend&rsquo;s game forked into a sort of candy crush-inspired word game, and mine became this interesting mash of ideas from Tetris and Scrabble.</p>
-<p>In the first screenshot below, you can see the dual influence: the tiles are coloured according to their &ldquo;state&rdquo; in the Game of Life simulation: red tiles are about to &ldquo;die&rdquo;, and other colours are about to &ldquo;spawn&rdquo; new tiles in the next iteration.</p>
+<p>In the image below I have chosen three screenshots from the game in various stages of its early development. On the left, very early on, you can see the influence of Game of Life and Scrabble: the tiles are coloured according to their &ldquo;state&rdquo; in the Game of Life simulation: red tiles are about to &ldquo;die&rdquo;, and other colours are about to &ldquo;spawn&rdquo; new tiles in the next iteration.</p>
+<p>I quickly realised that the randomness of Game of Life isn&rsquo;t particularly conducive to interesting word games, so I brought in a Tetris mechanic, which is clear in the second screenshot: the user is given some blocks of tiles, that can be placed on the board as a single unit. The seeds corresponded to &ldquo;wild cards&rdquo; that you could choose to be whatever letters you liked, and to win the level you needed to form the &ldquo;goal word&rdquo; written at the top. The working title at this point was &ldquo;Tetrisble&rdquo;, a mix of &ldquo;Tetris&rdquo; and &ldquo;Terrible&rdquo; because I hadn&rsquo;t worked on the design at all yet.</p>
+<p>This mechanic ultimately stuck, though I got rid of the seeds and made the tiles rotateable, as in the third screenshot. The &ldquo;harvest&rdquo; button, a mechanic that also persisted into the final game,</p>
 <p>
 	
-	
-	<img src="/projects/proseache/first.png"
-	width="712"
-	height="1544"
-	
-	alt="First" 
-	class="single-post-image" 
-	loading="lazy"
-	decoding="async"
-	>
-</p>
-<p>I quickly realised that the randomness of Game of Life isn&rsquo;t particularly conducive to interesting word games, so I brought in a Tetris mechanic: the user is given some blocks of tiles, that can be placed on the board as a single unit. The seeds corresponded to &ldquo;wild cards&rdquo; that you could choose to be whatever letters you liked, and to win the level you needed to form the &ldquo;goal word&rdquo; written at the top. The working title at this point was &ldquo;Tetrisble&rdquo;, a mix of &ldquo;Tetris&rdquo; and &ldquo;Terrible&rdquo; because I hadn&rsquo;t worked on the design at all yet.</p>
-<p>
+		
 	
 	
-	<img src="/projects/proseache/second.png"
-	width="716"
-	height="1550"
+	<img src="/projects/proseache/all_three_hu8044709506940975462.webp"
+	width="800"
+	height="537"
 	
-	alt="Second" 
-	class="single-post-image" 
-	loading="lazy"
-	decoding="async"
-	>
-</p>
-<p>This mechanic ultimately stuck, though I got rid of the seeds and made the tiles rotateable. The &ldquo;harvest&rdquo;</p>
-<p>
-	
-	
-	<img src="/projects/proseache/third.png"
-	width="375"
-	height="666"
-	
-	alt="Third" 
+	alt="All three" 
 	class="single-post-image" 
 	loading="lazy"
 	decoding="async"
@@ -171,9 +147,9 @@
 		
 	
 	
-	<img src="/projects/proseache/final_hu6672125124289767816.webp"
+	<img src="/projects/proseache/mechanic_hu504051170971204522.webp"
 	width="800"
-	height="1731"
+	height="339"
 	
 	alt="Final" 
 	class="single-post-image" 
@@ -181,6 +157,23 @@
 	decoding="async"
 	>
 </p>
+<p>After I had finished coding up the mechanics and had settled on something I liked, the rest of the work was designing the &ldquo;first-time user experience&rdquo; and all of the levels, to make this an actually interesting game that people would want to play and keep playing. This was by far the hardest bit for me - more challenging than coding the game up or designing the mechanisms, and also more of a &ldquo;grind&rdquo;. But it was definitely an important step and felt very good when it all fell into place.</p>
+<p>
+	
+		
+	
+	
+	<img src="/projects/proseache/sols_hu15178052408850711944.webp"
+	width="800"
+	height="441"
+	
+	alt="Final" 
+	class="single-post-image" 
+	loading="lazy"
+	decoding="async"
+	>
+</p>
+<p>The final step, which I&rsquo;m still working on and hope to finish off one day, is to do all the remaining administrative and polishing tasks to actually get this deployed to the App Store and have it available for purchase! When that happens I&rsquo;ll be sure to post an update to this site with details on how you can get your hands on prose.ache.</p>
   <div class="footer">
     <p class="footer-copyright"><i>&copy; 2014 - 2024
       Clinton Boys. Written, designed and built without the use of generative AI.</i>

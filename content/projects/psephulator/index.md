@@ -30,13 +30,13 @@ techstack:
 
 *February 2, 2024*
 
-Over the years I have done a few thought experiments on this site which could all be categorised as "taking the results from a real-world election and simulating them under a different electoral system": 
+Over the years I have conducted a few thought experiments on this site which could all be categorised as "taking the results from a real-world election and simulating them under a different electoral system": 
 
 - The 2019 United Kingdom election simulated under an ["AV" preferential voting system]({{< ref "projects/uk-av" >}})
 - Fifty years of Australian federal elections simulated under party-list [proportional representation]({{< ref "projects/aus-pr" >}})
 - The 2016 Australian federal election under a New Zealand-style [mixed system]({{< ref "posts/aus-nz" >}})
 
-I think these projects are very interesting in demonstrating how subtle changes to electoral systems can have a significant impact on the results of the election, and more generally supports a long-standing hypothesis of mine: that the political landscape in any particular country (or state, region, whatever) is dramatically influenced by the electoral system there. 
+I think these projects are very interesting in demonstrating how subtle changes to electoral systems can have a significant impact on the results of the election, and more generally supports a long-standing hypothesis of mine (surely not just mine): that the political landscape in any particular country (or state, region, whatever) is dramatically influenced by the electoral system there. 
 
 I wanted to build a tool that allows anyone to run these sorts of experiments, and more generally, to play with hypothetical scenarios based on real-world election data and electoral systems. 
 
@@ -62,7 +62,7 @@ The simulation engine decouples the first two components, allowing you to re-run
 
 ## Example - 2024 UK Election under AV
 
-As an example of where I would like to take Psephulator, I have written enough of the code to be able to reproduce my [experiment]({{< ref "projects/uk-av" >}}) from the 2019 UK election on this year's election. First, we start the tool by typing `psephulator` into the console. We're greeted at the moment with a single option because I've only loaded one election result into the tool, but in the future you can imagine a sophisticated search system allowing you to choose election results from any country (or even national subdivision like US state) from any year. 
+As an example of where I would like to take Psephulator, I have written enough of the code to be able to reproduce my [experiment]({{< ref "projects/uk-av" >}}) from the 2019 UK election on this year's election. First, we start the tool by typing `psephulator` into the console. We're greeted at the moment with a single option because I've only loaded one election result into the tool, but in the future you can imagine a sophisticated search system allowing you to choose election results from any country (or even national subdivision like US state) from any year. I haven't yet integrated the tool with the elections database, since when I worked on this the 2024 UK results were not yet published there, so instead I wrote a simple script to scrape them from the [Wikipedia page](https://en.wikipedia.org/wiki/Results_of_the_2024_United_Kingdom_general_election). 
 
 ![alt](scrnsht1.png)
 
