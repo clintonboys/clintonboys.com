@@ -28,3 +28,13 @@ techstack:
 
 *November 10, 2023*
 
+Shipley is an "opinionated" time and task management application for iOS that I am currently building using [React Native]({{< ref "posts/react-native" >}}). 
+
+![Labour force and Labor vote](shipley_scrns.png)
+
+## Chunks and the calendar
+
+## Projects
+
+## Tasks
+
