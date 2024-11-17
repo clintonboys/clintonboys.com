@@ -32,20 +32,17 @@ The central focus of this part is on the difference between what Alexander calls
 
 The second part of the book presents a framework for studying and decomposing design problems which Alexander suggests is free of this bias. He proposes a new method, an additional abstraction on top of the existing "selfconscious" method, which "eradicates its bias and retains only its abstract structural features; this second picture may then be examined according to precisely defined operations, in a way not subject to the bias of language and experience" (p77). 
 
-<center><img src="/assets/alexander1.png" alt="Alexander" width="300"/></center>
-<p></p>
+![alt](alexander1.png)
 
 He does this by venturing into pure mathematics, specifically set theory, graph theory and probability theory, something which you do not see in the architectural literature very often I imagine. He imagines enumerating all the "misfit" variables which represent "individual conditions which must be met at the form-context boundary", \(x_1, x_2, \ldots, x_m\) -- this is the set \(M\). He then associates with \(M\) a second set \(L\) -- a set of non-directed, signed, weighted edges between elements of \(M\). The weights are negative if they indicate conflict, and positive if they indicate concurrence, and may also be weighted to indicate strength of interaction. This is just a [line graph](https://en.wikipedia.org/wiki/Line_graph), referred to in Alexander's day as a "linear graph". 
 
 He then goes on to define "decompositions" of the set \(M\) into hierarchical tree-like structures, and the goal of the "program": to find some clustering of nodes of this graph which most naturally seems to fit the underlying link structure \(L\). 
 
-<center><img src="/assets/alexander2.png" alt="Alexander" width="200"/>   <img src="/assets/alexander3.png" alt="Alexander" width="300"/></center>
-<p></p>
+![alt](alexander2.png)
 
 At this stage it felt like we were about to solve some well-known NP-hard graph theory problem, but instead Alexander takes a detour into the theory of diagrams, defining a "constructive" diagram to be something that is both a form diagram and a requirement diagram. To explain this, he gives the *genius* example of how to specify the requirement that traffic can flow without congestion at a junction between two streets. You could provide a table of numbers with the relative frequency of each of the different paths at the junction, or you could compose the diagram below which presents the information, but also very strongly hints at its implications on the solution's form. He claims that constructive diagrams of this sort are the output of this program. 
 
-<center><img src="/assets/alexander4.png" alt="Alexander" width="300"/></center>
-<p></p>
+![alt](alexander4.png)
 
 Some of the "misfit" variables are easy to deal with because they exist on some measurable, numeric scale that allows for the establishment of a "performance standard". For example we can establish fairly well that the minimum width for a highway lane is 11 feet because of what we know about modern cars and motorway speeds. This means the misfit variable corresponding to "is this motorway safe from between-lane accidents" is simple. But the real interesting parts of design, and of life of course, lie in those things which do not have such a numerical interpretation. 
 
@@ -77,8 +74,7 @@ Into the maths now: for a partition \(\pi\) of a set \(S\) we define a "measure 
 
 The next part of the text is a 36-page case study, using the methods derived in the book to determine the form of a rural Indian village, which produces the following constructive diagram:
 
-<center><img src="/assets/alexander5.png" alt="Alexander" width="400"/></center>
-<p></p>
+![alt](alexander5.png)
 
 After that, the maths: Alexander uses probability theory and graph theory to derive a closed-form equation for his \(R(\pi)\) function for information transfer between subsets of a partition of the nodes of a line graph. I found this fascinating, but it might be over some peoples' heads; I think if you're interested the best thing to do is to read the Appendix 2. I will add the equation for good measure:
 
@@ -86,4 +82,4 @@ $$
 R(\pi)=\frac{\frac12 m(m-1)\sum_{\pi}v_{ij} - \ell \sum_{\pi}s_{\alpha}s_{\beta}}{\Bigl[\Bigl(\sum_{\pi}s_{\alpha}s_{\beta}\Bigr)\Bigl(\frac12m(m-1)\Bigr)-\sum_{\pi}s_{\alpha}s_{\beta}\Bigr]^{\frac12}}
 $$
 
-So overall a great book, a really good example of how abstraction can help provide clarify when properly considered. Lots of very big ideas in here about things that just seem so natural that it's weird no one has thought of them before. Alongside the theoretical purity and originality of Alexander's proposed method, I really enjoyed thinking about those "unselfconscious" processes, the kinds of things which are becoming rarer and rarer in the world today. The "enshittification" of forms of all kinds throughout the world can maybe be thought of as a loss of connection with these more primitive form-making processes. 
+So overall a great book, a really good example of how abstraction can help provide clarity when properly considered. Lots of very big ideas in here about things that just seem so natural that it's weird no one has thought of them before. Alongside the theoretical purity and originality of Alexander's proposed method, I really enjoyed thinking about those "unselfconscious" processes, the kinds of things which are becoming rarer and rarer in the world today. The "enshittification" of forms of all kinds throughout the world can maybe be thought of as a loss of connection with these more primitive form-making processes. 
