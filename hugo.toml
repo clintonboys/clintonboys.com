@@ -11,6 +11,7 @@ buildExpired = false
 buildFuture = true
 canonifyURLs = false
 defaultContentLanguage = 'en'
+timeout = '600s'
 disableAliases = true
 disableKinds = []
 enableEmoji = true
