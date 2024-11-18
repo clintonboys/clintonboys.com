@@ -15,7 +15,7 @@ portfolio_image: proseache.png
 feature_image: proseache.png
 
 project types: 
-    - Game
+    - App
 
 techstack:
     - Typescript

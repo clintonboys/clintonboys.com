@@ -11,7 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-portfolio_image: imager.png
+portfolio_image: ecnew.png
 feature_image: emma.png
 
 project types: 

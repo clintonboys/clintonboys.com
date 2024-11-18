@@ -28,7 +28,7 @@ techstack:
 
 *November 10, 2023*
 
-Shipley is an "opinionated" time and task management application for iOS that I am currently building using [React Native]({{< ref "posts/react-native" >}}). I have built a prototype, and it looks something like this:
+Shipley is an "opinionated" time and task management application for iOS that I am currently building using [React Native]({{< ref "posts/react-native" >}}). I have built a prototype, with a deliberately austere and unfinished design so I can focus on the central idea, and at the moment it looks something like this:
 
 ![Shipley screenshots](shipley_scrns.png)
 
@@ -107,6 +107,8 @@ In the Projects screen, you see a list of all projects, by default only showing 
 ![My time](mytime.png)
 
 A summary of how your time is spent, including statistics about completed project tasks and errands for previous days and weeks, the amount of assigned and unassigned chunks today and in the coming days, and a counter of the week number of your life (inspired by [4000 Weeks](https://en.wikipedia.org/wiki/Four_Thousand_Weeks:_Time_Management_for_Mortals)), to remind you how little time you have to do anything at all, how many things you are going to leave undone, and how important it is to decide carefully and with great consideration what you are going to work on.  
+
+I am still actively working on Shipley - stay tuned for more updates, and hopefully one day soon a link to buy it from the iOS App Store!
 
 ## Footnotes
 

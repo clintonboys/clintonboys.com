@@ -11,7 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-portfolio_image: governments.png
+portfolio_image: govs.png
 feature_image: sample-image-65.jpg
 feature_image_alt: Beowa National Park, NSW, Australia, 2015
 
