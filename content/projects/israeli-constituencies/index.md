@@ -184,13 +184,7 @@ This map has a lot of holes, and it's because of this:
 : Statistical areas: 3187.\nStatistical areas with no polling place: 2232
 ```
 
-There are 955 "statistical areas" without a single polling place inside. These areas are presumably unsettled. Again, note also most of the West Bank polling places are not in statistical areas.
-
-## Clustering statistical areas into electorates
-
-Our next task is to create 120 electorates. I want to do this by creating 120 electorates of roughly equal population by combining statistical areas together. I hadn't really thought about it, but when I started thinking about how to implement this and researching stuff online, I pretty soon realised that this is exactly how actual electoral districts are drawn up in countries that have them, and there is quite a large body of research into this interesting and difficult problem.
-
-I found quite a lot of papers on this topic, and decided to implement one of them for this project. 
+There are 955 "statistical areas" without a single polling place inside. These areas are presumably unsettled. Again, note also most of the West Bank polling places are not in statistical areas. Below is a histogram of statistical areas by population, and a random sample of ten of them. You can see many have 0 population. 
 
 ![Statistical areas by population](population_by_area_hist.png)
 
@@ -208,6 +202,12 @@ I found quite a lot of papers on this topic, and decided to implement one of the
 189   POINT (35.38535 32.95847)  35.385350  32.958470     0.0
 ```
 
+## Clustering statistical areas into electorates
+
+Our next task is to create 120 electorates. I want to do this by creating 120 electorates of roughly equal population by combining statistical areas together. I hadn't really thought about it, but when I started thinking about how to implement this and researching stuff online, I pretty soon realised that this is exactly how actual electoral districts are drawn up in countries that have them, and there is quite a large body of research into this interesting and difficult problem.
+
+I found quite a lot of papers on this topic, and decided to implement one of them for this project. 
+
 ## Implementing some districting algorithms
 
 We are going to be using the following method from [Cohen-Addad et al](https://arxiv.org/pdf/1710.03358.pdf)'s paper (p12):
@@ -219,7 +219,7 @@ A balanced centroidal power diagram is an augmented power diagram \(P(C,w,f)\) s
 1. Given \(C\), compute a minimum-cost balanced assignment $f: P \to C$.
 2. Move each center $x\in C$ to the centroid of the residents that \(f\) assigns to it.
    
-Each iteration except the last reduces the cost, $\sum_{y\in P} d^2(y,f(y))$, and at termination, the pair \((C,f)\) is a local minimum in the following sense: by just moving the centers in \(C\), or just changing \(f\) (while respecting the balance constraint), it is not possible to reduce the cost.
+Each iteration except the last reduces the cost, \(\sum_{y\in P} d^2(y,f(y))\), and at termination, the pair \((C,f)\) is a local minimum in the following sense: by just moving the centers in \(C\), or just changing \(f\) (while respecting the balance constraint), it is not possible to reduce the cost.
 
 We solve the problem in Step (1) by reducing it to minimum-cost flow; yielding both the stipulated f and (via the dual variables) weights \(w\) such that \(P(C,w,f)\) is a balanced power diagram. Note that the solution obtained by minimum-cost flow assigns assigns each person to a single district. In the last iteration, Step (2) does not change \(C\), so \(f\) is also centroidal, and at termination \(P(C,w,f)\) is a balanced centroidal power diagram, as desired.
 
