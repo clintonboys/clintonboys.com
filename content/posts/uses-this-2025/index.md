@@ -15,7 +15,7 @@ feature_image_alt: Near Hastings, England, 2024.
 
 *January 2025*
 
-In this post I answer the interview questions from [uses this](http://usesthis.com/) - again. This is an updated version of [this post]({{< ref "posts/uses-this-2021" >}}) which I wrote in 2021, and is now the fifth time I have answered these questions. I have enjoyed reading *uses this* for many years and I like having a little archive of my own setups - you can see the five times I have done this exercise here. 
+In this post I answer the interview questions from [uses this](http://usesthis.com/) - again. This is an updated version of [this post]({{< ref "posts/uses-this-2021" >}}) which I wrote in 2021, and is now the fifth time I have answered these questions. I have enjoyed reading *uses this* for many years and I like having a little archive of my own setups - you can see the five times I have done this exercise [here]({{< ref "categories/setup" >}}). 
 
 ## Who are you and what do you do?
 
