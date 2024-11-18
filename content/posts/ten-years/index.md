@@ -36,7 +36,11 @@ Over the years, I have mostly felt good about this site, but there have been mom
 
 I hope I still find myself writing here in another ten years' time. I wonder if by then I will have given into the urge to redesign the site using Hugo instead of Jekyll[^1], which will presumably be ancient technology in 2034 (though there are an awful lot of PHP sites still up and running today, so who knows). 
 
-And for now I have brought the images back. Life is too short, and the internet is too precious a thing, to not add a little bit of colour when you can. Who else are these little corners of the web we build for, after all? 
+And for now I have brought the images back. Life is too short, and the internet is too precious a thing, to not add a little bit of colour when you can. Who else do we build these little corners of the web for, after all? 
+
+**Update (January 2025)**
+
+I couldn't resist, and did end up doing a full migration of the site to Hugo, and made a few upgrades and changes along the way. You can read about that [here]({{< ref "projects/hugo-migration" >}}). 
 
 ## Footnotes
 

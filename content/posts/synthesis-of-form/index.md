@@ -76,10 +76,10 @@ The next part of the text is a 36-page case study, using the methods derived in 
 
 ![alt](alexander5.png)
 
-After that, the maths: Alexander uses probability theory and graph theory to derive a closed-form equation for his \(R(\pi)\) function for information transfer between subsets of a partition of the nodes of a line graph. I found this fascinating, but it might be over some peoples' heads; I think if you're interested the best thing to do is to read the Appendix 2. I will add the equation for good measure:
+After that, the maths: Alexander uses probability theory and graph theory to derive a closed-form equation for his \(R(\pi)\) function for information transfer between subsets of a partition of the nodes of a line graph. I found this fascinating, but it might be over some peoples' heads; I think if you're interested the best thing to do is to read the Appendix 2. I will add the equation for good measure (if you want to understand the notation here, you're going to need to buy the book). 
 
 $$
-R(\pi)=\frac{\frac12 m(m-1)\sum_{\pi}v_{ij} - \ell \sum_{\pi}s_{\alpha}s_{\beta}}{\Bigl[\Bigl(\sum_{\pi}s_{\alpha}s_{\beta}\Bigr)\Bigl(\frac12m(m-1)\Bigr)-\sum_{\pi}s_{\alpha}s_{\beta}\Bigr]^{\frac12}}
+R(\pi)=\frac{\frac12 m(m-1)\sum_{\pi}v_{ij} - \ell \sum_{\pi}s_{\alpha}s_{\beta}}{\Bigl[\Bigl(\sum_{\pi}s_{\alpha}s_{\beta}\Bigr)\Bigl(\frac12m(m-1)\Bigr)-\sum_{\pi}s_{\alpha}s_{\beta}\Bigr]^{\frac12}}.
 $$
 
 So overall a great book, a really good example of how abstraction can help provide clarity when properly considered. Lots of very big ideas in here about things that just seem so natural that it's weird no one has thought of them before. Alongside the theoretical purity and originality of Alexander's proposed method, I really enjoyed thinking about those "unselfconscious" processes, the kinds of things which are becoming rarer and rarer in the world today. The "enshittification" of forms of all kinds throughout the world can maybe be thought of as a loss of connection with these more primitive form-making processes. 

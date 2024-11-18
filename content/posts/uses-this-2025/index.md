@@ -37,9 +37,9 @@ I use [emacs]({{< ref "posts/emacs-i" >}}) to edit almost all of my text files, 
 
 I browse the web in Safari and listen to music in Apple Music, where I have a huge amount of custom playlists I've put a lot of work into and am very happy with. For recording music I use Logic Pro. 
 
-I also use a bunch of utilities to keep my computer sane: f.lux so my eyes don't get burnt out, Alfred to launch applications, Divvy to move windows around using keyboard commands and mclock to keep two time zones in my menu bar.
+I also use a bunch of utilities to keep my computer sane: [f.lux](https://justgetflux.com) so my eyes don't get burnt out, [Alfred](https://www.alfredapp.com) to launch applications, [Divvy](https://apps.apple.com/fi/app/divvy-window-manager/) to move windows around using keyboard commands and [mclock](https://github.com/bayashi/mclocks) to keep two time zones in my menu bar.
 
-On my phone, apart from the obvious stuff like Messages, Whatsapp (ugh), Mail, Photos, Telegram and Phone, my homescreen consists of Calendar, Music, a bunch of navigation apps, Safari, Files, beorg for my todo lists and tasks, and iAWriter for editing Markdown on the go. I deleted all my social media accounts years ago. 
+On my phone, apart from the obvious stuff like Messages, Whatsapp (ugh), Mail, Photos, Telegram and Phone, my homescreen consists of Calendar, (Apple) Music, a bunch of navigation apps, Safari, Files, beorg for my todo lists and tasks (though I am also venturing back to Things lately), and iAWriter for editing Markdown on the go. I deleted all my social media accounts years ago, so I also have Apple Books and the Kindle app for reading on my phone. 
 
 ## What would be your dream setup?
 
