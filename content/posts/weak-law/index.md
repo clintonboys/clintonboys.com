@@ -32,7 +32,7 @@ If you think about a point in space being represented by three numbers (a simple
 
 The most well-known, and most prone to cause issues, is the strange density property of high-dimensional space: in a very vague sense, paraphrasing Wikipedia, there is no space in the "middle" of a unit hypercube; and it is almost all "pushed" out to the corners. This is a weird idea, and it's even weirder that we can use the weak law of large numbers, a concept from statistics with seemingly little relation to high-dimensional geometry, elegantly to make this notion precise.
 
-Let's state the connection now. Choose some quantity $$1 > \epsilon > 0$$. Then for \(n\) sufficiently large, at least \(100(1-\epsilon)\%\) of the unit hypercube \([-1,1]^n\) is contained in the set 
+Let's state the connection now. Choose some quantity \(1 > \epsilon > 0\). Then for \(n\) sufficiently large, at least \(100(1-\epsilon)\%\) of the unit hypercube \([-1,1]^n\) is contained in the set 
 
 $$
 \{x\in \mathbb{R}^n\mid (1-\epsilon)\sqrt{n/3}\leq \left|x\right| \leq (1+\epsilon)\sqrt{n/3}\}.

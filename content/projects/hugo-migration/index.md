@@ -42,7 +42,7 @@ There were quite a few reasons for the change:
 - **Tags**. There is also built-in support for tags (called "categories") in Liftoff, which means you automatically get pages like [these]({{< ref "/categories/emacs" >}}). 
 - **Vercel**. I had already done this in my ten-year revamp of the Jekyll site, but deployment is now done through [Vercel](https://vercel.com) instead of GitHub Pages. Vercel is a bit more flexible, offers a nice interface for managing multiple projects at once, and offers a very generous free "hobbyist" plan for personal project sites like mine.  
 
-Here's a picture of the two sites side-by-side. On the left, the new Hugo site, on the right, the old Jekyll site (now archived [here](https://clintonboys-github-io.vercel.app)). You can see the overall design is quite similar. 
+Here's a picture of the two sites side-by-side. On the left, the new Hugo site (in light mode), on the right, the old Jekyll site (now archived [here](https://clintonboys-github-io.vercel.app)). You can see the overall design is quite similar. 
 
 ![Side by side comparison](side-by-side.png)
 

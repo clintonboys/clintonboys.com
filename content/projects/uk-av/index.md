@@ -49,7 +49,7 @@ I was interested to see, based on the high amount of votes for third parties in 
 
 In England and Wales, the two major parties (the Conservatives and Labour) dominate, with significant votes for the Liberal Democrats, and in this election also for the nationalist Brexit Party. There are also small votes for the Greens, and in Wales for the Welsh nationalist Plaid Cymrú.
 
-I ran the runoff simulations for all 573 seats in England and Wales, for different imaginary scenarios of preference flows from the two biggest minor parties. The most important parameters are the percentage of Liberal Democrats preferences which flow to the Labour party, and the percentage of Brexit Party preferences which flow to the Labour party. I assume for simplicity's sake that if $$x$$% of preferences flow to Labour, then $$(100-x)$$% flow to the Conservatives. The other minor parties distribute their preferences evenly among all relevant candidates.
+I ran the runoff simulations for all 573 seats in England and Wales, for different imaginary scenarios of preference flows from the two biggest minor parties. The most important parameters are the percentage of Liberal Democrats preferences which flow to the Labour party, and the percentage of Brexit Party preferences which flow to the Labour party. I assume for simplicity's sake that if \(x\)% of preferences flow to Labour, then \((100-x)\)% flow to the Conservatives. The other minor parties distribute their preferences evenly among all relevant candidates.
  
 If I simulate a range of values of these percentages, we obtain a grid of different outcomes for the different imaginary scenarios, summarised in the table below. 
  
