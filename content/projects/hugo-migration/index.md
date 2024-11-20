@@ -2,7 +2,6 @@
 title: Hugo migration
 seo_title: hugo-migration
 summary: Adventures upgrading my personal website with Hugo. 
-description: This is the first full description of a constructed language I have created. It's a hobby I have dabbled in for over twenty years. 
 slug: hugo-migration
 author: Clinton Boys
 
@@ -12,7 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-portfolio_image: mt_sol_thin.jpg
+portfolio_image: hugo_mig.png
 feature_image: mt_sol_thin.jpg
 feature_image_alt: Mt. Solitary, Blue Mountains, Australia
 

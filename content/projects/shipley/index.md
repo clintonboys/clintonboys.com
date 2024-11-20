@@ -11,7 +11,7 @@ lastmod:
 expiryDate: 
 publishDate: 
 
-portfolio_image: logo.png
+portfolio_image: shipley_scrns.png
 feature_image: IMG_6511.jpeg
 feature_image_alt: Megalong Valley, NSW, Australia, 2015
 

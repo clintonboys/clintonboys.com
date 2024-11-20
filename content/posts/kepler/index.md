@@ -30,7 +30,7 @@ These laws are extremely accurate in predicting the motion of planets in our sol
 
 ## Centre-of-mass coordinates
 
-The first insight is that one may treat a "two-body problem", like finding the orbital loci of the Sun and the Earth, as a one-body problem where the *reduced mass* \(\mu\) moves about a fixed *centre of mass* \(M\). Explicitly, let's write \(m_1\) and \(m_2\) for our two masses (you can think of \(m_1\) as representing the Earth and \(m_2\) the Sun); then 
+The first insight is that we can treat a "two-body problem", like finding the orbital loci of the Sun and the Earth, as a one-body problem where the *reduced mass* \(\mu\) moves about a fixed *centre of mass* \(M\). Explicitly, let's write \(m_1\) and \(m_2\) for our two masses (you can think of \(m_1\) as representing the Earth and \(m_2\) the Sun); then 
 
 $$
 \mu = \frac{m_1m_2}{m_1+m_2};\quad \quad M=m_1+m_2.

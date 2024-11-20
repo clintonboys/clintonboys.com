@@ -154,7 +154,7 @@ so \(GX=0\). The rest is algebra:
 
 $$
 \begin{align*}
-\mathrm{Var}\tilde\beta &=& \mathrm{Var}(Cy)\\	
+\mathrm{Var}\tilde\beta &= \mathrm{Var}(Cy)\\	
 &= C(\mathrm{Var}y) C^T\\
 &= \sigma^2 CC^T\\
 &= \sigma^2\Bigl[(X^TX)^{-1}X^T + G\Bigr]\Bigl[X\Bigl((X^TX)^{-1}\Bigr)^T + G^T\Bigr]\\
@@ -172,7 +172,7 @@ since \(GG^T\) is positive definite.
 
 Ways to generalise:
 
-- Introduce non-linearity by considering new variables which are powers (\(x_i^2\)) or interactions (\(x_ix_j\)), or even functions (\(\exp(x_j), \sin(x_j)\), etc) of existing features, splines etc
+- Introduce non-linearity by considering new variables which are powers \(x_i^2\) or interactions \(x_ix_j\), or even functions (\(\exp(x_j), \sin(x_j)\), etc) of existing features, splines etc
 - Relax the assumptions we made about linearity or the errors \(\epsilon\), which leads to generalised linear models
 - Reduce the number of features by restricting to the "most important" features
 	- Feature subset selection 
@@ -181,13 +181,7 @@ Ways to generalise:
 
 ## Generalised linear models
 
-Our linear regression setup was 
-
-$$
-Y=\beta X + \epsilon
-$$
-
-Let's assume that 
+Our linear regression setup was \(Y=\beta X + \epsilon\). Now let's assume that 
 
 - instead of \(\beta X\), \(Y\) is modelled by some known transformation \(g^{-1}(\beta X)\), called the *link function*
 - instead of being normally distributed, the error terms \(\epsilon\) have some arbitrary distribution (from a wide family of distributions known as the *exponential family*). 
