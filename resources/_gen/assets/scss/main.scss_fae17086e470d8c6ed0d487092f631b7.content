@@ -732,8 +732,7 @@ body {
 .footer {
   color: var(--color-contrast-medium-high);
   display: flex;
-  flex-direction: row;
-  justify-content: space-between; }
+  flex-direction: row; }
 
 .footer-copyright {
   text-align: left;
