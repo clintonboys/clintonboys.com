@@ -43,7 +43,7 @@ There were quite a few reasons for the change:
 
 Here's a picture of the two sites side-by-side. On the left, the new Hugo site (in light mode), on the right, the old Jekyll site (now archived [here](https://clintonboys-github-io.vercel.app)). You can see the overall design is quite similar. 
 
-![Side by side comparison](side-by-side.png)
+![Side by side comparison](side_by_side.png)
 
 As for the list of things I *lost* in the migration:
 
