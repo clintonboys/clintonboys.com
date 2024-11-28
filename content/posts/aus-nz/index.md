@@ -1,6 +1,6 @@
 ---
 layout: post
-title: The 2016 Australian election - New Zealand rules
+title: The 2016 Australian election (New Zealand rules)
 date: 2017-10-08T21:21:46-05:00
 lastmod: 2017-10-08T21:21:46-05:00
 
@@ -11,7 +11,7 @@ feature_image: sample-image-46.jpg
 feature_image_alt: Rob Roy Glacier National Park, New Zealand, 2014
 ---
 
-# The 2016 Australian election - New Zealand rules
+# The 2016 Australian election (New Zealand rules)
 
 *October 8, 2017*
 
@@ -21,7 +21,7 @@ New Zealand has a significantly different electoral system to Australia, and jus
 
 In Australia, the country is split into six states and two territories, and each state or territory contains a number of *electorates*, which are geographical areas with relatively equal populations who each elect one of 150 members to the lower house of parliament.
 
-In New Zealand, the system (called MMP - Mixed Member Proportional) is more complicated.
+In New Zealand, the system (called MMP &mdash; Mixed Member Proportional) is more complicated.
 
 First of all, the country (which has no states) is split into population-based electorates *twice*: once for the general population (giving 64 electorates), and a different split for Maori citizens who choose to enrol on a different electoral roll (giving an additional 7 electorates, called Maori electorates). Candidates are chosen in a simple first-past-the-post contest (no preferences, making this step much simpler than in Australia). 
 
@@ -104,5 +104,5 @@ The Liberal-National coalition has 136 seats which gives them a 6-member majorit
 
 It's interesting to note two things:
 
-- The ABC ran a similar analysis simulating the 2016 election under US rules and also found it much easier for the Coalition to run
+- The ABC ran a similar analysis simulating the 2016 election under US rules and also found it much easier for the Coalition to win
 - Of course, as Antony Green notes, elections and their results are tightly related to the electoral system they are held under, and the results would be different if held under MMP. 

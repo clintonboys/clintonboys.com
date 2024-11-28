@@ -15,7 +15,7 @@ feature_image_alt: Tel Aviv, Israel, 2018
 
 *March 23, 2021*
 
-In this post I answer the interview questions from [The Setup](http://usesthis.com/) - again. This is an updated version of [this post]({{< ref "posts/uses-this-2019" >}}) which I wrote in 2019.
+In this post I answer the interview questions from [The Setup](http://usesthis.com/) &mdash; again. This is an updated version of [this post]({{< ref "posts/uses-this-2019" >}}) which I wrote in 2019.
 
 **Who are you and what do you do?**
 

@@ -42,7 +42,7 @@ I wanted to build a tool that allows anyone to run these sorts of experiments, a
 
 ## The idea for Psephulator
 
-Psephulator[^1] is an open-source command-line tool for simulating elections. It's written in Rust, and you can find the code on GitHub [here](https://github.com/clintonboys/psephulator). It's currently in a very basic state - essentially I have just written the code for the "proof of concept" example below. I plan to add more and more functionality as I find time to work on the project. If anyone else would like to contribute, please contact me, or just open a pull request!
+Psephulator[^1] is an open-source command-line tool for simulating elections. It's written in Rust, and you can find the code on GitHub [here](https://github.com/clintonboys/psephulator). It's currently in a very basic state &mdash; essentially I have just written the code for the "proof of concept" example below. I plan to add more and more functionality as I find time to work on the project. If anyone else would like to contribute, please contact me, or just open a pull request!
 
 ## Key components of Psephulator
 
@@ -66,11 +66,11 @@ As an example of where I would like to take Psephulator, I have written enough o
 
 ![alt](scrnsht1.png)
 
-Once we have the results, we choose the electoral system we'd like to simulate the results with. If you choose "First Past the Post" the tool manages to recreate the [results](https://commonslibrary.parliament.uk/research-briefings/cbp-10009/) correctly. But we can also choose a different system - say "Alternative Vote". 
+Once we have the results, we choose the electoral system we'd like to simulate the results with. If you choose "First Past the Post" the tool manages to recreate the [results](https://commonslibrary.parliament.uk/research-briefings/cbp-10009/) correctly. But we can also choose a different system &mdash; say "Alternative Vote". 
 
 ![alt](scrnsht2.png)
 
-Alternative Vote is a fairly different system from the one that the actual election was conducted under - you can see a longer discussion of why [here]({{< ref "projects/uk-av" >}}) - so to successfully simulate it we need to provide some estimated parameters, in this case: the estimated preference flows for all the parties. In a full version of the tool, the "simulation engine" would provide the ability to run "grid searches" over this parameter, like I did in my 2019 experiment. 
+Alternative Vote is a fairly different system from the one that the actual election was conducted under &mdash; you can see a longer discussion of why [here]({{< ref "projects/uk-av" >}}) &mdash; so to successfully simulate it we need to provide some estimated parameters, in this case: the estimated preference flows for all the parties. In a full version of the tool, the "simulation engine" would provide the ability to run "grid searches" over this parameter, like I did in my 2019 experiment. 
 
 For now, I just have a single hard-coded `preference_flows.json` file (and only for England), and if we choose that the tool will simulate the AV election with these assumed preferences. 
 

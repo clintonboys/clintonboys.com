@@ -32,7 +32,7 @@ Last year, while in the middle of my PhD, I decided it was about time I had a pe
 
 ![cb.com](cbcom_old.png)
 
-Once I had made the decision finally, I bought my own domain - clintonboys.com, what an empowering moment! - and started building out a site myself, for fun and as another indication of my technical chops. 
+Once I had made the decision finally, I bought my own domain &mdash; clintonboys.com, what an empowering moment! &mdash; and started building out a site myself, for fun and as another indication of my technical chops. 
 
 After reading some other folks' blogs and researching static site generators a bit (after understanding that's what I needed), I chose Jekyll, since it seemed simple enough. I hacked away at an existing, open-sourced theme called [Minimal Mistakes](https://mmistakes.github.io/minimal-mistakes/) for a while until I came up with something that felt like it was mine. I really like the large feature images on every page, which gives me a chance to show off some of my favourite photographs that I've taken and also adds a bit of colour. 
 

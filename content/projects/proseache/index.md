@@ -43,7 +43,7 @@ Finally I managed to work on the design. I made the board look a bit like a cros
 
 ![Final](mechanic.png)
 
-After I had finished coding up the mechanics and had settled on something I liked, the rest of the work was designing the "first-time user experience" and all of the levels, to make this an actually interesting game that people would want to play and keep playing. This was by far the hardest bit for me - more challenging than coding the game up or designing the mechanisms, and also more of a "grind". But it was definitely an important step and felt very good when it all fell into place.
+After I had finished coding up the mechanics and had settled on something I liked, the rest of the work was designing the "first-time user experience" and all of the levels, to make this an actually interesting game that people would want to play and keep playing. This was by far the hardest bit for me &mdash; more challenging than coding the game up or designing the mechanisms, and also more of a "grind". But it was definitely an important step and felt very good when it all fell into place.
 
 ![Final](sols.png)
 

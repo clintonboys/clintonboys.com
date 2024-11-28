@@ -32,7 +32,7 @@ Australia has a very unique electoral system, with geographic "districts" (almos
 
 After spending a bit too much time on Australian political [Twitter](https://twitter.com/mumbletwits/status/1403508783389630464?s=20) I thought it might be an interesting intellectual exercise to re-imagine Australian elections over the last fifty years in an alternative universe where they took place under a different system. 
 
-Before we start I will give the massive caveat that the political history of a country is inseparable from its electoral system - the types of parties and issues that evolve out of the current system in Australia would not necessarily emerge under a different system. So it's more of a thought experiment than any kind of suggestion about which system is better or worse, though the downsides of both systems are easily apparent in the comparative analysis. 
+Before we start I will give the massive caveat that the political history of a country is inseparable from its electoral system &mdash; the types of parties and issues that evolve out of the current system in Australia would not necessarily emerge under a different system. So it's more of a thought experiment than any kind of suggestion about which system is better or worse, though the downsides of both systems are easily apparent in the comparative analysis. 
 
 ## The current system versus proportional representation
 
@@ -80,7 +80,7 @@ This election gives the closest result in our alternative universe to the real r
 
 ---
 
-The 1975 election was a big one - Governor General John Kerr had just removed Prime Minister Gough Whitlam from office, and new Prime Minister Malcolm Fraser was seeking a mandate from the public. In reality, he received a substantial one: a landslide 91-36 victory, sending Labor to opposition until 1983. 
+The 1975 election was a big one &mdash; Governor General John Kerr had just removed Prime Minister Gough Whitlam from office, and new Prime Minister Malcolm Fraser was seeking a mandate from the public. In reality, he received a substantial one: a landslide 91-36 victory, sending Labor to opposition until 1983. 
 
 In our alternative reality, the result is a little closer: where the seat-based, preferential system gives a landslide, the PR system recognises that the shift from Labor to Liberal, although dramatic, was deserving of a little less than a landslide. And indeed, nationwide the swing against Labor was -6.5%, bringing their total first preference votes down to 43%, and the swing to the Coalition was 7%, bringing theirs to 53%. The 67 seats they win under PR give them a very slim majority in the 127-seat parliament which is a big deal: this is the only election in the last fifty years that would have given a non-"small C" coalition government. 
 
@@ -96,7 +96,7 @@ Another interesting fact about our PR universe: apart from the two-and-a-half ye
 
 Whitlam didn't disappear after the Dismissal: he continued on as opposition leader until his defeat in the 1977 election, which Fraser won again in a landslide (his majority was reduced by five, but the parliament was also reduced by three seats from 127 to 124). 
 
-Under PR things get interesting - this is our first election where the government formed under PR is different than what happened in reality. Whitlam wins back the Prime Ministership, with the help of the recently formed Australian Democrats, whose 12 seats join with Whitlam's 49 to give 61, the same as the Liberal / Country / DLP opposition. The two remaining members - taken by the Progress party and the Socialist party - would probably have been controversial in the anti-Communist furor of the late 70s, but a left-wing Coalition (maybe with Socialist abstentions) seems like the only real option. 
+Under PR things get interesting &mdash; this is our first election where the government formed under PR is different than what happened in reality. Whitlam wins back the Prime Ministership, with the help of the recently formed Australian Democrats, whose 12 seats join with Whitlam's 49 to give 61, the same as the Liberal / Country / DLP opposition. The two remaining members &mdash; taken by the Progress party and the Socialist party &mdash; would probably have been controversial in the anti-Communist furor of the late 70s, but a left-wing Coalition (maybe with Socialist abstentions) seems like the only real option. 
 
 ![Real and imagined governments by year](governments.png)
 
@@ -157,7 +157,7 @@ Indeed in this election, there is a net change of only one seat: Labor loses two
 
 ---
 
-1990 was the year of the Democrats - winning 11.26% of first preference votes from over one million Australians, they have 17 seats in our PR parliament, coming largely at the expense of the Labor party. The difference between the blocs remains essentially the same as last year, but within the left-wing bloc Hawke's standing as Prime Minister would take a hit after the 6.5% swing against Labor. 
+1990 was the year of the Democrats &mdash; winning 11.26% of first preference votes from over one million Australians, they have 17 seats in our PR parliament, coming largely at the expense of the Labor party. The difference between the blocs remains essentially the same as last year, but within the left-wing bloc Hawke's standing as Prime Minister would take a hit after the 6.5% swing against Labor. 
 
 The leader of the Australian Democrats, Janine Haines, who in reality stood down as leader after this election, finds herself in an enviable position after this election, much like Nick Clegg and his Liberal Democrats after the 2010 UK election (although a Labor-Democrats coalition is much more natural than the Conservative-Liberal Democrats one that transpired in 2010). Since Hawke has no lower house majority without Haines and her 17 seats, she becomes Deputy Prime Minister and several ministerial portfolios are given to senior Democrats. 
 
@@ -197,7 +197,7 @@ In the 148-seat parliament in our alternative universe, the kingmakers who ended
 
 ---
 
-In our PR version of 1998, it was John Howard's turn to form an unsavoury coalition - under PR we would have had Deputy Prime Minister Pauline Hanson, who had entered parliament in 1996 as an independent to give her notorious maiden speech that introduced an anti-multicultural politics that has stuck to Australia's shoe ever since.
+In our PR version of 1998, it was John Howard's turn to form an unsavoury coalition &mdash; under PR we would have had Deputy Prime Minister Pauline Hanson, who had entered parliament in 1996 as an independent to give her notorious maiden speech that introduced an anti-multicultural politics that has stuck to Australia's shoe ever since.
 
 Hanson's One Nation party won 936,621 first preference votes, or 8.43%, and that support was significantly higher in Queensland. In reality however, she lost her seat in the House and One Nation turned their attention to the Senate. 
 
@@ -216,7 +216,7 @@ So for the first six years of his Prime Ministership, in our PR universe, John H
 
 ---
 
-Here's another election that would have turned out very different under PR than reality: in 2001, only six weeks after 9/11, we would have seen Prime Minister Kim Beazley - or at least that's how I see the electoral combinatorics playing out in this very close proportional result. 
+Here's another election that would have turned out very different under PR than reality: in 2001, only six weeks after 9/11, we would have seen Prime Minister Kim Beazley &mdash; or at least that's how I see the electoral combinatorics playing out in this very close proportional result. 
 
 Beazley's coalition: his 57 seats and the Greens and Democrats with 8 each give 73, so he needs three of the four independents to vote with him to give a majority, or all four to go to Howard for the reverse result. This would have been the most tense of post-election coalition negotiations, similar to what happened in 2013. So again we have to dive deeper and find out who these independents are. In reality in 2001 three independents were elected: Peter Andren, [Tony Windsor](https://en.wikipedia.org/wiki/Tony_Windsor) and [Bob Katter](https://en.wikipedia.org/wiki/Bob_Katter). Andren and Windsor would have leaned Beazley, I think, so it would have come down to Katter and the other imagined fourth independent we need to elect to compensate. Peter Andren's support in [Calare](https://en.wikipedia.org/wiki/Division_of_Calare) was substantial, his two-party preferred vote over 70%, so I think it wouldn't be unreasonable to elect another independent aligned with him, giving Beazley his coalition. 
 

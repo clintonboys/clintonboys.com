@@ -14,7 +14,7 @@ This page, inspired by the now-legendary [post](https://sive.rs/nowff) by Derek 
 
 ## New website
 
-I just finished revamping this site by migrating it to Hugo! I made a bunch of changes and improvements along the way - you can read more details about it [here]({{< ref "projects/hugo-migration" >}}). 
+I just finished revamping this site by migrating it to Hugo! I made a bunch of changes and improvements along the way &mdash; you can read more details about it [here]({{< ref "projects/hugo-migration" >}}). 
 
 ## Work
 
