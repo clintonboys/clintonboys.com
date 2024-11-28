@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Forecasting Australian elections: the tricky seats
+title: Forecasting Australian elections - the tricky seats
 date: 2015-05-28T21:21:46-05:00
 lastmod: 2015-05-28T21:21:46-05:00
 
@@ -11,7 +11,7 @@ feature_image: sample-image-10.jpg
 feature_image_alt: Stella Maris, Haifa, Israel, 2014
 ---
 
-# Forecasting Australian elections: the tricky seats
+# Forecasting Australian elections - the tricky seats
 
 *May 28, 2015*
 
