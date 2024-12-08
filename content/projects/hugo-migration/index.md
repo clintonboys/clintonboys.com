@@ -69,7 +69,6 @@ The things I had to tweak globally were
 - completely rejigged the navigation bar
 - changed the "feature image" to be more like I had on my old site, including an image caption
 - migrate some posts to a "project" format instead of a "post" format
-- tweak the copyright footer to include an AI statement
 
 I enjoyed this project, it really forced me to take a deep look at my online presence and rethink how I want it to look for the decade to come. The end result is something that feels really suited to me, and I'm very happy with it. 
 

@@ -18,7 +18,7 @@ I just finished revamping this site by migrating it to Hugo! I made a bunch of c
 
 ## Work
 
-I've been working at [Via](http://ridewithvia.com) since 2018, doing all sorts of different and interesting stuff, mostly related to algorithms and data science and then building interesting and useful products around these things. Lately I am spending a lot of time on more "core" engineering projects, with a focus on system design, performance, visibility and efficiency at scale. 
+I've been working at [Via](http://ridewithvia.com) since 2018, doing all sorts of different and interesting stuff, mostly related to algorithms and data science and then building interesting and useful products around these things. Lately, alongside managing a team of very talented folks, I am spending a lot of time on more "core" engineering projects, with a focus on system design, performance, visibility and efficiency at scale. 
 
 ## Thinking about AI
 
