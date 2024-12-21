@@ -1,8 +1,8 @@
 ---
 layout: post
 title: My setup (2025)
-date: 2025-01-06T11:21:46-05:00
-lastmod: 2025-01-06T11:21:46-05:00
+date: 2025-01-04T11:21:46-05:00
+lastmod: 2025-01-04T11:21:46-05:00
 
 categories:
   - Setup
@@ -19,7 +19,7 @@ In this post I answer the interview questions from [uses this](http://usesthis.c
 
 ## Who are you and what do you do?
 
-I'm an Australian mathematician and software engineer living in London. I'm currently working at [Via](https://ridewithvia.com). Outside of work, I enjoy reading, writing, listening to and making music, and spending time with my family. 
+I'm an Australian mathematician and programmer living in London. I'm currently working at [Via](https://ridewithvia.com). Outside of work, I enjoy reading, writing, listening to and making music, and spending time with my family. 
 
 ## What hardware do you use?
 
