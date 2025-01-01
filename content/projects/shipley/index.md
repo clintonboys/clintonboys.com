@@ -5,7 +5,7 @@ summary: A minimalistic task and time management app for iOS.
 slug: shipley
 author: Clinton Boys
 
-draft: false
+draft: true
 date: 2023-09-10T03:52:30-05:00
 lastmod: 
 expiryDate: 
@@ -108,8 +108,8 @@ In the Projects screen, you see a list of all projects, by default only showing 
 
 A summary of how your time is spent, including statistics about completed project tasks and errands for previous days and weeks, the amount of assigned and unassigned chunks today and in the coming days, and a counter of the week number of your life (inspired by [4000 Weeks](https://en.wikipedia.org/wiki/Four_Thousand_Weeks:_Time_Management_for_Mortals)), to remind you how little time you have to do anything at all, how many things you are going to leave undone, and how important it is to decide carefully and with great consideration what you are going to work on.  
 
-I am still actively working on Shipley - stay tuned for more updates, and hopefully one day soon a link to buy it from the iOS App Store!
+I am still actively working on Shipley &mdash; stay tuned for more updates, and hopefully one day soon a link to buy it from the iOS App Store!
 
 ## Footnotes
 
-[^1]: Shipley itself is still a working title that comes from my own "bank" of project names, related to the [Blue Mountains](https://en.wikipedia.org/wiki/Blue_Mountains_(New_South_Wales)), where I grew up. The Shipley Plateau is a beautiful sandstone plateau in the north-eastern part of the Blue Mountains escarpment. 
+[^1]: Shipley itself is still a working title that comes from my own "bank" of project names, related to the [Blue Mountains](https://en.wikipedia.org/wiki/Blue_Mountains_(New_South_Wales)), where I grew up. The Shipley Plateau, pictured at the top of this page, is a beautiful sandstone plateau in the northwest of the Blue Mountains escarpment. 
